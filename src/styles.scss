@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+// Definir la base en px para convertir a rem
+$base-spacing: 8px;
+
+// Generar el mapa de valores de espaciado
+$spacing-scale: ();
+@for $i from 1 through 30 {
+  $spacing-scale: map-merge($spacing-scale, (#{m}-#{$i}: ($i * $base-spacing) / 16px * 1rem));
+}
+
+// Mixin para generar márgenes y padding en todas las direcciones
+@mixin generate-spacing-classes($scale) {
+  @each $key, $value in $scale {
+    // Margen
+    .#{$key} { margin: $value !important; }
+    .mt-#{str-slice($key, 3)} { margin-top: $value !important; }
+    .mb-#{str-slice($key, 3)} { margin-bottom: $value !important; }
+    .ml-#{str-slice($key, 3)} { margin-left: $value !important; }
+    .mr-#{str-slice($key, 3)} { margin-right: $value !important; }
+    .mx-#{str-slice($key, 3)} { margin-left: $value !important; margin-right: $value !important; }
+    .my-#{str-slice($key, 3)} { margin-top: $value !important; margin-bottom: $value !important; }
+
+    // Padding
+    .p-#{str-slice($key, 3)} { padding: $value !important; }
+    .pt-#{str-slice($key, 3)} { padding-top: $value !important; }
+    .pb-#{str-slice($key, 3)} { padding-bottom: $value !important; }
+    .pl-#{str-slice($key, 3)} { padding-left: $value !important; }
+    .pr-#{str-slice($key, 3)} { padding-right: $value !important; }
+    .px-#{str-slice($key, 3)} { padding-left: $value !important; padding-right: $value !important; }
+    .py-#{str-slice($key, 3)} { padding-top: $value !important; padding-bottom: $value !important; }
+  }
+}
+
+// Llamada para aplicar los márgenes y padding generados
+@include generate-spacing-classes($spacing-scale);
