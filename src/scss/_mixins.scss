@@ -1,0 +1,15 @@
+// _mixins.scss
+@mixin generate-color-classes($colors-map) {
+  @each $color-name, $shades in $colors-map {
+    @each $shade, $value in $shades {
+      // Clase de fondo
+      .bg-#{$color-name}-#{$shade} {
+        background-color: $value;
+      }
+      // Clase de texto
+      .text-#{$color-name}-#{$shade} {
+        color: $value;
+      }
+    }
+  }
+}

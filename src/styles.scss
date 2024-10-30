@@ -1,10 +1,22 @@
+@use "sass:math";
+@use "sass:map";
+
+@import './scss/variables';
+@import './scss/mixins';
+
+
+
 // Definir la base en px para convertir a rem
 $base-spacing: 8px;
 
 // Generar el mapa de valores de espaciado
 $spacing-scale: ();
 @for $i from 1 through 30 {
-  $spacing-scale: map-merge($spacing-scale, (#{m}-#{$i}: ($i * $base-spacing) / 16px * 1rem));
+  $spacing-scale: map.set(
+    $spacing-scale,
+    unquote("m-#{$i}"),
+    math.div($i * $base-spacing, 16px) * 1rem
+  );
 }
 
 // Mixin para generar márgenes y padding en todas las direcciones
@@ -30,5 +42,12 @@ $spacing-scale: ();
   }
 }
 
+// Llamada al mixin para generar las clases
+
+@include generate-color-classes($colors);
+
 // Llamada para aplicar los márgenes y padding generados
 @include generate-spacing-classes($spacing-scale);
+
+
+
