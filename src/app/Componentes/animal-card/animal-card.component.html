@@ -1,0 +1,12 @@
+<div class="card">
+    <img [src]="animal.imagenUrl">
+    <div class="card-content bg-black-600">
+      <h2>{{ animal.nombre }}</h2>
+      <div class="info justify-content-between">
+        <img src="../../../../public/img/card-animales/Weight.png" alt=""> <p>{{animal.peso}}</p>
+        <span class="icono altura"></span> <p>{{ animal.altura }}</p>
+        <span class="icono ambiente"></span> <p>{{ animal.tipo }}</p>
+      </div>
+      <p class="nombre-cientifico justify-content-start">{{ animal.nombreCientifico }}</p>
+    </div>
+</div>

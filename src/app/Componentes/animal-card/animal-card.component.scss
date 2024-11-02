@@ -1,0 +1,40 @@
+@import "../../../scss/variables";
+.card {
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+  
+  .card-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card-content {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+  }
+  
+  .nombre-cientifico {
+    font-size: 0.9em;
+    color: #aaa;
+  }
+  
+  .info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  .icono {
+    margin-right: 5px;
+  }
+  
