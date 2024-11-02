@@ -1,40 +1,71 @@
 @import "../../../scss/variables";
+
 .card {
-    width: 250px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: #fff;
-  }
-  
-  .card-image {
-    height: 150px;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .card-content {
-    padding: 15px;
-    text-align: center;
-  }
-  
-  h2 {
-    font-size: 1.2em;
-    margin: 10px 0 5px;
-  }
-  
-  .nombre-cientifico {
-    font-size: 0.9em;
-    color: #aaa;
-  }
-  
-  .info {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-  }
-  
-  .icono {
-    margin-right: 5px;
-  }
-  
+  display: flex;
+  width: 23rem; /* Mantener las dimensiones exactas de la tarjeta */
+  height: 28.1875rem;
+  padding-bottom: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-shrink: 0;
+  border-radius: 1.5rem;
+  background: var(--Negro-600, #2E312E); /* Color de fondo ajustado según tus variables */
+  box-shadow: 0px 11px 10.9px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card-image {
+  display: flex;
+  height: 18.5rem; /* Tamaño de la imagen */
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 1.5rem 1.5rem 0rem 0rem;
+}
+
+.descripcion {
+  display: flex;
+  padding: 0rem 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px !important; //ESTA PARTE
+  align-self: stretch;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  color: var(--Blanco-300, #FCFFF9); /* Color de texto */
+}
+
+h6 {
+  display: flex;
+  font-family: "Fredoka";
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%; /* 3rem */
+  letter-spacing: 0.05rem; /* Ajuste de espacio entre letras */
+}
+
+.info {
+  display: flex;
+  align-items: center; /* Centrar el contenido verticalmente */
+  gap: 8px;
+  font-family: "Fredoka";
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--Blanco-300, #FCFFF9);
+}
+
+.nombre-cientifico {
+  display: flex;
+  font-family: "Fredoka";
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--Negro-200, #757C75);
+  margin-top: 8px; /* Ajuste de margen para separar visualmente */
+}
+

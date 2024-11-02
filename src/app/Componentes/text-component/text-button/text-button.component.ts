@@ -1,12 +1,23 @@
-import { Component } from '@angular/core';
+// animal-card.component.ts
+import { Component, Input } from '@angular/core';
 
-@Component({
+interface TextButton {
+  title: string;
+  texto: string;
+  boton: string;
+}
+
+@Component ({
   selector: 'app-text-button',
-  standalone: true,
-  imports: [],
   templateUrl: './text-button.component.html',
-  styleUrl: './text-button.component.scss'
+  styleUrls: ['./text-button.component.scss'],
+
+  standalone: true
 })
 export class TextButtonComponent {
-
+  @Input() textButton: TextButton = {
+    title: '',
+    texto: '',
+    boton: ''
+  };
 }

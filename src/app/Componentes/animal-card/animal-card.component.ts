@@ -9,6 +9,7 @@ interface Animal {
   tipo: string;
   nombreCientifico: string;
   imagenUrl: string;
+  tipoImg: string
 }
 
 @Component ({
@@ -25,7 +26,8 @@ export class AnimalCardComponent {
     altura: '',
     tipo: '',
     nombreCientifico: '',
-    imagenUrl: ''
+    imagenUrl: '',
+    tipoImg: 'img/card-animales/Terrestre.png'
   };
 }
 
