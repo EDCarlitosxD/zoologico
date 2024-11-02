@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
-interface Experiencia{
-  
+import { Component, Input } from '@angular/core';
+interface Experiencias{
+  title: string;
+  texto: string;
+  image: string;
 }
 @Component({
   selector: 'app-experiencias-card',
-  standalone: true,
-  imports: [],
   templateUrl: './experiencias-card.component.html',
-  styleUrl: './experiencias-card.component.scss'
+  styleUrl: './experiencias-card.component.scss',
+  standalone: true
 })
 export class ExperienciasCardComponent {
-
+  @Input() experiencias: Experiencias = {
+    title: '',
+    texto: '',
+    image: ''
+  };
 }
