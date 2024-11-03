@@ -125,9 +125,12 @@ line-height: 150%; /* 24px */
 }
 
 @media (max-width: 768px) {
-  
+
   .nombre-cientifico {
   font-size: 8.77px;
+  }
+  .card-animal-info{
+    font-size: 8px;
   }
   .card{
     display: flex;
@@ -142,6 +145,7 @@ line-height: 150%; /* 24px */
   flex-shrink: 0;
   align-self: stretch;
     }
+
     .descripcion{
       display: flex;
       padding: 0px 7.816px;
