@@ -15,6 +15,7 @@
 .card:hover{
 
   background: var(--Secundario-Auxiliar-600, #EDC457);
+  transition: background-color 0.5s ease, color 0.5s ease;
   .card-animal-info{
     color: var(--Negro-800, #1D1F1D);
   }
@@ -57,7 +58,6 @@
   color: var(--Blanco-300, #FCFFF9);
 
   font-family: "Fredoka";
-  font-size: 32px;
   font-style: normal;
   font-weight: 300 !important ;
   line-height: 150%; /* 48px */
@@ -67,7 +67,6 @@
   color: var(--Blanco-600, #F7FFF1);
 /* Desktop/P 02/Ligth */
 font-family: "Comic Neue";
-font-size: 20px;
 font-style: normal;
 font-weight: 300;
 line-height: 150%; /* 30px */
@@ -109,6 +108,7 @@ line-height: 150%; /* 30px */
 .info {
   display: flex;
   align-items: center; /* Centrar el contenido verticalmente */
+  justify-content: center;
   gap: 8px;
   font-family: "Fredoka";
   font-weight: 300;
@@ -124,3 +124,63 @@ font-weight: 400;
 line-height: 150%; /* 24px */
 }
 
+@media (max-width: 768px) {
+  
+  .nombre-cientifico {
+  font-size: 8.77px;
+  }
+  .card{
+    display: flex;
+    width: 164px;
+    height: 260px;
+    padding-bottom: 7.816px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7.816px;
+    .card-image{
+      height: 144.597px;
+  flex-shrink: 0;
+  align-self: stretch;
+    }
+    .descripcion{
+      display: flex;
+      padding: 0px 7.816px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3.908px;
+      align-self: stretch;
+      .info{
+        gap: 3.908px;
+        .weight{
+          width: 15px;
+      height: 15px;
+      background-size: contain; // Ajusta la imagen dentro del contenedor sin recortes
+  background-repeat: no-repeat;
+  background-position: center;
+        }
+        .rule{
+          width: 15px;
+          height: 15px;
+          background-size: contain; // Ajusta la imagen dentro del contenedor sin recortes
+  background-repeat: no-repeat;
+  background-position: center;
+        }
+        .Aéreo{
+          width: 15px;
+          height: 15px;
+          background-size: contain; // Ajusta la imagen dentro del contenedor sin recortes
+  background-repeat: no-repeat;
+  background-position: center;
+        }
+        .Terrestre{
+          width: 14.655px;
+          height: 14.655px;
+          background-size: contain; // Ajusta la imagen dentro del contenedor sin recortes
+  background-repeat: no-repeat;
+  background-position: center;
+        }
+      }
+    }
+
+  }
+}
