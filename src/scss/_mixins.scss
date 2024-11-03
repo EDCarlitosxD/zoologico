@@ -13,3 +13,19 @@
     }
   }
 }
+
+
+
+// Mixin para estilos de computadoras (pantallas grandes)
+@mixin desktop {
+  @media (min-width: 968px) { // Puedes ajustar el tamaño según tus necesidades
+    @content; // Inserta los estilos que se pasan al mixin
+  }
+}
+
+// Mixin para estilos de dispositivos móviles
+@mixin mobile {
+  @media (max-width: 967px) { // Puedes ajustar el tamaño según tus necesidades
+    @content; // Inserta los estilos que se pasan al mixin
+  }
+}
