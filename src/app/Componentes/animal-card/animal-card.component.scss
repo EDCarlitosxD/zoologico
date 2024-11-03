@@ -2,16 +2,38 @@
 
 .card {
   display: flex;
-  width: 23rem; /* Mantener las dimensiones exactas de la tarjeta */
-  height: 28.1875rem;
   padding-bottom: 16px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
   flex-shrink: 0;
-  border-radius: 1.5rem;
+  gap: 16px;
+  border-radius: 24px;
   background: var(--Negro-600, #2E312E); /* Color de fondo ajustado según tus variables */
   box-shadow: 0px 11px 10.9px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover{
+
+  background: var(--Secundario-Auxiliar-600, #EDC457);
+  .card-animal-info{
+    color: var(--Negro-800, #1D1F1D);
+  }
+  .card-animal-nombre{
+    color: var(--Negro-800, #1D1F1D);
+  }
+  .nombre-cientifico{
+    color: var(--Negro-300, #606560);
+  }
+  .weight{
+    background: url(../../../../public/img/card-animales/WeightHover.svg);
+  }
+  .rule{
+    background: url(../../../../public/img/card-animales/RulerHover.svg);
+  }
+  .Aéreo{
+    background: url(../../../../public/img/card-animales/IconoAireHover.svg);
+  }
+
 }
 
 .card-image {
@@ -24,11 +46,31 @@
 
 .descripcion {
   display: flex;
-  padding: 0rem 1rem;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px !important; //ESTA PARTE
+  gap: 8px;
+  padding: 0 1rem;
   align-self: stretch;
+}
+
+.card-animal-nombre{
+  color: var(--Blanco-300, #FCFFF9);
+
+  font-family: "Fredoka";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300 !important ;
+  line-height: 150%; /* 48px */
+}
+
+.card-animal-info{
+  color: var(--Blanco-600, #F7FFF1);
+/* Desktop/P 02/Ligth */
+font-family: "Comic Neue";
+font-size: 20px;
+font-style: normal;
+font-weight: 300;
+line-height: 150%; /* 30px */
 }
 
 .card-content {
@@ -40,32 +82,45 @@
   color: var(--Blanco-300, #FCFFF9); /* Color de texto */
 }
 
-h6 {
-  display: flex;
-  font-family: "Fredoka";
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 150%; /* 3rem */
-  letter-spacing: 0.05rem; /* Ajuste de espacio entre letras */
+.weight{
+  width: 30px;
+  height: 30px;
+  background: url('./../../../../public/img/card-animales/Weight.svg');
 }
+.rule {
+  width: 30px;
+  height: 30px;
+  background: url('./../../../../public/img/card-animales/Ruler.svg');
+}
+.Terrestre {
+  width: 30px;
+  height: 30px;
+  background: url('./../../../../public/img/card-animales/IconTerrestre.png');
+}
+.Aéreo {
+  width: 30px;
+  height: 30px;
+  background: url('./../../../../public/img/card-animales/IconoAire.svg');
+}
+
+
+
 
 .info {
   display: flex;
   align-items: center; /* Centrar el contenido verticalmente */
   gap: 8px;
   font-family: "Fredoka";
-  font-size: 1rem;
   font-weight: 300;
   color: var(--Blanco-300, #FCFFF9);
 }
 
 .nombre-cientifico {
-  display: flex;
-  font-family: "Fredoka";
-  font-size: 1rem;
-  font-weight: 300;
-  color: var(--Negro-200, #757C75);
-  margin-top: 8px; /* Ajuste de margen para separar visualmente */
+  color: var(--Blanco-800, #E7ECE3);
+font-family: "Comic Neue";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
 }
 
