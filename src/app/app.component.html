@@ -1,6 +1,7 @@
 
 <h1 class="px-2">csds</h1>
 
+<!-- animal-card -->
 <div class="d-flex justify-content-evenly">
 
 <app-animal-card [animal] = "{
@@ -9,8 +10,7 @@
   altura: '1.2 m',
   tipo: 'Terrestre',
   nombreCientifico: 'Panthera leo',
-  imagenUrl: 'img/card-animales/Leon.png',
-  tipoImg: ''
+  imagenUrl: 'img/card-animales/Leon.png'
   }" >
 
 </app-animal-card>
@@ -21,8 +21,7 @@
   altura: '5.5 m',
   tipo: 'Terrestre',
   nombreCientifico: 'Giraffa camelopardalis',
-  imagenUrl: 'img/card-animales/Jirafa.png',
-  tipoImg: ''
+  imagenUrl: 'img/card-animales/Jirafa.png'
   }"></app-animal-card>
 
 <app-animal-card [animal] = "{
@@ -31,8 +30,7 @@
     altura: '0.675 m',
     tipo: 'Aéreo',
     nombreCientifico: 'Bubo bubo',
-    imagenUrl: 'img/card-animales/Buho.png',
-    tipoImg: ''
+    imagenUrl: 'img/card-animales/Buho.png'
     }"></app-animal-card>
 
     <app-animal-card [animal] = "{
@@ -41,11 +39,21 @@
       altura: '0.6 m',
       tipo: 'Aéreo',
       nombreCientifico: 'Ramphastos toco',
-      imagenUrl: 'img/card-animales/Tucan.png',
-      tipoImg: ''
+      imagenUrl: 'img/card-animales/Tucan.png'
       }"></app-animal-card>
-</div>
 
+      <app-animal-card [animal] ="{
+        nombre: 'Elefante  africano',
+        peso: '6 ton',
+        altura: '3 m',
+        tipo: 'Terrestre',
+        nombreCientifico: 'Loxodonta africana',
+        imagenUrl: 'img/card-animales/Elefante.png'
+      }">
+
+      </app-animal-card>
+</div>
+<!-- text-button -->
   <div class="d-flex justify-content-evenly">
     <app-text-button [textButton] = "{
       title:  'Conoce a nuestros animales Terrestres',

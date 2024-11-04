@@ -13,7 +13,7 @@
 background: var(--Degradado-1, linear-gradient(0deg, rgba(170, 199, 103, 0.50) 0%, rgba(248, 255, 232, 0.00) 100%));
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-h3{
+h4{
     display: flex;
 width: 40rem;
 height: 7.4375rem;
@@ -36,7 +36,7 @@ text-align: center;
 }
 .texto {
     white-space: pre-wrap;
-  }  
+  } 
 
 @media (max-width: 768px){
     .contenedor-main{

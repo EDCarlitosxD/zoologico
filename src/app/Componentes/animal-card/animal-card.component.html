@@ -1,20 +1,22 @@
 <div class="card bg-black-600">
     <img [src]="animal.imagenUrl" class="card-image">
     <div class="descripcion">
-        <h6 class=" card-animal-nombre">{{ animal.nombre }}</h6>
-        <div class="info">
-
-          <div class="weight"></div>
-          <p class="p2 text-white-600 card-animal-info d-flex p2">{{ animal.peso }}</p>
-          
-          <div class="rule"></div>
-          <p class="p2 text-white-600 card-animal-info d-flex p2">{{ animal.altura }}</p>
-
-          <div class="{{animal.tipo}}"></div>
-          <p class="p2 text-white-600 card-animal-info d-flex">{{ animal.tipo }}</p>
-
-        </div>
-        <p class="nombre-cientifico text-black-200">{{ animal.nombreCientifico }}</p>
+        <div class="descripcion2">
+          <h6 class=" card-animal-nombre">{{ animal.nombre }}</h6>
+          <div class="info">
+  
+            <div class="weight"></div>
+            <p class="p2 text-white-600 card-animal-info d-flex">{{ animal.peso }}</p>
+            
+            <div class="rule"></div>
+            <p class="p2 text-white-600 card-animal-info d-flex">{{ animal.altura }}</p>
+  
+            <div class="{{animal.tipo}}"></div>
+            <p class="p2 text-white-600 card-animal-info d-flex">{{ animal.tipo }}</p>
+  
+          </div>
+          <p class="nombre-cientifico text-black-200">{{ animal.nombreCientifico }}</p>
+        </div>   
     </div>
 
 </div>
