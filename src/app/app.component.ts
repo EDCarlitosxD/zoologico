@@ -5,11 +5,11 @@ import { ExperienciasCardComponent } from './Componentes/experiencias-card/exper
 import { TextGrid4Component } from './Componentes/text-component/text-grid4/text-grid4.component'; 
 import { TextGrid5Component } from './Componentes/text-component/text-grid5/text-grid5.component';
 import { BoletosComponent } from './Componentes/boletos/boletos.component';
-
+import { FooterComponent } from './Componentes/footer/footer.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AnimalCardComponent, ExperienciasCardComponent, TextGrid4Component,  TextGrid5Component,  BoletosComponent],
+  imports: [RouterOutlet, AnimalCardComponent, ExperienciasCardComponent, TextGrid4Component,  TextGrid5Component,  BoletosComponent, FooterComponent],
 
 
 
