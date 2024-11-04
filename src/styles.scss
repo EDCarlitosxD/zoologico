@@ -4,7 +4,27 @@
 @import './scss/variables';
 @import './scss/mixins';
 
+p, h1, h2, h3, h4, h5, h6, ul,ol {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+html {
+  font-size: 100%; /* 1rem = 16px */
+}
+ul, li{
+  list-style: none;
+}
 
 // Definir la base en px para convertir a rem
 $base-spacing: 8px;
@@ -12,11 +32,9 @@ $base-spacing: 8px;
 // Generar el mapa de valores de espaciado
 $spacing-scale: ();
 @for $i from 1 through 30 {
-  $spacing-scale: map.set(
-    $spacing-scale,
-    unquote("m-#{$i}"),
-    math.div($i * $base-spacing, 16px) * 1rem
-  );
+  // Cambiar la división para que el valor se calcule correctamente en rem
+  $value: math.div($i * $base-spacing, 16px) * 1rem; // Esto ahora calculará correctamente los valores
+  $spacing-scale: map.set($spacing-scale, unquote("m-#{$i}"), $value);
 }
 
 // Mixin para generar márgenes y padding en todas las direcciones

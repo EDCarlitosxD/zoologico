@@ -13,18 +13,19 @@
     }
   }
 }
-// _mixins.scss
-@mixin generate-color-classes($colors-map) {
-  @each $color-name, $shades in $colors-map {
-    @each $shade, $value in $shades {
-      // Clase de fondo
-      .bg-#{$color-name}-#{$shade} {
-        background-color: $value;
-      }
-      // Clase de texto
-      .text-#{$color-name}-#{$shade} {
-        color: $value;
-      }
-    }
+
+
+
+// Mixin para estilos de computadoras (pantallas grandes)
+@mixin desktop {
+  @media (min-width: 968px) { // Puedes ajustar el tamaño según tus necesidades
+    @content; // Inserta los estilos que se pasan al mixin
+  }
+}
+
+// Mixin para estilos de dispositivos móviles
+@mixin mobile {
+  @media (max-width: 967px) { // Puedes ajustar el tamaño según tus necesidades
+    @content; // Inserta los estilos que se pasan al mixin
   }
 }

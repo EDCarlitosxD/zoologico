@@ -1,0 +1,85 @@
+@import "../../../scss/variables";
+
+.card {
+  display: flex;
+  padding-bottom: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  gap: 16px;
+  border-radius: 1.5rem;
+  background: var(--Negro-600, #2E312E); /* Color de fondo ajustado según tus variables */
+  box-shadow: 0px 11px 10.9px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card-image {
+  display: flex;
+  height: 18.5rem; /* Tamaño de la imagen */
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 1.5rem 1.5rem 0rem 0rem;
+}
+
+.descripcion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0 1rem;
+  align-self: stretch;
+}
+
+.card-animal-nombre{
+  color: var(--Blanco-300, #FCFFF9);
+
+  font-family: "Fredoka";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300 !important ;
+  line-height: 150%; /* 48px */
+}
+
+.card-animal-info{
+  color: var(--Blanco-600, #F7FFF1);
+/* Desktop/P 02/Ligth */
+font-family: "Comic Neue";
+font-size: 20px;
+font-style: normal;
+font-weight: 300;
+line-height: 150%; /* 30px */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  color: var(--Blanco-300, #FCFFF9); /* Color de texto */
+}
+
+.icon-tipo-animal {
+  width: 30px;
+  height: 30px;
+  background: url('./../../../assets//img/card-animales/IconTerrestre.png') lightgray 50% / cover no-repeat;
+}
+
+
+
+.info {
+  display: flex;
+  align-items: center; /* Centrar el contenido verticalmente */
+  gap: 8px;
+  font-family: "Fredoka";
+  font-weight: 300;
+  color: var(--Blanco-300, #FCFFF9);
+}
+
+.nombre-cientifico {
+  display: flex;
+  font-family: "Fredoka";
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--Negro-200, #757C75);
+}
+

@@ -1,5 +1,17 @@
-// _variables.scss
+// @font-face {
+//   font-family: 'Cherry Bomb';
+//   src: url(fonts/CherryBomb-Regular.ttf);
+// }
 
+// @font-face {
+//   font-family: 'Comic Neue';
+//   src: url(fonts/ComicNeue-Regular.ttf);
+// }
+
+// @font-face {
+//   font-family: 'Fredoka';
+//   src: url(fonts/Fredoka-Regular.ttf);
+// }
 $colors: (
   "primary": (
     200: #81BA8C,
@@ -57,6 +69,65 @@ $colors: (
   )
 );
 
-#hola{
+body {
+  font-family: 'Comic Neue'; // Usar Comic Neue por defecto
 
 }
+
+h1 {
+  font-family: "Cherry Bomb One";
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Fredoka'; // Usar Fredoka para los encabezados
+}
+
+// Tamaños y pesos de encabezados
+h2 {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 3.375rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+// Estilos para el párrafo
+*{
+  font-family: "Comic Neue";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.5rem */
+}
+
+// Estilos para variantes de peso en los textos
+p .p2{
+  font-size: 1.25rem;
+}
+.bold{
+  font-weight: 700;
+}
+
+.thin{
+  font-weight: 300;
+}
+
