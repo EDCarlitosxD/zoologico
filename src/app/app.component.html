@@ -53,63 +53,40 @@
 
       </app-animal-card>
 </div>
-<!-- text-button -->
-  <div class="d-flex justify-content-evenly">
-    <app-text-button [textButton] = "{
-      title:  'Conoce a nuestros animales Terrestres',
-      texto: 'Podrás descubrir una asombrosa
-variedad de especies que habitan la
-tierra.\nDesde los majestuosos leones y tigres
-hasta los elegantes elefantes y jirafas,
-cada animal nos muestra la diversidad
-de la vida en nuestro planeta.',
-      boton: 'Conócelos'
 
-    }"></app-text-button>
-    <app-text-button [textButton] = "{
-      title:  'Conoce a nuestros animales Aéreos',
-      texto: 'Te invitamos a conocer las increíbles criaturas
-que dominan los cielos. Desde coloridas aves
-tropicales hasta majestuosas águilas, cada
-especie te sorprenderá con su habilidad para
-volar y sus características únicas.',
-boton: 'Conócelos'
+<!-- text-grid4 -->
+<div class="d-flex justify-content-evenly">
+ <app-text-grid4 [textGrid4] = "{
+  title: 'Conoce a nuestros animales Terrestres',
+  description: 'Podrás descubrir una asombrosa variedad de especies que habitan la tierra. 
+  Desde los majestuosos leones y tigres hasta los elegantes elefantes y jirafas, cada animal nos muestra la diversidad de la vida en nuestro planeta.',
+  boton: 'Conócelos',
+ }"></app-text-grid4>
 
-    }"></app-text-button>
-    <app-text-button [textButton] = "{
-      title:  'Actividades educativas',
-      texto: 'Descubre el mundo animal de forma
-divertida y práctica. A través de talleres
-guiados, conectamos a todas las edades
-con la naturaleza, fomentando la curiosidad
-y la conciencia ambiental.',
-      boton: 'Ver más'
-
-    }"></app-text-button>
-    <app-text-button [textButton] = "{
-      title:  'Recorridos',
-      texto: 'Explora cada rincón del zoológico con
-nuestros expertos. Sumérgete en historias
-fascinantes sobre la vida silvestre y
-descubre curiosidades únicas mientras te
-conectas con la naturaleza en un recorrido
-inolvidable.',
-      boton: 'Ver más'
-
-    }"></app-text-button>
-    <app-text-button [textButton] = "{
-      title:  'Ubicación',
-      texto: 'Zoo-Logic
-Avenida Naturaleza 123,
-Ciudad Verde, CP 45678,
-Mexico, Cancún, Q.Roo
-
-Accede por la ciclovía de la Avenida
-Naturaleza.',
-      boton: 'Destino'
-
-    }"></app-text-button>
-  </div>
+ <app-text-grid4 [textGrid4] = "{
+  title: 'Conoce a nuestros animales Aéreos',
+  description: 'Te invitamos a conocer las increíbles criaturas que dominan los cielos. Desde coloridas aves tropicales hasta majestuosas águilas, cada especie te sorprenderá con su habilidad para volar y sus características únicas.',
+  boton: 'Conócelos',
+ }"></app-text-grid4>
+</div>
+<!-- text-grid5 -->
+<div class="d-flex justify-content-evenly">
+  <app-text-grid5 [textGrid5]=" {
+    title: 'Actividades educativas',
+    description: 'Descubre el mundo animal de forma divertida y práctica. A través de talleres guiados, conectamos a todas las edades con la naturaleza, fomentando la curiosidad y la conciencia ambiental.',
+    boton: 'Ver más'
+  } "></app-text-grid5>
+  <app-text-grid5 [textGrid5]=" {
+    title: 'Recorridos',
+    description: 'Explora cada rincón del zoológico con nuestros expertos. Sumérgete en historias fascinantes sobre la vida silvestre y descubre curiosidades únicas mientras te conectas con la naturaleza en un recorrido inolvidable.',
+    boton: 'Ver más'
+  } "></app-text-grid5>
+  <app-text-grid5 [textGrid5]=" {
+    title: 'Ubicación',
+    description: 'Zoo-Logic\nAvenida Naturaleza 123,\nCiudad Verde, CP 45678,\nMexico, Cancún, Q.Roo\n\nAccede por la ciclovía de la Avenida Naturaleza.',
+    boton: 'Destino'
+  } "></app-text-grid5>
+</div>
 
   <div class="d-flex justify-content-between m-12">
     <app-experiencias-card [experiencias] = "{
@@ -134,4 +111,33 @@ Naturaleza.',
     "></app-experiencias-card>
   </div>
 
+  <div class="d-flex justify-content-between m-12">
+    <app-boletos [boleto]=" {
+      title: 'Boleto Infantil',
+      description: 'Ideal para los más pequeños, este boleto permite a los niños explorar el mundo animal de manera divertida y educativa, con acceso a áreas interactivas y actividades especiales.',
+      age: '3 a 12 años',
+      price: '$70',
+      type:  'Descuento',
+      image: 'img/card-boletos/Niños.png'
+    }"></app-boletos>
+
+<app-boletos [boleto]=" {
+  title: 'Boleto Adulto',
+  description: 'Disfruta del zoológico en su totalidad con acceso completo a exhibiciones y charlas educativas para vivir una experiencia completa y enriquecedora.',
+  age: 'A partir de 13 años',
+  price: '$120',
+  type:  'Acceso',
+  image: 'img/card-boletos/Adultos.png'
+}"></app-boletos>
+
+<app-boletos [boleto]=" {
+  title: 'Boleto Tercera Edad',
+  description: 'Con un precio especial, este boleto ofrece una experiencia tranquila y accesible, ideal para disfrutar de cada rincón y aprender sobre conservación.',
+  age: 'Mayores de 60 años',
+  price: '$70',
+  type:  'Descuento',
+  image: 'img/card-boletos/3raEdad.png'
+}"></app-boletos>
+
+  </div>
 <router-outlet/>

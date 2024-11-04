@@ -1,0 +1,15 @@
+<div class="component-boletos text-center">
+    <div class="arriba">
+        <img [src]="boleto.image" [alt]="boleto.image" class="image">
+        <div class="content bg-primaryAux-200">
+            <h5 class="title">{{boleto.title}}</h5>        
+            <p class="p2 thin description">{{boleto.description}}</p>
+        </div>
+    </div>
+
+    <div class="footer bg-primary-500 text-white">
+        <p class="p1 bold age">{{boleto.age}}</p>
+        <p class="p1 bold price">{{boleto.price}}</p>
+        <p class="p1 bold type">{{boleto.type}}</p>
+    </div>
+</div>
