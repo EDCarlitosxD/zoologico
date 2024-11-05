@@ -12,7 +12,7 @@
     border-radius: 40px;
     background: var(--Degradado-1, linear-gradient(0deg, rgba(170, 199, 103, 0.50) 0%, rgba(248, 255, 232, 0.00) 100%));
 
-    h4{
+    .textoH4{
         display: flex;
         width: 496px;
         height: 213px;
@@ -20,7 +20,7 @@
         justify-content: center;
         flex-shrink: 0;
     }
-    p{
+    .textoP{
         display: flex;
         height: 292px;
         flex-direction: column;
@@ -47,7 +47,7 @@ align-self: stretch;
 border-radius: 20px;
 background: var(--Degradado-1, linear-gradient(0deg, rgba(170, 199, 103, 0.50) 0%, rgba(248, 255, 232, 0.00) 100%));
     
-        h4{
+        .textoH4{
             align-self: stretch;
             color: #000;
             text-align: center;
@@ -59,7 +59,7 @@ background: var(--Degradado-1, linear-gradient(0deg, rgba(170, 199, 103, 0.50) 0
             font-weight: 500;
             line-height: 150%; /* 39px */
         }
-        p{
+        .textoP{
             width: 348px;
             color: #000;
 text-align: center;
