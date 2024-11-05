@@ -6,10 +6,12 @@ import { TextGrid4Component } from './Componentes/text-component/text-grid4/text
 import { TextGrid5Component } from './Componentes/text-component/text-grid5/text-grid5.component';
 import { BoletosComponent } from './Componentes/boletos/boletos.component';
 import { FooterComponent } from './Componentes/footer/footer.component';
+import { NavBarComponent } from "./Componentes/nav-bar/nav-bar.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AnimalCardComponent, ExperienciasCardComponent, TextGrid4Component,  TextGrid5Component,  BoletosComponent, FooterComponent],
+  imports: [RouterOutlet, AnimalCardComponent, ExperienciasCardComponent, 
+    TextGrid4Component, TextGrid5Component, BoletosComponent, FooterComponent, NavBarComponent],
 
 
 

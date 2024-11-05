@@ -41,7 +41,7 @@
       nombreCientifico: 'Ramphastos toco',
       imagenUrl: 'img/card-animales/Tucan.png'
       }"></app-animal-card>
-</div>
+
 
       <app-animal-card [animal] ="{
         nombre: 'Elefante  africano',
@@ -89,6 +89,7 @@
   } "></app-text-grid5>
 </div>
 
+<!-- experiencias -->
   <div class="d-flex justify-content-between m-12">
     <app-experiencias-card [experiencias] = "{
       title: 'Safari fotográfico',
@@ -112,6 +113,7 @@
     "></app-experiencias-card>
   </div>
 
+  <!-- boletos -->
   <div class="d-flex justify-content-between m-12">
     <app-boletos [boleto]=" {
       title: 'Boleto Infantil',
@@ -143,8 +145,14 @@
 
 
   </div>
+
+  <!-- footer -->
   <div class="d-flex justify-content-between m-12">
     <app-footer></app-footer>
     </div>
+
+    <!-- <div class="d-flex justify-content-evenly">
+      <app-nav-bar></app-nav-bar>
+    </div> -->
 <router-outlet/>
 

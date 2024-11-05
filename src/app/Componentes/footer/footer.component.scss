@@ -83,6 +83,37 @@ align-self: stretch;
     width: 72px;
 height: 72px;
 }
+    #facebook{
+        background: url(../../../../public/img/footer/Facebook.svg);
+        &:hover {
+            background: url(../../../../public/img/footer/FacebookHover.svg);
+            
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+    }
+
+    #instagram{
+        background: url(../../../../public/img/footer/Instagram.svg);
+        &:hover {
+            background: url(../../../../public/img/footer/Instagramhover.svg);
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+    }
+    #Youtube{
+        background: url(../../../../public/img/footer/Youtube.svg);
+        &:hover {
+            background: url(../../../../public/img/footer/YoutubeHover.svg);
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+    }
+    #x{
+        background: url(../../../../public/img/footer/X.svg);
+        &:hover {
+            background: url(../../../../public/img/footer/xHover.svg);
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+    }
+
     }
 }
 .horarios{
