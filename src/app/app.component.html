@@ -117,9 +117,10 @@
 
   <!-- boletos -->
   <div class="d-flex justify-content-between m-12">
+    
     <app-boletos [boleto]=" {
       title: 'Boleto Infantil',
-      description: 'Ideal para los más pequeños, este boleto permite a los niños explorar el mundo animal de manera divertida y educativa, con acceso a áreas interactivas y actividades especiales.',
+      description: 'Para los más pequeños: acceso a áreas interactivas y actividades especiales que hacen del aprendizaje una aventura.',
       age: '3 a 12 años',
       price: '$70',
       type:  'Descuento',
@@ -128,16 +129,17 @@
 
 <app-boletos [boleto]=" {
   title: 'Boleto Adulto',
-  description: 'Disfruta del zoológico en su totalidad con acceso completo a exhibiciones y charlas educativas para vivir una experiencia completa y enriquecedora.',
+  description: 'Vive una experiencia completa con acceso a todas las exhibiciones y charlas educativas del zoológico.',
   age: 'A partir de 13 años',
   price: '$120',
   type:  'Acceso',
   image: 'img/card-boletos/Adultos.png'
 }"></app-boletos>
 
+
 <app-boletos [boleto]=" {
   title: 'Boleto Tercera Edad',
-  description: 'Con un precio especial, este boleto ofrece una experiencia tranquila y accesible, ideal para disfrutar de cada rincón y aprender sobre conservación.',
+  description: 'A un precio especial, disfruta de una visita tranquila y accesible, ideal para aprender sobre conservación.',
   age: 'Mayores de 60 años',
   price: '$70',
   type:  'Descuento',
