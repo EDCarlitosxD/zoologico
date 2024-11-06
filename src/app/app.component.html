@@ -58,10 +58,10 @@
 </div>
 
 <!-- text-grid4 -->
-<div class="d-flex justify-content-evenly">
+<div class="d-flex justify-content-evenly gap-4 flex-wrap">
  <app-text-grid4 [textGrid4] = "{
   title: 'Conoce a nuestros animales Terrestres',
-  description: 'Podrás descubrir una asombrosa variedad de especies que habitan la tierra. 
+  description: 'Podrás descubrir una asombrosa variedad de especies que habitan la tierra.
   Desde los majestuosos leones y tigres hasta los elegantes elefantes y jirafas, cada animal nos muestra la diversidad de la vida en nuestro planeta.',
   boton: 'Conócelos',
  }"></app-text-grid4>
@@ -73,7 +73,7 @@
  }"></app-text-grid4>
 </div>
 <!-- text-grid5 -->
-<div class="d-flex justify-content-evenly">
+<div class="d-flex justify-content-evenly flex-wrap gap-4">
   <app-text-grid5 [textGrid5]=" {
     title: 'Actividades educativas',
     description: 'Descubre el mundo animal de forma divertida y práctica. A través de talleres guiados, conectamos a todas las edades con la naturaleza, fomentando la curiosidad y la conciencia ambiental.',
@@ -92,7 +92,7 @@
 </div>
 
 <!-- experiencias -->
-  <div class="d-flex justify-content-between m-12">
+  <div class="d-flex justify-content-between gap-3 m-12">
     <app-experiencias-card [experiencias] = "{
       title: 'Safari fotográfico',
       texto: 'Captura momentos únicos junto a los animales más salvajes del zoológico.',
@@ -117,7 +117,7 @@
 
   <!-- boletos -->
   <div class="d-flex justify-content-between m-12">
-    
+
     <app-boletos [boleto]=" {
       title: 'Boleto Infantil',
       description: 'Para los más pequeños: acceso a áreas interactivas y actividades especiales que hacen del aprendizaje una aventura.',
@@ -155,6 +155,6 @@
     <app-footer></app-footer>
     </div>
 
-    
+
 <router-outlet/>
 
