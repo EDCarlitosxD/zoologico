@@ -153,6 +153,28 @@ button {
   font-weight: 500;
   line-height: 150%;
 }
+button.chiquito{
+  display: flex;
+  width: 180px;
+  height: 60px;
+  padding: 27px 44px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 38px;
+background: var(--Primario-300, #68AC75);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+color: var(--Negro-800, #1D1F1D);
+text-align: center;
+
+/* Desktop/P 01/Bold */
+font-family: "Comic Neue";
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 36px */
+}
 
 button:hover {
   background: var(--Secundario-Auxiliar-800, #DCA617);
@@ -160,7 +182,7 @@ button:hover {
 }
 
 // Estilos de Desktop
-@media (min-width: 768px) {
+@media (min-width: 730px) {
   h1 {
     font-size: 72px;
   }
