@@ -9,15 +9,18 @@ import { TextGrid5Component } from './Componentes/text-component/text-grid5/text
 import { BoletosComponent } from './Componentes/boletos/boletos.component';
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { NavBarComponent } from "./Componentes/nav-bar/nav-bar.component";
-import { SliderComponent } from "./slider/slider.component";
+import { SliderComponent } from "./Componentes/slider/slider.component";
 
 //PAGES
 import { DonacionesComponent } from "./pages/donaciones/donaciones.component";
+import { AnimalesComponent } from './pages/animales/animales.component';
+import { HomeComponent } from './pages/home/home.component';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,
     RouterLink,
+
     AnimalCardComponent,
     ExperienciasCardComponent,
     TextGrid4Component,
@@ -27,7 +30,8 @@ import { DonacionesComponent } from "./pages/donaciones/donaciones.component";
     NavBarComponent,
     SliderComponent,
 
-
+    HomeComponent,
+    AnimalesComponent,
     DonacionesComponent],
 
 

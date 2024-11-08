@@ -15,12 +15,9 @@
     transition: background-color 0.5s ease, color 0.5s ease;
 
     .card-animal-info,
-    .card-animal-nombre {
-      color: var(--Negro-800, #1D1F1D);
-    }
-
+    .card-animal-nombre,
     .nombre-cientifico {
-      color: var(--Negro-300, #606560);
+      color: var(--Negro-800, #1D1F1D);
     }
 
     .weight {
@@ -33,6 +30,9 @@
 
     .Aéreo {
       background: url(../../../../public/img/card-animales/IconoAireHover.svg);
+    }
+    .Terrestre{
+      background: url(../../../../public/img/card-animales/IconTerrestreHover.svg);
     }
   }
 }
@@ -73,7 +73,7 @@
 
 .weight { background: url('./../../../../public/img/card-animales/Weight.svg'); }
 .rule { background: url('./../../../../public/img/card-animales/Ruler.svg'); }
-.Terrestre { background: url('./../../../../public/img/card-animales/IconTerrestre.png'); }
+.Terrestre { background: url('./../../../../public/img/card-animales/IconTerrestre.svg'); }
 .Aéreo { background: url('./../../../../public/img/card-animales/IconoAire.svg'); }
 
 .info {
@@ -82,15 +82,16 @@
   gap: 8px;
   font-family: "Fredoka";
   font-weight: 300;
-  color: var(--Blanco-300, #FCFFF9);
+  
 }
 
 .nombre-cientifico {
-  color: var(--Blanco-800, #E7ECE3);
+  
   font-family: "Comic Neue";
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
+  color: var(--Blanco-600, #F7FFF1);
 }
 
 @media (max-width: 768px) {
@@ -125,7 +126,7 @@
       }
 
       .p2 {
-        color: var(--Blanco-600, #F7FFF1);
+        
         font-family: "Comic Neue";
         font-size: 8px;
         font-weight: 300;
