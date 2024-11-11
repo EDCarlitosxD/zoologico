@@ -1,0 +1,117 @@
+.heroBol {
+    display: inline-flex;
+    height: 700px;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 0px 0px 24px 24px;
+    .colorSolido {
+        height: 109px;
+        flex-shrink: 0;
+        align-self: stretch;
+    }
+    .image{
+        display: flex;
+        width: 430px;
+        height: 591px;
+        padding-bottom: 40px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        flex-shrink: 0;
+        background: seagreen;
+        .degradado{
+            height: 85px;
+            flex-shrink: 0;
+            align-self: stretch;
+            background: linear-gradient(0deg, #8BAC3F 0%, rgba(248, 255, 232, 0.00) 100%);
+        }
+        .textoHeader{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            .bolH1{
+                display: flex;
+                width: 348px;
+                height: 166px;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .bolH4{
+                width: 348px;
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+.cardBol{
+    display: flex;
+    width: 348px;
+    height: 96px;
+    padding: 16px 8px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: var(--Primario-800, #25442B);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    .imageBol{
+        width: 88px;
+        height: 80px;
+        flex-shrink: 0;
+        border-radius: 8px;
+    }
+    .descBoleto{
+        display: flex;
+        width: 107px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 6px;
+        flex-shrink: 0;
+        .tipo, .precio{
+            align-self: stretch;
+        }
+    }
+    .contador{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        .menos{
+            width: 20px;
+            height: 20px;
+            background: url(../../../../public/img/contadorBoletos/Menos.svg);
+
+        }
+        .cantidad{
+            display: flex;
+            width: 40px;
+            height: 30px;
+            padding: 6.415px;
+            justify-content: center;
+            align-items: center;
+            gap: 6.415px;
+            border-radius: 12.83px;
+            background: var(--Primario-Auxiliar-400, #B3CD78);
+            .contP{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                flex: 1 0 0;
+                align-self: stretch;
+            }
+        }
+        .mas{
+            width: 20px;
+            height: 20px;
+            background: url(../../../../public/img/contadorBoletos/Mas.svg);
+        }
+    }
+}
