@@ -5,7 +5,15 @@
 @import './scss/mixins';
 
 // Reiniciar márgenes y paddings
-p, h1, h2, h3, h4, h5, h6, ul, ol {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -16,11 +24,14 @@ html {
   font-size: 100%; // 1rem = 16px
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
@@ -28,7 +39,9 @@ ul, li {
 $base-spacing: 8px;
 
 // Generar el mapa de valores de espaciado
-$spacing-scale: ();
+$spacing-scale: (
+);
+
 @for $i from 1 through 30 {
   $value: math.div($i * $base-spacing, 16px) * 1rem;
   $spacing-scale: map.set($spacing-scale, unquote("m-#{$i}"), $value);
@@ -37,29 +50,136 @@ $spacing-scale: ();
 // Mixin para generar clases de margen y padding
 @mixin generate-spacing-classes($scale) {
   @each $key, $value in $scale {
-    .#{$key} { margin: $value !important; }
-    .mt-#{str-slice($key, 3)} { margin-top: $value !important; }
-    .mb-#{str-slice($key, 3)} { margin-bottom: $value !important; }
-    .ml-#{str-slice($key, 3)} { margin-left: $value !important; }
-    .mr-#{str-slice($key, 3)} { margin-right: $value !important; }
-    .mx-#{str-slice($key, 3)} { margin-left: $value !important; margin-right: $value !important; }
-    .my-#{str-slice($key, 3)} { margin-top: $value !important; margin-bottom: $value !important; }
+    .#{$key} {
+      margin: $value !important;
+    }
 
-    .p-#{str-slice($key, 3)} { padding: $value !important; }
-    .pt-#{str-slice($key, 3)} { padding-top: $value !important; }
-    .pb-#{str-slice($key, 3)} { padding-bottom: $value !important; }
-    .pl-#{str-slice($key, 3)} { padding-left: $value !important; }
-    .pr-#{str-slice($key, 3)} { padding-right: $value !important; }
-    .px-#{str-slice($key, 3)} { padding-left: $value !important; padding-right: $value !important; }
-    .py-#{str-slice($key, 3)} { padding-top: $value !important; padding-bottom: $value !important; }
+    .mt-#{str-slice($key, 3)} {
+      margin-top: $value !important;
+    }
+
+    .mb-#{str-slice($key, 3)} {
+      margin-bottom: $value !important;
+    }
+
+    .ml-#{str-slice($key, 3)} {
+      margin-left: $value !important;
+    }
+
+    .mr-#{str-slice($key, 3)} {
+      margin-right: $value !important;
+    }
+
+    .mx-#{str-slice($key, 3)} {
+      margin-left: $value !important;
+      margin-right: $value !important;
+    }
+
+    .my-#{str-slice($key, 3)} {
+      margin-top: $value !important;
+      margin-bottom: $value !important;
+    }
+
+    .p-#{str-slice($key, 3)} {
+      padding: $value !important;
+    }
+
+    .pt-#{str-slice($key, 3)} {
+      padding-top: $value !important;
+    }
+
+    .pb-#{str-slice($key, 3)} {
+      padding-bottom: $value !important;
+    }
+
+    .pl-#{str-slice($key, 3)} {
+      padding-left: $value !important;
+    }
+
+    .pr-#{str-slice($key, 3)} {
+      padding-right: $value !important;
+    }
+
+    .px-#{str-slice($key, 3)} {
+      padding-left: $value !important;
+      padding-right: $value !important;
+    }
+
+    .py-#{str-slice($key, 3)} {
+      padding-top: $value !important;
+      padding-bottom: $value !important;
+    }
   }
 }
 
 // Variables de la grid
+
+.grid-base {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr) !important;
+  gap: 40px !important;
+}
+@media (max-width: 960px) {
+  .grid-base {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+@media (width: 1920px) {
+  .grid-base {
+    grid-template-columns: repeat(12, 96px) !important;
+    gap: 40px !important;
+  }
+}
+
+
+@media(width: 430px) {
+  .grid-base {
+    grid-template-columns: 164px 164px !important;
+    gap: 20px !important;
+  }
+}
+
+
+
+// WRAPPER
+.wrapper {
+  margin: 0 10% !important;
+
+}
+
+@media (max-width: 960px) {
+  .wrapper {
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // gap: 20px;
+    margin: 0px 10% !important;
+
+  }
+}
+
+@media (width: 1920px) {
+  .wrapper {
+    // grid-template-columns: repeat(12, 96px);
+    // gap: 40px;
+    // height: 939px;
+    margin: 0px 164px !important;
+  }
+}
+
+
+@media(width: 430px) {
+  .wrapper {
+    // grid-template-columns: 164px 164px;
+    margin: 0px 41px !important;
+  }
+}
+
 
 
 // Llamada a los mixins
 @include generate-spacing-classes($spacing-scale);
 
 // Si estás usando Bootstrap, agrégalo aquí después de las variables
-

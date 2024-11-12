@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
-  margin: 0 164px;
+  // margin: 0 164px;
 
   border-radius: 64px;
   background: var(--Blanco-700, #F0F7EB);
@@ -92,7 +92,7 @@
 }
 
 
-@media (min-width: 769px) {
+@media (min-width: 1670px) {
 
   // Puedes ajustar el tamaño según tus necesidades
   .enlaces-nav {
@@ -113,13 +113,13 @@
 
 }
 
-@media (max-width: 769px) {
+@media (max-width: 1670px) {
   // Puedes ajustar el tamaño según tus necesidades
 
   .navegacion {
     // width: 348px;
     height: 40px;
-    width: 90%;
+    // width: 90%;
     margin: 0 auto;
     margin-top: 24px;
     padding: 0px 24px;
