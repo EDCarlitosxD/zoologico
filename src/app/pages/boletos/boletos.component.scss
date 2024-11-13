@@ -91,6 +91,9 @@
     .image{
         height: 1080px;
         background: url(../../../../public/img/pages/Boletos/HeroDesk.png);
+        background-size: cover;
+        background-position: center;
+        border-radius: 0px;
         .textoHeader {
             display: flex;
             flex-direction: column;

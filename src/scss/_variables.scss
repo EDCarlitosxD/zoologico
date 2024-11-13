@@ -145,10 +145,12 @@ h6 {
 button {
   display: flex;
   width: 151px;
+  height: 54px;
   padding: 10px;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 background: var(--Primario-Auxiliar-400, #B3CD78);
   border-radius: 20px;
   border: #00000000;
