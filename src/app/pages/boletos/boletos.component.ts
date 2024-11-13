@@ -6,7 +6,7 @@ import { AddBoletosComponent } from "../../Componentes/add-boletos/add-boletos.c
   standalone: true,
   imports: [AddBoletosComponent],
   templateUrl: './boletos.component.html',
-  styleUrl: './boletos.component.scss'
+  styleUrls: ['./boletos.component.scss']
 })
 export class BoletosComponent {
 

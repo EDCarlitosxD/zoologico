@@ -10,7 +10,7 @@ interface addBoletos{
   standalone: true,
   imports: [],
   templateUrl: './add-boletos.component.html',
-  styleUrl: './add-boletos.component.scss'
+  styleUrls: ['./add-boletos.component.scss']
 })
 export class AddBoletosComponent {
 @Input() addBoletos: addBoletos = {
