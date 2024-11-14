@@ -1,0 +1,37 @@
+<div class="heroBol">
+    <div class="image">
+        <div class="textoHeader text-center text-white-700">
+            <h1 class="bolH1">Abre la puerta a una aventura salvaje</h1>
+            <h4 class="bolH4">¡Adquiere tus boletos y comienza el viaje!</h4>
+        </div>  
+    </div>
+</div>
+
+
+<section class="añadirBoletos">
+
+        <div class="bolTexto">
+            <h3 class="bolH3">Compra</h3>
+            <p class="bolP">Conoce, Explora y Aprende</p>
+        </div>
+        <div class="boletos">
+            <app-add-boletos [addBoletos]="{
+                image: 'img/card-boletos/Niños.png',
+                type: 'Boleto Infantil',
+                price: '$70'
+            }"></app-add-boletos>
+            <app-add-boletos [addBoletos]="{
+                image: 'img/card-boletos/Adultos.png',
+                type: 'Boleto Adultos',
+                price: '$70'
+            }"></app-add-boletos>
+            <app-add-boletos [addBoletos]="{
+                image: 'img/card-boletos/3raEdad.png',
+                type: 'Boleto Tercera Edad',
+                price: '$70'
+            }"></app-add-boletos>
+        </div>
+        <button class="verify">Verificar</button>
+
+
+</section>

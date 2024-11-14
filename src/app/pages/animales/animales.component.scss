@@ -1,50 +1,43 @@
-.animalesPage{
-    width: 430px;
-    height: 2505px;
-    background: var(--Blanco-500, #FAFFF6);
+
 
     .animalesHero{
         display: flex;
-        width: 430px;
+        width: 100%;
+        max-width: 1920px; // Ancho máximo para pantallas grandes
         height: 734px;
         padding-bottom: 20px;
         flex-direction: column;
-        align-items: center;
         gap: 16px;
         flex-shrink: 0;
-        .anHeroImg{
+        .imgAnimal{
             display: flex;
-            width: 432px;
+            width: 100%;
+            max-width: 730px; // Limita el ancho máximo original en 430px
+
             height: 394px;
             flex-direction: column;
             align-items: flex-start;
             flex-shrink: 0;
             border-radius: 0px 0px 80px 0px;
-            .rectangleHero{
-                height: 71px;
-                flex-shrink: 0;
-                align-self: stretch;
-                background: #000;
-            }
-            .imgAnimal{
-                flex: 1 0 0;
-                align-self: stretch;
-                border-radius: 0px 0px 80px 0px;
-            }
+            background-image: url(../../../../public/img/pages/Animales/hero2.png);
+            background-size: cover;
+            background-position: center;
         }
         .anHeroTxt{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             gap: 16px;
+            margin-left: 41px;
+            margin-right: 41px;
             .animHeroH1{
-                width: 348px;   
+                width: 100%;
+                max-width: 550px; 
             }
         }
 
     }
 
     .buscarAnimal{
+        width: 100%;
         display: inline-flex;
         padding: 0px 41px;
         flex-direction: column;
@@ -52,7 +45,7 @@
         align-items: center;
         gap: 16px;
         .buscarAnimalH3{
-            width: 348px;
+            max-width: 348px;
         }
         .buscarAnimalBusqueda{
             display: flex;
@@ -82,40 +75,51 @@
                     flex-shrink: 0;
                     border-radius: 20px;
                     background: var(--Primario-Auxiliar-700, #8BAC3F);
+                    .vectorLupa{
+                        width: 15px;
+                        height: 15px;
+                        flex-shrink: 0;
+                        background: url(../../../../public/img/pages/Animales/LupaMobile.svg);
+                    }
                 }
             }
             .filtroAnimal{
                 display: flex;
-                width: 40px;
-                height: 40px;
-                padding: 5px;
+                width: 48px;
+                height: 48px;
+                padding: 6px;
                 justify-content: center;
                 align-items: center;
-                gap: 12.5px;
-                border-radius: 20px;
+                gap: 15px;
+                border-radius: 24px;
                 background: var(--Primario-Auxiliar-200, #C6DA9A);
-                box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
-                .filtroEnvoltura{
+
+                box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
+
+                .filtroBusq{
                     display: flex;
-                    flex-direction: column;
+                    width: 33px;
+                    height: 33px;
+                    justify-content: center;
                     align-items: center;
-                    .filtroBusq{
-                        display: flex;
-                        width: 27.5px;
-                        height: 27.5px;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 12.5px;
-                        border-radius: 20px;
-                        background: var(--Primario-Auxiliar-700, #8BAC3F);
+                    gap: 15px;
+                    flex-shrink: 0;
+                    border-radius: 24px;
+                    background: var(--Primario-Auxiliar-700, #8BAC3F);
+                    .filtroVector{
+                        width: 18px;
+                        height: 18px;
+                        flex-shrink: 0;
+                        background: url(../../../../public/img/pages/Animales/FiltroMobile.svg);
                     }
                 }
+                
             }
         }
     }
     .animalesCards{
         display: flex;
-        width: 430px;
+        width: 100%;
         padding: 32px 41px;
         justify-content: center;
         align-items: flex-start;
@@ -123,4 +127,160 @@
         gap: 32px 20px;
         flex-wrap: wrap;
     }
+    .boton{
+        margin: 0px auto 0px auto;
+        max-width: fit-content;
+    }
+
+    @media(min-width: 730px){
+        .animalesHero{
+            .anHeroTxt{
+                align-items: center;
+                gap: 48px;
+    
+                .animHeroH1{
+                    width: 100%;
+                    max-width: 900px;
+                }
+            }
+        }
+    }
+@media (min-width: 1200px){
+    .animalesHero {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: 1920px;
+        height: auto; // Cambiar a auto para que se ajuste automáticamente
+        padding-right: 164px;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+
+        .imgAnimal {
+            width: 100%;
+            max-width: 1076px;
+            min-width: 100px; // Establece un ancho mínimo para evitar que sea demasiado pequeña
+            height: 1080px;
+            border-radius: 0px 0px 240px 0px;
+            background-image: url(../../../../public/img/pages/Animales/hero.png);
+            background-size: cover;
+            background-position: center;
+        }
+    
+        .anHeroTxt{
+            align-items: center;
+            gap: 48px;
+
+            .animHeroH1{
+                width: 504px;
+                max-width: 504px; 
+            }
+        }
+    } 
+    .buscarAnimal{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: 1920px;
+        height: 411px;
+        padding: 0px 41px;
+        justify-content: center;
+        align-items: center;
+        gap: 130px;
+        flex-shrink: 0;
+        .animalTxt{
+            display: flex;
+            width: 545px;
+            flex-direction: column;
+            justify-content: start;
+            align-items: flex-start;
+            gap: 16px;
+            flex-shrink: 0;
+            .buscarAnimalH3{
+                width: 100%;
+                max-width: 545px;
+            }
+        }
+
+        .buscarAnimalBusqueda{
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            justify-content: center;
+            align-items: center;
+            gap: 38.5px;
+            .lupaTxt{
+                display: flex;
+                width: 529.375px;
+                height: 77px;
+                padding: 9.625px;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 24.063px;
+                border-radius: 38.5px;
+                background: var(--Primario-Auxiliar-200, #C6DA9A);
+                box-shadow: 0px 9.625px 9.625px 0px rgba(0, 0, 0, 0.25);
+                .lupa{
+                    display: flex;
+                    width: 52.938px;
+                    height: 52.938px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 24.063px;
+                    flex-shrink: 0;
+                    border-radius: 38.5px;
+                    .vectorLupa{
+                        width: 29px;
+                        height: 29px;
+                        background: url(../../../../public/img/pages/Animales/LupaDesk.svg);
+                    }
+                }
+            }
+            .filtroAnimal{
+                display: flex;
+                width: 77px;
+                height: 77px;
+                padding: 9.625px;
+                justify-content: center;
+                align-items: center;
+                gap: 24.063px;
+                border-radius: 38.5px;
+                box-shadow: 0px 9.625px 9.625px 0px rgba(0, 0, 0, 0.25);
+                .filtroBusq{
+                    display: flex;
+                    width: 52.938px;
+                    height: 52.938px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 24.063px;
+                    flex-shrink: 0;
+                    border-radius: 38.5px;
+                    .filtroVector{
+                        width: 28.875px;
+                        height: 28.875px;
+                        flex-shrink: 0;
+                        background: url(../../../../public/img/pages/Animales/FiltroDesk.svg);
+                    }
+                }
+            }
+        }
+    }
+    .animalesCards{
+        gap: 40px;
+        padding: 40px;
+    }
+    .boton{
+        display: flex;
+        width: 242px;
+        height: 87px;
+        padding: 27px 44px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        margin: 48px auto 48px auto;
+        max-width: fit-content;
+    }
+
 }
