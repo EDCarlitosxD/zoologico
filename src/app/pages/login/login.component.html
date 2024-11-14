@@ -1,0 +1,25 @@
+<div class="page">
+    <div class="frameCentrar">
+        <div class="cont">
+            <div class="atras"></div>
+        </div>
+
+        <app-login-form [login]="{
+            title: 'Inicia sesión',
+            subtitle: 'Y continúa tu aventura',
+            type: 'hidden',
+            aText: '¿No tienes cuenta? Regístrate aquí'
+        }"
+        
+        ></app-login-form>
+
+        <app-login-form [login]="{
+            title: 'Regístrate',
+            subtitle: 'Y comienza tu aventura',
+            type: 'password',
+            aText: '¿No tienes cuenta? Regístrate aquí'
+        }"
+        ></app-login-form>
+
+    </div>
+</div>
