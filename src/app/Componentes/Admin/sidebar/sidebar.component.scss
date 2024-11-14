@@ -1,0 +1,109 @@
+#aside-dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+
+  max-width: 260px;
+  height: 100vh;
+  padding: 40px 20px;
+
+  background: var(--Negro-800, #1D1F1D);
+
+
+  .aside-dashboard__logo {
+    h3 {
+      align-self: stretch;
+      color: var(--Blanco-200, #F9FFF5);
+      text-align: center;
+      font-family: "Cherry Bomb";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      /* 30px */
+    }
+  }
+
+  /* Termina Dashboard Logo*/
+
+  .aside-dashboard__enlaces {
+
+
+    .active-dashboard {
+      border-radius: 16px;
+      background: var(--Primario-Auxiliar-800, #779336);
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      align-self: stretch;
+
+
+      li {
+        border-radius: 16px;
+        transition: all .3s;
+
+        &:hover {
+          background: var(--Negro-200, #757C75);
+        }
+
+        /*li Style Finish */
+        a {
+          display: flex;
+          width: 220px;
+          height: 69px;
+          padding: 0px 16px;
+          align-items: center;
+          gap: 8px;
+
+          p {
+            color: var(--Blanco-200, #F9FFF5);
+            text-align: center;
+
+            /* Desktop/H6/Ligth */
+            font-family: 'Fredoka';
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 150%;
+            /* 48px */
+          }
+        }
+
+        /*<a> Enlace Styles Finish */
+
+
+
+
+
+
+      }
+
+    }
+
+  }
+
+  /* Termina Dashboard Enlaces*/
+  .aside-dashboard__salir {
+
+    a {
+      color: var(--Color, #FFF);
+      text-align: center;
+
+      /* Desktop/H6/Ligth */
+      font-family: Fredoka;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%;
+      /* 48px */
+    }
+
+  }
+
+}
