@@ -16,48 +16,76 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  .navegacion__logo {
+    width: 280.13px;
+    height: 60.267px;
+    flex-shrink: 0;
+  }
+  .enlaces-nav {
+    display: flex;
+    height: 64px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    ::ng-deep .enlace-nav a {
+      text-decoration: none !important;
+      color: inherit !important;
+      font-family: "Fredoka";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%;
+    }
+    
+    .enlace-nav {
+      display: flex;
+      width: 169px;
+      padding: 0px 13px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none; /* Quitar el subrayado */
+      color: inherit; /* Usar el color del contenedor o del texto */
+    
+      border-radius: 24px;
+    
+      color: var(--Negro-700, #232523);
+      text-align: center;
+    
+      /* Desktop/H6/Ligth */
+      font-family: "Fredoka";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%;
+      /* 48px */
+    
+    
+      transition-duration: 300ms;
+      .enlace-nav .dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+      .enlace-nav .dropdown-menu {
+        transition: opacity 0.3s;
+        opacity: 0;
+        visibility: hidden;
+      }
+    
+    }
+
+  }
+
 
 }
 
-.navegacion__logo {
-  width: 280.13px;
-  height: 60.267px;
-  flex-shrink: 0;
-}
-
-.enlaces-nav {
-  display: flex;
-  height: 64px;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 40px;
-}
-
-.enlace-nav {
-  display: flex;
-  width: 169px;
-  padding: 0px 13px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  border-radius: 24px;
-
-  color: var(--Negro-700, #232523);
-  text-align: center;
-
-  /* Desktop/H6/Ligth */
-  font-family: Fredoka;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 150%;
-  /* 48px */
 
 
-  transition-duration: 300ms;
 
-}
+
+
 
 .enlace-nav:hover {
   background: var(--Secundario-Auxiliar-800, #DCA617);
@@ -66,14 +94,6 @@
 
   color: var(--Blanco-500, #FAFFF6);
   text-align: center;
-
-  /* Desktop/H6/Medium */
-  font-family: Fredoka;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 150%;
-  /* 48px */
 }
 
 .enlace-nav:last-child {

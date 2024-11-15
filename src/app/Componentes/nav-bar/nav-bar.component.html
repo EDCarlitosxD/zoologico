@@ -1,3 +1,4 @@
+
 <nav class="navegacion mt-4">
 
   <!--Mobile-->
@@ -24,14 +25,23 @@
 
 
   <!--Desktop-->
-  <img class="navegacion__logo" src="img/navegacion/Zoo-logic-letras.png" alt="">
+  <a routerLink="/"><img class="navegacion__logo" src="img/navegacion/Zoo-logic-letras.png" alt=""></a>
 
   <ul class="enlaces-nav">
-    <li class="enlace-nav">Animales</li>
-    <li class="enlace-nav"><a routerLink="/donaciones">Donaciones</a></li>
-    <li class="enlace-nav">Comprar</li>
+    <li class="enlace-nav"><a routerLink="/animales" class="link-custom">Animales</a></li>
+    <li class="enlace-nav"><a routerLink="/donaciones" class="link-custom">Donaciones</a></li>
+    <li class="enlace-nav">
+      <a class="nav-link dropdown-toggle link-custom" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Comprar
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="nav-link link-custom p-3 py-3" routerLink="/boletos">Boletos</a></li>
+        <li><a class="link-custom p-3 py-3" routerLink="/recorridos">Recorridos</a></li>
+      </ul>
+    </li>
     <li class="enlace-nav">Contacto</li>
     <li class="enlace-nav"><img src="img/navegacion/User.png" alt="Perfil"></li>
   </ul>
+  
 
 </nav>
