@@ -1,8 +1,23 @@
 <main id="main-dashboard">
   <app-sidebar></app-sidebar>
 
-  <!--CONTENIDO DE ETIQUETA-->
+  <!--CONTENIDO DE -->
   <div class="dashboard-contenido">
-    <ng-content></ng-content>
+      <section class="dashboard__titulo">
+          <h3>{{dashboardTitulo}}</h3>
+          <div class="dashboard__perfil">
+            <img src="" alt="">
+            <div class="dashboard__perfil__datos">
+              <p class="perfil__nombre">Nombre Admin</p>
+              <p class="perfil__role">Administrador</p>
+            </div>
+
+          </div>
+      </section>
+      <h6 class="dashboard__descripcion">{{dashboardDescripcion}}</h6>
+      <div style="width: 100%; background-color: #C6DA9A; height: 2px;"></div>
+      <div>
+        <ng-content></ng-content>
+      </div>
   </div>
 </main>

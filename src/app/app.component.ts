@@ -17,6 +17,7 @@ import { NavBarComponent } from "./Componentes/nav-bar/nav-bar.component";
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,
+    RouterLink,
     NavBarComponent,
     FooterComponent,
     ],

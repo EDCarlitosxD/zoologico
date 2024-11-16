@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
@@ -9,5 +9,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   styleUrl: './dashboard-content.component.scss'
 })
 export class DashboardContentComponent {
+  @Input() dashboardTitulo = 'Dashboard';
+  @Input() dashboardDescripcion = 'Descripcion General';
 
 }
