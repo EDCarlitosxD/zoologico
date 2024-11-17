@@ -6,6 +6,8 @@ import { DashboardComponent } from './pages/Admin/dashboard/dashboard.component'
 import { DashboardAnimalesComponent } from './pages/dashboard-animales/dashboard-animales.component';
 import { DashboardVentasComponent } from './pages/dashboard-ventas/dashboard-ventas.component';
 import { DashboardRecorridoComponent } from './pages/dashboard-recorrido/dashboard-recorrido.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 export const routes: Routes = [
@@ -13,6 +15,7 @@ export const routes: Routes = [
     // {path: '', component: HomeComponen},
     {path: 'animales', component:AnimalesComponent},
     {path: 'boletos', component:BoletosComponent},
+    {path: 'login', component: LoginComponent},,
     {path:'dashboard', component:DashboardComponent},
     {path:'dashboard/animales', component:DashboardAnimalesComponent},
     {path:'dashboard/ventas', component:DashboardVentasComponent},
