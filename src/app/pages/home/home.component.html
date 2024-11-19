@@ -1,6 +1,150 @@
-<br><br>
-<br><br>
-<br><br>
-<br><br>
+<main class="sobreNosotros">
+  <section class="wrapper  grid-base sobreNosotros__informacion">
+    <p class="sobreNosotrosP text-center">Aprende, Intuye y Explora.</p>
+    <h2 class="sobreNosotrosH2 text-center">Sobre nosotros</h2>
+    <p class="sobreNosotrosP2 text-center">Desde su apertura en 2024, nuestro zoológico ha sido un hogar seguro para más
+      de 150 especies.
+      Nacimos con la misión de proteger y preservar la vida silvestre, y hoy seguimos creciendo con el mismo compromiso
+      hacia la conservación del planeta.</p>
+  </section>
+
+  <img class="mx-auto" src="img/Home/sobreNosotros.png" alt="Sobre nosotros, bosque">
+
+</main>
 
 
+<section class="wrapper grid-base   nuestrosAnimales">
+  <div class="nuestrosAnimales__texto">
+    <h3 class="text-center">Conoce nuestros animales </h3>
+    <p class="nATexto__descripcion">Te invitamos a conocer las increíbles criaturas que dominan el mundo Desde coloridas
+      aves tropicales hasta majestuosos rinocerontes, cada especie te sorprenderá con su habilidad para volar y sus
+      características únicas.</p>
+    <button class="text-center">Conócelos</button>
+  </div>
+  <div class="nuestrosAnimales__contenido ">
+    <app-animal-card [animal]="{
+        nombre: 'León',
+        peso: '200 kg',
+        altura: '1.2 m',
+        tipo: 'Terrestre',
+        nombreCientifico: 'Panthera leo',
+        imagenUrl: 'img/card-animales/Leon.png'
+        }">
+    </app-animal-card>
+    <app-animal-card [animal]="{
+        nombre: 'León',
+        peso: '200 kg',
+        altura: '1.2 m',
+        tipo: 'Terrestre',
+        nombreCientifico: 'Panthera leo',
+        imagenUrl: 'img/card-animales/Leon.png'
+        }">
+    </app-animal-card>
+    <app-animal-card [animal]="{
+        nombre: 'León',
+        peso: '200 kg',
+        altura: '1.2 m',
+        tipo: 'Terrestre',
+        nombreCientifico: 'Panthera leo',
+        imagenUrl: 'img/card-animales/Leon.png'
+        }">
+    </app-animal-card>
+
+  </div>
+
+</section>
+
+
+
+<section class="boletosHome ">
+  <div class="boletos__texto wrapper">
+    <h3 class="text-center">Boletos</h3>
+    <p class="bTexto__descripcion text-center">Nuestros boletos ofrecen acceso completo a todas las áreas del zoológico,
+      diseñados para brindar una experiencia única de aprendizaje, diversión e interacción con la naturaleza.</p>
+    <p class="bTexto__horario text-center">Todos los boletos tienen acceso de <span class="fw-700">8 am</span> a <span
+        class="fw-700"> 6 pm</span></p>
+  </div>
+
+  <div class="boletos__container">
+    <app-boleto></app-boleto>
+    <app-boleto></app-boleto>
+    <app-boleto></app-boleto>
+  </div>
+</section>
+
+
+<section class="recorridosHome">
+
+  <div class="recorridosHome__texto">
+    <h4>Recorridos</h4>
+    <p>Sumérgete en la vida silvestre con nuestros recorridos guiados, diseñados para acercarte a los animales y sus
+      historias.</p>
+
+    <button>Reserva</button>
+
+
+  </div>
+
+
+  <div class="recorridosHome__recorridos">  <!--FALTA 1.83 y tantos pixeles-->
+    <app-recorrido-home></app-recorrido-home>
+    <app-recorrido-home></app-recorrido-home>
+    <app-recorrido-home></app-recorrido-home>
+    <app-recorrido-home></app-recorrido-home>
+  </div>
+
+</section>
+
+
+
+<section class="donacionHome">
+
+    <div class="donacionHome__texto wrapper">
+        <h4>¡Dona!</h4>
+        <p>Tu donación protege animales, apoya la conservación y promueve la educación ambiental. ¡Cada aporte cuenta para asegurar un futuro mejor!</p>
+        <button>Donar ahora</button>
+    </div>
+
+    <div class="donacionHome__imagenes">
+      <img class="donacionHome_imagenPequeño" src="img/Home/donacion/niño.png" alt="Niño pobre con 4 pajaritos en su cuerpo">
+      <img class="donacionHome_imagenGrande" src="img/Home/donacion/changuitoQueSePareceAMia.png" alt="Dos changuitos amarillo enjaulado">
+      <img class="donacionHome_imagenPequeño" src="img/Home/donacion/pajarito.png" alt="Dos pajaritos en manos humanas">
+      <img class="donacionHome_imagenPequeño" src="img/Home/donacion/hombreNegroAlimentandoNoSeQue.png" alt="Hombre alimentando elefante bebe">
+      <img class="donacionHome_imagenGrande" src="img/Home/donacion/tortuga.png" alt="Tortuga en concha">
+      <img class="donacionHome_imagenPequeño" src="img/Home/donacion/otroChanguitoQueSePareceAMia.png" alt="Changuito enjaulado">
+    </div>
+
+</section>
+
+<section class="mapaHome wrapper">
+  <h5>Mapa del zoológico</h5>
+  <div>
+    <img src="img/Home/mapaZoo.png" alt="Mapa del zoológico">
+  </div>
+</section>
+
+
+<section class="ubicacionHome wrapper">
+
+    <div class="ubicacionHome__texto">
+        <h5>Ubicación</h5>
+        <p>Zoo-Logic
+          <br>
+             Avenida Naturaleza 123,
+          <br>
+             Ciudad Verde, CP 45678,
+          <br>
+           Mexico, Cancún, Q.Roo
+
+            <br>
+            <br>
+          Accede por la ciclovía de la Avenida Naturaleza.</p>
+
+          <button>Destino</button>
+    </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7439.551673483749!2d-86.87194373851636!3d21.201062080517694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smaps!5e0!3m2!1ses!2smx!4v1731990439819!5m2!1ses!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</section>
+
+<app-footer></app-footer>

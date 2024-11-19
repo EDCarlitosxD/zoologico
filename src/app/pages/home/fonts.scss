@@ -1,0 +1,95 @@
+.sobreNosotros__informacion {
+
+  h2,
+  :nth-child(1),
+  :nth-child(3) {
+    font-style: normal;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  .sobreNosotrosH2 {
+    color: var(--Negro-800, #1D1F1D);
+    font-family: 'Fredoka';
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .sobreNosotrosP {
+    color: var(--Negro-800, #1D1F1D);
+    font-family: "Comic Neue";
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .sobreNosotrosP2 {
+    color: var(--Negro-800, #1D1F1D);
+    font-family: "Comic Neue";
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+}
+
+
+
+/*
+NUESTROS ANIMALES
+*/
+
+.nuestrosAnimales__texto {
+
+  h3,
+  .nATexto__descripcion {
+    line-height: 150%;
+    font-style: normal;
+  }
+
+  h3 {
+    font-family: 'Fredoka';
+    font-size: 26px;
+    font-weight: 500;
+
+  }
+
+  .nATexto__descripcion {
+    font-family: "Comic Neue";
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+}
+
+
+
+
+.boletos__texto {
+  h3, .bTexto__descripcion, .bTexto__horario{
+    line-height: 150%;
+    font-style: normal;
+  }
+
+
+  h3 {
+    color: var(--Negro-800, #1D1F1D);
+    font-family: Fredoka;
+    font-size: 26px;
+    font-weight: 500;
+  }
+
+  .bTexto__descripcion {
+    color: var(--Negro-800, #1D1F1D);
+    font-family: "Comic Neue";
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .bTexto__horario, .bTexto__horario span {
+    color: var(--Negro-800, #1D1F1D);
+    font-family: "Comic Neue";
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+
+}
