@@ -27,8 +27,10 @@
             gap: 6px;
             .tipo, .precio{
                 align-self: stretch;
+
                 line-height: 150%; /* 24px */
             }
+
         }
     }
     .contador{
@@ -94,18 +96,16 @@
                 width: 100%;
                 max-width: 500px;
                 gap: 10px;
+
                 .tipo{
-                    
-                    font-size: 30px;
-  font-weight: 500;
-  font-family: 'Fredoka'; // Usar Fredoka para los encabezados
-  line-height: 150%; 
+                  font-size: 3rem;
+                  // font-weight: 500;
                 }
                 .precio{
-                    align-self: stretch;
-                    line-height: 150%; /* 24px */
+                  font-size: 2rem;
+                  font-weight: 400;
                 }
-                
+
             }
         }
         .contador{

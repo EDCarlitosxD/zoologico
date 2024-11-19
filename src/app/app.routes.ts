@@ -7,15 +7,20 @@ import { DashboardRecorridoComponent } from "./pages/dashboard-recorrido/dashboa
 import { DashboardVentasComponent } from "./pages/dashboard-ventas/dashboard-ventas.component";
 import { DonacionesComponent } from "./pages/donaciones/donaciones.component";
 import { LoginComponent } from "./pages/login/login.component";
+import { HomeComponent } from "./pages/home/home.component";
+import { ComponentesComponent } from "./pages/componentes/componentes.component";
 
 export const routes: Routes = [
-  { path: 'donaciones', component: DonacionesComponent },
-  // { path: '', component: HomeComponent }, // Corrige el nombre del componente si es necesario
-  { path: 'animales', component: AnimalesComponent },
-  { path: 'boletos', component: BoletosComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
+  { path: '', component: HomeComponent }, // Corrige el nombre del componente si es necesario
+  { path: 'animales', component: AnimalesComponent }, // NO APROBADO ❌❌❌,
+  { path: 'boletos', component: BoletosComponent }, // Aprobado ✅✅✅,
+  { path: 'login', component: LoginComponent },// Terminarlo,
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
   { path: 'dashboard/ventas', component: DashboardVentasComponent },
   { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
+
+
+  {path:  'componentes', component: ComponentesComponent}
 ];
