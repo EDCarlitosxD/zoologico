@@ -1,0 +1,242 @@
+.carousel-item {
+    display: grid;
+    width: 100%;
+    height: 1080px;
+    grid-template-columns: repeat(12, 1fr); /* 12 columnas iguales */
+    gap: 40px; /* Espaciado entre columnas */
+    padding: 0 164px; /* Márgenes externos (96px a la izquierda y derecha) */
+    align-items: center; /* Centra verticalmente el contenido del grid */
+    position: relative; /* Necesario para posicionar la imagen dentro del contenedor */
+    .carousel-img {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        object-fit: cover; 
+        z-index: -1;
+        background-size: cover; /* Ajusta la imagen al contenedor */
+        background-position: center; /* Centra la imagen */
+    }
+    .jaguar-img{
+        background-image: url('../../../../public/img/slider/1jaguar.png');
+    }
+    .panda-img{
+        background-image: url('../../../../public/img/slider/2PandaRojo.png');
+    }
+    .buho-img {
+        background-image: url('../../../../public/img/slider/3Buho.png');
+    }
+    .jirafa-img{
+        background-image: url('../../../../public/img/slider/4Jirafa.png');
+    }
+    
+
+    .jaguarC {
+        grid-column: 8 / span 5; /* El contenedor ocupa 5 columnas */
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 columnas internas ajustables */
+        grid-template-rows: auto; /* Ajusta el tamaño según el contenido */
+        justify-items: end; /* Alinea todo el contenido a la derecha */
+        gap: 48px; /* Espaciado consistente entre filas y columnas */
+        height: fit-content; /* El contenedor solo ocupa el espacio de su contenido */
+        align-self: center; /* Centra verticalmente este elemento dentro de su celda de grid */
+
+        .carouselH1 {
+            grid-column: 1 / span 5; /* Ocupa todas las columnas internas */
+            text-align: right; /* Alinea el texto a la derecha */
+        }
+
+        .carouselP {
+            grid-column: 2 / span 4; /* Ocupa todas las columnas internas */
+            line-height: 1.5; /* Espaciado entre líneas */
+            text-align: right; /* Alinea el texto a la derecha */
+            background-color: transparent; /* Sin fondo */
+        }
+
+        .but {
+            grid-column: 4 / span 2; /* Posiciona el botón dentro de las columnas internas */
+            justify-self: end; /* Alinea el botón a la derecha */  
+        }
+    }
+
+    .pandaR {
+        grid-column: 1 / span 5; /* El contenedor ocupa 5 columnas */
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 columnas internas ajustables */
+        grid-template-rows: auto; 
+        gap: 48px; /* Espaciado consistente entre filas y columnas */
+        height: fit-content; /* El contenedor solo ocupa el espacio de su contenido */
+        align-self: center; /* Centra verticalmente este elemento dentro de su celda de grid */
+
+        .carouselH1-2 {
+            grid-row-start: 1;
+            grid-column: span 5; 
+
+        }
+        .carouselP-2 {
+            grid-row-start: 2;
+            grid-column: span 4; 
+            line-height: 1.5; 
+
+            background-color: transparent; 
+        }
+
+        .but-2 {
+        grid-row-start: 3;
+            grid-column: span 2; 
+        }
+    }
+
+    .Jirafa {
+        grid-column: 1 / span 5;
+        display: flex;
+        
+        height: fit-content; 
+
+        padding: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        flex-shrink: 0;
+    }
+
+    .Buho{
+        grid-column: 8 / span 5;
+        display: flex;
+        
+        height: fit-content; 
+
+        padding: 40px;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: end;
+        align-items: end;
+        text-align: end;
+        gap: 40px;
+        flex-shrink: 0;        
+    }
+    
+}
+
+@media (max-width: 800px) {
+    .carousel-item {
+        display: grid;
+        width: 100%;
+        height: 808px;
+        grid-template-columns: repeat(2, 1fr); /* 12 columnas iguales */
+        gap: 20px; /* Espaciado entre columnas */
+        padding: 72px 41px 24px 41px;
+        .carousel-img {
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; 
+            object-fit: cover; 
+            z-index: -1;
+            background-size: cover; /* Ajusta la imagen al contenedor */
+            background-position: center; /* Centra la imagen */
+        }
+        .jaguar-img{
+            background-image: url('../../../../public/img/slider/1jaguarMobile.png');
+        }
+        .panda-img{
+            background-image: url('../../../../public/img/slider/2PandaRojoMobile.png');
+        }
+        .buho-img {
+            background-image: url('../../../../public/img/slider/3BuhoMobile.png');
+        }
+        .jirafa-img{
+            background-image: url('../../../../public/img/slider/4JirafaMobile.png');
+        }
+
+        .jaguarC {
+            padding: 16px 0px;
+            grid-column: span 2; /* El contenedor ocupa 5 columnas */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 5 columnas internas ajustables */
+            grid-template-rows: auto; /* Ajusta el tamaño según el contenido */
+            justify-items: end; /* Alinea todo el contenido a la derecha */
+            gap: 8px; /* Espaciado consistente entre filas y columnas */
+            height: fit-content; /* El contenedor solo ocupa el espacio de su contenido */
+            align-self: self-start; /* Centra verticalmente este elemento dentro de su celda de grid */
+    
+            .carouselH1 {
+                grid-column: span 2; /* Ocupa todas las columnas internas */
+                text-align: center; /* Alinea el texto a la derecha */
+            }
+    
+            .carouselP {
+                grid-column: span 2; /* Ocupa todas las columnas internas */
+                line-height: 1.5; /* Espaciado entre líneas */
+                text-align: center; /* Alinea el texto a la derecha */
+                background-color: transparent; /* Sin fondo */
+            }
+    
+            .but {
+                grid-column: span 2; /* Posiciona el botón dentro de las columnas internas */
+                justify-self: center; /* Alinea el botón a la derecha */  
+            }
+        }
+        
+        .pandaR {
+            padding: 16px 0px;
+            grid-column: span 2; /* El contenedor ocupa 5 columnas */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 5 columnas internas ajustables */
+            grid-template-rows: auto; /* Ajusta el tamaño según el contenido */
+            justify-items: center; /* Alinea todo el contenido a la derecha */
+            gap: 8px; /* Espaciado consistente entre filas y columnas */
+            height: fit-content; /* El contenedor solo ocupa el espacio de su contenido */
+            align-self: self-start; /* Centra verticalmente este elemento dentro de su celda de grid */
+    
+            .carouselH1-2 {
+                grid-column: span 2; /* Ocupa todas las columnas internas */
+                text-align: center; /* Alinea el texto a la derecha */
+            }
+    
+            .carouselP-2 {
+                grid-column: span 2; /* Ocupa todas las columnas internas */
+                line-height: 1.5; /* Espaciado entre líneas */
+                text-align: center; /* Alinea el texto a la derecha */
+                background-color: transparent; /* Sin fondo */
+            }
+    
+            .but {
+                grid-column: span 2; /* Posiciona el botón dentro de las columnas internas */
+                justify-self: center; /* Alinea el botón a la derecha */  
+            }
+        }
+        
+    .Jirafa {
+        align-self: self-start; /* Centra verticalmente este elemento dentro de su celda de grid */
+        grid-column: span 2;
+        display: flex;
+        
+        height: fit-content; 
+
+        padding: 16px 0px;
+
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .Buho {
+        align-self: self-start; /* Centra verticalmente este elemento dentro de su celda de grid */
+        grid-column: span 2;
+        display: flex;
+        
+        height: fit-content; 
+
+        padding: 16px 0px;
+
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+    }
+
+    }
+}
