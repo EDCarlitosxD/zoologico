@@ -77,3 +77,50 @@
   }
 
 }
+
+
+
+@media (min-width:960px) {
+  .boleto {
+    width: 368px;
+    // height: 424px;
+    gap:32px;
+    height: auto;
+
+    .boleto__img{
+      img {
+        width: 100%;
+        height: 419px;
+      }
+    }
+  }
+
+  .boleto__informacion {
+    padding: 0px;
+    gap: 16px;
+    height: 332px;
+
+    h6 {
+      font-size: 40px;
+    }
+
+    .boletoPrecio{
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 24px;
+      /* 18px */
+    }
+
+
+
+    button {
+      padding: 27px 44px;
+      width: 180px;
+      height: 60px;
+      font-size: 24px;
+    }
+
+  }
+}

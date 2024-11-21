@@ -1,10 +1,14 @@
 @import '../../../styles.scss';
 @import url(./fonts.scss);
+@import url('desktop.scss');
+
+
 
 
 .sobreNosotros {
   margin-top: 32px;
   margin-bottom: 32px;
+
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -12,6 +16,7 @@
 
   .sobreNosotros__informacion {
     row-gap: 16px;
+    padding: 0 41px
   }
 
   .sobreNosotros__informacion>* {
@@ -88,9 +93,10 @@
     justify-content: center;
     gap: 20px;
 
-    max-width: 968px;
-    min-width: 260px;
-    width: 430px;
+    // max-width: 968px;
+    // min-width: 260px;
+    // width: 430px;
+    width: 100%;
 
 
     overflow-x: scroll;
@@ -105,7 +111,8 @@
 
 .recorridosHome {
   display: flex;
-  padding: 24px 41px;
+  // padding: 24px 41px;
+  padding: 24px 0;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
@@ -123,33 +130,14 @@
   gap: 20px;
   align-self: stretch;
 
-  h4 {
-    text-align: center;
-    font-family: Fredoka;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%;
-    /* 36px */
-  }
 
-  p {
-    text-align: center;
-
-    /* Mobile/P/Medium */
-    font-family: "Comic Neue";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 30px */
-  }
 }
 
 
 .recorridosHome__recorridos {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   align-content: center;
   gap: 20px;
   align-self: stretch;
@@ -177,29 +165,7 @@
   gap: 16px;
   align-self: stretch;
 
-  h4 {
-    color: var(--Blanco-500, #FAFFF6);
-    text-align: center;
-    font-family: Fredoka;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%;
-    /* 36px */
-  }
 
-  p {
-    color: var(--Blanco-500, #FAFFF6);
-    text-align: center;
-
-    /* Mobile/P/Medium */
-    font-family: "Comic Neue";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 30px */
-  }
 
 }
 
@@ -207,13 +173,12 @@
 .donacionHome__imagenes {
   display: flex;
   height: 264px;
-  width: 430px;
+  width: 100%;
   align-items: center;
   justify-content: center;
   gap: 13px;
-
+  margin: 0 auto;
   background: var(--Blanco-700, #F0F7EB);
-
   overflow-x: scroll;
 
   .donacionHome_imagenPequeño {
@@ -238,6 +203,7 @@
   align-items: center;
   padding: 24px 0;
   gap: 24px;
+  // text-align: center;
   align-self: stretch;
 
   div {
@@ -246,19 +212,9 @@
 
   }
 
-  h5 {
-    color: #000;
-    text-align: center;
-
-    /* Mobile/H5/Medium */
-    font-family: Fredoka;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%;
-    /* 39px */
-  }
 }
+
+
 
 
 .ubicacionHome {
@@ -286,32 +242,202 @@
   align-items: center;
   gap: 12px;
 
-  h5 {
-    color: #000;
-    text-align: center;
 
-    /* Mobile/H5/Medium */
-    font-family: Fredoka;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%;
-    text-align: center;
-    /* 39px */
+
+}
+
+
+
+@media (min-width: 1200px) {
+  .sobreNosotros {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 0 164px;
+    gap: 40px;
+    grid-template-columns: repeat(12, 1fr);
+    display: grid;
+
+    .sobreNosotros__informacion {
+      row-gap: 16px;
+      grid-column: 1/ 6;
+      display: block;
+      align-self: center;
+      padding: 0;
+
+    }
+
+    .sobreNosotros__informacion>* {
+      display: block;
+      text-align: left;
+    }
+
+    img {
+      grid-column: 6 / 13;
+      width: 100%;
+      height: 740px;
+      object-fit: cover;
+      border-radius: 0 160px 0 160px;
+    }
+
   }
 
-  p {
-    color: #000;
-    text-align: center;
+  .nuestrosAnimales {
+    padding-top: 40px;
+    padding-bottom: 40px;
 
-    /* Mobile/P 01/Medium */
-    font-family: "Comic Neue";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 24px */
+    .nuestrosAnimales__texto {
+      display: flex;
+      padding: 40px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+
+      grid-column: 9 / 13;
+
+      button {
+        height: 60px;
+        width: 180px;
+      }
+
+    }
+
+
+    .nuestrosAnimales__contenido {
+      grid-column: 1 / 9;
+      grid-row: 1 / 2;
+    }
+
+
   }
 
+
+
+
+  .boletosHome {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+    padding: 40px 164px;
+
+
+    .boletos__container {
+      grid-row: 1 / 2;
+      grid-column: 1 / 10;
+      justify-content: flex-start;
+
+    }
+
+
+    .boletos__texto {
+      grid-column: 10 / 13;
+      padding: 20px;
+
+      gap: 32px;
+      margin: 0;
+
+    }
+
+  }
+
+
+  .recorridosHome {
+    gap: 40px;
+    padding: 40px 0;
+  }
+
+
+  .recorridosHome__texto {
+    display: flex;
+    width: 1044px;
+    padding: 20px;
+    margin: 0;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .recorridosHome__recorridos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .donacionHome {
+    display: flex;
+    padding: 40px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+
+
+    .donacionHome__texto {
+      margin: 0 auto;
+    }
+
+  }
+
+
+
+  .donacionHome__imagenes {
+    height: 364px;
+    width: 100%;
+    overflow-x: scroll;
+    gap: 20px;
+    .donacionHome_imagenPequeño {
+      width: 266px;
+      height: 327px;
+
+      flex-shrink: 0;
+    }
+
+    .donacionHome_imagenGrande {
+      width: 532px;
+      height: 327px;
+
+      flex-shrink: 0;
+    }
+
+  }
+
+  .mapaHome {
+    padding: 40px 0;
+    gap: 72px;
+
+    div {
+      width: 1072px;
+      height: 778px;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+  }
+
+
+  .ubicacionHome {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
+    padding: 40px 0;
+
+    .ubicacionHome__texto {
+      grid-column: 1 / 6;
+      padding: 0;
+      gap: 40px;
+    }
+
+    iframe {
+      grid-column: 6 / 13;
+      width: 912px;
+      height: 912px;
+    }
+  }
 
 }

@@ -3,6 +3,7 @@
 @import './scss/variables';
 @import './scss/_mixins';
 
+
 body{
   margin: 0;
 }
@@ -52,7 +53,7 @@ li {
 
 // Variables de la grid
 
-.grid-base {
+.grid-base{
   display: grid;
   grid-template-columns: repeat(12, 1fr) !important;
   gap: 40px;
@@ -64,7 +65,7 @@ li {
 
 
 @media (max-width: 960px) {
-  .grid-base {
+  .grid-base{
     grid-template-columns: 1fr 1fr !important;
     gap: 20px;
   }
@@ -75,16 +76,16 @@ li {
 
 }
 
-@media (width: 1920px) {
-  .grid-base {
-    grid-template-columns: repeat(12, 96px) !important;
-    gap: 40px;
-  }
-}
+// @media (width: 1920px) {
+//   .grid-base{
+//     grid-template-columns: repeat(12, 96px) !important;
+//     gap: 40px;
+//   }
+// }
 
 
 @media(width: 430px) {
-  .grid-base {
+  .grid-base{
     grid-template-columns: 164px 164px !important;
     gap: 20px ;
   }
@@ -142,9 +143,9 @@ li {
 
 // UTILIDADES
 
-.text-center{
-  text-align: center;
-}
+// .text-center{
+//   text-align: center;
+// }
 
 
 
