@@ -1,12 +1,11 @@
 .navegacion {
   display: flex;
   height: 70px;
-  max-width: 1920px;
   padding: 0px 24px;
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
-  margin: 0 164px;
+  // margin: 0 164px;
 
   border-radius: 64px;
   background: var(--Blanco-700, #F0F7EB);
@@ -23,6 +22,8 @@
   }
   .enlaces-nav {
     display: flex;
+    // display: none;
+
     height: 64px;
     justify-content: flex-end;
     align-items: center;
@@ -37,22 +38,22 @@
       font-weight: 300;
       line-height: 150%;
     }
-    
+
     .enlace-nav {
       display: flex;
-      width: 169px;
+      // width: 169px;
       padding: 0px 13px;
       justify-content: center;
       align-items: center;
       gap: 10px;
       text-decoration: none; /* Quitar el subrayado */
       color: inherit; /* Usar el color del contenedor o del texto */
-    
+
       border-radius: 24px;
-    
+
       color: var(--Negro-700, #232523);
       text-align: center;
-    
+
       /* Desktop/H6/Ligth */
       font-family: "Fredoka";
       font-size: 32px;
@@ -60,8 +61,8 @@
       font-weight: 300;
       line-height: 150%;
       /* 48px */
-    
-    
+
+
       transition-duration: 300ms;
       .enlace-nav .dropdown:hover .dropdown-menu {
         display: block;
@@ -73,7 +74,7 @@
         opacity: 0;
         visibility: hidden;
       }
-    
+
     }
 
   }
@@ -112,7 +113,7 @@
 }
 
 
-@media (min-width: 769px) {
+@media (min-width: 1670px) {
 
   // Puedes ajustar el tamaño según tus necesidades
   .enlaces-nav {
@@ -133,14 +134,14 @@
 
 }
 
-@media (max-width: 769px) {
+@media (max-width: 1670px) {
   // Puedes ajustar el tamaño según tus necesidades
 
   .navegacion {
     // width: 348px;
     height: 40px;
-    width: 90%;
-    margin: 0 auto;
+    // width: 90%;
+    // margin: 0 auto;
     margin-top: 24px;
     padding: 0px 24px;
     justify-content: space-between;
@@ -150,11 +151,15 @@
   }
 
   .enlaces-nav {
-    display: none;
+    display: none !important;
   }
 
-  .navegacion__logo {
+  .navegacion__logo_a{
     display: none;
+  }
+  .navegacion__logo {
+    display: none !important;
+
   }
 
   .navegacion__logo--mobile {
@@ -176,4 +181,11 @@
     width: 348px;
     margin: 48px 48px 0 48px;
   }
+}
+
+
+
+.nav-perfil{
+  width: 60px;
+height: 60px;
 }

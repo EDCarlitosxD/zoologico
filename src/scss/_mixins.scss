@@ -15,17 +15,35 @@
 }
 
 
+$base-spacing: 8px;
 
-// Mixin para estilos de computadoras (pantallas grandes)
-@mixin desktop {
-  @media (min-width: 968px) { // Puedes ajustar el tamaño según tus necesidades
-    @content; // Inserta los estilos que se pasan al mixin
-  }
+// Generar el mapa de valores de espaciado
+$spacing-scale: ();
+@for $i from 1 through 30 {
+  // Cambiar la división para que el valor se calcule correctamente en rem
+  $value: math.div($i * $base-spacing, 16px) * 1rem; // Esto ahora calculará correctamente los valores
+  $spacing-scale: map.set($spacing-scale, unquote("m-#{$i}"), $value);
 }
 
-// Mixin para estilos de dispositivos móviles
-@mixin mobile {
-  @media (max-width: 967px) { // Puedes ajustar el tamaño según tus necesidades
-    @content; // Inserta los estilos que se pasan al mixin
+// Mixin para generar márgenes y padding en todas las direcciones
+@mixin generate-spacing-classes($scale) {
+  @each $key, $value in $scale {
+    // Margen
+    .#{$key} { margin: $value !important; }
+    .mt-#{str-slice($key, 3)} { margin-top: $value !important; }
+    .mb-#{str-slice($key, 3)} { margin-bottom: $value !important; }
+    .ml-#{str-slice($key, 3)} { margin-left: $value !important; }
+    .mr-#{str-slice($key, 3)} { margin-right: $value !important; }
+    .mx-#{str-slice($key, 3)} { margin-left: $value !important; margin-right: $value !important; }
+    .my-#{str-slice($key, 3)} { margin-top: $value !important; margin-bottom: $value !important; }
+
+    // Padding
+    .p-#{str-slice($key, 3)} { padding: $value !important; }
+    .pt-#{str-slice($key, 3)} { padding-top: $value !important; }
+    .pb-#{str-slice($key, 3)} { padding-bottom: $value !important; }
+    .pl-#{str-slice($key, 3)} { padding-left: $value !important; }
+    .pr-#{str-slice($key, 3)} { padding-right: $value !important; }
+    .px-#{str-slice($key, 3)} { padding-left: $value !important; padding-right: $value !important; }
+    .py-#{str-slice($key, 3)} { padding-top: $value !important; padding-bottom: $value !important; }
   }
 }

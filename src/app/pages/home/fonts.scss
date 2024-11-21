@@ -1,0 +1,296 @@
+.sobreNosotros__informacion {
+
+  h2,
+  :nth-child(1),
+  :nth-child(3) {
+    font-style: normal;
+    line-height: 150%;
+  }
+
+  .sobreNosotrosH2 {
+    color: var(--Negro-800, #1D1F1D);
+    font-family: 'Fredoka';
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .sobreNosotrosP {
+    color: var(--Negro-800, #1D1F1D);
+    font-family: "Comic Neue";
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .sobreNosotrosP2 {
+    color: var(--Negro-800, #1D1F1D);
+    font-family: "Comic Neue";
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+}
+
+
+
+/*
+NUESTROS ANIMALES
+*/
+
+.nuestrosAnimales__texto {
+
+  h3,
+  .nATexto__descripcion {
+    line-height: 150%;
+    font-style: normal;
+  }
+
+  h3 {
+    font-family: 'Fredoka';
+    font-size: 26px;
+    font-weight: 500;
+
+  }
+
+  .nATexto__descripcion {
+    font-family: "Comic Neue";
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+}
+
+
+
+
+.boletos__texto {
+
+  h3,
+  .bTexto__descripcion,
+  .bTexto__horario {
+    line-height: 150%;
+    font-style: normal;
+  }
+
+
+  h3 {
+    color: var(--Negro-800, #1D1F1D);
+    font-family: Fredoka;
+    font-size: 26px;
+    font-weight: 500;
+  }
+
+  .bTexto__descripcion {
+    color: var(--Negro-800, #1D1F1D);
+    font-family: "Comic Neue";
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .bTexto__horario,
+  .bTexto__horario span {
+    color: var(--Negro-800, #1D1F1D);
+    font-family: "Comic Neue";
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+
+}
+
+.recorridosHome__texto {
+  h4 {
+    text-align: center;
+    font-family: Fredoka;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    /* 36px */
+  }
+
+  p {
+    text-align: center;
+
+    /* Mobile/P/Medium */
+    font-family: "Comic Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 30px */
+  }
+}
+
+.donacionHome__texto {
+  h4 {
+    color: var(--Blanco-500, #FAFFF6);
+    text-align: center;
+    font-family: Fredoka;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    /* 36px */
+  }
+
+  p {
+    color: var(--Blanco-500, #FAFFF6);
+    text-align: center;
+
+    /* Mobile/P/Medium */
+    font-family: "Comic Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 30px */
+  }
+}
+
+
+.mapaHome {
+  h5 {
+    color: #000;
+    text-align: center;
+
+    /* Mobile/H5/Medium */
+    font-family: Fredoka;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    /* 39px */
+  }
+}
+
+
+.ubicacionHome__texto {
+  h5 {
+    color: #000;
+    text-align: center;
+
+    /* Mobile/H5/Medium */
+    font-family: Fredoka;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    text-align: center;
+    /* 39px */
+  }
+
+  p {
+    color: #000;
+    text-align: center;
+
+    /* Mobile/P 01/Medium */
+    font-family: "Comic Neue";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 24px */
+  }
+}
+
+@media (min-width: 960px) {
+  .sobreNosotros__informacion {
+
+
+    .sobreNosotrosH2 {
+      font-size: 72px;
+    }
+
+    .sobreNosotrosP {
+      font-size: 32px;
+    }
+
+    .sobreNosotrosP2 {
+      font-size: 32px;
+    }
+
+  }
+
+  .nuestrosAnimales__texto {
+
+    h3 {
+      font-size: 54px;
+    }
+
+    .nATexto__descripcion {
+      font-size: 32px;
+    }
+
+
+    button {
+      font-size: 24px;
+      font-weight: 700;
+    }
+  }
+
+  .boletos__texto {
+    h3 {
+      font-size: 54px;
+    }
+
+    .bTexto__descripcion,
+    .bTexto__horario,
+    .bTexto__horario span {
+      font-size: 32px;
+    }
+
+    .bTexto__horario,
+    .bTexto__horario span {
+      font-weight: 400;
+    }
+
+  }
+
+
+  .recorridosHome__texto {
+    h4 {
+      font-size: 54px;
+    }
+
+    p {
+      font-size: 32px;
+    }
+
+  }
+
+
+  .donacionHome__texto {
+    display: flex;
+    width: 912px;
+    padding: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+
+    h4 {
+      font-size: 54px;
+    }
+
+    p {
+      font-size: 32px;
+    }
+  }
+
+
+  .mapaHome h5 {
+    font-size: 54px;
+  }
+
+
+  .ubicacionHome__texto {
+
+    h5 {
+      font-size: 54px;
+    }
+    p{
+      font-size: 32px;
+    }
+  }
+
+}

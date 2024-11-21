@@ -4,12 +4,13 @@
   display: flex;
   padding-bottom: 16px;
   flex-direction: column;
+  max-width: 368px;
   align-items: flex-start;
   gap: 16px;
   border-radius: 24px;
   background: var(--Negro-600, #2E312E);
   box-shadow: 0px 11px 10.9px 0px rgba(0, 0, 0, 0.25);
-  
+
   &:hover {
     background: var(--Secundario-Auxiliar-600, #EDC457);
     transition: background-color 0.5s ease, color 0.5s ease;
@@ -49,6 +50,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
   padding: 0 1rem;
 }
 
@@ -113,8 +115,8 @@
     }
 
     .descripcion {
-      padding: 0 7.816px;
-      gap: 3.908px;
+      padding: 0 4px;
+      gap: 4px;
     }
 
     .info {
