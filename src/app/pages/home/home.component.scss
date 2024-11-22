@@ -25,8 +25,8 @@
   }
 
   img {
-      // min-width: 430px;
-      width: 100%;
+    // min-width: 430px;
+    width: 100%;
     height: 232px;
   }
 
@@ -55,12 +55,25 @@
   .nuestrosAnimales__contenido {
     @extend .col-full;
     gap: 20px;
+    padding-right: -41px;
 
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    justify-content: center;
-    scroll-behavior: smooth
+    // justify-content: center;
+    scroll-behavior: smooth;
+
+    /* Ocultar la barra de desplazamiento */
+    scrollbar-width: none;
+    /* Para Firefox */
+    -ms-overflow-style: none;
+    /* Para IE y Edge */
+
+    &::-webkit-scrollbar {
+      display: none;
+      /* Para Chrome, Safari y Edge basados en Chromium */
+    }
+
   }
 
 }
@@ -84,6 +97,9 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
+
+
+
   }
 
 
@@ -91,7 +107,7 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     gap: 20px;
 
     // max-width: 968px;
@@ -103,6 +119,19 @@
     overflow-x: scroll;
     scroll-behavior: smooth;
     overflow-y: hidden;
+
+    /* Ocultar la barra de desplazamiento */
+    scrollbar-width: none;
+    /* Para Firefox */
+    -ms-overflow-style: none;
+    /* Para IE y Edge */
+
+    &::-webkit-scrollbar {
+      display: none;
+      /* Para Chrome, Safari y Edge basados en Chromium */
+    }
+
+
   }
 
 }
@@ -158,6 +187,15 @@
   background: var(--Primario-600, #325B3A);
 }
 
+.donacionHome__informacion {
+  display: flex;
+  padding: 20px 41px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+}
+
 .donacionHome__texto {
   display: flex;
   padding: 20px 0;
@@ -176,7 +214,7 @@
   height: 264px;
   width: 100%;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   gap: 13px;
   margin: 0 auto;
   background: var(--Blanco-700, #F0F7EB);
@@ -247,6 +285,81 @@
 
 }
 
+
+.experiencia {
+  display: flex;
+  padding: 24px 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+}
+
+.experiencia__informacion {
+  display: flex;
+  // width: 348px;
+  padding: 0px 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.carouselExperiencias__texto {
+  h3 {
+    color: #000;
+    text-align: center;
+
+    /* Mobile/H6/Ligth */
+    font-family: Fredoka;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+    /* 33px */
+  }
+
+
+  p {
+    color: var(--Negro-800, #1D1F1D);
+    text-align: center;
+
+    /* Mobile/P 02/Ligth */
+    font-family: "Comic Neue";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+    /* 18px */
+  }
+
+  button {
+    display: flex;
+    width: 96.868px;
+    padding: 6.415px;
+    height: 36.83px;
+    justify-content: center;
+    align-items: center;
+    gap: 6.415px;
+    border-radius: 12px;
+    font-size: 16px;
+    color: white;
+    background: var(--Negro-600, #2E312E);
+
+    color: var(--Blanco-700, #F0F7EB);
+    text-align: center;
+
+    /* Mobile/P 01/Bold */
+    font-family: "Comic Neue";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 24px */
+
+  }
+
+}
+
 .carouselExperiencias {
   position: relative;
 }
@@ -256,7 +369,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
 
   .carouselExperiencias__img {
     width: 188px;
@@ -280,17 +392,30 @@
     gap: 7px;
     flex: 1 0 0;
     padding: 8px 0px;
+
   }
 
 
 
 }
 
+.carouselExperiencias__textoItem {
+  display: flex;
+  padding: 8px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  padding: 0;
+
+}
+
 
 .carouselExample-control-prev,
 .carouselExample-control-next {
-  top: 50%;
-  position: absolute;
+  // top: 50%;
+  position: relative;
+  // position: absolute;
 
   width: 40px;
   height: 40px;
@@ -306,6 +431,13 @@
   right: -15px;
 }
 
+.round-bottom-item {
+  border-radius: 0px 0px 64px 0px;
+}
+
+.round-top-item {
+  border-radius: 64px 0px 0px 0px;
+}
 
 @media (min-width: 1200px) {
   .sobreNosotros {
@@ -317,11 +449,18 @@
     display: grid;
 
     .sobreNosotros__informacion {
-      row-gap: 16px;
       grid-column: 1/ 6;
-      display: block;
+
       align-self: center;
       padding: 0;
+
+      display: flex;
+      padding: 40px 0px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+
 
     }
 
@@ -343,6 +482,7 @@
   .nuestrosAnimales {
     padding-top: 40px;
     padding-bottom: 40px;
+    gap: 40px;
 
     .nuestrosAnimales__texto {
       display: flex;
@@ -351,6 +491,11 @@
       justify-content: center;
       align-items: center;
       gap: 40px;
+
+      h3 {
+        padding: 0;
+        width: 504px;
+      }
 
       grid-column: 9 / 13;
 
@@ -365,6 +510,18 @@
     .nuestrosAnimales__contenido {
       grid-column: 1 / 9;
       grid-row: 1 / 2;
+
+      grid-column: 1 / 9;
+      grid-row: 1 / 2;
+      gap: 40px;
+
+      justify-content: center;
+
+
+
+      .mobileAnimal {
+        display: none;
+      }
     }
 
 
@@ -384,6 +541,19 @@
       grid-row: 1 / 2;
       grid-column: 1 / 10;
       justify-content: flex-start;
+      overflow-x: none;
+      // height: 783px;
+
+      /* Ocultar la barra de desplazamiento */
+      scrollbar-width: none;
+      /* Para Firefox */
+      -ms-overflow-style: none;
+      /* Para IE y Edge */
+
+      &::-webkit-scrollbar {
+        display: none;
+        /* Para Chrome, Safari y Edge basados en Chromium */
+      }
 
     }
 
@@ -395,6 +565,7 @@
       gap: 32px;
       margin: 0;
 
+
     }
 
   }
@@ -403,6 +574,7 @@
   .recorridosHome {
     gap: 40px;
     padding: 40px 0;
+
   }
 
 
@@ -410,31 +582,69 @@
     display: flex;
     width: 1044px;
     padding: 20px;
+    gap: 0;
     margin: 0;
     margin: 0 auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+
+    .recorridoBtn {
+      display: none;
+    }
+
   }
 
   .recorridosHome__recorridos {
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   .donacionHome {
-    display: flex;
-    padding: 40px 0;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    align-self: stretch;
 
+
+    .donacionHome__informacion {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 40px;
+      align-self: stretch;
+
+
+      button {
+        display: flex;
+        width: 290px;
+        height: 121px;
+        padding: 27px 44px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+    }
 
     .donacionHome__texto {
-      margin: 0 auto;
+      margin: 0 0 0 0px;
+      padding: 40px 40px;
+
+      width: 912px;
+      gap: 40px;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      h4 {
+        text-align: left !important;
+
+      }
+
+      p {
+        text-align: left !important;
+
+      }
+
     }
 
   }
@@ -446,6 +656,16 @@
     width: 100%;
     overflow-x: scroll;
     gap: 20px;
+    /* Ocultar la barra de desplazamiento */
+    scrollbar-width: none;
+    /* Para Firefox */
+    -ms-overflow-style: none;
+    /* Para IE y Edge */
+
+    &::-webkit-scrollbar {
+      display: none;
+      /* Para Chrome, Safari y Edge basados en Chromium */
+    }
 
     .donacionHome_imagenPequeño {
       width: 266px;
@@ -514,17 +734,114 @@
     flex-shrink: 0;
   }
 
+  .experiencia {
+    padding: 40px 0;
+  }
+
+  .experiencia__informacion {
+    h5 {
+      color: var(--Negro-800, #1D1F1D);
+      text-align: center;
+
+      /* Desktop/H3/Medium */
+      font-family: Fredoka;
+      font-size: 54px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      /* 81px */
+    }
+
+    p {
+      color: var(--Negro-800, #1D1F1D);
+      text-align: center;
+
+      /* Desktop/P/Ligth */
+      font-family: "Comic Neue";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%;
+      /* 48px */
+    }
+  }
+
+  .carouselExample-control-prev,
+  .carouselExample-control-next {
+    // top: 50%;
+    position: relative;
+    // position: absolute;
+
+    width: 200px;
+    height: 80px;
+    z-index: 1000;
+
+    background-color: rgba(29, 31, 29, 0.80);
+  }
+
+  .carouselExperiencias__texto {
+    h3 {
+      color: #000;
+      text-align: center;
+
+      /* Desktop/H4/Ligth */
+      font-family: Fredoka;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%;
+      /* 72px */
+    }
+
+    p {
+      color: var(--Negro-800, #1D1F1D);
+      text-align: center;
+
+      /* Desktop/P 01/Ligth */
+      font-family: "Comic Neue";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%;
+      /* 36px */
+    }
+
+    button {
+      display: flex;
+      width: 240px;
+      height: 88px;
+      padding: 27px 44px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      text-align: center;
+
+      /* Desktop/P/Bold */
+      font-family: "Comic Neue";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%;
+      /* 48px */
+
+      border-radius: 38px;
+    }
+  }
+
   .carouselExperiencias-item {
     align-items: center;
     flex-direction: row;
-    gap: 78px;
+    gap: 40px;
+
+
     align-self: stretch;
 
 
     .carouselExperiencias__img {
       display: flex;
       width: 532px;
-      padding: 64px;
+      padding: 0 40px;
       height: auto;
       align-items: center;
       gap: 10px;
@@ -542,7 +859,8 @@
 
     .carouselExperiencias__texto {
       display: flex;
-      width: 776px;
+      // width: 536px;
+
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -554,10 +872,17 @@
 
   }
 
+  .round-bottom-item {
+    border-radius: 0px 0px 160px 0px;
+  }
+
+  .round-top-item {
+    border-radius: 160px 0px 0px 0px;
+  }
 
   .carouselExample-control-prev,
   .carouselExample-control-next {
-    top: 50%;
+    // top: 50%;
     position: absolute;
 
     width: 80px;
@@ -566,12 +891,14 @@
   }
 
   .carouselExample-control-prev {
-    left: -85px;
+    left: 64px;
   }
 
   .carouselExample-control-next {
-    right: -85px;
+    right: 64px;
   }
+
+
 
 
 }
