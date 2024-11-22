@@ -1,0 +1,60 @@
+.animalesSoloPage{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr); /* 12 columnas iguales */
+    gap: 20px; /* Espaciado entre columnas */
+    padding: 120px 41px 20px 41px;
+    .hero{
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        .imgAnimalPage{
+            height: 300px;
+            width: 100%;
+            background-color: rgb(234, 87, 2);
+
+        }
+        .caracteristicas{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            align-self: stretch;
+            .weight{
+                width: 30px;
+                height: 30px;
+                background-image: url(../../../../public/img/card-animales/WeightHover.svg);
+            }
+            .rule{
+                width: 30px;
+                height: 30px;
+                background-image: url(../../../../public/img/card-animales/RulerHover.svg);
+            }
+            .Terrestre{
+                width: 30px;
+                height: 30px;
+                background-image: url(../../../../public/img/card-animales/IconTerrestreHover.svg);
+            }
+            .Aereo{
+                width: 30px;
+                height: 30px;
+                background-image: url(../../../../public/img/card-animales/IconoAireHover.svg);
+            }
+        }
+
+    }
+    .detalles{
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+
+        .fisionomia{
+            grid-column: span 1;
+            
+        }
+    }
+}
