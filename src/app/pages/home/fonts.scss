@@ -60,6 +60,34 @@ NUESTROS ANIMALES
 }
 
 
+.experiencia__informacion{
+
+
+  h5{
+    color: var(--Negro-800, #1D1F1D);
+text-align: center;
+
+/* Mobile/H5/Medium */
+font-family: Fredoka;
+font-size: 26px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 39px */
+  }
+
+  p{
+    color: var(--Negro-800, #1D1F1D);
+text-align: center;
+
+/* Mobile/P 01/Medium */
+font-family: "Comic Neue";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+  }
+}
+
 
 
 .boletos__texto {
@@ -241,7 +269,9 @@ NUESTROS ANIMALES
 
     .bTexto__horario,
     .bTexto__horario span {
-      font-weight: 400;
+
+      font-weight: 700;
+      /* 48px */
     }
 
   }
@@ -288,7 +318,8 @@ NUESTROS ANIMALES
     h5 {
       font-size: 54px;
     }
-    p{
+
+    p {
       font-size: 32px;
     }
   }

@@ -1,5 +1,12 @@
 
 
+.carouselExample-invisible{
+  top: 0;
+  height: 100%;
+  bottom: 0;
+  opacity: 0;
+}
+
 .carousel-item2{
     display: grid;
     width: 100%;

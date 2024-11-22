@@ -1,12 +1,12 @@
 <div class="boleto">
   <div class="boleto__img">
-    <img src="img/card-boletos/Adultos.png" alt="Boleto de adulto">
+    <img src="{{img}}" alt="Boleto de adulto">
   </div>
 
   <div class="boleto__informacion">
-    <h6>Boleto Adulto</h6>
-    <p class="boletoPrecio">$80</p>
-    <p>Vive una experiencia completa con acceso a todas las exhibiciones y charlas educativas del zoológico.</p>
+    <h6>{{titulo}}</h6>
+    <p class="boletoPrecio">{{precio}}</p>
+    <p [innerHTML]="saltosDeLinea ? descripcionFormateada : descripcion"></p>
     <button>Comprar</button>
   </div>
 </div>

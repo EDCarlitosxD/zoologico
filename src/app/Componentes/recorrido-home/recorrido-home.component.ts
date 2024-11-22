@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-recorrido-home',
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './recorrido-home.component.scss'
 })
 export class RecorridoHomeComponent {
-
+  @Input() titulo = "";
+  @Input() valoracion = "";
+  @Input() img = "";
 }
