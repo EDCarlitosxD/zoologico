@@ -23,11 +23,7 @@
       -webkit-text-stroke-width: 1;
       -webkit-text-stroke-color: #000;
 
-      font-family: Fredoka;
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 300;
-      line-height: 150%;
+
       /* 48px */
     }
 
@@ -45,15 +41,7 @@
   align-items: center;
   align-self: stretch;
 
-  color: #000;
-  text-align: center;
-  /* Desktop/H3/Medium */
-  font-family: Fredoka;
-  font-size: 3.375rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 150%;
-  /* 81px */
+
 }
 
 .dashboard__perfil {
@@ -86,26 +74,11 @@
       color: var(--Color, #FFF);
       text-align: center;
 
-      /* Desktop/P/Bold */
-      font-family: "Comic Neue";
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 150%;
-      /* 48px */
     }
 
     .perfil__role {
       color: var(--Color, #FFF);
       text-align: center;
-
-      /* Desktop/P 02/Ligth */
-      font-family: "Comic Neue";
-      font-size: 1.25rem;
-      font-style: normal;
-      font-weight: 300;
-      line-height: 150%;
-      /* 30px */
     }
   }
 
