@@ -43,11 +43,6 @@
             z-index: 1; /* Asegura que el texto esté encima de la imagen */
         }
     }
-    .desplegable{
-                    width: 30px;
-                    height: 30px;
-                    background-image: url(../../../../public/img/pages/Recorridos/SigiuenteMobile.svg);
-                }
     
     .RecorridoyCalendario{
     grid-column: span 2;
@@ -170,12 +165,6 @@
                         background-image: url(../../../../public/img/pages/Recorridos/SigiuenteMobile.svg);
                     }
                 }
-                .selectorTermino{
-                    width: 100%;
-                    height: 105px;
-                    background-color: chartreuse;
-                }
-
             }
         }
     }  
@@ -249,6 +238,9 @@
                 .selectorRecorrido{
                     gap: 40px;
                     grid-column: span 6;
+                    .selector{
+                    align-self: center !important;
+                    }
 
                 }            
                 .contadorRecorrido{
