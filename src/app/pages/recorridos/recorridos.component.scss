@@ -1,0 +1,330 @@
+.recorridosPage{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr); /* 12 columnas iguales */
+    gap: 20px; /* Espaciado entre columnas */
+    padding: 0px 41px;
+
+    .heroRecorridos {
+        grid-column: span 2; /* Sigue ocupando ambas columnas */
+        position: relative; /* Necesario para posicionar la imagen */
+        width: calc(100% + 41px * 2); /* Para que la imagen invada los gaps */
+        margin: 0 -41px; /* Ajuste del margen del contenedor */
+        max-height: 900px;
+        aspect-ratio: 43 / 70; /* Proporción deseada */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden; /* Evita que elementos internos desborden el contenedor */
+    
+        /* Imagen de fondo */
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../../../../public/img/pages/Recorridos/HerorecorridosMobile.png);
+            background-size: cover; /* La imagen cubrirá el contenedor */
+            background-position: center; /* Centra la imagen */
+            z-index: -1; /* Asegura que esté detrás del contenido */
+        }
+    
+        /* Contenedor para el texto */
+        .txtHeroRec {
+            width: 100%;
+            max-width: 580px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 0 41px; /* Mantiene el texto dentro de las columnas */
+            z-index: 1; /* Asegura que el texto esté encima de la imagen */
+        }
+    }
+    .desplegable{
+                    width: 30px;
+                    height: 30px;
+                    background-image: url(../../../../public/img/pages/Recorridos/SigiuenteMobile.svg);
+                }
+    
+    .RecorridoyCalendario{
+    grid-column: span 2;
+       display: flex;
+       flex-direction: column;
+       padding: 20px 0px;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       gap: 20px;
+       .EscogeRecorrido, .EscogeFecha{
+        width: 100%;
+        display: flex;
+        padding: 20px 0px;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        .selectorRecorrido, .contadorRecorrido{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            .selector{
+            width: 100%;
+
+                align-self: center;
+                max-width: 776px;
+                display: flex;
+                padding: 0px 10px;
+                justify-content: space-between;
+                align-items: center;
+
+                border-radius: 16px;
+                background: var(--Primario-800, #25442B);
+            
+                .infoRecorrido{
+                    display: flex;
+                    align-items: center;
+                    gap: 21px;
+                    align-self: stretch;
+                    .imgRecorrido{
+                        width: 88px;
+                        height: 80px;
+                        border-radius: 8px;
+                        background-color: aquamarine;
+                    }
+            
+                }
+                .desplegable{
+                    width: 30px;
+                    height: 30px;
+                    background-image: url(../../../../public/img/pages/Recorridos/SigiuenteMobile.svg);
+                }
+            }
+            .MargenContador{
+                display: flex;
+                width: fit-content;
+                padding: 15px 10px;
+                align-items: center;
+                gap: 31.169px;
+                border-radius: 12.83px;
+                .contador{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 16px;
+                    .menos{
+                        width: 20px;
+                        height: 20px;
+                        background-image: url(../../../../public/img/contadorBoletos/Menos.svg);
+                    }
+                    .mas{
+                        width: 20px;
+                        height: 20px;
+                        background-image: url(../../../../public/img/contadorBoletos/Mas.svg);
+                    }
+                }
+            }
+
+
+
+        }
+        .calendario{
+            width: 348px;
+            height: 372px;
+            background-color: chocolate;
+        }
+        .horario{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+            .Inicio, .Termino{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                
+                gap: 24px;
+                flex-shrink: 0;
+                .horInicio, .horTermino{
+                    display: flex;
+                    width: 164px !important;
+                    height: 68px;
+                    width: auto;
+                    padding: 8px 0px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 24px;
+                    align-self: center;
+                    border-radius: 16px;
+                    background: var(--Blanco-800, #E7ECE3);
+                    .desplegable{
+                        width: 30px;
+                        height: 30px;
+                        background-image: url(../../../../public/img/pages/Recorridos/SigiuenteMobile.svg);
+                    }
+                }
+                .selectorTermino{
+                    width: 100%;
+                    height: 105px;
+                    background-color: chartreuse;
+                }
+
+            }
+        }
+    }  
+    }
+
+    .reservar{
+        grid-column: span 2;
+        align-self: center;
+        justify-self: center;
+    }
+
+}
+
+
+
+
+
+@media (min-width: 1200px) {
+    .recorridosPage {
+        grid-template-columns: repeat(12, 1fr); /* Diseño de 12 columnas */
+        gap: 40px;
+        padding: 0px 164px; /* Espacio lateral amplio */
+      
+        .heroRecorridos {
+            grid-column: span 12; /* Abarca todo el ancho del grid */
+            position: relative; 
+            width: calc(100% + 164px * 2); /* Invade los paddings */
+            margin: 0 -164px; 
+            background-image: url(../../../../public/img/pages/Recorridos/HeroDesktop.png);
+            background-size: cover; 
+            background-position: center; 
+            min-height: 1080px;
+            height: 1080px; 
+            overflow: hidden; 
+            display: grid; /* Establece una grilla */
+            grid-template-columns: repeat(12, 1fr); /* Diseño de 12 columnas */
+            padding: 0 164px; /* Elimina el padding dentro de la grilla */
+            gap: 40px;
+            .txtHeroRec {
+              max-width: 100%;
+              grid-column: 1 / span 5; /* Comienza en la columna 1 y abarca 5 columnas */
+              display: flex;
+              height: 100%;
+              padding: 40px;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+              text-align: start;
+              gap: 48px;
+              flex-shrink: 0;
+              z-index: 1; /* Asegura que esté encima del fondo */
+            }
+        }
+          
+      
+  
+        .RecorridoyCalendario {
+            grid-column: span 12;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 40px;
+            .EscogeRecorrido{
+            grid-column: span 6;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 40px; 
+
+
+                .selectorRecorrido{
+                    gap: 40px;
+                    grid-column: span 6;
+
+                }            
+                .contadorRecorrido{
+                    grid-column: 7 /span 5;
+                    .MargenContador{
+                        display: flex;
+                        width: 232px;
+                        padding: 15.584px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 31.169px;
+                        border-radius: 31.169px;
+                        border: 1px solid var(--Negro-400, #4A4E4A);
+                        .contador{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 17.039px;
+                            .menos{
+                                width: 43px;
+                                height: 43px;
+                                background-image: url(../../../../public/img/contadorBoletos/MenosMobile.png);
+                            }
+                            .pmargin{
+                                margin: 13.663px;
+                            }
+                            .mas{
+                                width: 43px;
+                                height: 43px;
+                                background-image: url(../../../../public/img/contadorBoletos/MasMobile.svg);
+                            }
+                        }
+                    }
+                }  
+            }
+            .EscogeFecha{
+                grid-column: 8 /span 5;
+                .calendario{
+                    width: 100%;
+                    height: 572px;
+                }
+                .horario{
+                    gap: 40px;
+                }
+            }
+        }
+      .reservar {
+        grid-column: 5 / span 4; /* Botón centrado en las últimas 4 columnas */
+        justify-self: center;
+        align-self: center;
+      }
+    }
+}
+
+@media (min-width: 1630px) {
+    .recorridosPage .RecorridoyCalendario .EscogeRecorrido .selectorRecorrido .selector{
+        display: flex;
+        height: 229px;
+        padding: 20px;
+        align-items: center;
+        gap: 40px;
+        align-self: stretch;
+        border-radius: 40px;
+        .infoRecorrido{
+            .imgRecorrido{
+                width: 244px;
+                height: 189px;
+                border-radius: 24px;
+            }
+        }
+
+        .desplegable{
+            width: 64px;
+            height: 64px;
+            background-image: url(../../../../public/img/pages/Recorridos/Sigiuente.svg);
+        }
+    }   
+}

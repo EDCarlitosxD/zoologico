@@ -11,6 +11,7 @@ import { HomeComponent } from "./pages/home/home.component";
 import { ComponentesComponent } from "./pages/componentes/componentes.component";
 import { PruebaComponent } from "./Componentes/prueba/prueba.component";
 import { AnimalSoloComponent } from './pages/animal-solo/animal-solo.component';
+import { RecorridosComponent } from "./pages/recorridos/recorridos.component";
 
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
@@ -18,14 +19,14 @@ export const routes: Routes = [
   { path: 'animales', component: AnimalesComponent }, // NO APROBADO ❌❌❌,
   { path: 'boletos', component: BoletosComponent }, // Aprobado ✅✅✅,
   { path: 'login', component: LoginComponent },// Terminarlo,
+  { path: 'animal', component: AnimalSoloComponent}, //Mobile parcialmente terminado
+  
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
   { path: 'dashboard/ventas', component: DashboardVentasComponent },
   { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
+  { path: 'recorridos', component: RecorridosComponent },
+
   { path: 'pruebas', component: PruebaComponent},
-  { path: 'animal', component: AnimalSoloComponent},
-
-
-
   {path:  'componentes', component: ComponentesComponent}
 ];
