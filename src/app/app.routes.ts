@@ -9,6 +9,8 @@ import { DonacionesComponent } from "./pages/donaciones/donaciones.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { HomeComponent } from "./pages/home/home.component";
 import { ComponentesComponent } from "./pages/componentes/componentes.component";
+import { PruebaComponent } from "./Componentes/prueba/prueba.component";
+import { AnimalSoloComponent } from './pages/animal-solo/animal-solo.component';
 
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
@@ -20,6 +22,9 @@ export const routes: Routes = [
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
   { path: 'dashboard/ventas', component: DashboardVentasComponent },
   { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
+  { path: 'pruebas', component: PruebaComponent},
+  { path: 'animal', component: AnimalSoloComponent},
+
 
 
   {path:  'componentes', component: ComponentesComponent}
