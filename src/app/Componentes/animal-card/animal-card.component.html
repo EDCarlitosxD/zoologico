@@ -1,5 +1,6 @@
-<div class="card">
-    <img [src]="animal.imagenUrl" class="card-image">
+<a [routerLink]="['/animal',animal.slug]" class="card">
+
+    <img [src]="animal.imagen_principal" class="card-image">
     <div class="descripcion">
         <div class="descripcion2">
           <h6 class=" card-animal-nombre">{{ animal.nombre }}</h6>
@@ -17,8 +18,8 @@
             <p class="p2 text-white-600 card-animal-info d-flex">{{ animal.tipo }}</p>
 
           </div>
-          <p class="nombre-cientifico text-black-200">{{ animal.nombreCientifico }}</p>
+          <p class="nombre-cientifico text-black-200">{{ animal.nombre_cientifico }}</p>
         </div>
     </div>
 
-</div>
+</a>

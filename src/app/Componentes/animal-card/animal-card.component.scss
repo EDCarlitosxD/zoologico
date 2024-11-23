@@ -32,11 +32,11 @@
       background: url(../../../../public/img/card-animales/RulerHover.svg);
     }
 
-    .Aéreo {
+    .aéreo {
       background: url(../../../../public/img/card-animales/IconoAireHover.svg);
     }
 
-    .Terrestre {
+    .terrestre {
       background: url(../../../../public/img/card-animales/IconTerrestreHover.svg);
     }
   }
@@ -83,8 +83,8 @@
 
 .weight,
 .rule,
-.Terrestre,
-.Aéreo {
+.terrestre,
+.aéreo {
   width: 30px;
   height: 30px;
   font-weight: 300;
@@ -98,11 +98,11 @@
   background: url('./../../../../public/img/card-animales/Ruler.svg');
 }
 
-.Terrestre {
+.terrestre {
   background: url('./../../../../public/img/card-animales/IconTerrestre.svg');
 }
 
-.Aéreo {
+.aéreo {
   background: url('./../../../../public/img/card-animales/IconoAire.svg');
 }
 
@@ -165,8 +165,8 @@
 
       .weight,
       .rule,
-      .Aéreo,
-      .Terrestre {
+      .aéreo,
+      .terrestre {
         width: 15px;
         height: 15px;
         background-size: contain;

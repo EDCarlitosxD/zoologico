@@ -1,31 +1,26 @@
 // animal-card.component.ts
 import { Component, Input } from '@angular/core';
+import { AnimalEnum, IAnimalCard } from '../../types/Animales';
+import { RouterLink } from '@angular/router';
 
 
-interface Animal {
-  nombre: string;
-  peso: string;
-  altura: string;
-  tipo: string;
-  nombreCientifico: string;
-  imagenUrl: string;
-}
 
 @Component ({
   selector: 'app-animal-card',
   templateUrl: './animal-card.component.html',
+  imports: [RouterLink],
   styleUrls: ['./animal-card.component.scss'],
-
   standalone: true
 })
 export class AnimalCardComponent {
-  @Input() animal: Animal = {
+  @Input() animal: IAnimalCard = {
     nombre: '',
     peso: '',
     altura: '',
-    tipo: '',
-    nombreCientifico: '',
-    imagenUrl: '',
+    tipo: AnimalEnum.Terrestre,
+    nombre_cientifico: '',
+    imagen_principal: '',
+    slug: '',
   };
 }
 

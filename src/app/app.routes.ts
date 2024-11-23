@@ -19,8 +19,8 @@ export const routes: Routes = [
   { path: 'animales', component: AnimalesComponent }, // NO APROBADO ❌❌❌,
   { path: 'boletos', component: BoletosComponent }, // Aprobado ✅✅✅,
   { path: 'login', component: LoginComponent },// Terminarlo,
-  { path: 'animal', component: AnimalSoloComponent}, //Mobile parcialmente terminado
-  
+  { path: 'animal/:slug', component: AnimalSoloComponent}, //Mobile parcialmente terminado
+
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
   { path: 'dashboard/ventas', component: DashboardVentasComponent },

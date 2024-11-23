@@ -1,52 +1,57 @@
+<app-nav-bar></app-nav-bar>
+
 <div class="animalesSoloPage">
 
     <section class="hero">
-        <div class="imgAnimalPage"></div>
-        <h1>NombreAnimal</h1>
-        <p class="thin">Nombre cientifico</p>
+        <div class="imgAnimalPage"><img [src]="animal.imagen_principal" [alt]="animal.nombre"></div>
+        <h1>{{animal.nombre}}</h1>
+        <p class="thin">{{animal.nombre_cientifico}}</p>
         <div class="caracteristicas">
             <div class="weight"></div>
-            <p class="thin">Peso</p>
+            <p class="thin">{{animal.peso}} kg</p>
             <div class="rule"></div>
-            <p class="thin">Altura</p>
-            <div class="Terrestre"></div>
-            <p class="thin">Terrestre</p>
+            <p class="thin">{{animal.altura}} m</p>
+            <div [class]="animal.tipo"></div>
+            <p class="thin">{{animal.tipo}}</p>
         </div>
     </section>
 
     <section class="detalles text-center">
         <div class="fisionomia">
             <h6 class="thin">Fisionomía</h6>
-            <p class="p2"><span class="p1">Tamaño: </span>gybhunjimgtfyguh</p>
-            <p class="p2"><span class="p1">Peso: </span>gybhunjimgtfyguh</p>
-            
+            <p class="p2">{{animal.caracteristicas_fisicas}}</p>
+            <p class="p2"><span class="p1">Tamaño: </span>{{animal.altura}}</p>
+            <p class="p2"><span class="p1">Peso: </span>{{animal.peso}}</p>
+
         </div>
         <div class="conducta">
             <h6 class="thin">Conducta</h6>
-            <p class="p2"><span class="p1">Social: </span>gybhunjimgtfyguh</p>
-            <p class="p2"><span class="p1">Terriorialidad: </span>gybhunjimgtfyguh</p>
+            <p class="p2"><span class="p1">Social: {{animal.comportamiento}}</span></p>
+            <p class="p2"><span class="p1">Terriorialidad: </span>{{animal.habitat}}</p>
 
 
 
         </div>
         <div class="dieta">
             <h6 class="thin">Dieta</h6>
-            <p class="p2"><span class="p1">Tipo: </span>gybhunjimgtfyguh</p>
-            <p class="p2"><span class="p1">Alimentación: </span>gybhunjimgtfyguh</p>
+            <p class="p2"><span class="p1">Tipo: </span>{{animal.tipo}}</p>
+            <p class="p2"><span class="p1">Alimentación: </span>{{animal.dieta}}</p>
 
 
         </div>
         <div class="datosCuriosos">
             <h6 class="thin">Datos Curiosos</h6>
-            <p class="p2">gybhunjimgtfyguh</p>
+            <p class="p2">{{animal.datos_curiosos}}</p>
 
         </div>
     </section>
 
     <section class="descripcionAnimal">
-        <h4 class="bold">Frace animal</h4>
-        <p class="thin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo animi incidunt ut maxime, facere accusantium debitis eum possimus ipsam, consequatur nam aspernatur unde sunt similique eius quae consectetur? Libero, nemo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas sint ratione id quaerat, similique saepe quasi obcaecati, ducimus quibusdam dicta repellat labore incidunt architecto repellendus consequatur quis in dolor! Praesentium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aliquam voluptas quas asperiores minus. Consequuntur, cupiditate nisi, sequi, laborum nostrum pariatur repellendus placeat distinctio illo molestias nobis quia sed aliquam.</p>
-        <div class="img2Animal"></div>
+        <h4 class="bold">{{animal.subtitulo}}</h4>
+        <p class="thin">{{animal.descripcion}}</p>
+        <div class="img2Animal">
+          <img [src]="animal.imagen_secundaria" [alt]="animal.nombre_cientifico">
+        </div>
     </section>
 
     <section class="ubicacion">
@@ -57,10 +62,10 @@
 
     <section class="conocelo">
         <h4 class="bold">Conócelo</h4>
-        <p class="thin">¡Conoce a este increíble animal y muchos más! 
+        <p class="thin">¡Conoce a este increíble animal y muchos más!
 <br><br>
             Obtén tus boletos aquí y vive una inolvidable experiencia.</p>
-        <div class="mapa"></div>
+        <div class="mapa"><img [src]="animal.img_ubicacion" [alt]="animal.nombre"></div>
         <button>Boletos</button>
     </section>
 </div>
