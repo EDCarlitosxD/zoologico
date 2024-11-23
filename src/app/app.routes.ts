@@ -23,12 +23,12 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },// Terminarlo,
 
   { path: 'animal', component: AnimalSoloComponent}, //Mobile parcialmente terminado
+  { path: 'recorridos', component: RecorridosComponent }, // Falta calendario y selectores
 
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
   { path: 'dashboard/ventas', component: DashboardVentasComponent },
   { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
-  { path: 'recorridos', component: RecorridosComponent },
 
   { path: 'pruebas', component: PruebaComponent},
   {path:  'componentes', component: ComponentesComponent}
