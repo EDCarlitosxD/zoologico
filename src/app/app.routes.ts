@@ -12,6 +12,7 @@ import { ComponentesComponent } from "./pages/componentes/componentes.component"
 import { PruebaComponent } from "./Componentes/prueba/prueba.component";
 import { AnimalSoloComponent } from './pages/animal-solo/animal-solo.component';
 import { RecorridosComponent } from "./pages/recorridos/recorridos.component";
+import { RegisterComponent } from "./pages/register/register.component";
 
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
@@ -19,13 +20,17 @@ export const routes: Routes = [
   { path: 'animales', component: AnimalesComponent }, // NO APROBADO ❌❌❌,
   { path: 'boletos', component: BoletosComponent }, // Aprobado ✅✅✅,
   { path: 'login', component: LoginComponent },// Terminarlo,
+  { path: 'register', component: RegisterComponent },// Terminarlo,
+
+  { path: 'animal', component: AnimalSoloComponent}, //Mobile parcialmente terminado
+  { path: 'recorridos', component: RecorridosComponent }, // Falta calendario y selectores
+
   { path: 'animal/:slug', component: AnimalSoloComponent}, //Mobile parcialmente terminado
 
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
   { path: 'dashboard/ventas', component: DashboardVentasComponent },
   { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
-  { path: 'recorridos', component: RecorridosComponent },
 
   { path: 'pruebas', component: PruebaComponent},
   {path:  'componentes', component: ComponentesComponent}
