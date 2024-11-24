@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { NavBarComponent } from '../../Componentes/nav-bar/nav-bar.component';
+import { FooterComponent } from "../../Componentes/footer/footer.component";
 
 @Component({
   selector: 'app-recorridos',
   standalone: true,
-  imports: [],
+  imports: [NavBarComponent, FooterComponent],
   templateUrl: './recorridos.component.html',
   styleUrl: './recorridos.component.scss'
 })

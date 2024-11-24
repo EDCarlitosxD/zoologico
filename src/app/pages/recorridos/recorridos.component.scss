@@ -226,6 +226,8 @@
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             gap: 40px;
+            padding-top: 12px;
+            padding-bottom: 0px;
             .EscogeRecorrido{
             grid-column: span 6;
                 display: flex;
@@ -278,6 +280,7 @@
                 }  
             }
             .EscogeFecha{
+                padding: 0px;
                 grid-column: 8 /span 5;
                 .calendario{
                     width: 100%;
@@ -292,6 +295,7 @@
         grid-column: 5 / span 4; /* Botón centrado en las últimas 4 columnas */
         justify-self: center;
         align-self: center;
+        margin-bottom: 53px;
       }
     }
 }
