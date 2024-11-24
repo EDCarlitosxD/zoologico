@@ -17,7 +17,7 @@ import { RegisterComponent } from "./pages/register/register.component";
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
   { path: '', component: HomeComponent }, // Corrige el nombre del componente si es necesario
-  { path: 'animales', component: AnimalesComponent }, // NO APROBADO ❌❌❌,
+  { path: 'animales', component: AnimalesComponent }, // Falta filtro
   { path: 'boletos', component: BoletosComponent }, // Aprobado ✅✅✅,
   { path: 'login', component: LoginComponent },// Terminarlo,
   { path: 'register', component: RegisterComponent },// Terminarlo,
