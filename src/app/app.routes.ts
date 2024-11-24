@@ -13,6 +13,7 @@ import { PruebaComponent } from "./Componentes/prueba/prueba.component";
 import { AnimalSoloComponent } from './pages/animal-solo/animal-solo.component';
 import { RecorridosComponent } from "./pages/recorridos/recorridos.component";
 import { RegisterComponent } from "./pages/register/register.component";
+import { adminGuard } from "./Guard/admin.guard";
 
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
@@ -27,11 +28,15 @@ export const routes: Routes = [
 
   { path: 'animal/:slug', component: AnimalSoloComponent}, //Mobile parcialmente terminado
 
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'dashboard/animales', component: DashboardAnimalesComponent },
-  { path: 'dashboard/ventas', component: DashboardVentasComponent },
-  { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
+  { path: 'dashboard', component: DashboardComponent,
+    canActivate: [adminGuard],
+    children:[
+      { path: 'animales', component: DashboardAnimalesComponent },
+      { path: 'ventas', component: DashboardVentasComponent },
+      { path: 'recorridos', component: DashboardRecorridoComponent },
+    ]
 
+  },
   { path: 'pruebas', component: PruebaComponent},
   {path:  'componentes', component: ComponentesComponent}
 ];
