@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -26,7 +26,7 @@ export interface loginFormApi {
 })
 export class LoginFormComponent {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private location : Location) { }
 
   @Input() login: LoginForm = {
     title: '',
@@ -57,7 +57,8 @@ export class LoginFormComponent {
       if (data) {
         console.log(data);
         localStorage.setItem("userDetails",JSON.stringify(data.body))
-        this.router.navigate(["/"]);
+        this.location.back();
+        // this.router.navigate([this.previosRoute.getPreviousUrl()]);
       }
     })
 
