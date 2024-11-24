@@ -1,7 +1,7 @@
 export enum AnimalEnum{
   Terrestre = 'terrestre',
-  Aéreo = 'aéreo',
-  Acuático = 'acuático',
+  Aereo = 'aéreo',
+  Acuatico = 'acuático',
   Anfibio = 'anfibio'
 }
 

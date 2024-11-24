@@ -1,11 +1,14 @@
-<form action="" class="form">
+<div *ngFor="let error of errors" class="alert alert-danger" role="alert">
+  {{error}}
+</div>
+
+<form class="form">
     <div class="textForm text-center">
         <h3 class="h3Form">{{login.title}}</h3>
         <h6 class="thin h3Form">{{login.subtitle}}</h6>
     </div>
-    <input type="text" class="formInput" placeholder="Correo electrónico">
-    <input type="password" class="formInput" placeholder="Contraseña">
-    <input type="{{login.type}}" class="formInput" placeholder="Confirmar contraseña">
-    <button>Continua</button>
-    <a routerLink="/register" class="p2">{{login.aText}}</a>
+    <input [(ngModel)]="loginForm.email" name="email" type="text" class="formInput" placeholder="Correo electrónico">
+    <input [(ngModel)]="loginForm.password" name="password" type="password" class="formInput" placeholder="Contraseña">
+    <button (click)="loginPeticion()">Continua</button>
+    <a  routerLink="/register" class="p2">{{login.aText}}</a>
 </form>
