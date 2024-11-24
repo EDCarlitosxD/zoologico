@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 interface LoginForm{
   title: string;
   subtitle: string;
@@ -8,7 +9,7 @@ interface LoginForm{
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss'
 })
