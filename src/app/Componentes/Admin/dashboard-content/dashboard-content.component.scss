@@ -9,8 +9,7 @@
   .dashboard-contenido {
     height: 100vh;
     overflow-y: auto;
-    /* Habilita el scroll vertical */
-    padding: 40px 162px 40px 8px;
+    padding: 40px 164px 40px 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -25,6 +24,12 @@
 
 
       /* 48px */
+    }
+    .dashboard-ng-content{
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      width: 100%;
+      gap: 40px;
     }
 
 

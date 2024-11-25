@@ -1,0 +1,57 @@
+.h6Animales{
+    grid-column: span 11;
+    text-align: center;
+    height: 70px;
+    border-radius: 16px;
+    background: var(--Blanco-200, #F9FFF5);
+    display: grid;
+    align-items: center;
+}
+.table-responsive{
+    grid-column: 2 / span 9;
+    border-radius: 16px;
+background: var(--Blanco-200, #F9FFF5);
+    .cell{
+        width: 16.0472972972973%;
+        padding: 9px 20px;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .cellwh, .cellw{
+        width: auto;
+        display: flex;
+        gap: 10px;
+        padding: 9px 20px;
+    }
+    .cellw{
+        justify-content: center;
+        align-items: center;
+        padding: 9px 15px;
+    }
+    button{
+        all: unset;
+        display: flex;
+        width: 96.868px;
+        padding: 6.415px 0px;
+        justify-content: center;
+        align-items: center;
+        gap: 6.415px;
+        flex-shrink: 0;
+color: var(--Negro-800, #1D1F1D);
+text-align: center;
+border-radius: 12px;
+background: var(--Primario-Auxiliar-400, #B3CD78);
+
+/* Mobile/P 01/Bold */
+font-family: "Comic Neue";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 24px */
+    }
+    .delete{
+background: var(--Secundario-200, #E9ADAB);
+    }
+}

@@ -19,7 +19,7 @@ import { isLoggedGuard } from "./is-logged.guard";
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
   { path: '', component: HomeComponent }, // Corrige el nombre del componente si es necesario
-  { path: 'animales', component: AnimalesComponent }, // NO APROBADO ❌❌❌,
+  { path: 'animales', component: AnimalesComponent }, // Falta filtro
   { path: 'boletos', component: BoletosComponent }, // Aprobado ✅✅✅,
   { path: 'login', component: LoginComponent, canActivate: [isLoggedGuard] },// Terminarlo,
   { path: 'register', component: RegisterComponent , canActivate: [isLoggedGuard]},// Terminarlo,

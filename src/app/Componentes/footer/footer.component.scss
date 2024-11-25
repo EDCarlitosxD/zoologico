@@ -86,7 +86,7 @@ $grid-gutter-width: 40px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-
+      align-items: center;
     }
 
   }
@@ -352,15 +352,9 @@ $grid-gutter-width: 40px;
       .horarios__acerca {
         text-align: start;
         width: 100%;
-
-
-
-
         &>.flex-column-center {
           height: 45px
         }
-
-
       }
 
       .horarios__acerca,
@@ -388,21 +382,21 @@ $grid-gutter-width: 40px;
     .right {
       grid-column: 2 / 3;
       grid-row: 2 / 3;
-      padding: 0 20px;
-
+      margin: 0px;
+      padding: 0px 20px;
       .cuenta-descubre {
         gap: 24px;
-
+        .cuenta,
+        .descubre {
+          height: auto;
+          gap: 8px !important;
+          width: 124px;
+          text-align: end;
+        }
       }
 
 
-      .cuenta,
-      .descubre {
-        height: auto;
-        gap: 8px;
-        width: 124px;
-        text-align: end;
-      }
+
     }
 
     .letras {

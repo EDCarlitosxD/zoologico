@@ -41,9 +41,16 @@
     </li> -->
 
     <li routerLink="/boletos" class="enlace-nav">Boletos</li>
-    <li routerLink="recorridos" class="enlace-nav">Recorridos</li>
+    <li routerLink="/recorridos" class="enlace-nav">Recorridos</li>
     <li class="enlace-nav">Contacto</li>
-    <li class="enlace-nav nav-perfil"><img src="img/navegacion/User.png" alt="Perfil"></li>
+    <li class="enlace-nav nav-perfil link-custom" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <img src="img/navegacion/User.png" alt="Perfil">
+      <ul class="dropdown-menu">
+        <li><a class="nav-link link-custom p-3 py-3" routerLink="/login">Iniciar sesion</a></li>
+        <li><a class="link-custom p-3 py-3" routerLink="/recorridos">Recorridos</a></li>
+      </ul>
+    </li>
+
   </ul>
 
 
