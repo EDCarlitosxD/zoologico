@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-boleto',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './boleto.component.html',
   styleUrl: './boleto.component.scss'
 })
