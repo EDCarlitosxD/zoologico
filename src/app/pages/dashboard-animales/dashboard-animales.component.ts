@@ -1,13 +1,25 @@
 import { Component } from '@angular/core';
 import { DashboardContentComponent } from "../../Componentes/Admin/dashboard-content/dashboard-content.component";
+import { AnimalService } from '../../Services/animal.service';
+import { IAnimal } from '../../types/Animales';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard-animales',
   standalone: true,
-  imports: [DashboardContentComponent],
+  imports: [DashboardContentComponent,CommonModule],
   templateUrl: './dashboard-animales.component.html',
   styleUrl: './dashboard-animales.component.scss'
 })
 export class DashboardAnimalesComponent {
+
+  animales: IAnimal[] = [];
+
+  constructor(private animalesServices: AnimalService){}
+
+  ngOnInit(){
+    this.animalesServices.getAll().subscribe(data => this.animales = data);
+  }
+
 
 }

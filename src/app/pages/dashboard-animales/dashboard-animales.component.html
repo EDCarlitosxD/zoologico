@@ -1,4 +1,4 @@
-<app-dashboard-content dashboardTitulo="Animales" class="content">
+<app-dashboard-content dashboardTitulo="Animales" >
     <div class="h6Animales">
         <h6 class="thin center">Contenido animales</h6>
     </div>
@@ -16,12 +16,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="p2 cell">1</td>
-              <td class="p2 cell">León</td>
-              <td class="p2 cell">Terrestre</td>
-              <td class="p2 cell">66 kg</td>
-              <td class="p2 cell">100m</td>
+            <tr *ngFor="let animal of animales">
+              <td class="p2 cell">{{animal.id}}</td>
+              <td class="p2 cell">{{animal.nombre}}</td>
+              <td class="p2 cell">{{animal.tipo}}</td>
+              <td class="p2 cell">{{animal.peso}} kg</td>
+              <td class="p2 cell">{{animal.altura}}m</td>
               <td class="p2 cellw"><button>Editar</button><button class="delete">Eliminar</button></td>
             </tr>
           </tbody>

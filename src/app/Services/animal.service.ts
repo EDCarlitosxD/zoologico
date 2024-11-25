@@ -48,4 +48,8 @@ export class AnimalService {
     return this.http.get<IAnimal>(`${environment.API_URL}/animales/${slug}`);
   }
 
+  getAll(){
+    return this.http.get<IAnimal[]>(`${environment.API_URL}/animales`);
+  }
+
 }

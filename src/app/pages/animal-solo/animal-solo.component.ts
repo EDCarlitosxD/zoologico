@@ -25,6 +25,7 @@ export class AnimalSoloComponent {
 
 
   animal: IAnimal = {
+  id: null,
   nombre: '',
   nombre_cientifico: '',
   imagen_principal: '',

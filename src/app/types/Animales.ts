@@ -18,6 +18,7 @@ export interface IAnimalCard{
 
 
 export interface IAnimal {
+  id: number|null
   nombre: string;
   nombre_cientifico: string;
   imagen_principal: string;
