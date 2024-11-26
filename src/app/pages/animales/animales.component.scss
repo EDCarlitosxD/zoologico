@@ -158,9 +158,17 @@
         gap: 32px 20px;
         flex-wrap: wrap;
     }
+    .btncontainer{
+        display: flex;
+        width: 100%;
+        padding: 32px 41px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 32px 20px;
+    }
     .boton{
         margin: 0px auto 0px auto;
-        max-width: fit-content;
     }
 
     @media(min-width: 730px){
@@ -315,17 +323,18 @@
         gap: 40px;
         padding: 40px calc(8.54vw);
     }
-    .boton{
-        display: flex;
-        width: 242px;
-        height: 87px;
-        padding: 27px 44px;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        flex-shrink: 0;
-        margin: 48px auto 48px auto;
-        max-width: fit-content;
+    .btncontainer{
+        display: grid;
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 40px;
+        padding: 0 calc(8.54vw);        
+        .boton{
+            grid-column: 3 / span 8;
+            margin: 48px auto 48px auto;
+        }
     }
+
 
 }
