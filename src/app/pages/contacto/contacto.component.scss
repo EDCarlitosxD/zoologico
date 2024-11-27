@@ -78,15 +78,13 @@
 }
 
 .formContacto{
+    grid-column: span 12;
+    display: grid ;
     width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
     padding: 83.5px 164px;
-    form{
-        grid-column: span 12;
-        display: grid ;
-        width: 100%;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 40px;
-    }
+
     .form-input{
         display: flex;
         height: 64px;
@@ -131,4 +129,100 @@
     button{
         grid-column: 3 / 11;
     }
+}
+
+@media (max-width: 1200px) {
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 112px 0px 40px 0px;
+    gap: 16px;
+    .heroTxt{
+        width: 100%;
+    }
+    .heroImgContact{
+        display: flex;
+        width: 431px;
+        height: 498px;
+        padding: 120px 41px 80px 41px;
+        flex-direction: column;
+        align-items: center;
+        gap: 160px;
+        flex-shrink: 0;
+        border-radius: 0px 0px 0px 120px;
+        background: url(../../../../public/img/pages/Contacto/HeroMobContact.png) cover no-repeat;
+    }
+
+} 
+.contacto{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    row-gap: 24px;
+    padding: 40px 41px;
+    .correo, .telefono, .horario{
+        grid-column: span 2;
+
+        .mailIcoDesk, .telIcoDesk, .horIcoDesk{
+            display: none;
+        }
+        .mailIcoMob{
+            width: 47px;
+            height: 40px;
+            display: block;
+        }
+        .telIcoMob, .horIcoMob{
+            width: 41px;
+            height: 40px;
+            display: block;
+        }
+    }
+}
+.ubicacion{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 40px 41px;
+    gap: 20px;
+    row-gap: 24px;
+    .ubicacionTxt{
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        order: 1;
+        grid-column: span 2;
+    }
+    .map-ubicacion{
+        order: 2;
+        grid-column: span 2;
+    }
+
+}
+.formContacto{
+    display: grid;
+    padding: 40px 41px;
+    gap: 20px;
+    row-gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    .items{
+        grid-column: span 2;
+        padding: 0;
+        .nombre-tel{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+    .mail-message{
+        grid-column: span 2;
+        padding: 0;
+        gap: 16px;
+    }
+    .blackBtn{
+        grid-column: span 2;
+    }
+    
+}
 }
