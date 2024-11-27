@@ -1,5 +1,4 @@
-
-    <section class="dashboard__titulo">
+    <header class="dashboard__titulo">
 
       <div class="atras-title">
         <div class="atras">
@@ -23,9 +22,10 @@
 
     <div class="line"></div>
     <h6 class="dashboard__descripcion">Edición de datos</h6>
-    </section>
-    <section class="dashboard__seccion">
-      <form action="" class="editData">
+    </header>
+
+    <form class="dashboard__seccion" action="">
+      <div class="editData">
         <h6 class="thin">Nombre Recorrido</h6>
         <div class="input-text"><input type="text" name="nombre" placeholder="Nombre" id="nombre" autofocus></div>
         
@@ -40,6 +40,17 @@
         
         <h6 class="thin">Cantidad Personas</h6>
         <div class="input-text"><input type="text" name="cantidadPersonas" placeholder="Cantidad Personas" id="cantidadPersonas"></div>
-      </form>
-    </section>
+      </div>
+      <div class="fecha">
+        <h6 class="thin">Fecha</h6>
+        <div class="calendario"></div>
+        <h6 class="thin">Agregar Horario</h6>
+        <button class="chiquito"></button>
+        <div class="horarios">
+        
+        </div>
+      </div>
+      <button class="formBtn">Modificar</button>
+
+    </form>
 
