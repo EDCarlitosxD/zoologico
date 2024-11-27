@@ -17,7 +17,7 @@
         align-items: center;
         text-align: center;
         overflow: hidden; /* Evita que elementos internos desborden el contenedor */
-    
+
         /* Imagen de fondo */
         &::before {
             content: "";
@@ -31,7 +31,7 @@
             background-position: center; /* Centra la imagen */
             z-index: -1; /* Asegura que esté detrás del contenido */
         }
-    
+
         /* Contenedor para el texto */
         .txtHeroRec {
             width: 100%;
@@ -43,7 +43,7 @@
             z-index: 1; /* Asegura que el texto esté encima de la imagen */
         }
     }
-    
+
     .RecorridoyCalendario{
     grid-column: span 2;
        display: flex;
@@ -79,7 +79,7 @@
 
                 border-radius: 16px;
                 background: var(--Primario-800, #25442B);
-            
+
                 .infoRecorrido{
                     display: flex;
                     align-items: center;
@@ -91,7 +91,7 @@
                         border-radius: 8px;
                         background-color: aquamarine;
                     }
-            
+
                 }
                 .desplegable{
                     width: 30px;
@@ -128,9 +128,9 @@
 
         }
         .calendario{
-            width: 348px;
-            height: 372px;
-            background-color: chocolate;
+            // width: 348px;
+            // height: 372px;
+            // background-color: chocolate;
         }
         .horario{
             width: 100%;
@@ -144,7 +144,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                
+
                 gap: 24px;
                 flex-shrink: 0;
                 .horInicio, .horTermino{
@@ -167,7 +167,7 @@
                 }
             }
         }
-    }  
+    }
     }
 
     .reservar{
@@ -187,18 +187,18 @@
         grid-template-columns: repeat(12, 1fr); /* Diseño de 12 columnas */
         gap: 40px;
         padding: 0px 164px; /* Espacio lateral amplio */
-      
+
         .heroRecorridos {
             grid-column: span 12; /* Abarca todo el ancho del grid */
-            position: relative; 
+            position: relative;
             width: calc(100% + 164px * 2); /* Invade los paddings */
-            margin: 0 -164px; 
+            margin: 0 -164px;
             background-image: url(../../../../public/img/pages/Recorridos/HeroDesktop.png);
-            background-size: cover; 
-            background-position: center; 
+            background-size: cover;
+            background-position: center;
             min-height: 1080px;
-            height: 1080px; 
-            overflow: hidden; 
+            height: 1080px;
+            overflow: hidden;
             display: grid; /* Establece una grilla */
             grid-template-columns: repeat(12, 1fr); /* Diseño de 12 columnas */
             padding: 0 164px; /* Elimina el padding dentro de la grilla */
@@ -218,9 +218,9 @@
               z-index: 1; /* Asegura que esté encima del fondo */
             }
         }
-          
-      
-  
+
+
+
         .RecorridoyCalendario {
             grid-column: span 12;
             display: grid;
@@ -234,7 +234,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                gap: 40px; 
+                gap: 40px;
 
 
                 .selectorRecorrido{
@@ -244,7 +244,7 @@
                     align-self: center !important;
                     }
 
-                }            
+                }
                 .contadorRecorrido{
                     grid-column: 7 /span 5;
                     .MargenContador{
@@ -277,7 +277,7 @@
                             }
                         }
                     }
-                }  
+                }
             }
             .EscogeFecha{
                 padding: 0px;
@@ -322,5 +322,51 @@
             height: 64px;
             background-image: url(../../../../public/img/pages/Recorridos/Sigiuente.svg);
         }
-    }   
+    }
+}
+
+
+
+/* Ajustar el encabezado */
+.fc-header-toolbar .fc-toolbar .fc-toolbar-ltr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Estilo del mes (lado izquierdo) */
+.fc .fc-toolbar-title {
+  font-size: 16px !important;
+  font-weight: bold;
+  text-transform: capitalize; /* Asegura que los meses estén en formato adecuado */
+  color: #333;
+}
+
+/* Contenedor para los botones de navegación */
+.fc-toolbar-chunk:last-child {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1; /* Alinea el año hacia la derecha */
+}
+
+/* Estilo para los botones de navegación */
+.fc-button {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.fc-button:hover {
+  background-color: #5148d9;
+}
+
+/* Espaciado del calendario */
+.fc {
+  padding: 10px;
 }

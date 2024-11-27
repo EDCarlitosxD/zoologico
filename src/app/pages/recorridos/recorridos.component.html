@@ -35,24 +35,23 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="EscogeFecha text-center">
             <h3 class="thin">Escoge tu Fecha</h3>
-            <div class="calendario"></div>
+            <full-calendar #calendarRecorrido [options]="calendarOptions" class="calendario"></full-calendar>
             <div class="horario">
                 <div class="Inicio">
                     <h5 class="thin">Inicio</h5>
-                    <div class="horInicio">
-                        <h6 class="thin">10:00</h6>
-                        <div class="desplegable"></div>
-                    </div>
+                    <select class="horInicio desplegable">
+                        <option *ngFor="let horario of horarioInput" class="thin">{{horario.horario_inicio}}</option>
+                    </select>
                 </div>
                 <div class="Termino">
                     <h5 class="thin">Termino</h5>
                     <div class="horTermino">
-                        <h6 class="thin">15:00</h6>
+                        <div class="thin">{{horarioFin}}</div>
                     </div>
                 </div>
             </div>
