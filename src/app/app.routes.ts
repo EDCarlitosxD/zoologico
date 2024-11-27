@@ -13,6 +13,7 @@ import { PruebaComponent } from "./Componentes/prueba/prueba.component";
 import { AnimalSoloComponent } from './pages/animal-solo/animal-solo.component';
 import { RecorridosComponent } from "./pages/recorridos/recorridos.component";
 import { RegisterComponent } from "./pages/register/register.component";
+import { ContactoComponent } from "./pages/contacto/contacto.component";
 
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
@@ -24,6 +25,7 @@ export const routes: Routes = [
 
   { path: 'animal', component: AnimalSoloComponent}, //Mobile parcialmente terminado
   { path: 'recorridos', component: RecorridosComponent }, // Falta calendario y selectores
+  { path: 'contactanos', component: ContactoComponent },
 
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
