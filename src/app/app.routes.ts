@@ -15,6 +15,8 @@ import { RecorridosComponent } from "./pages/recorridos/recorridos.component";
 import { RegisterComponent } from "./pages/register/register.component";
 import { ContactoComponent } from "./pages/contacto/contacto.component";
 import { EditRecorridosComponent } from "./pages/dashboard/edit-recorridos/edit-recorridos.component";
+import { Component } from '@angular/core';
+import { EditGuiasComponent } from "./pages/dashboard/edit-guias/edit-guias.component";
 
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
@@ -33,6 +35,6 @@ export const routes: Routes = [
   { path: 'dashboard/ventas', component: DashboardVentasComponent },
   { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
   { path: 'dashboard/recorridos/edit', component: EditRecorridosComponent },
-
+  { path: 'dashboard/guias/edit', component: EditGuiasComponent },
   { path: 'pruebas', component: PruebaComponent},
 ];
