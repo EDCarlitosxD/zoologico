@@ -1,18 +1,18 @@
 // Definición de fuentes y colores
-// @font-face {
-//   font-family: 'Cherry Bomb';
-//   src: url(fonts/CherryBomb-Regular.ttf);
-// }
+  // @font-face {
+  //   font-family: 'Cherry Bomb One';
+  //   src: url(fonts/CherryBomb-Regular.ttf);
+  // }
 
-// @font-face {
-//   font-family: 'Comic Neue';
-//   src: url(fonts/ComicNeue-Regular.ttf);
-// }
+  // @font-face {
+  //   font-family: 'Comic Neue';
+  //   src: url(fonts/ComicNeue-Regular.ttf);
+  // }
 
-// @font-face {
-//   font-family: 'Fredoka';
-//   src: url(fonts/Fredoka-Regular.ttf);
-// }
+  // @font-face {
+  //   font-family: 'Fredoka';
+  //   src: url(fonts/Fredoka-Regular.ttf);
+  // }
 
 $colors: (
   "primary": (
@@ -82,6 +82,14 @@ body {
   font-family: 'Comic Neue'; // Usar Comic Neue por defecto
 
 }
+input, textarea{
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+}  
 
 h1 {
   font-family: "Cherry Bomb One";
@@ -141,7 +149,7 @@ h6 {
 button {
   border-color: transparent;
   display: flex;
-  width: 150px;
+  width: 100%;
   height: 54px;
   padding: 10px;
   justify-content: center;
@@ -162,6 +170,10 @@ button {
   font-weight: 700;
   line-height: 150%; /* 30px */
 }
+button.formBtn{
+  width: 218px;
+  height: 80px;
+}
 button.chiquito {
   display: flex;
   width: 96.868px;
@@ -180,6 +192,36 @@ button.chiquito {
   font-style: normal;
   font-weight: 700;
   line-height: 150%; /* 24px */
+}
+
+button.dashboard{
+  all:unset;
+  display: flex;
+  width: 96.868px;
+  padding: 6.415px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 6.415px;
+  flex-shrink: 0;
+  
+  color: var(--Negro-800, #1D1F1D);
+  text-align: center;
+  border-radius: 12px;
+  background: var(--Primario-Auxiliar-400, #B3CD78);
+
+  /* Mobile/P 01/Bold */
+  font-family: "Comic Neue";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+}
+button.delete{
+  background: var(--Secundario-200, #E9ADAB);
+}
+button.blackBtn{
+  color: var(--Blanco-300, #FCFFF9);
+  background: var(--Negro-500, #343734);
 }
 
 button:hover {
@@ -230,24 +272,26 @@ button:hover {
 
   button {
     display: flex;
-    width: 240px;
-    height: 88px;
-    padding: 27px 44px;
+    width: 100%;
+    height: 80px;
+    padding: 16px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0;
     border-radius: 38px;
     background: var(--Primario-Auxiliar-500, #AAC767);
+    
     color: var(--Negro-800, #1D1F1D);
     text-align: center;
-    
-    /* Desktop/P/Bold */
     font-family: "Comic Neue";
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 48px */
+
+    .btnnegro{
+      background: var(--Negro-500, #343734);
+    }
   }
   button.chiquito{
     display: flex;
@@ -259,8 +303,8 @@ button:hover {
     gap: 10px;
     border-radius: 24px;
     background: var(--Primario-Auxiliar-400, #B3CD78);
-color: var(--Negro-800, #1D1F1D);
-text-align: center;
+    color: var(--Negro-800, #1D1F1D);
+    text-align: center;
 
 /* Desktop/P 01/Bold */
 font-family: "Comic Neue";

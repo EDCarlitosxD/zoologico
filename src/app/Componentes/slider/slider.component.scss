@@ -6,7 +6,9 @@
   bottom: 0;
   opacity: 0;
 }
-
+button{
+    grid-column: span 5;
+}
 .carousel-item2{
     display: grid;
     width: 100%;

@@ -2,34 +2,30 @@
     display: flex;
     width: 348px;
     height: 96px;
-    padding: 16px 8px;
+    padding: 6px;
     justify-content: space-between;
     align-items: center;
-    flex-shrink: 0;
     border-radius: 16px;
-    background: var(--Primario-800, #25442B);
+    background: var(--Negro-500, #343734);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     .img-Txt{
         display: flex;
         align-items: center;
-        gap: 21px;
+        gap: 8px;
+        flex: 1 0 0;
+        align-self: stretch;
         .imageBol{
             width: 88px;
-            height: 80px;
-            border-radius: 8px;
+            align-self: stretch;
+            border-radius: 10px;
         }
         .descBoleto{
             display: flex;
-            max-width: 107px;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            gap: 6px;
-            .tipo, .precio{
-                align-self: stretch;
-
-                line-height: 150%; /* 24px */
-            }
+            gap: 4px;
+            flex: 1 0 0;
 
         }
     }
@@ -37,35 +33,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 8px;
-        .menos{
-            width: 20px;
-            height: 20px;
-            background: url(../../../../public/img/contadorBoletos/Menos.svg);
+        gap: 6px;
+        .counterMob{
+            display: block;
+            width: 24px;
+            height: 24px;
+        }
+        .counterDesk{
+            display: none;
+            width: 49px;
+            height: 49px;
+        }
+        .contP{
 
-        }
-        .cantidad{
-            display: flex;
-            width: 40px;
-            height: 30px;
-            padding: 6.415px;
-            justify-content: center;
-            align-items: center;
-            gap: 6.415px;
-            border-radius: 12.83px;
-            background: var(--Primario-Auxiliar-400, #B3CD78);
-            .contP{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                flex: 1 0 0;
-                align-self: stretch;
-            }
-        }
-        .mas{
-            width: 20px;
-            height: 20px;
-            background: url(../../../../public/img/contadorBoletos/Mas.svg);
         }
     }
 }
@@ -73,19 +53,21 @@
 @media (min-width: 1090px) {
     .cardBol{
         display: flex;
-        width: 1048px;
-        height: 254px;
+        width: 100%;
+        height: 200px;
         padding: 20px;
         justify-content: space-between;
         align-items: center;
+        flex-shrink: 0;
+        
         border-radius: 40px;
         .img-Txt{
             display: flex;
             align-items: center;
             gap: 40px;
             .imageBol{
-                width: 244px;
-                height: 214px;
+                width: 160px;
+                height: 160px;
                 border-radius: 24px;
             }
             .descBoleto{
@@ -94,39 +76,22 @@
                 justify-content: center;
                 align-items: flex-start;
                 width: 100%;
-                max-width: 500px;
                 gap: 10px;
-
-                .tipo{
-                  font-size: 3rem;
-                  // font-weight: 500;
-                }
-                .precio{
-                  font-size: 2rem;
-                  font-weight: 400;
-                }
 
             }
         }
         .contador{
-            gap: 24px;
-            .menos{
-                width: 55px;
-                height: 55px;
-                background: url(../../../../public/img/contadorBoletos/Menos.svg);
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
+            display: flex;
+            padding: 8px;
+            align-items: center;
+            gap: 16px;
+            .counterMob{
+                display: none;
             }
-            .cantidad{
-                display: flex;
-                width: 109.333px;
-                height: 82px;
-                padding: 17.535px;
-                justify-content: center;
-                align-items: center;
-                gap: 17.535px;
-                border-radius: 36px;
+            .counterDesk{
+                display: block;
+            }
+
                 .contP{
                     display: flex;
                     flex-direction: column;
@@ -134,15 +99,6 @@
                     flex: 1 0 0;
                     align-self: stretch;
                 }
-            }
-            .mas{
-                width: 55px;
-                height: 55px;
-                background: url(../../../../public/img/contadorBoletos/Mas.svg);
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
         }
     }
 }

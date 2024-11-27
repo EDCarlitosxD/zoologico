@@ -7,31 +7,42 @@
     display: grid;
     align-items: center;
 }
-.table-responsive{
+.div-table-responsive{
     grid-column: 2 / span 9;
     border-radius: 16px;
-background: var(--Blanco-200, #F9FFF5);
+    background: var(--Blanco-200, #F9FFF5);
+    padding: 16px 0px;
+    max-height: 608px;
+    overflow: auto;
+    .table-animales {
+        background-color: transparent !important;
+        &.table-striped {
+            background-color: transparent !important;
+        }
+    }
+    
+
     .cell{
-        width: 16.0472972972973%;
+        // width: 16.0472972972973%;
+        width: 16.4819vh;
         padding: 9px 20px;
         align-items: center;
+        white-space: nowrap;
         justify-content: center;
-
     }
-
     .cellwh, .cellw{
-        width: auto;
         display: flex;
+        
         gap: 10px;
         padding: 9px 20px;
     }
     .cellw{
+        vertical-align: middle !important; /* Centra verticalmente la celda */
         justify-content: center;
         align-items: center;
         padding: 9px 15px;
     }
     button{
-        all: unset;
         display: flex;
         width: 96.868px;
         padding: 6.415px 0px;
@@ -39,19 +50,24 @@ background: var(--Blanco-200, #F9FFF5);
         align-items: center;
         gap: 6.415px;
         flex-shrink: 0;
-color: var(--Negro-800, #1D1F1D);
-text-align: center;
-border-radius: 12px;
-background: var(--Primario-Auxiliar-400, #B3CD78);
+        
+        color: var(--Negro-800, #1D1F1D);
+        text-align: center;
+        border-radius: 12px;
+        background: var(--Primario-Auxiliar-400, #B3CD78);
 
-/* Mobile/P 01/Bold */
-font-family: "Comic Neue";
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: 150%; /* 24px */
+        /* Mobile/P 01/Bold */
+        font-family: "Comic Neue";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; /* 24px */
+        &:hover{
+            background: var(--Secundario-Auxiliar-800, #DCA617);
+            transition: background-color 0.5s ease, color 0.5s ease;    
+        }
     }
-    .delete{
-background: var(--Secundario-200, #E9ADAB);
-    }
+        .delete{
+    background: var(--Secundario-200, #E9ADAB);
+        }
 }
