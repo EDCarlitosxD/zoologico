@@ -14,6 +14,7 @@ import { AnimalSoloComponent } from './pages/animal-solo/animal-solo.component';
 import { RecorridosComponent } from "./pages/recorridos/recorridos.component";
 import { RegisterComponent } from "./pages/register/register.component";
 import { ContactoComponent } from "./pages/contacto/contacto.component";
+import { EditRecorridosComponent } from "./pages/dashboard/edit-recorridos/edit-recorridos.component";
 
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
@@ -31,7 +32,7 @@ export const routes: Routes = [
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
   { path: 'dashboard/ventas', component: DashboardVentasComponent },
   { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
+  { path: 'dashboard/recorridos/edit', component: EditRecorridosComponent },
 
   { path: 'pruebas', component: PruebaComponent},
-  {path:  'componentes', component: ComponentesComponent}
 ];
