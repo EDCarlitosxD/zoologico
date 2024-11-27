@@ -1,0 +1,32 @@
+.atras{
+    cursor: pointer;
+    display: flex;
+    width: 96px;
+    height: 96px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    .atrasIcoDesk{
+        width: 80px;
+        height: 80px;
+        display: block;
+    }
+    .atrasIcoMob{
+        width: 50px;
+        height: 50px;
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .atras{
+        width: 60px;
+        height: 60px;
+    }
+    .atrasIcoDesk{
+        display: none;
+    }
+    .atrasIcoMob{
+        display: block;
+    }
+}
