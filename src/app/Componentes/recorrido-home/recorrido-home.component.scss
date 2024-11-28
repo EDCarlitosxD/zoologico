@@ -42,26 +42,6 @@
     /* 24px */
   }
 
-  button {
-    width: 96.868px;
-    height: 36px;
-    padding: 6.415px;
-    gap: 6.415px;
-    border-radius: 12px;
-
-
-    color: var(--Negro-800, #1D1F1D);
-    text-align: center;
-
-    /* Mobile/P 01/Bold */
-    font-family: "Comic Neue";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    /* 24px */
-
-  }
 
 }
 
@@ -116,16 +96,15 @@
     p {
       font-size: 24px;
     }
-
-    button {
-      width: 180px;
-      height: 60px;
-      padding: 27px 44px;
-      border-radius: 24px;
-      background: var(--Primario-Auxiliar-400, #B3CD78);
-
+    button{
+      font-family: "Comic Neue";
       font-size: 24px;
-
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; /* 36px */
+      height: fit-content;
+      padding: 8px 40px;
+      align-self: stretch;
     }
 
   }

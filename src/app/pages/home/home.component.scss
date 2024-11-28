@@ -331,31 +331,6 @@
     /* 18px */
   }
 
-  button {
-    display: flex;
-    width: 96.868px;
-    padding: 6.415px;
-    height: 36.83px;
-    justify-content: center;
-    align-items: center;
-    gap: 6.415px;
-    border-radius: 12px;
-    font-size: 16px;
-    color: white;
-    background: var(--Negro-600, #2E312E);
-
-    color: var(--Blanco-700, #F0F7EB);
-    text-align: center;
-
-    /* Mobile/P 01/Bold */
-    font-family: "Comic Neue";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    /* 24px */
-
-  }
 
 }
 
@@ -532,28 +507,19 @@
 
 
     .boletos__container {
-      grid-row: 1 / 2;
-      grid-column: 1 / 10;
-      justify-content: flex-start;
-      overflow-x: none;
-      // height: 783px;
-
-      /* Ocultar la barra de desplazamiento */
-      scrollbar-width: none;
-      /* Para Firefox */
-      -ms-overflow-style: none;
-      /* Para IE y Edge */
-
-      &::-webkit-scrollbar {
-        display: none;
-        /* Para Chrome, Safari y Edge basados en Chromium */
+      grid-column: span 9;
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 40px;
+      .boleto{
+        grid-column: span 3;
       }
 
     }
 
 
     .boletos__texto {
-      grid-column: 10 / 13;
+      grid-column: span 3;
       padding: 20px;
 
       gap: 32px;
@@ -598,48 +564,33 @@
   }
 
   .donacionHome {
-
-
+    
+    text-align: left !important;
     .donacionHome__informacion {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
       gap: 40px;
-      align-self: stretch;
-
-
-      button {
+      padding: 40px 0;
+      text-align: left;
+      .donacionHome__texto {
+        grid-column: span 8;
         display: flex;
-        width: 290px;
-        height: 121px;
-        padding: 27px 44px;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
+        margin: 0 0 0 0px;
+        padding: 40px 40px;
+  
+        width: 912px;
+        gap: 40px;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        
+      }
+      .donarBtn{
+        grid-column: span 4;
       }
     }
 
-    .donacionHome__texto {
-      margin: 0 0 0 0px;
-      padding: 40px 40px;
 
-      width: 912px;
-      gap: 40px;
-      justify-content: flex-start;
-      align-items: flex-start;
-
-      h4 {
-        text-align: left !important;
-
-      }
-
-      p {
-        text-align: left !important;
-
-      }
-
-    }
 
   }
 
@@ -775,7 +726,6 @@
 
   .carouselExperiencias__texto {
     h3 {
-      color: #000;
       text-align: center;
 
       /* Desktop/H4/Ligth */
@@ -800,27 +750,7 @@
       /* 36px */
     }
 
-    button {
-      display: flex;
-      width: 240px;
-      height: 88px;
-      padding: 27px 44px;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-
-      text-align: center;
-
-      /* Desktop/P/Bold */
-      font-family: "Comic Neue";
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 150%;
-      /* 48px */
-
-      border-radius: 38px;
-    }
+    
   }
 
   .carouselExperiencias-item {
