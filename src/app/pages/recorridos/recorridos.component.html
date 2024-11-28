@@ -29,9 +29,9 @@
                 <h5 class="thin">Personas extra</h5>
                 <div class="MargenContador bg-primary-800 text-white-200">
                     <div class="contador">
-                        <div class="menos"></div>
-                        <div class="pmargin"><p class="bold">0</p></div>
-                        <div class="mas"></div>
+                        <div (click)="personasExtraMenos()" class="menos"></div>
+                        <div class="pmargin"><p class="bold">{{cantidadPersonas}}</p></div>
+                        <div (click)="personasExtraMas()" class="mas"></div>
                     </div>
                 </div>
             </div>

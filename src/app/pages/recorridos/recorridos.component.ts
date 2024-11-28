@@ -19,6 +19,9 @@ export class RecorridosComponent {
 
   constructor(private recorridoService: RecorridoService) { }
 
+  cantidadPersonas = 0;
+
+
   @ViewChild('calendarRecorrido') calendarComponent!: FullCalendarComponent;
 
   events: EventSourceInput = [];
@@ -39,6 +42,14 @@ export class RecorridosComponent {
     eventClick: this.handleEventClick.bind(this), // Manejar clics en eventos
   };
 
+  personasExtraMenos(){
+    if(this.cantidadPersonas === 0)return;
+    this.cantidadPersonas--;
+  }
+
+  personasExtraMas(){
+    this.cantidadPersonas++;
+  }
 
   onHorarioInicioChange(event: Event) {
     const selectedHorarioInicio = (event.target as HTMLSelectElement).value;

@@ -16,21 +16,11 @@
             <h3 class="bolH3">Compra</h3>
             <p class="bolP">Conoce, Explora y Aprende</p>
         </div>
-        <div class="boletos">
-            <app-add-boletos [addBoletos]="{
-                image: 'img/card-boletos/Niños.png',
-                type: 'Infantil',
-                price: '$70'
-            }"></app-add-boletos>
-            <app-add-boletos [addBoletos]="{
-                image: 'img/card-boletos/Adultos.png',
-                type: 'Adultos',
-                price: '$70'
-            }"></app-add-boletos>
-            <app-add-boletos [addBoletos]="{
-                image: 'img/card-boletos/3raEdad.png',
-                type: 'Tercera Edad',
-                price: '$70'
+        <div class="boletos" >
+            <app-add-boletos *ngFor="let boleto of boletos" [addBoletos]="{
+                image: boleto.imagen,
+                type: boleto.titulo,
+                price: boleto.precio
             }"></app-add-boletos>
         <button class="verify">Verificar</button>
         </div>

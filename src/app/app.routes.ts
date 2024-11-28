@@ -33,12 +33,11 @@ export const routes: Routes = [
   { path: 'recorridos', component: RecorridosComponent }, // Falta calendario y selectores
   { path: 'contactanos', component: ContactoComponent },
 
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'dashboard/animales', component: DashboardAnimalesComponent },
+  // { path: 'dashboard', component: DashboardComponent },
+  // { path: 'dashboard/animales', component: DashboardAnimalesComponent },
   { path: 'dashboard/ventas', component: DashboardVentasComponent },
   { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
   { path: 'dashboard/recorridos/edit', component: EditRecorridosComponent },
-  { path: 'dashboard/guias/edit', component: EditGuiasComponent },
   { path: 'dashboard/recorridos/vendidos/edit', component: EditRecoVendidosComponent },
 
   { path: 'animal/:slug', component: AnimalSoloComponent}, //Mobile parcialmente terminado
@@ -49,6 +48,8 @@ export const routes: Routes = [
       { path: 'animales', component: DashboardAnimalesComponent },
       { path: 'ventas', component: DashboardVentasComponent },
       { path: 'recorridos', component: DashboardRecorridoComponent },
+      { path: 'guias/:id', component: EditGuiasComponent },
+
     ]
 
   },

@@ -28,26 +28,26 @@
       <div class="editData">
         <h6 class="thin">Nombre Recorrido</h6>
         <div class="input-text"><input type="text" name="nombre" placeholder="Nombre" id="nombre" autofocus></div>
-        
+
         <h6 class="thin">Precio</h6>
         <div class="input-text"><input type="text" name="Precio" placeholder="Precio" id="Precio"></div>
-        
+
         <h6 class="thin">Descripción</h6>
         <div class="input-textarea"><textarea name="descripcion" placeholder="Descripción" id="descripcion"></textarea></div>
-        
+
         <h6 class="thin">Duración</h6>
         <div class="input-text"><input type="text" name="Duración" placeholder="Duración" id="Duración"></div>
-        
+
         <h6 class="thin">Cantidad Personas</h6>
         <div class="input-text"><input type="text" name="cantidadPersonas" placeholder="Cantidad Personas" id="cantidadPersonas"></div>
       </div>
       <div class="fecha">
         <h6 class="thin">Fecha</h6>
-        <div class="calendario"></div>
+        <full-calendar #recorridoEdit [options]="calendarOptions"></full-calendar>
         <h6 class="thin">Agregar Horario</h6>
         <button class="chiquito"></button>
         <div class="horarios">
-        
+
         </div>
       </div>
       <button class="formBtn">Modificar</button>
