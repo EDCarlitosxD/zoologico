@@ -1,17 +1,4 @@
 <app-nav-bar></app-nav-bar>
-<app-experiencias [experiencias]="{
-  img: 'aguila',
-  title: 'Espectáculo de Aves',
-  description1: 'Vive la experiencia de alimentar a jirafas, llamas y otros animales amigables.',
-  description2: 'La actividad incluye el acompañamiento de un cuidador para garantizar una experiencia segura y educativa para toda la familia.',
-  lun: false,
-  mie: false,
-  jue: false,
-  mar: true,
-  vie: true,
-  sab: true,
-  dom: true
-}"></app-experiencias>
 
 <div>
   <app-slider></app-slider>
@@ -109,7 +96,7 @@
                         <!-- Modal -->
             <div class="modal fade" id="alimentacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content bg-transparent border-0 align-items-center">
                   <app-experiencias [experiencias]="{
                     img: 'alimentacion',
                     title: 'Alimentación de Animales',
@@ -164,7 +151,7 @@
                         <!-- Modal -->
             <div class="modal fade" id="aves" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content bg-transparent border-0 align-items-center">
                   <app-experiencias [experiencias]="{
                     img: 'aguila',
                     title: 'Espectáculo de Aves',
@@ -219,7 +206,7 @@
                         <!-- Modal -->
             <div class="modal fade" id="fotografia" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content bg-transparent border-0 align-items-center">
                   <app-experiencias [experiencias]="{
                     img: 'fotografia',
                     title: 'Safari Fotográfico',
@@ -379,7 +366,7 @@
       Accede por la ciclovía de la Avenida Naturaleza.
     </p>
 
-    <button>Destino</button>
+    <button routerLink="https://www.google.com/maps/search/maps/@21.198864,-86.868359,3097m/data=!3m1!1e3?hl=es&entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D">Destino</button>
   </div>
 
   <iframe
