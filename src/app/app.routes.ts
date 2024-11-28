@@ -18,6 +18,7 @@ import { EditRecorridosComponent } from "./pages/dashboard/edit-recorridos/edit-
 import { Component } from '@angular/core';
 import { EditGuiasComponent } from "./pages/dashboard/edit-guias/edit-guias.component";
 import { EditRecoVendidosComponent } from "./pages/dashboard/edit-reco-vendidos/edit-reco-vendidos.component";
+import { PagarComponent } from "./pages/pagar/pagar.component";
 
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
@@ -30,6 +31,7 @@ export const routes: Routes = [
   { path: 'animal', component: AnimalSoloComponent}, //Mobile parcialmente terminado
   { path: 'recorridos', component: RecorridosComponent }, // Falta calendario y selectores
   { path: 'contactanos', component: ContactoComponent },
+  { path: 'pagar', component: PagarComponent },
 
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
