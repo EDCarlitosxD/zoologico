@@ -11,8 +11,8 @@
               <th scope="col" class="bold p2 cell" >Tipo</th>
               <th scope="col" class="bold p2 cell" >Peso</th>
               <th scope="col" class="bold p2 cell" >Altura</th>
-              <th scope="col" class="bold p2 cellwh">Acciones</th>
-
+              <th scope="col" class="bold p2 cellwh">Editar</th>
+              <th scope="col" class="bold p2 cell">Activo</th>
             </tr>
           </thead>
           <tbody>
@@ -22,7 +22,14 @@
               <td class="p2 cell">{{animal.tipo}}</td>
               <td class="p2 cell">{{animal.peso}} kg</td>
               <td class="p2 cell">{{animal.altura}}m</td>
-              <td class="p2 cellw"><button>Editar</button><button class="delete">Eliminar</button></td>
+              <td class="p2 cellw"><button>Editar</button></td>
+              <td class="p2 cell">
+
+                <div class="form-check form-switch">
+                  <input (change)="actualizarEstadoAnimal(animal,$event)" class="form-check-input" [checked]="animal.estado" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                  <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>

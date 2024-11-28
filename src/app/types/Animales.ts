@@ -35,5 +35,5 @@ export interface IAnimal {
   subtitulo: string;
   qr: string;
   img_ubicacion: string;
-  estado: string;
+  estado: boolean;
 }

@@ -22,4 +22,10 @@ export class DashboardAnimalesComponent {
   }
 
 
+
+  actualizarEstadoAnimal(animal:IAnimal,event: Event){
+    const inputElement = event.target as HTMLInputElement;
+    this.animalesServices.updateEstado(animal.id!,inputElement.checked).subscribe(data => console.log(data));
+  }
+
 }

@@ -52,4 +52,10 @@ export class AnimalService {
     return this.http.get<IAnimal[]>(`${environment.API_URL}/animales`);
   }
 
+  updateEstado(id: number, estado: boolean){
+    return this.http.put(`${environment.API_URL}/animales/eliminar/${id}`,{
+        'estado': estado
+    })
+  }
+
 }

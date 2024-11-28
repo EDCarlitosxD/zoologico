@@ -42,6 +42,6 @@ export class AnimalSoloComponent {
   subtitulo: '',
   qr: '',
   img_ubicacion: '',
-  estado: ''
+  estado: true
   };
 }
