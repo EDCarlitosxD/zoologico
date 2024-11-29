@@ -1,3 +1,4 @@
+
 .menu-mob{
   display: flex;
   width: 348px;
@@ -18,6 +19,31 @@ div.header-navbar{
   align-self: stretch;
   border-radius: 24px;
   background: var(--Negro-500, #343734);
+}
+
+ul.user-options{
+  display: flex;
+  width: 455px;
+  padding: 10px 16px !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-radius: 24px;
+  background: var(--Blanco-600, #F7FFF1);
+  li{
+    display: flex;
+    height: 69px;
+    padding: 0px 16px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 16px;
+    &:hover{
+      transition: 0.5s ease;
+      background: #C6DA9A;
+    }
+  }
+
 }
 
 div.body-navbar{
@@ -98,7 +124,7 @@ div.body-navbar{
     height: 64px;
     justify-content: flex-end;
     align-items: center;
-    gap: 40px;
+    gap: 16px;
     list-style: none;
     ::ng-deep .enlace-nav a {
       text-decoration: none !important;
@@ -141,7 +167,7 @@ div.body-navbar{
         visibility: visible;
       }
       .enlace-nav .dropdown-menu {
-        transition: opacity 0.3s;
+        transition: opacity 0.5s ease;
         opacity: 0;
         visibility: hidden;
       }
@@ -153,7 +179,8 @@ div.body-navbar{
 }
 
 .enlace-nav:hover {
-  background: var(--Secundario-Auxiliar-800, #DCA617);
+  border-radius: 24px;
+  background: var(--Secundario-Auxiliar-200, #F6E0A8);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
 
