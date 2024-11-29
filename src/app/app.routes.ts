@@ -29,11 +29,11 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },// Terminarlo,
   { path: 'register', component: RegisterComponent },// Terminarlo,
 
-  { path: 'animal', component: AnimalSoloComponent}, //Mobile parcialmente terminado
+  { path: 'animales/animal', component: AnimalSoloComponent}, //Mobile parcialmente terminado
   { path: 'recorridos', component: RecorridosComponent }, // Falta calendario y selectores
-  { path: 'contactanos', component: ContactoComponent },
-  { path: 'pagar', component: PagarComponent },
-  { path: 'gracias', component: CierreComponent },
+  { path: 'contactanos', component: ContactoComponent }, //Aprobado ✅✅✅,
+  { path: 'pagar', component: PagarComponent }, //Aprobado ✅✅✅,
+  { path: 'gracias', component: CierreComponent }, //Aprobado ✅✅✅,
 
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },

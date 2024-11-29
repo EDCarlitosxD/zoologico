@@ -1,5 +1,6 @@
 // animal-card.component.ts
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 
 interface Animal {
@@ -15,7 +16,7 @@ interface Animal {
   selector: 'app-animal-card',
   templateUrl: './animal-card.component.html',
   styleUrls: ['./animal-card.component.scss'],
-
+  imports: [RouterLink],
   standalone: true
 })
 export class AnimalCardComponent {
