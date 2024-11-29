@@ -20,6 +20,7 @@ import { EditGuiasComponent } from "./pages/dashboard/edit-guias/edit-guias.comp
 import { EditRecoVendidosComponent } from "./pages/dashboard/edit-reco-vendidos/edit-reco-vendidos.component";
 import { PagarComponent } from "./pages/pagar/pagar.component";
 import { CierreComponent } from "./pages/cierre/cierre.component";
+import { LoadingComponent } from "./pages/loading/loading.component";
 
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
@@ -34,6 +35,7 @@ export const routes: Routes = [
   { path: 'contactanos', component: ContactoComponent }, //Aprobado ✅✅✅,
   { path: 'pagar', component: PagarComponent }, //Aprobado ✅✅✅,
   { path: 'gracias', component: CierreComponent }, //Aprobado ✅✅✅,
+  { path: 'loading', component: LoadingComponent },
 
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
