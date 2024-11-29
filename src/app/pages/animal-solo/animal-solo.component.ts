@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { NavBarComponent } from "../../Componentes/nav-bar/nav-bar.component";
+import { FooterComponent } from "../../Componentes/footer/footer.component";
+import { RouterLink } from '@angular/router';
 interface animalSolo {
   nombre: string;
   nombre_cientifico: string;
@@ -22,12 +25,12 @@ interface animalSolo {
 @Component({
   selector: 'app-animal-solo',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, NavBarComponent, FooterComponent],
   templateUrl: './animal-solo.component.html',
   styleUrl: './animal-solo.component.scss'
 })
 export class AnimalSoloComponent {
-@Input() animal: animalSolo = {
+@Input() an: animalSolo = {
   nombre: '',
   nombre_cientifico: '',
   img_principal: '',
