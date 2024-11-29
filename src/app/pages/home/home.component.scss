@@ -201,9 +201,6 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  align-self: stretch;
-
-
 
 }
 
@@ -565,13 +562,11 @@
 
   .donacionHome {
     
-    text-align: left !important;
     .donacionHome__informacion {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 40px;
       padding: 40px 0;
-      text-align: left;
       .donacionHome__texto {
         grid-column: span 8;
         display: flex;

@@ -14,8 +14,27 @@
         </svg>
       </div>
 
+      <!-- Button trigger modal -->
+      <button class="blackBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</button>
 
-      <button class="blackBtn">Ver Mas</button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content align-items-center bg-transparent border-0">
+            <app-recorridos-modal [recorridos]="{
+              img: '',
+              title: 'Recorrido por Animales Terrestres',
+              valoracion: 3.4,
+              price: 750,
+              duracion: 2,
+              personaExtra: 300,
+              description: 'Explora los mamíferos terrestres del zoológico y descubre sus características, adaptaciones y cómo interactúan con su entorno, guiado por un experto.',
+              calendar: ''
+            }"></app-recorridos-modal>
+          </div>
+        </div>
+      </div>
+      
   </div>
 
 

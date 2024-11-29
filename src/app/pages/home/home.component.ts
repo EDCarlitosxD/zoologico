@@ -7,18 +7,19 @@ import { NavBarComponent } from "../../Componentes/nav-bar/nav-bar.component";
 import { SliderComponent } from "../../Componentes/slider/slider.component";
 import { RouterLink } from '@angular/router';
 import { ExperienciasComponent } from "../../Componentes/modals/experiencias/experiencias.component";
+import { RecorridosModalComponent } from "../../Componentes/modals/recorridos-modal/recorridos-modal.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, 
-    AnimalCardComponent, 
-    BoletoComponent, 
-    RecorridoHomeComponent, 
-    FooterComponent, 
-    NavBarComponent, 
-    SliderComponent, 
-    ExperienciasComponent],
+  imports: [RouterLink,
+    AnimalCardComponent,
+    BoletoComponent,
+    RecorridoHomeComponent,
+    FooterComponent,
+    NavBarComponent,
+    SliderComponent,
+    ExperienciasComponent, RecorridosModalComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
