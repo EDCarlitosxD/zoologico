@@ -20,6 +20,7 @@
         border-radius: 48px 48px 0px 0px;        
         .cerrar{
             cursor: pointer;
+
             .cerrar-mob{
                 display: none;
                 width: 40px;
@@ -29,6 +30,10 @@
                 display: block;
                 width: 56px;
                 height: 56px;
+            }
+            &:hover path{
+                transition: 0.3s ease;
+                fill: #C53833;
             }
         }
     }

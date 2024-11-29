@@ -32,6 +32,10 @@
                 width: 56px;
                 height: 56px;
             }
+            &:hover path{
+                transition: 0.3s ease;
+                fill: #C53833;
+            }
         }
     }
     .recorrido-cuerpo{
