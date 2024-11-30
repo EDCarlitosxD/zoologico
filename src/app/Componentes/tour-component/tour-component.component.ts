@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 interface Tour {
+  id: number;
   nombre: string,
   precio: number,
   img: string,
@@ -22,6 +23,7 @@ interface Tour {
 })
 export class TourComponentComponent {
   @Input() tour: Tour = {
+    id: 0,
     nombre: 'Expedición de Animales Nocturnos',
     precio: 150,
     img: 'img/pages/Recorridos/ExpediciónNocturna.png',

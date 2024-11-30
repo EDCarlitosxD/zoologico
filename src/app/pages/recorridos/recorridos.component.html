@@ -15,7 +15,7 @@
 
     <section class="boletos">
         <div class="text text-center">
-            <h2 class="thin">Compra</h2>
+            <h2 class="thin">Boletos</h2>
             <p class="thin">El zoológico te espera con experiencias inolvidables para toda la familia</p>
         </div>
 
@@ -43,7 +43,7 @@
 
         <app-add-boletos [addBoletos]="{
             image: 'img/card-boletos/3raEdad.png',
-            type: 'Tercera edad',
+            type: 'Tercera Edad (INAPAM)',
             description: 'Una experiencia tranquila para personas mayores de 60 años Tu boleto incluye\:
 • Acceso preferencial a todas las áreas principales\.
 • Tarifas especiales para disfrutar del zoológico a un precio reducido\.
@@ -55,13 +55,31 @@
     
     </section>
 
-    <section class="tours d-flex flex-column align-items-center justify-content-center">
+    <section class="tours">
         <div class="text-center">
             <h2 class="thin">Tours</h2>
             <p class="thin">Agrega un toque especial a tu visita con nuestros tours exclusivos</p>
         </div>
 
         <app-tour-component></app-tour-component>
+        <app-tour-component [tour]="{
+    id: 2,
+    nombre: 'Expedición de Animales Nocturnos',
+    precio: 15000,
+    img: '',
+    valoracion: 5,
+    descripcionPrincipal: 'Sumérgete en el misterioso mundo de los animales nocturnos. Acompañado de un guía experto te permitirá observar cómo algunas especies se preparan para la noche\.',
+    incluye: '• Guía experto que te conducirá por las áreas nocturnas\.\n• Uso de linternas especiales para no alterar a los animales\.\n• Relatos sobre adaptaciones únicas al ambiente nocturno\.',
+    alReservar: '• Este Tour tiene una duración aproximada de 3 horas.\n• Se realiza en grupos pequeños para garantizar una experiencia tranquila.\n• Se recomienda llevar ropa abrigadora.',
+    contador: 0,
+    fecha: '',
+    horario: 0
+        }"></app-tour-component>
+
     </section>
 
+    <button routerLink="pagar">Continuar</button>
 </div>
+
+<app-footer></app-footer>
+

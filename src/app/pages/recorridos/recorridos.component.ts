@@ -5,11 +5,12 @@ import { SelectorRecorridoComponent } from "../../Componentes/selector-recorrido
 import { IndicadorComponent } from "../../Componentes/indicador/indicador.component";
 import { AddBoletosComponent } from "../../Componentes/add-boletos/add-boletos.component";
 import { TourComponentComponent } from "../../Componentes/tour-component/tour-component.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-recorridos',
   standalone: true,
-  imports: [NavBarComponent, FooterComponent, SelectorRecorridoComponent, IndicadorComponent, AddBoletosComponent, TourComponentComponent],
+  imports: [RouterLink, NavBarComponent, FooterComponent, SelectorRecorridoComponent, IndicadorComponent, AddBoletosComponent, TourComponentComponent],
   templateUrl: './recorridos.component.html',
   styleUrl: './recorridos.component.scss'
 })

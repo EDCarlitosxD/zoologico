@@ -22,15 +22,10 @@
         background-color: brown;
         .cerrar{
             cursor: pointer;
-            .cerrar-mob{
-                display: block;
+
+            .cerrar-ico{
                 width: 40px;
                 height: 40px;
-            }
-            .cerrar-desk{
-                display: none;
-                width: 56px;
-                height: 56px;
             }
             &:hover path{
                 transition: 0.3s ease;
@@ -136,11 +131,10 @@
             background-color: brown;
             .cerrar{
                 cursor: pointer;
-                .cerrar-mob{
-                    display: none;
-                }
-                .cerrar-desk{
-                    display: block;
+
+                .cerrar-ico{
+                    width: 56px;
+                    height: 56px;
                 }
             }
         }
