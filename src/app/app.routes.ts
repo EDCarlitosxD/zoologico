@@ -1,7 +1,6 @@
 import { Routes } from "@angular/router";
 import { DashboardComponent } from "./pages/Admin/dashboard/dashboard.component";
 import { AnimalesComponent } from "./pages/animales/animales.component";
-import { BoletosComponent } from "./pages/boletos/boletos.component";
 import { DashboardAnimalesComponent } from "./pages/dashboard-animales/dashboard-animales.component";
 import { DashboardRecorridoComponent } from "./pages/dashboard-recorrido/dashboard-recorrido.component";
 import { DashboardVentasComponent } from "./pages/dashboard-ventas/dashboard-ventas.component";
@@ -26,15 +25,14 @@ export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
   { path: '', component: HomeComponent }, // Corrige el nombre del componente si es necesario
   { path: 'animales', component: AnimalesComponent }, // Falta filtro
-  { path: 'boletos', component: BoletosComponent }, // Aprobado ✅✅✅,
   { path: 'login', component: LoginComponent },// Terminarlo,
   { path: 'register', component: RegisterComponent },// Terminarlo,
 
   { path: 'animales/animal', component: AnimalSoloComponent}, //Mobile parcialmente terminado
   { path: 'recorridos', component: RecorridosComponent }, // Falta calendario y selectores
   { path: 'contactanos', component: ContactoComponent }, //Aprobado ✅✅✅,
-  { path: 'pagar', component: PagarComponent }, //Aprobado ✅✅✅,
-  { path: 'gracias', component: CierreComponent }, //Aprobado ✅✅✅,
+  { path: 'recorridos/pagar', component: PagarComponent }, //Aprobado ✅✅✅,
+  { path: 'recorridos/pagar/gracias', component: CierreComponent }, //Aprobado ✅✅✅,
   { path: 'loading', component: LoadingComponent },
 
   { path: 'dashboard', component: DashboardComponent },
