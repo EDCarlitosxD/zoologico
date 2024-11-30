@@ -22,6 +22,7 @@ import { PagarComponent } from "./pages/pagar/pagar.component";
 import { CierreComponent } from "./pages/cierre/cierre.component";
 import { LoadingComponent } from "./pages/loading/loading.component";
 import { EditAnimalComponent } from "./pages/edit-animal/edit-animal.component";
+import { CreateAnimalesComponent } from "./pages/create-animales/create-animales.component";
 
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
@@ -46,6 +47,7 @@ export const routes: Routes = [
   { path: 'dashboard/guias/edit', component: EditGuiasComponent },
   { path: 'dashboard/animal/edit', component: EditAnimalComponent },
   { path: 'dashboard/recorridos/vendidos/edit', component: EditRecoVendidosComponent },
+  { path: 'dashboard/animales/create', component: CreateAnimalesComponent },
 
   { path: 'pruebas', component: PruebaComponent},
 ];
