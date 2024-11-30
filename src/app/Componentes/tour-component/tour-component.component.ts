@@ -22,10 +22,10 @@ interface Tour {
 })
 export class TourComponentComponent {
   @Input() tour: Tour = {
-    nombre: 'Tour',
-    precio: 0,
-    img: '',
-    valoracion: 0,
+    nombre: 'Expedición de Animales Nocturnos',
+    precio: 150,
+    img: 'img/pages/Recorridos/ExpediciónNocturna.png',
+    valoracion: 5,
     descripcionPrincipal: 'Sumérgete en el misterioso mundo de los animales nocturnos. Acompañado de un guía experto te permitirá observar cómo algunas especies se preparan para la noche\.',
     incluye: '• Guía experto que te conducirá por las áreas nocturnas\.\n• Uso de linternas especiales para no alterar a los animales\.\n• Relatos sobre adaptaciones únicas al ambiente nocturno\.',
     alReservar: '• Este Tour tiene una duración aproximada de 3 horas.\n• Se realiza en grupos pequeños para garantizar una experiencia tranquila.\n• Se recomienda llevar ropa abrigadora.',
