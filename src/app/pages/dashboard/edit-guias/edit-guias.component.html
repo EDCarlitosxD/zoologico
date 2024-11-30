@@ -24,7 +24,15 @@
   <h6 class="dashboard__descripcion">Edición de datos</h6>
   </header>
 
+
+  <div *ngIf="isAlertVisible" class="alert  alert-success d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+    <div>
+      Se edito correctamente
+    </div>
+  </div>
   <form  class="formGuias">
+
     <div class="items">
       <h6 class="thin">Nombre Completo</h6>
       <div  class="formInput"><input type="text" [(ngModel)]="guia.nombre_completo" [value]="guia.nombre_completo" name="Nombre" id="Nombre" autofocus placeholder="Nombre"></div>

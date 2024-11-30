@@ -1,4 +1,4 @@
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { GuiaService } from '../../../Services/guia.service';
 import { ActivatedRoute } from '@angular/router';
@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-edit-guias',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './edit-guias.component.html',
   styleUrl: './edit-guias.component.scss'
 })
 export class EditGuiasComponent {
   constructor(private location: Location, private guiaService: GuiaService, private activateRoute: ActivatedRoute) {}
+
+  isAlertVisible = false;
 
   guia: IGuia = {
     disponible: true,
@@ -38,7 +40,7 @@ export class EditGuiasComponent {
 
   editarGuia(event:Event){
     event.preventDefault()
-    this.guiaService.updateGuia(this.guia, this.guia.id!).subscribe(data => console.log(data));
+    this.guiaService.updateGuia(this.guia, this.guia.id!).subscribe(data => this.isAlertVisible = true);
   }
 
 }
