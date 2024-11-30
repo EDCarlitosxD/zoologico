@@ -38,9 +38,15 @@
     .minus-plus{
         width: 48px;
         height: 48px;
+        cursor: pointer;
         &:hover path{
             transition: 0.3s ease;
             fill: #DCA617;
         }
     }
 }
+
+
+    .description {
+        white-space: pre-wrap;
+      }
