@@ -7,6 +7,9 @@ section{
     padding: 60px 164px;
     align-items: center;
 
+    .indicator{
+        grid-column: 1 / 13;
+    }
     .gracias{
         grid-column: 4 / span 6;
         display: flex;

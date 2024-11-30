@@ -1,25 +1,76 @@
 <section>
+    <app-indicador class="indicator" [step]="{
+        ticket: '',
+        confirmacion: 'active',
+        finalizar: ''
+    }"></app-indicador>
     <app-atras-btn class="back"></app-atras-btn>
     <div class="casiListo">
+
         <div class="texto">
             <h3 class="thin text-center">Casi listo</h3>
-            <p class="thin text-center">Resumen del pedido</p>
-            <div class="resumen">
-                <div class="boletos">
-                    <p class="p1 thin">
-                        Boleto Infantil<br>
-                        Boleto Adulto<br>
-                        Boleto Tercera Edad
-                    </p>
+            <h6 class="text-center">Resumen del pedido</h6>
+
+            <div class="boletos w-100">
+                <p class="thin text-center bg-black-800 text-white-200 w-100">Boletos</p>
+                <div class="resumen">
+                    <div class="boletos">
+                        <p class="infantil p1 thin">Infantil</p>
+                        <p class="adulto p1 thin">Adulto</p>
+                        <p class="viejito p1 thin">Tercera Edad</p>
+                        <app-contador-resumen-pedido class="infantilCont"></app-contador-resumen-pedido>
+                        <app-contador-resumen-pedido class="adultoCont"></app-contador-resumen-pedido>
+                        <app-contador-resumen-pedido class="viejitoCont"></app-contador-resumen-pedido>
+                    </div>
+
                     <p class="p1 bold">
-                        1<br>
-                        2<br>
-                        3
+                        $75 <br>
+                        $478 <br>
+                        $48 <br>
                     </p>
                 </div>
-                <h6>Total: $1000</h6>
             </div>
+
+            <div class="boletos w-100">
+                <p class="thin text-center bg-black-800 text-white-200 w-100">Tours</p>
+
+                <div class="d-flex align-items-center w-100 justify-content-center text-center gap-1">
+                    <p class="p1 thin">Safaris en Vuelo</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="minusIco" viewBox="0 0 21 20" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 20C16.023 20 20.5 15.523 20.5 10C20.5 4.477 16.023 0 10.5 0C4.977 0 0.5 4.477 0.5 10C0.5 15.523 4.977 20 10.5 20ZM6.5 9C6.23478 9 5.98043 9.10536 5.79289 9.29289C5.60536 9.48043 5.5 9.73478 5.5 10C5.5 10.2652 5.60536 10.5196 5.79289 10.7071C5.98043 10.8946 6.23478 11 6.5 11H14.5C14.7652 11 15.0196 10.8946 15.2071 10.7071C15.3946 10.5196 15.5 10.2652 15.5 10C15.5 9.73478 15.3946 9.48043 15.2071 9.29289C15.0196 9.10536 14.7652 9 14.5 9H6.5Z" fill="#AAC767"/>
+                      </svg>
+                </div>
+
+                <div class="d-flex align-items-center w-100 justify-content-center text-center flex-row gap-3">
+                    <p class="p1 thin">Fecha</p>
+                    <p class="bold">16/09/24</p>
+                </div>
+
+                <div class="d-flex align-items-center w-100 justify-content-center text-center gap-5">
+                    <div class="d-flex align-items-center justify-content-center gap-3">
+                        <p class="p1 thin">Personas extra</p>
+                        <app-contador-resumen-pedido></app-contador-resumen-pedido>
+                    </div>
+                    <p class="p1 bold">$450</p>
+                </div>
+
+                <div class="d-flex align-self-center w-auto align-items-center justify-content-center text-center px-3 py-1 bg-secondary-300 gap-2 rounded-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C24 15.1826 22.7357 18.2348 20.4853 20.4853C18.2348 22.7357 15.1826 24 12 24C8.8174 24 5.76516 22.7357 3.51472 20.4853C1.26428 18.2348 0 15.1826 0 12C0 8.8174 1.26428 5.76516 3.51472 3.51472C5.76516 1.26428 8.8174 0 12 0C15.1826 0 18.2348 1.26428 20.4853 3.51472C22.7357 5.76516 24 8.8174 24 12ZM12 6C11.8104 6.00011 11.6229 6.03993 11.4497 6.11689C11.2764 6.19386 11.1212 6.30626 10.994 6.44687C10.8668 6.58747 10.7705 6.75316 10.7113 6.93325C10.652 7.11334 10.6311 7.30385 10.65 7.4925L11.175 12.753C11.1926 12.9597 11.2872 13.1522 11.44 13.2925C11.5927 13.4327 11.7926 13.5106 12 13.5106C12.2074 13.5106 12.4073 13.4327 12.56 13.2925C12.7128 13.1522 12.8074 12.9597 12.825 12.753L13.35 7.4925C13.3689 7.30385 13.348 7.11334 13.2887 6.93325C13.2295 6.75316 13.1332 6.58747 13.006 6.44687C12.8788 6.30626 12.7236 6.19386 12.5503 6.11689C12.3771 6.03993 12.1896 6.00011 12 6ZM12.003 15C11.6052 15 11.2236 15.158 10.9423 15.4393C10.661 15.7206 10.503 16.1022 10.503 16.5C10.503 16.8978 10.661 17.2794 10.9423 17.5607C11.2236 17.842 11.6052 18 12.003 18C12.4008 18 12.7824 17.842 13.0637 17.5607C13.345 17.2794 13.503 16.8978 13.503 16.5C13.503 16.1022 13.345 15.7206 13.0637 15.4393C12.7824 15.158 12.4008 15 12.003 15Z" fill="#A9302B"/>
+                      </svg>
+                      <p class="p1">Recuerda que los Tours necesitan de un boleto</p>
+                </div>
+            </div>
+
+
+
+
+
         </div>
+
+
+
+        <h6>Total: $1500</h6>
         <div class="metodoPago">
             <p class="p1">Método de pago</p>
             <div class="cardbtn">

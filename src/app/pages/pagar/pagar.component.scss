@@ -1,39 +1,59 @@
 section{
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 96px auto;
+    grid-template-columns: 96px repeat(10, 1fr) 96px;
     gap: 40px;
     width: 100%;
-    height: 100vh;
-    padding: 60px 164px;
+    padding: 40.5px 164px;
+    .indicator{
+        grid-column: span 12;
+    }
     .back{
         grid-column: span 1;
-        grid-row: span 1;
     }
     .casiListo{
         grid-column: 4 / span 6;
-        grid-row: 2;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         gap: 40px;
         .texto{
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 16px;
-            .resumen{
+            gap: 24px;
+            .boletos{
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 40px;
-                align-self: stretch;
-                .boletos{
+                padding-bottom: 8px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                border-radius: 0px 0px 16px 16px;
+                background: var(--Blanco-800, #E7ECE3);
+                .resumen{
                     display: flex;
+                    justify-content: center;
                     align-items: center;
-                    gap: 20px;
+                    gap: 64px;
+                    align-self: stretch;
+                    .boletos{
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: repeat(3, 1fr);
+                        gap: 24px;
+                        row-gap: 0px;
+                        .infantil{
+                            grid-row: 1;
+                        }
+                        .adulto{
+                            grid-row: 2;
+                        }
+                        .viejito{
+                            grid-row: 3;
+                        }
+                    }
                 }
             }
         }
@@ -68,6 +88,10 @@ section{
                     }
                 }
             }
+            &:hover .cardbtn div .sig-desk path{
+                transition: 0.3s ease;
+                fill: #DCA617;
+            }
         }
     }
     .sig-mob{
@@ -80,6 +104,17 @@ section{
         height: 37px;
     }
 }
+
+.minusIco{
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+    &:hover path{
+        transition: 0.3s ease;
+        fill: #DCA617;
+    }
+}
+
 @media (max-width: 1200px) {
     section{
         grid-template-columns: repeat(2, 1fr);
