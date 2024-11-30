@@ -1,0 +1,19 @@
+.contador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    .icoCont{
+        width: 21px;
+        height: 21px;
+        cursor: pointer;
+        &:hover path{
+            transition: 0.3s ease;
+            fill: #DCA617;
+        }
+    }
+    p{
+        width: 40px;
+        text-align: center;
+    }
+}
