@@ -1,0 +1,18 @@
+.indicator{
+    display: flex;
+    padding: 8px 16px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+.active{
+    border-radius: 8px;
+    background: var(--Secundario-Auxiliar-400, #F3D68B);
+    h6{
+        font-family: Fredoka;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 48px */
+    }
+}
