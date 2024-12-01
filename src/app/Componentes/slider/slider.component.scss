@@ -164,30 +164,25 @@ button{
         }
 
         .jaguarC {
-            padding: 16px 0px;
             grid-column: span 2; /* El contenedor ocupa 5 columnas */
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 5 columnas internas ajustables */
-            grid-template-rows: auto; /* Ajusta el tamaño según el contenido */
-            justify-items: end; /* Alinea todo el contenido a la derecha */
-            gap: 8px; /* Espaciado consistente entre filas y columnas */
-            height: fit-content; /* El contenedor solo ocupa el espacio de su contenido */
-            align-self: self-start; /* Centra verticalmente este elemento dentro de su celda de grid */
-
+            display: flex;
+            padding: 16px 0px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            align-self: stretch;
             .carouselH1 {
-                grid-column: span 2; /* Ocupa todas las columnas internas */
                 text-align: center; /* Alinea el texto a la derecha */
             }
 
             .carouselP {
-                grid-column: span 2; /* Ocupa todas las columnas internas */
                 line-height: 1.5; /* Espaciado entre líneas */
                 text-align: center; /* Alinea el texto a la derecha */
                 background-color: transparent; /* Sin fondo */
             }
 
             .but {
-                grid-column: span 2; /* Posiciona el botón dentro de las columnas internas */
                 justify-self: center; /* Alinea el botón a la derecha */
             }
         }

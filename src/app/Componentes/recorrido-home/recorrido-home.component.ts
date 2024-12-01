@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { RecorridosModalComponent } from "../modals/recorridos-modal/recorridos-modal.component";
 
 @Component({
   selector: 'app-recorrido-home',
   standalone: true,
-  imports: [],
+  imports: [RecorridosModalComponent],
   templateUrl: './recorrido-home.component.html',
   styleUrl: './recorrido-home.component.scss'
 })

@@ -1,8 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { IAnimal } from '../../types/Animales';
 import { ActivatedRoute } from '@angular/router';
 import { AnimalService } from '../../Services/animal.service';
 import { NavBarComponent } from "../../Componentes/nav-bar/nav-bar.component";
+
+import { FooterComponent } from "../../Componentes/footer/footer.component";
+import { RouterLink } from '@angular/router';
 
 
 @Component({

@@ -9,12 +9,18 @@
     .atrasIcoDesk{
         width: 80px;
         height: 80px;
-        display: block;
-    }
-    .atrasIcoMob{
-        width: 50px;
-        height: 50px;
-        display: none;
+        &:hover{
+            .background{
+            transition: 0.3s ease;
+
+                fill: #F6E0A8;
+            }
+            .border{
+            transition: 0.3s ease;
+
+                fill: #DCA617;
+            }
+        }
     }
 }
 
@@ -24,9 +30,7 @@
         height: 60px;
     }
     .atrasIcoDesk{
-        display: none;
-    }
-    .atrasIcoMob{
-        display: block;
+        width: 50px;
+        height: 50px;
     }
 }

@@ -1,19 +1,61 @@
-.recorridosPage{
+.compra{
     display: grid;
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr); /* 12 columnas iguales */
-    gap: 20px; /* Espaciado entre columnas */
-    padding: 0px 41px;
-
-    .heroRecorridos {
-        grid-column: span 2; /* Sigue ocupando ambas columnas */
-        position: relative; /* Necesario para posicionar la imagen */
-        width: calc(100% + 41px * 2); /* Para que la imagen invada los gaps */
-        margin: 0 -41px; /* Ajuste del margen del contenedor */
-        max-height: 900px;
-        aspect-ratio: 43 / 70; /* Proporción deseada */
+    grid-template-columns: repeat(12, 1fr);
+    height: 1080px;
+    padding: 0px 164px;
+    gap: 40px;
+    background: url(../../../../public/img/pages/Recorridos/HeroDesktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    div{
+        grid-column: span 5;
         display: flex;
+        padding: 40px;
+        flex-direction: column;
         justify-content: center;
+        align-items: flex-start;
+        gap: 48px;
+    }
+}
+.indicator{
+    grid-column: span 12;
+}
+
+
+.page{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+    padding: 52px 164px;
+    gap: 40px;
+    row-gap: 48px;
+    button{
+        grid-column: span 12;
+    }
+}
+.boletos{
+    grid-column: 2 / span 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.tours{
+    grid-column: 2 / span 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+@media (max-width: 1400px){
+    .boletos{
+
+            all: unset;
+        grid-column: span 12;
+
         align-items: center;
         text-align: center;
         overflow: hidden; /* Evita que elementos internos desborden el contenedor */
@@ -63,8 +105,59 @@
         .selectorRecorrido, .contadorRecorrido{
             width: 100%;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            align-self: stretch;
+            flex-wrap: wrap;
+            align-content: center;
             justify-content: center;
+            .text{
+                width: 100%;
+            }
+
+
+    }
+    .tours{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        align-self: stretch;
+    }
+}
+
+
+@media (max-width: 1200px){
+
+.compra{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 730px;
+    padding: 0px 41px;
+    gap: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    div{
+        text-align: center;
+        grid-column: span 2;
+        display: flex;
+        padding: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 48px;
+        h1, p{
+            width: 100%;
+        }
+    }
+}
+
+.page{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 41px;
+    gap: 20px;
+    app-indicador{
             align-items: center;
             gap: 20px;
             .selector{
@@ -172,6 +265,14 @@
 
     .reservar{
         grid-column: span 2;
+    }
+    section, button{
+        grid-column: span 2;
+    }
+}
+
+
+
         align-self: center;
         justify-self: center;
     }

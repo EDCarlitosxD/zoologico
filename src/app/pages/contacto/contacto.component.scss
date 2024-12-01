@@ -94,8 +94,12 @@
         align-items: flex-start;
         align-self: stretch;
         border-radius: 16px;
-        background: var(--Blanco-800, #E7ECE3);     
-
+        background: var(--Blanco-800, #E7ECE3);  
+        &:focus-within {
+            transition: 0.1s ease;
+            border: 4px solid var(--Primario-Auxiliar-700, #8BAC3F);
+            background: var(--Blanco-700, #F0F7EB);
+        }   
     }
     .items{
         grid-column: span 6;
@@ -123,13 +127,37 @@
             align-items: flex-start;
             align-self: stretch;
             border-radius: 16px;
-            background: var(--Blanco-800, #E7ECE3);            
+            background: var(--Blanco-800, #E7ECE3);      
+            &::placeholder{
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                color: var(--Negro-500, #343734);
+                text-align: start;                    
+                /* Desktop/P 02/Ligth */
+                font-family: "Comic Neue";
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 150%; /* 30px */
+            }
+            &:focus-within {
+                transition: 0.1s ease;
+                border: 4px solid var(--Primario-Auxiliar-700, #8BAC3F);
+                background: var(--Blanco-700, #F0F7EB);
+            }    
         }
     }
     button{
         grid-column: 3 / 11;
     }
 }
+input{
+    height: 100%; /* Asegura que el input ocupe todo el alto del contenedor */
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+}
+
 
 @media (max-width: 1200px) {
 .hero{

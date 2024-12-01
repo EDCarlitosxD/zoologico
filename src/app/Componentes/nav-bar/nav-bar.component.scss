@@ -1,3 +1,101 @@
+
+.menu-mob{
+  display: flex;
+  width: 348px;
+  background: transparent;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+div.header-navbar{
+  display: flex;
+  height: 65px;
+  padding: 0px 24px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 24px;
+  background: var(--Negro-500, #343734);
+}
+
+ul.user-options{
+  display: flex;
+  width: 455px;
+  padding: 10px 16px !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-radius: 24px;
+  background: var(--Blanco-600, #F7FFF1);
+  li{
+    display: flex;
+    height: 69px;
+    padding: 0px 16px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 16px;
+    &:hover{
+      transition: 0.5s ease;
+      background: #C6DA9A;
+    }
+  }
+
+}
+
+div.body-navbar{
+  display: flex;
+  height: 524px;
+  padding: 33.5px 32px 33.5px 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 24px;
+  background: var(--Primario-Auxiliar-200, #C6DA9A);
+  .botones{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+    .boton{
+      display: flex;
+      padding: 0px 56px;
+      align-items: start;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 0px 24px 24px 0px;
+      background: var(--Blanco-800, #E7ECE3);
+      .frame{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        h3{
+          font-size: 34px !important;
+        }
+      }
+    }
+  }
+  .letras{
+    display: flex;
+    width: 348px;
+    height: 42px;
+    padding: 4px 64px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+}
+
 .navegacion {
   display: flex;
   height: 70px;
@@ -27,7 +125,7 @@
     height: 64px;
     justify-content: flex-end;
     align-items: center;
-    gap: 40px;
+    gap: 16px;
     list-style: none;
     ::ng-deep .enlace-nav a {
       text-decoration: none !important;
@@ -70,7 +168,7 @@
         visibility: visible;
       }
       .enlace-nav .dropdown-menu {
-        transition: opacity 0.3s;
+        transition: opacity 0.5s ease;
         opacity: 0;
         visibility: hidden;
       }
@@ -79,17 +177,11 @@
 
   }
 
-
 }
 
-
-
-
-
-
-
 .enlace-nav:hover {
-  background: var(--Secundario-Auxiliar-800, #DCA617);
+  border-radius: 24px;
+  background: var(--Secundario-Auxiliar-200, #F6E0A8);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
 

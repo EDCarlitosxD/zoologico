@@ -24,9 +24,17 @@
           justify-content: center;
           align-items: center;
           .atras{
-              background: url(../../../../public/img/pages/Login/Atras.svg);
-              width: 80px;
-              height: 80px;
+            cursor: pointer;
+            width: 80px;
+            height: 81px;
+            &:hover{
+                .background{
+                    fill: #F6E0A8;
+                }
+                .border{
+                    fill: #DCA617;
+                }
+            }
           }
       }
 
@@ -64,7 +72,6 @@
               justify-content: start;
               align-items: start;
               .atras{
-                  background: url(../../../../public/img/pages/Login/AtrasMob.svg);
                   width: 50px;
                   height: 50px;
               }
@@ -126,6 +133,12 @@
           font-weight: 300;
           line-height: 150%; /* 30px */
       }
+      &:focus-within {
+        transition: 0.1s ease;
+        border: 4px solid var(--Primario-Auxiliar-700, #8BAC3F);
+        background: var(--Blanco-700, #F0F7EB);
+    }
+
   }
 
 }

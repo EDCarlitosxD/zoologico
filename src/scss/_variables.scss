@@ -89,7 +89,22 @@ input, textarea{
   background: transparent;
   outline: none;
   font-family: inherit;
-}  
+  
+} 
+  
+input::placeholder, textarea::placeholder{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--Negro-200, #757C75);
+  text-align: start;                    
+  /* Desktop/P 02/Ligth */
+  font-family: "Comic Neue";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%; /* 30px */
+}
 
 h1 {
   font-family: "Cherry Bomb One";
@@ -150,8 +165,7 @@ button {
   border-color: transparent;
   display: flex;
   width: 100%;
-  height: 54px;
-  padding: 10px;
+  padding: 10px 0;
   justify-content: center;
   align-items: center;
   gap: 10px;

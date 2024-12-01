@@ -1,0 +1,172 @@
+.experiencia-card{
+    display: flex;
+    width: 837px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: 48px;
+    background: var(--Blanco-600, #F7FFF1);
+    box-shadow: 0px 4.775px 4.732px 0px rgba(0, 0, 0, 0.25);
+    .experiencia-img{
+        display: flex;
+        height: 410.246px;
+        width: 100%;
+        padding: 48px 48px;
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: #779336;
+        align-self: stretch;
+        border-radius: 48px 48px 0px 0px;        
+        .cerrar{
+            cursor: pointer;
+
+            .cerrar-mob{
+                display: none;
+                width: 40px;
+                height: 40px;
+            }
+            .cerrar-desk{
+                display: block;
+                width: 56px;
+                height: 56px;
+            }
+            &:hover path{
+                transition: 0.3s ease;
+                fill: #C53833;
+            }
+        }
+    }
+    .aguila{
+        background: url(../../../../../public/img/card-experiencias/EspectaculoAves.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .alimentacion{
+        background: url(../../../../../public/img/card-experiencias/AlimentacionAnimales.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .fotografia{
+        background: url(../../../../../public/img/card-experiencias/SafariFotografico.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .description{
+        display: flex;
+        padding: 8px 32px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        align-self: stretch;
+    }
+    .disponibilidad{
+        display: flex;
+        padding: 8px 32px;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+        .dias-disponibles{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            align-self: stretch;
+            .dia{
+                width: 72px;
+                height: 72px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                border-radius: 16px;
+                opacity: 0.8;
+
+                
+            }
+            .disponible{
+                background: var(--Primario-Auxiliar-800, #779336);
+                color: var(--Secundario-Auxiliar-400, #F3D68B);
+            }
+            .no-disponible{
+                background: var(--Negro-200, #757C75);
+                color: var(--Blanco-800, #E7ECE3);
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .experiencia-card{
+        width: 348px;
+        height: 490px;
+        padding-bottom: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        border-radius: 16px;
+        background: var(--Blanco-600, #F7FFF1);
+        box-shadow: 0px 4.775px 4.732px 0px rgba(0, 0, 0, 0.25);
+        .experiencia-img{
+            display: flex;
+            height: 192px;
+            padding: 20px;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+            align-self: stretch;
+            border-radius: 16px 16px 0px 0px;
+            .cerrar{
+                cursor: pointer;
+                .cerrar-mob{
+                    display: block;
+                }
+                .cerrar-desk{
+                    display: none;
+                }
+            }
+        }
+        .description{
+            display: flex;
+            padding: 8px 16px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            align-self: stretch;
+        }
+        .disponibilidad{
+            display: flex;
+            padding: 8px 16px;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            align-self: stretch;       
+            .dias-disponibles{
+                
+                gap: 10px;
+                .dia{
+                    display: flex;
+                    width: 40px;
+                    height: 40px;
+                    flex-direction: column;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    border-radius: 8px;
+                    text-align: center;
+                    
+                    /* Mobile/H6/Ligth */
+                    font-family: Fredoka;
+                    font-size: 22px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 150%; /* 33px */
+                }
+            }     
+        }
+    }
+}

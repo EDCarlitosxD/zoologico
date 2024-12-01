@@ -14,9 +14,7 @@
             <div [class]="animal.tipo"></div>
             <p class="thin">{{animal.tipo}}</p>
         </div>
-    </section>
 
-    <section class="detalles text-center">
         <div class="fisionomia">
             <h6 class="thin">Fisionomía</h6>
             <p class="p2">{{animal.caracteristicas_fisicas}}</p>
@@ -24,6 +22,7 @@
             <p class="p2"><span class="p1">Peso: </span>{{animal.peso}}</p>
 
         </div>
+
         <div class="conducta">
             <h6 class="thin">Conducta</h6>
             <p class="p2"><span class="p1">Social: {{animal.comportamiento}}</span></p>
@@ -32,6 +31,7 @@
 
 
         </div>
+
         <div class="dieta">
             <h6 class="thin">Dieta</h6>
             <p class="p2"><span class="p1">Tipo: </span>{{animal.tipo}}</p>
@@ -39,6 +39,7 @@
 
 
         </div>
+
         <div class="datosCuriosos">
             <h6 class="thin">Datos Curiosos</h6>
             <p class="p2">{{animal.datos_curiosos}}</p>
@@ -54,9 +55,11 @@
         </div>
     </section>
 
-    <section class="ubicacion">
-        <h4 class="bold">Ubicación</h4>
+    <section class="ubicacion text-center">
+      <div class="texto">
+        <h4 class="thin">Ubicación</h4>
         <p class="thin">Ubicación dentro del zoológico</p>
+      </div>
         <div class="mapa"></div>
     </section>
 

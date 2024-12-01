@@ -25,10 +25,17 @@
             align-items: center;
             .atras{
                 cursor: pointer;
-                background: url(../../../../public/img/pages/Login/Atras.svg);
                 width: 80px;
-                height: 80px;
-            }
+                height: 81px;
+                &:hover{
+                    .background{
+                        fill: #F6E0A8;
+                    }
+                    .border{
+                        fill: #DCA617;
+                    }
+                }
+              }
         }
 
     }
@@ -65,7 +72,6 @@
                 justify-content: start;
                 align-items: start;
                 .atras{
-                    background: url(../../../../public/img/pages/Login/AtrasMob.svg);
                     width: 50px;
                     height: 50px;
                 }

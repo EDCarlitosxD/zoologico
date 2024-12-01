@@ -1,0 +1,201 @@
+.recorrido-card{
+    display: flex;
+    width: 348px;
+    min-height: 490px;
+    padding: 0px 16px 20px 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 16px;
+    background: var(--Blanco-600, #F7FFF1);
+    box-shadow: 0px 4.775px 4.732px 0px rgba(0, 0, 0, 0.25);
+    .recorrido-img{
+        display: flex;
+        width: 348px;
+        height: 192px;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        border-radius: 16px 16px 0px 0px;
+        background-color: brown;
+        .cerrar{
+            cursor: pointer;
+
+            .cerrar-ico{
+                width: 40px;
+                height: 40px;
+            }
+            &:hover path{
+                transition: 0.3s ease;
+                fill: #C53833;
+            }
+        }
+    }
+    .recorrido-cuerpo{
+        display: flex;
+        padding: 0px 16px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+        .stars{
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            .star-mob{
+                display: block;
+                width: 24px;
+                height: 24px;
+            }
+            .star-desk{
+                display: none;
+                width: 48px;
+                height: 48px;
+            }
+        }
+        .texto{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            align-self: stretch;
+            .precio-duracion{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                align-self: stretch;
+                .precio-duracion-title, .precio-duracion-desc{
+                    display: flex;
+                    padding: 0px 8px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 40px;
+                    align-self: stretch;
+                }
+            }
+        }
+    }
+    .pie{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        align-self: stretch;
+        .disponibilidad{
+            display: flex;
+            padding: 0px 16px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            align-self: stretch;
+            .calendario{
+                display: flex;
+                width: 283px;
+                height: 282px;
+                padding: 8px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 24px;
+                background: var(--Blanco-800, #E7ECE3);
+            }
+        }
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .recorrido-card{
+        display: flex;
+        width: 903px;
+        padding-bottom: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        border-radius: 48px;
+        background: var(--Blanco-600, #F7FFF1);
+        box-shadow: 0px 4.775px 4.732px 0px rgba(0, 0, 0, 0.25);
+        .recorrido-img{
+            display: flex;
+            width: 903px;
+            height: 410px;
+            padding: 48px;
+            gap: 10px;
+            border-radius: 48px 48px 0px 0px;
+            background-color: brown;
+            .cerrar{
+                cursor: pointer;
+
+                .cerrar-ico{
+                    width: 56px;
+                    height: 56px;
+                }
+            }
+        }
+        .recorrido-cuerpo{
+            display: flex;
+            padding: 8px 32px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            align-self: stretch;
+            .stars{
+                gap: 24px;
+                .star-mob{
+                    display: none;
+                }
+                .star-desk{
+                    display: block;
+                }
+            }
+            .texto{
+                gap: 16px;
+                .precio-duracion{
+                    .precio-duracion-title, .precio-duracion-desc{
+                        padding: 0px 144px;
+                        gap: 0px;
+                        p{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .pie{
+            display: flex;
+            padding: 0px 24px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            align-self: stretch;
+            .disponibilidad{
+                display: flex;
+                padding: 8px 32px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 24px;
+                align-self: stretch;
+                .calendario{
+                    width: 461px;
+                    height: 470px;
+                    display: flex;
+                    padding: 8px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 24px;
+                }
+            }
+        }
+    
+    }
+}

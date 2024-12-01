@@ -1,0 +1,162 @@
+section{
+    display: grid;
+    grid-template-columns: 96px repeat(10, 1fr) 96px;
+    gap: 40px;
+    width: 100%;
+    padding: 40.5px 164px;
+    .indicator{
+        grid-column: span 12;
+    }
+    .back{
+        grid-column: span 1;
+    }
+    .casiListo{
+        grid-column: 4 / span 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        .texto{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            .boletos{
+                display: flex;
+                padding-bottom: 8px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                border-radius: 0px 0px 16px 16px;
+                background: var(--Blanco-800, #E7ECE3);
+                .resumen{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 64px;
+                    align-self: stretch;
+                    .boletos{
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: repeat(3, 1fr);
+                        gap: 24px;
+                        row-gap: 0px;
+                        .infantil{
+                            grid-row: 1;
+                        }
+                        .adulto{
+                            grid-row: 2;
+                        }
+                        .viejito{
+                            grid-row: 3;
+                        }
+                    }
+                }
+            }
+        }
+        .metodoPago{
+            cursor: pointer;
+            display: flex;
+            padding: 8px 20px;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+            border-radius: 8px;
+            background: var(--Secundario-Auxiliar-100, #F3EBD6);
+            .cardbtn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+                .tarjeta{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                    .visa-Desk{
+                        display: block;
+                        width: 48px;
+                        height: 33px;
+                    }
+                    .visa-mob{
+                        display: none;
+                        width: 32px;
+                        height: 23px;  
+                    }
+                }
+            }
+            &:hover .cardbtn div .sig-desk path{
+                transition: 0.3s ease;
+                fill: #DCA617;
+            }
+        }
+    }
+    .sig-mob{
+        width: 24px;
+        height: 25px;
+        display: none;
+    }
+    .sig-desk{
+        width: 36px;
+        height: 37px;
+    }
+}
+
+.minusIco{
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+    &:hover path{
+        transition: 0.3s ease;
+        fill: #DCA617;
+    }
+}
+
+@media (max-width: 1200px) {
+    section{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+        height: 100%;
+        padding: 68px 41px;
+        .gracias{
+            grid-column: span 2;
+            .texto{
+                gap: 16px;
+                .resumen{
+                    gap: 16px;
+                    .boletos{
+                        gap: 8px;
+                    }
+                }
+            }
+            .metodoPago{
+                padding: 14px 20px;
+                .cardbtn{
+                    .tarjeta{
+                        .visa-Desk{
+                            display: none;
+                        }
+                        .visa-mob{
+                            display: block;
+                        }
+                    }
+                    .sig-mob{
+                        display: block;
+                    }
+                    .sig-desk{
+                        display: none;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+
+    
+}

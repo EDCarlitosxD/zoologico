@@ -1,3 +1,11 @@
+    .detalles{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 104px 41px 40px 41px;
+        text-align: center;
+        h1, h6, .caracteristicas{
+            grid-column: span 2;
 .animalesSoloPage{
     display: grid;
     width: 100%;
@@ -23,65 +31,115 @@
         }
         .caracteristicas{
             display: flex;
+            align-self: center;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            .weight, .rule, .Terrestre, .Aereo{
+                width: 31px;
+                height: 30px;
+            }
+        }
+        .fisionomia, .conducta, .dieta, .datosCuriosos{
+            grid-column: span 2;
+            display: flex;
+            padding: 0px 16px;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 8px;
             align-self: stretch;
-            .weight{
-                width: 30px;
-                height: 30px;
-                background-image: url(../../../../public/img/card-animales/WeightHover.svg);
-            }
-            .rule{
-                width: 30px;
-                height: 30px;
-                background-image: url(../../../../public/img/card-animales/RulerHover.svg);
-            }
-            .Terrestre{
-                width: 30px;
-                height: 30px;
-                background-image: url(../../../../public/img/card-animales/IconTerrestreHover.svg);
-            }
-            .Aereo{
-                width: 30px;
-                height: 30px;
-                background-image: url(../../../../public/img/card-animales/IconoAireHover.svg);
-            }
         }
-
     }
-    .detalles{
-        grid-column: span 2;
+
+    .imgAnimal{
+        width: 100%;
+        height: 640px;
+        background-color: #E9ADAB;
+    }
+    .descripcionAnimal{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        padding: 24px 41px;
         gap: 20px;
-        padding: 20px 0px;
+        row-gap: 32px;
 
-        .fisionomia{
-            grid-column: span 1;
-            grid-row: span 1;
+        .texto{
+            grid-column: span 2;
+            display: flex;
+            padding: 16px;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            align-self: stretch;
+        }
+
+        .img2Animal{
+            grid-column: span 2;
+            width: 100%;
+            height: 424px;
+            align-self: stretch;
+            border-radius: 120px 0px 0px 0px;
+            background-color: blueviolet;
+        }
+    }
+    .ubicacion{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 20px 41px;
+        gap: 20px;
+
+        .texto{
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
+            align-self: stretch;
+            grid-column: span 2;
         }
-        .dieta{
-            grid-column-start: span 1;
-            grid-row-start: 2;
+        .mapa{
+            grid-column: span 2;
+            width: 100%;
+            height: 262px;
+            background-color: rgba(22, 189, 100, 0.773);
+        }
+    }
+    .conocelo{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 20px 41px;
+        gap: 20px;
+        .frame{
+            grid-column: span 2;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
+            align-self: stretch;
         }
-        .conducta{
-            grid-column-start: 2;
-            grid-row-start: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
+    }
+
+@media (min-width: 1200px) {
+    .detalles{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        padding: 120px 164px 80px 164px;
+        gap: 40px;
+        row-gap: 8px;
+        h1, h6, .caracteristicas{
+            grid-column: span 12;
         }
+        .caracteristicas{
+            gap: 16px;
+            .weight, .rule, .Terrestre, .Aereo{
+                width: 48px;
+                height: 48px;
+            }
+        }
+        .fisionomia, .conducta, .dieta, .datosCuriosos{
+            grid-column: span 6;
+            padding: 16px;
+            gap: 10px;
         .dieta{
             grid-column-start: 1;
             grid-row-start: 2;
@@ -100,15 +158,30 @@
         }
 
     }
+
+    .imgAnimal{
+        height: 1020px;
+    }
+
     .descripcionAnimal{
-        grid-column: span 2;
-        display: flex;
-        padding: 20px 0px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 40px;
+        padding: 40px 164px;
+        .texto{
+            order: 2;
+            justify-self: center;
+            align-self: center;
+            grid-column: span 6;
+            align-items: center;
+            justify-content: center;
+        }
         .img2Animal{
+            order: 1;
+            justify-self: center;
+            grid-column: span 6;
+            align-self: center;
+            height: 960px;
+            border-radius: 240px 0px 0px 0px;
             width: 100%;
             height: 300px;
             background-color: blueviolet;
@@ -119,7 +192,16 @@
             }
         }
     }
+
     .ubicacion{
+        grid-template-columns: repeat(12, 1fr);
+        gap: 40px;
+        row-gap: 20px;
+        padding: 40px 164px;
+        .texto{
+            justify-content: center;
+            grid-column: 1 / span 4;
+        }
         grid-column: span 2;
         display: flex;
         padding: 20px 0px;
@@ -128,12 +210,26 @@
         text-align: center;
         gap: 10px;
         .mapa{
-            width: 100%;
-            height: 300px;
-            background-color: rgba(22, 189, 100, 0.773);
+            grid-column: 5 / span 8;
+            height: 787px;
         }
     }
+
     .conocelo{
+        grid-template-columns: repeat(12, 1fr);
+        gap: 40px;
+        padding: 40px 164px;
+        row-gap: 24px;
+        .frame{
+            grid-column: 4 / span 6;
+            padding: 24px;
+            gap: 24px;
+            h4{
+                display: flex;
+                align-items: center;
+                height: 119px;
+            }
+        }
         grid-column: span 2;
         display: flex;
         padding: 20px 0px;
@@ -142,5 +238,4 @@
         text-align: center;
         gap: 20px;
     }
-
 }

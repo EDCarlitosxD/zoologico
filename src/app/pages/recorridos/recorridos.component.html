@@ -1,64 +1,85 @@
 <app-nav-bar></app-nav-bar>
-<div class="recorridosPage">
-    <header class="heroRecorridos">
-        <div class="txtHeroRec text-white-200">
-            <h1>Vive una aventura educativa y emocionante</h1>
-            <p class="p1">Recorre el zoológico junto a nuestros guías y descubre historias fascinantes, adaptaciones únicas y comportamientos inesperados</p>
-        </div>
-    </header>
-    <section class="RecorridoyCalendario">
+<header class="compra">
+    <div class="text-white-200">
+        <h1>Vive una aventura educativa y emocionante</h1>
+        <p class="p1">Recorre el zoológico junto a nuestros guías y descubre historias fascinantes, adaptaciones únicas y comportamientos inesperados</p>
+    </div>
+</header>
 
-        <div class="EscogeRecorrido">
+<div class="page">
+    <app-indicador class="indicator" [step]="{
+        ticket: 'active',
+        confirmacion: '',
+        finalizar: ''
+    }"></app-indicador>
 
-            <div class="selectorRecorrido">
-                <h3 class="thin text-center">Escoge tu recorrido</h3>
-                <div class="selector">
-                    <div class="infoRecorrido text-white-800">
-                        <div class="imgRecorrido"></div>
-                        <div class="textoRec">
-                            <h4>Recorrido</h4>
-                            <p>Nombre</p>
-                            <p class="bold">Precio: </p>
-                        </div>
-                    </div>
-                    <div class="desplegable"></div>
-                </div>
-            </div>
-
-            <div class="contadorRecorrido">
-                <h5 class="thin">Personas extra</h5>
-                <div class="MargenContador bg-primary-800 text-white-200">
-                    <div class="contador">
-                        <div (click)="personasExtraMenos()" class="menos"></div>
-                        <div class="pmargin"><p class="bold">{{cantidadPersonas}}</p></div>
-                        <div (click)="personasExtraMas()" class="mas"></div>
-                    </div>
-                </div>
-            </div>
-
+    <section class="boletos">
+        <div class="text text-center">
+            <h2 class="thin">Boletos</h2>
+            <p class="thin">El zoológico te espera con experiencias inolvidables para toda la familia</p>
         </div>
 
-        <div class="EscogeFecha text-center">
-            <h3 class="thin">Escoge tu Fecha</h3>
-            <full-calendar #calendarRecorrido [options]="calendarOptions" class="calendario"></full-calendar>
-            <div class="horario">
-                <div class="Inicio">
-                    <h5 class="thin">Inicio</h5>
-                    <select class="horInicio desplegable">
-                        <option *ngFor="let horario of horarioInput" class="thin">{{horario.horario_inicio}}</option>
-                    </select>
-                </div>
-                <div class="Termino">
-                    <h5 class="thin">Termino</h5>
-                    <div class="horTermino">
-                        <div class="thin">{{horarioFin}}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <app-add-boletos [addBoletos]="{
+            image: 'img/card-boletos/Niños.png',
+            type: 'Infantil',
+            description: 'Haz que tus hijos vivan una aventura inolvidable en contacto con la naturaleza. Este boleto incluye\:
+• Acceso a todas las áreas del zoológico\.
+• Actividades interactivas para niños\.
+• Encuentros educativos con cuidadores y expertos en animales.',
+            price: 70,
+            contador: 0,
+            nota: 'Los menores deben estar acompañados por un adulto con boleto pagado.'
+        }"></app-add-boletos>
+
+        <app-add-boletos [addBoletos]="{
+            image: 'img/card-boletos/Adultos.png',
+            type: 'Adulto',
+            description: 'Explora el reino animal y vive la experiencia completa Este boleto está diseñado para mayores de 13 años y ofrece\:\n• Acceso a todas las atracciones del zoológico\.\n• Información detallada sobre la conservación y cuidado de las especies\.\n• Espacios ideales para capturar recuerdos inolvidables.',
+            price: 120,
+            contador: 1,
+            nota: ''
+        }"></app-add-boletos>
+
+
+        <app-add-boletos [addBoletos]="{
+            image: 'img/card-boletos/3raEdad.png',
+            type: 'Tercera Edad (INAPAM)',
+            description: 'Una experiencia tranquila para personas mayores de 60 años Tu boleto incluye\:
+• Acceso preferencial a todas las áreas principales\.
+• Tarifas especiales para disfrutar del zoológico a un precio reducido\.
+• Zonas de descanso y rutas diseñadas para mayor comodidad',
+            price: 70,
+            contador: 0,
+            nota: 'Es necesario presentar tu credencial INAPAM o identificación oficial para validar el descuento.'
+        }"></app-add-boletos>
+
     </section>
-    <button class="reservar">Reservar</button>
+
+    <section class="tours">
+        <div class="text-center">
+            <h2 class="thin">Tours</h2>
+            <p class="thin">Agrega un toque especial a tu visita con nuestros tours exclusivos</p>
+        </div>
+
+        <app-tour-component></app-tour-component>
+        <app-tour-component [tour]="{
+    id: 2,
+    nombre: 'Expedición de Animales Nocturnos',
+    precio: 15000,
+    img: '',
+    valoracion: 5,
+    descripcionPrincipal: 'Sumérgete en el misterioso mundo de los animales nocturnos. Acompañado de un guía experto te permitirá observar cómo algunas especies se preparan para la noche\.',
+    incluye: '• Guía experto que te conducirá por las áreas nocturnas\.\n• Uso de linternas especiales para no alterar a los animales\.\n• Relatos sobre adaptaciones únicas al ambiente nocturno\.',
+    alReservar: '• Este Tour tiene una duración aproximada de 3 horas.\n• Se realiza en grupos pequeños para garantizar una experiencia tranquila.\n• Se recomienda llevar ropa abrigadora.',
+    contador: 0,
+    fecha: '',
+    horario: 0
+        }"></app-tour-component>
+
+    </section>
+
+    <button routerLink="pagar">Continuar</button>
 </div>
 
-
 <app-footer></app-footer>
+

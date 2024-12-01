@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
-import { NavBarComponent } from './Componentes/nav-bar/nav-bar.component';
-import { FooterComponent } from './Componentes/footer/footer.component';
-
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 //COMPONENTES
 
 //PAGES
@@ -11,11 +8,7 @@ import { FooterComponent } from './Componentes/footer/footer.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,
-    RouterLink,
-    NavBarComponent,
-    FooterComponent
-    ],
+  imports: [RouterOutlet],
 
 
 
@@ -23,5 +16,14 @@ import { FooterComponent } from './Componentes/footer/footer.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0); // Desplaza la página al tope
+      }
+    });
+  }
   title = 'zoologico';
 }

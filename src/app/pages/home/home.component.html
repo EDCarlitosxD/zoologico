@@ -1,4 +1,5 @@
 <app-nav-bar></app-nav-bar>
+
 <div>
   <app-slider></app-slider>
 </div>
@@ -69,7 +70,7 @@
     <h5>Explora nuestras Inolvidables experiencias</h5>
     <p>En nuestro zoológico, cada experiencia es una oportunidad de aprender, disfrutar y conectar con la naturaleza.
       <br> <br>
-      Ofrecemos actividades gratuitas cortas pensadas para toda la familia, donde podrás vivir momentos únicos, rodeado de algunas de las criaturas más fascinantes del planeta.</p>
+      Ofrecemos <span class="bold">actividades gratuitas</span> cortas pensadas para toda la familia, donde podrás vivir momentos únicos, rodeado de algunas de las criaturas más fascinantes del planeta.</p>
   </div>
 
   <div id="carouselExample" class="carousel slide">
@@ -93,7 +94,27 @@
             <div class="carouselExperiencias__texto">
               <h3 class="text-center">Alimentación de Animales</h3>
               <p class="text-center">Vive la experiencia de alimentar a jirafas, llamas y otros animales amigables.</p>
-              <button class="w-100">Ver Mas</button>
+              <button class="blackBtn" data-bs-toggle="modal" data-bs-target="#alimentacion">Ver Mas</button>
+            </div>
+                        <!-- Modal -->
+            <div class="modal fade" id="alimentacion" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content bg-transparent border-0 align-items-center">
+                  <app-experiencias [experiencias]="{
+                    img: 'alimentacion',
+                    title: 'Alimentación de Animales',
+                    description1: 'Vive la experiencia de alimentar a jirafas, llamas y otros animales amigables.',
+                    description2: 'La actividad incluye el acompañamiento de un cuidador para garantizar una experiencia segura y educativa para toda la familia.',
+                    lun: false,
+                    mie: false,
+                    jue: false,
+                    mar: true,
+                    vie: true,
+                    sab: true,
+                    dom: true
+                  }"></app-experiencias>
+                </div>
+              </div>
             </div>
 
             <button class=" carouselExample-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
@@ -128,7 +149,27 @@
             <div class="carouselExperiencias__texto">
               <h3 class="text-center">Espectáculo de aves</h3>
               <p class="text-center">Admira el vuelo majestuoso de halcones y águilas mientras aprendes sobre estas impresionantes aves.</p>
-              <button class="w-100">Ver Mas</button>
+              <button class="blackBtn" data-bs-toggle="modal" data-bs-target="#aves">Ver Mas</button>
+            </div>
+                        <!-- Modal -->
+            <div class="modal fade" id="aves" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content bg-transparent border-0 align-items-center">
+                  <app-experiencias [experiencias]="{
+                    img: 'aguila',
+                    title: 'Espectáculo de Aves',
+                    description1: 'Admira el vuelo majestuoso de halcones y águilas mientras aprendes sobre estas impresionantes aves.',
+                    description2: 'Un guía experto compartirá datos fascinantes y responderá preguntas mientras las aves vuelan cerca del público.',
+                    lun: true,
+                    mar: false,
+                    mie: true,
+                    jue: true,
+                    vie: false,
+                    sab: false,
+                    dom: true
+                  }"></app-experiencias>
+                </div>
+              </div>
             </div>
 
             <button class=" carouselExample-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
@@ -163,7 +204,27 @@
             <div class="carouselExperiencias__texto">
               <h3 class="text-center">Safari Fotográfico</h3>
               <p class="text-center">Captura momentos únicos junto a los animales más salvajes del zoológico.</p>
-              <button class="w-100">Ver Mas</button>
+              <button class="blackBtn" data-bs-toggle="modal" data-bs-target="#fotografia">Ver Mas</button>
+            </div>
+                        <!-- Modal -->
+            <div class="modal fade" id="fotografia" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content bg-transparent border-0 align-items-center">
+                  <app-experiencias [experiencias]="{
+                    img: 'fotografia',
+                    title: 'Safari Fotográfico',
+                    description1: 'Captura momentos únicos junto a los animales más salvajes del zoológico.',
+                    description2: 'Equipado con tu cámara o smartphone, podrás acercarte a una gran variedad de especies salvajes, un guía te asesorara para obtener las mejores tomas.',
+                    lun: false,
+                    mie: false,
+                    jue: false,
+                    mar: false,
+                    vie: false,
+                    sab: true,
+                    dom: true
+                  }"></app-experiencias>
+                </div>
+              </div>
             </div>
 
             <button class=" carouselExample-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
@@ -209,13 +270,13 @@
   <div class="boletos__container">
     <app-boleto
       [descripcion]="'Para los más pequeños: acceso a áreas interactivas y actividades especiales que hacen del aprendizaje una aventura.'"
-      [precio]="'$70 MXN'" [titulo]="'Infantil'" img="img/card-boletos/Niños.png"></app-boleto>
+      [precio]="'$70 MXN'" [titulo]="'Infantil'" img="img/card-boletos/Niños.png" class="boleto"></app-boleto>
     <app-boleto [saltosDeLinea]="true"
       [descripcion]="'Vive una experiencia completa con acceso a todas las exhibiciones y charlas educativas del zoológico. \n\n'"
-      precio="$120 MXN" titulo="Adulto" img="img/card-boletos/Adultos.png"></app-boleto>
+      precio="$120 MXN" titulo="Adulto" img="img/card-boletos/Adultos.png" class="boleto"></app-boleto>
     <app-boleto
       descripcion="A un precio especial, disfruta de una visita tranquila y accesible, ideal para aprender sobre conservación."
-      titulo="Tercera Edad" precio="$70 MXN" img="img/card-boletos/3raEdad.png">
+      titulo="Tercera Edad" precio="$70 MXN" img="img/card-boletos/3raEdad.png" class="boleto">
 
     </app-boleto>
   </div>
@@ -228,10 +289,6 @@
     <h4>Recorridos</h4>
     <p>Sumérgete en la vida silvestre con nuestros recorridos guiados, diseñados para acercarte a los animales y sus
       historias.</p>
-
-    <button class="recorridoBtn ">Reserva</button>
-
-
   </div>
 
 
@@ -258,13 +315,16 @@
 <section class="donacionHome">
 
   <div class="donacionHome__informacion wrapper">
-    <div class="donacionHome__texto">
-      <h4>¡Dona!</h4>
-      <p>Tu donación protege animales, apoya la conservación y promueve la educación ambiental. ¡Cada aporte cuenta para
+    <div class="donacionHome__texto text-white-700">
+      <div>
+        <h4 class="text-xl-start">¡Dona!</h4>
+        <h6 class="text-xl-start bold">Y se parte del cambio</h6>
+      </div>
+      <p class="text-xl-start">Tu donación protege animales, apoya la conservación y promueve la educación ambiental. ¡Cada aporte cuenta para
         asegurar un futuro mejor!</p>
     </div>
 
-    <button routerLink="/donaciones">Donar ahora</button>
+    <button routerLink="/donaciones" class="donarBtn">Donar ahora</button>
   </div>
 
   <div class="donacionHome__imagenes">
@@ -305,7 +365,7 @@
       Accede por la ciclovía de la Avenida Naturaleza.
     </p>
 
-    <button>Destino</button>
+    <button routerLink="https://www.google.com/maps/search/maps/@21.198864,-86.868359,3097m/data=!3m1!1e3?hl=es&entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D">Destino</button>
   </div>
 
   <iframe
