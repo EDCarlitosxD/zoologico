@@ -24,7 +24,6 @@ import { EditAnimalComponent } from "./pages/edit-animal/edit-animal.component";
 import { CreateAnimalesComponent } from "./pages/create-animales/create-animales.component";
 import { adminGuard } from "./Guard/admin.guard";
 import { isLoggedGuard } from "./is-logged.guard";
-import { BoletosComponent } from "./pages/boletos/boletos.component";
 
 export const routes: Routes = [
   { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
@@ -32,7 +31,6 @@ export const routes: Routes = [
   { path: 'animales', component: AnimalesComponent }, // Falta filtro
   { path: 'login', component: LoginComponent },// Terminarlo,
   { path: 'register', component: RegisterComponent },// Terminarlo,
-  { path: 'boletos', component: BoletosComponent }, // Aprobado ✅✅✅,
   { path: 'login', component: LoginComponent, canActivate: [isLoggedGuard] },// Terminarlo,
   { path: 'register', component: RegisterComponent , canActivate: [isLoggedGuard]},// Terminarlo,
 

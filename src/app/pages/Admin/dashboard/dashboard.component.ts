@@ -3,6 +3,7 @@ import { SidebarComponent } from '../../../Componentes/Admin/sidebar/sidebar.com
 import { DashboardContentComponent } from "../../../Componentes/Admin/dashboard-content/dashboard-content.component";
 import { Chart, ChartConfiguration, registerables } from 'chart.js';
 import 'chartjs-chart-financial';
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({

@@ -8,16 +8,14 @@ import { TourComponentComponent } from "../../Componentes/tour-component/tour-co
 import { RouterLink } from '@angular/router';
 import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions, EventSourceInput } from '@fullcalendar/core/index.js';
-import dayGridPlugin from '@fullcalendar/daygrid';
 import { RecorridoService } from '../../Services/recorrido.service';
 import { Evento, EventosPorDia } from '../../types/Horario';
 import { CommonModule } from '@angular/common';
-
+import dayGridPlugin from '@fullcalendar/daygrid'
 @Component({
   selector: 'app-recorridos',
   standalone: true,
-  imports: [RouterLink, NavBarComponent, FooterComponent, SelectorRecorridoComponent, IndicadorComponent, AddBoletosComponent, TourComponentComponent],
-  imports: [NavBarComponent, FooterComponent, FullCalendarModule, CommonModule],
+  imports: [RouterLink, NavBarComponent, FooterComponent, SelectorRecorridoComponent, IndicadorComponent, AddBoletosComponent, TourComponentComponent,FullCalendarModule, CommonModule],
   templateUrl: './recorridos.component.html',
   styleUrl: './recorridos.component.scss'
 })
