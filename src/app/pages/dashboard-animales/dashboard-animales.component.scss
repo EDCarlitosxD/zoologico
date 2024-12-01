@@ -20,7 +20,7 @@
             background-color: transparent !important;
         }
     }
-    
+
 
     .cell{
         // width: 16.0472972972973%;
@@ -32,7 +32,7 @@
     }
     .cellwh, .cellw{
         display: flex;
-        
+
         gap: 10px;
         padding: 9px 20px;
     }
@@ -50,7 +50,7 @@
         align-items: center;
         gap: 6.415px;
         flex-shrink: 0;
-        
+
         color: var(--Negro-800, #1D1F1D);
         text-align: center;
         border-radius: 12px;
@@ -64,10 +64,21 @@
         line-height: 150%; /* 24px */
         &:hover{
             background: var(--Secundario-Auxiliar-800, #DCA617);
-            transition: background-color 0.5s ease, color 0.5s ease;    
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
     }
         .delete{
     background: var(--Secundario-200, #E9ADAB);
         }
+}
+
+
+.form-check-input:checked{
+  background-color: var(--Primario-Auxiliar-500, #AAC767) !important; /* Verde */
+  border-color: var(--Primario-Auxiliar-500, #AAC767) !important; /* Asegurar el borde es del mismo color */
+}
+
+/* Opcional: Agregar una transición para un efecto suave */
+.form-check-input {
+  transition: background-color 0.9s, border-color 0.9s;
 }
