@@ -24,9 +24,9 @@ import { EditAnimalComponent } from "./pages/edit-animal/edit-animal.component";
 import { CreateAnimalesComponent } from "./pages/create-animales/create-animales.component";
 
 export const routes: Routes = [
-  { path: 'donaciones', component: DonacionesComponent }, //IMG NUEVA,
+  { path: 'donaciones', component: DonacionesComponent }, //A PIXEL✅✅✅,
   { path: '', component: HomeComponent }, // Corrige el nombre del componente si es necesario
-  { path: 'animales', component: AnimalesComponent }, // Falta filtro
+  { path: 'animales', component: AnimalesComponent }, // Falta filtro A PIXEL✅✅✅
   { path: 'login', component: LoginComponent },// Terminarlo,
   { path: 'register', component: RegisterComponent },// Terminarlo,
 
