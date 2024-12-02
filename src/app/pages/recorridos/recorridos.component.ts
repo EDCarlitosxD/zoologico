@@ -6,11 +6,12 @@ import { IndicadorComponent } from "../../Componentes/indicador/indicador.compon
 import { AddBoletosComponent } from "../../Componentes/add-boletos/add-boletos.component";
 import { TourComponentComponent } from "../../Componentes/tour-component/tour-component.component";
 import { RouterLink } from '@angular/router';
+import { BolDisponiblesComponent } from "../../Componentes/bol-disponibles/bol-disponibles.component";
 
 @Component({
   selector: 'app-recorridos',
   standalone: true,
-  imports: [RouterLink, NavBarComponent, FooterComponent, SelectorRecorridoComponent, IndicadorComponent, AddBoletosComponent, TourComponentComponent],
+  imports: [RouterLink, NavBarComponent, FooterComponent, SelectorRecorridoComponent, IndicadorComponent, AddBoletosComponent, TourComponentComponent, BolDisponiblesComponent],
   templateUrl: './recorridos.component.html',
   styleUrl: './recorridos.component.scss'
 })

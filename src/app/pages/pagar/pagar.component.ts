@@ -4,11 +4,12 @@ import { ContadorResumenPedidoComponent } from "../../Componentes/contador-resum
 import { IndicadorComponent } from "../../Componentes/indicador/indicador.component";
 import { RouterLink } from '@angular/router';
 import { AddTarjetaComponent } from "../../Componentes/modals/add-tarjeta/add-tarjeta.component";
+import { MetodoDePagoComponent } from "../../Componentes/modals/metodo-de-pago/metodo-de-pago.component";
 
 @Component({
   selector: 'app-pagar',
   standalone: true,
-  imports: [RouterLink, AtrasBtnComponent, ContadorResumenPedidoComponent, IndicadorComponent, AddTarjetaComponent],
+  imports: [RouterLink, AtrasBtnComponent, ContadorResumenPedidoComponent, IndicadorComponent, AddTarjetaComponent, MetodoDePagoComponent],
   templateUrl: './pagar.component.html',
   styleUrl: './pagar.component.scss'
 })

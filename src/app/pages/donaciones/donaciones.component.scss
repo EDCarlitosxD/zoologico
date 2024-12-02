@@ -233,35 +233,42 @@
 }
 @media (min-width: 1200px){
   .donacionHero{
+    all: unset;
     display: grid !important;
-    width: 100%;
-    height: 776px;
+    height: 1000px;
     grid-template-columns: repeat(12, 1fr);
     gap: 40px;
-    padding: 0 calc(8.54vw);
-    .imgdonacionHero{
-      height: 100%;
-      border-radius: 0px 240px;
-      grid-column: 7 / span 6;
-      grid-row: 1;
-      align-items: center;
-    }
+    padding: 0 164px;
+    background-image: url(../../../../public/img/pages/Donacion/HeroDonacionDesk.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     .txtHeroDonacion{
-      gap: 16px;
+      all: unset;
+      grid-column: 6 / span 7;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      align-self: center;
-      grid-column: span 6;
-      grid-row: 1;
+      gap: 32px;
+      flex-shrink: 0;
+      text-align: center;
+      .heroTitle{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
     }
   }
   .donacionMotivos{
+    all: unset;
     display: grid !important;
-    width: 100%;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat auto 1fr;
     gap: 40px;
     row-gap: 40px;
-    padding: 40px calc(8.54vw);
+    padding: 40px 164px;
     .donacionH{
       grid-column: span 12;
       grid-row: 1;
@@ -269,6 +276,11 @@
     }
     .donVerdeClaro{
       grid-column: span 4;
+      display: flex;
+      padding: 24px 32px;
+      flex-direction: column;
+      align-items: center;
+      align-self: stretch;
       .donVerdeClaroicoMobile {
         display: none;
       }
@@ -361,6 +373,15 @@
     .corazon-mob{
       display: none;
     }
+  }
+  .bg-verdeClaroIco{
+    display: flex;
+    width: 88px;
+    padding: 4px 2px 0px 2px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--Blanco-200, #F9FFF5);
   }
   
 }
