@@ -106,6 +106,18 @@ input::placeholder, textarea::placeholder{
   line-height: 150%; /* 30px */
 }
 
+@media (max-width: 1200px) {
+  input::placeholder, textarea::placeholder{
+      color: var(--Negro-200, #757C75);      
+      /* Mobile/P 01/Ligth */
+      font-family: "Comic Neue";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%; /* 24px */
+}
+}
+
 h1 {
   font-family: "Cherry Bomb One";
   font-size: 42px;
@@ -163,19 +175,13 @@ h6 {
 
 button {
   border-color: transparent;
-  display: flex;
   width: 100%;
-  padding: 10px 0;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
+  height: 46px;
   border-radius: 20px;
   background: var(--Primario-Auxiliar-400, #B3CD78);
   
 
   color: var(--Negro-800, #1D1F1D);
-  text-align: center;
   
   /* Mobile/P/Bold */
   font-family: "Comic Neue";
@@ -255,7 +261,7 @@ button:hover {
   }
 
   h2 {
-    font-size: 4rem;
+    font-size: 72px;;
   }
 
   h3 {
