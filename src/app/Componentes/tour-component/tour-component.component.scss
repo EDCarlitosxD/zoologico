@@ -12,19 +12,18 @@
         align-self: center !important;
         color: var(--Blanco-200, #F9FFF5) !important;
         background-color: #325B3A !important; // Cambia este color al que desees
-        .star path{
-            fill: #DCA617 !important;
-        }
-        .plus path{
-            fill: #F9FFF5 !important;
+        .plus {
+        transition: 0.3s ease;     
+            transform: rotate(180deg);
+            path{
+                fill: #F9FFF5 !important;
+            }
         }
 
       }
       &:hover{
-        background-color: #DCA617;
-        .star path{
-            fill: #1D1F1D;
-        }
+        background: var(--Secundario-Auxiliar-300, #F4DB99);
+
       }
 }
 .list{
@@ -61,8 +60,8 @@
 }
 
 .plus{
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
 }
 .star{
     width: 40px;

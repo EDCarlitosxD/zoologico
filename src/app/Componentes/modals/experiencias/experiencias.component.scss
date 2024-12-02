@@ -21,13 +21,7 @@
         .cerrar{
             cursor: pointer;
 
-            .cerrar-mob{
-                display: none;
-                width: 40px;
-                height: 40px;
-            }
-            .cerrar-desk{
-                display: block;
+            .cerrar-ico{
                 width: 56px;
                 height: 56px;
             }
@@ -122,11 +116,9 @@
             border-radius: 16px 16px 0px 0px;
             .cerrar{
                 cursor: pointer;
-                .cerrar-mob{
-                    display: block;
-                }
-                .cerrar-desk{
-                    display: none;
+                .cerrar-ico{
+                    width: 40px;
+                    height: 40px;
                 }
             }
         }

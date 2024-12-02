@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SidebarComponent } from '../../../Componentes/Admin/sidebar/sidebar.component';
 import { DashboardContentComponent } from "../../../Componentes/Admin/dashboard-content/dashboard-content.component";
-import { Chart, ChartConfiguration, registerables } from 'chart.js';
+// import { Chart, ChartConfiguration, registerables } from 'chart.js';
 import 'chartjs-chart-financial';
 
 

@@ -24,18 +24,19 @@ import { EditAnimalComponent } from "./pages/edit-animal/edit-animal.component";
 import { CreateAnimalesComponent } from "./pages/create-animales/create-animales.component";
 
 export const routes: Routes = [
-  { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
+  { path: 'donaciones', component: DonacionesComponent }, //IMG NUEVA,
   { path: '', component: HomeComponent }, // Corrige el nombre del componente si es necesario
   { path: 'animales', component: AnimalesComponent }, // Falta filtro
   { path: 'login', component: LoginComponent },// Terminarlo,
   { path: 'register', component: RegisterComponent },// Terminarlo,
 
-  { path: 'animales/animal', component: AnimalSoloComponent}, //Mobile parcialmente terminado
+  { path: 'animales/animal', component: AnimalSoloComponent}, //Aprobado ✅✅✅
   { path: 'comprar', component: RecorridosComponent }, // Falta calendario y selectores
+
   { path: 'contactanos', component: ContactoComponent }, //Aprobado ✅✅✅,
-  { path: 'comprar/pagar', component: PagarComponent }, //Aprobado ✅✅✅,
-  { path: 'comprar/pagar/gracias', component: CierreComponent }, //Aprobado ✅✅✅,
-  { path: 'loading', component: LoadingComponent },
+  { path: 'comprar/pagar', component: PagarComponent }, //CENTRAR MODALS, MENSAJES DE CONFIRMACION, MOBILE,
+  { path: 'comprar/pagar/gracias', component: CierreComponent }, //,
+  { path: 'loading', component: LoadingComponent }, //Aprobado ✅✅✅
 
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
