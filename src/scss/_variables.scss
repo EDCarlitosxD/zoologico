@@ -91,7 +91,14 @@ input, textarea{
   font-family: inherit;
   
 } 
-  
+
+
+
+a{
+  text-decoration: none;
+  color: #1D1F1D;
+  width: 100%;
+}
 input::placeholder, textarea::placeholder{
   display: flex;
   justify-content: center;
@@ -158,8 +165,8 @@ h6 {
   line-height: 150%; /* 72px */
 }
 
-.p2 {
-  font-size: 12px;
+.p2{
+  font-size: 14px;
   line-height: 150%; /* 72px */
 }
 
@@ -174,13 +181,15 @@ h6 {
 }
 
 button {
+  all: unset;
   border-color: transparent;
   width: 100%;
   height: 46px;
   border-radius: 20px;
   background: var(--Primario-Auxiliar-400, #B3CD78);
-  
-
+  padding: 0;
+  margin: 0;
+  text-align: center;
   color: var(--Negro-800, #1D1F1D);
   
   /* Mobile/P/Bold */
@@ -195,12 +204,7 @@ button.formBtn{
   height: 80px;
 }
 button.chiquito {
-  display: flex;
   width: 96.868px;
-  padding: 6.415px;
-  justify-content: center;
-  align-items: center;
-  gap: 6.415px;
   border-radius: 12px;
   background: var(--Primario-Auxiliar-400, #B3CD78);
   color: var(--Negro-800, #1D1F1D);
@@ -265,19 +269,19 @@ button:hover {
   }
 
   h3 {
-    font-size: 3.375rem;
+    font-size: 54px;
   }
 
   h4 {
-    font-size: 3rem;
+    font-size: 48px;
   }
 
   h5 {
-    font-size: 2.5rem;
+    font-size: 40px;
   }
 
   h6 {
-    font-size: 2rem;
+    font-size: 32px;
   }
 
 
@@ -291,13 +295,8 @@ button:hover {
   }
 
   button {
-    display: flex;
     width: 100%;
     height: 80px;
-    padding: 16px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
     border-radius: 38px;
     background: var(--Primario-Auxiliar-500, #AAC767);
     

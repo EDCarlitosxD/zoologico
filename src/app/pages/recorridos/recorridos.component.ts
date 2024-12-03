@@ -7,11 +7,12 @@ import { AddBoletosComponent } from "../../Componentes/add-boletos/add-boletos.c
 import { TourComponentComponent } from "../../Componentes/tour-component/tour-component.component";
 import { RouterLink } from '@angular/router';
 import { BolDisponiblesComponent } from "../../Componentes/bol-disponibles/bol-disponibles.component";
+import { WarningComponent } from "../../warning/warning.component";
 
 @Component({
   selector: 'app-recorridos',
   standalone: true,
-  imports: [RouterLink, NavBarComponent, FooterComponent, SelectorRecorridoComponent, IndicadorComponent, AddBoletosComponent, TourComponentComponent, BolDisponiblesComponent],
+  imports: [RouterLink, NavBarComponent, FooterComponent, SelectorRecorridoComponent, IndicadorComponent, AddBoletosComponent, TourComponentComponent, BolDisponiblesComponent, WarningComponent],
   templateUrl: './recorridos.component.html',
   styleUrl: './recorridos.component.scss'
 })
