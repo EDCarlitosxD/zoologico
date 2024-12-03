@@ -1,7 +1,6 @@
 .hero{
     display: grid ;
     width: 100%;
-    height: 776px;
     grid-template-columns: repeat(12, 1fr);
     gap: 40px;
     padding: 40px 164px;
@@ -13,11 +12,10 @@
         align-items: center;
         gap: 16px;
     }
-    .heroImgContact{
+    img{
         grid-column: 7 / span 6;
-        background-image: url(../../../../public/img/pages/Contacto/HeroDeskContact.png);
-        background-size: cover;
-        background-position: center;        
+        width: 100%;
+        border-radius: 0px 0px 0px 240px;
     }
 }
 
@@ -37,17 +35,17 @@
         gap: 16px;
         .mailIcoDesk{
             width: 80px;
-            height: 65px;
+            height: 64px;
             display: block;
         }
         .telIcoDesk{
             width: 64px;
-            height: 65px;
+            height: 64px;
             display: block;
         }
         .horIcoDesk{
             width: 64px;
-            height: 65px;
+            height: 64px;
             display: block;
         }
         .mailIcoMob, .telIcoMob, .horIcoMob{
@@ -65,10 +63,18 @@
 
     .map-ubicacion{
         grid-column: span 6;
+        width: 100%; /* El mapa ocupa todo el ancho del grid */
+        aspect-ratio: 776 / 752; /* Ajusta la altura para llenar el contenedor */
+        border: none;
+        align-self: center; 
+        border-radius: 32px;
+
     }
     .ubicacionTxt{
         grid-column: span 6;
         display: flex;
+        height: fit-content;
+        align-self: center;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -94,11 +100,11 @@
         align-items: flex-start;
         align-self: stretch;
         border-radius: 16px;
-        background: var(--Blanco-800, #E7ECE3);  
+        border: 3px solid var(--Primario-Auxiliar-200, #C6DA9A);
+        background: var(--Blanco-400, #FBFFF8);
         &:focus-within {
             transition: 0.1s ease;
             border: 4px solid var(--Primario-Auxiliar-700, #8BAC3F);
-            background: var(--Blanco-700, #F0F7EB);
         }   
     }
     .items{
@@ -109,6 +115,13 @@
         justify-content: flex-end;
         gap: 16px;
         align-self: stretch;
+        .nombre-tel{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            align-self: stretch;
+        }
     }
     .mail-message{
         grid-column: span 6;
@@ -127,7 +140,8 @@
             align-items: flex-start;
             align-self: stretch;
             border-radius: 16px;
-            background: var(--Blanco-800, #E7ECE3);      
+            border: 3px solid var(--Primario-Auxiliar-200, #C6DA9A);
+            background: var(--Blanco-400, #FBFFF8);
             &::placeholder{
                 display: flex;
                 justify-content: center;
@@ -152,11 +166,7 @@
         grid-column: 3 / 11;
     }
 }
-input{
-    height: 100%; /* Asegura que el input ocupe todo el alto del contenedor */
-    display: flex;
-    align-items: center; /* Alinea verticalmente */
-}
+
 
 
 @media (max-width: 1200px) {
@@ -165,23 +175,17 @@ input{
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    padding: 112px 0px 40px 0px;
-    gap: 16px;
+    padding: 96px 0px 40px 0px;
     .heroTxt{
         width: 100%;
+        gap: 10px;
+        padding: 0 41px;
     }
-    .heroImgContact{
-        display: flex;
-        width: 431px;
-        height: 498px;
-        padding: 120px 41px 80px 41px;
-        flex-direction: column;
-        align-items: center;
-        gap: 160px;
-        flex-shrink: 0;
+    img{
         border-radius: 0px 0px 0px 120px;
-        background: url(../../../../public/img/pages/Contacto/HeroMobContact.png) cover no-repeat;
+        min-height: 498px;
     }
+
 
 } 
 .contacto{
@@ -221,10 +225,19 @@ input{
         gap: 12px;
         order: 1;
         grid-column: span 2;
+        h3{
+/* Mobile/H5/Medium */
+font-family: Fredoka;
+font-size: 26px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 39px */
+        }
     }
     .map-ubicacion{
         order: 2;
         grid-column: span 2;
+        aspect-ratio: 348 / 338;
     }
 
 }
@@ -247,6 +260,9 @@ input{
         grid-column: span 2;
         padding: 0;
         gap: 16px;
+        .form-input-text{
+            height: 96px;
+        }
     }
     .blackBtn{
         grid-column: span 2;
