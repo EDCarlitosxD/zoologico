@@ -167,6 +167,17 @@ line-height: 150%; /* 36px */
   height: 72px;
 
   &:hover path{
+    transition: 0.3s ease;
+    fill: var(--Secundario-Auxiliar-700, #E9B733);
+  }
+}
+.socialIcoX {
+  transition: all .3s;
+  width: 72px;
+  height: 72px;
+
+  &:hover rect{
+    transition: 0.3s ease;
     fill: var(--Secundario-Auxiliar-700, #E9B733);
   }
 }

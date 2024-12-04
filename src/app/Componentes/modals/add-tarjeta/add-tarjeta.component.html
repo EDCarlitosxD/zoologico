@@ -16,14 +16,13 @@
         <p class="p2 thin">La información de su tarjeta está protegida con tecnología de encriptación avanzada.</p>
     </header>
 
-    <section>
-        <h6 class="thin">Nombre del titular</h6>
-        <input type="text" placeholder="Nombre del Titular" autofocus required>
-        <h6 class="thin">Número de Tarjeta</h6>
-        <input type="text" placeholder="0000 0000 0000 0000" maxlength="16" pattern="\d{4}\d{4}\d{4}\d{4}" required>
-
-        <h6 class="thin security">Fecha de expiración</h6>
-        <h6 class="thin security">C V V</h6>
+    <section class="form-tarjeta">
+        <h6 class="c1 thin">Nombre del titular</h6>
+        <input type="text" class="input-t" placeholder="Nombre del Titular" autofocus required>
+        <h6 class="c1 thin">Número de Tarjeta</h6>
+        <input type="text" class="input-t" placeholder="0000 0000 0000 0000" maxlength="16" pattern="\d{4}\d{4}\d{4}\d{4}" required>
+        <h6 class="thin h6security">Fecha de expiración</h6>
+        <h6 class="thin h6security">C V V</h6>
         <input class="security" type="text" placeholder="MM/AA" maxlength="5" pattern="(0[1-9]|1[0-2])\/\d{2}" required>
         <input class="security" type="password" placeholder="000" maxlength="3" pattern="\d{3}" required>
     </section>

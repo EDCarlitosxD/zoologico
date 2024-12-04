@@ -270,9 +270,7 @@ form .seleccionar-tarjeta{
 }
 
 @media (max-width: 1200px) {
-.back{
-    display: none;
-}
+
 
 .titleTour{
     font-size: 20px;
@@ -284,8 +282,15 @@ form .seleccionar-tarjeta{
         width: 100%;
         height: 100%;
         padding: 40px 41px;
+        row-gap: 40px;
+        position: relative;
         .indicator, .casiListo{
             grid-column: span 2;
+        }
+        .back{
+            position: absolute;
+            top: 227px;
+            left: 41px;
         }
         .casiListo{
             gap: 16px;

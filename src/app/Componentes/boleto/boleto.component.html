@@ -2,11 +2,14 @@
   <div class="boleto__img">
     <img src="{{img}}" alt="Boleto de adulto">
   </div>
-
+  <div class="cont">
   <div class="boleto__informacion">
-    <h6>{{titulo}}</h6>
-    <p class="boletoPrecio">{{precio}}</p>
-    <p [innerHTML]="saltosDeLinea ? descripcionFormateada : descripcion"></p>
-    <button class="blackBtn" routerLink="/comprar">Comprar</button>
+    
+    <h5 class="thin">{{titulo}}</h5>
+    <p class="p1 bold">{{precio}}</p>
+    <p class="p1 thin" [innerHTML]="saltosDeLinea ? descripcionFormateada : descripcion"></p>
+    
+  </div>
+  <button class="blackBtn chiquito" routerLink="/comprar">Comprar</button> 
   </div>
 </div>

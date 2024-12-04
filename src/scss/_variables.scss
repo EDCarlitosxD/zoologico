@@ -99,6 +99,7 @@ a{
   color: #1D1F1D;
   width: 100%;
 }
+
 input::placeholder, textarea::placeholder{
   display: flex;
   justify-content: center;
@@ -204,18 +205,18 @@ button.formBtn{
   height: 80px;
 }
 button.chiquito {
-  width: 96.868px;
-  border-radius: 12px;
-  background: var(--Primario-Auxiliar-400, #B3CD78);
-  color: var(--Negro-800, #1D1F1D);
-  text-align: center;
-  
-  /* Mobile/P 01/Bold */
-  font-family: "Comic Neue";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 150%; /* 24px */
+  height: 40px;
+  button.chiquito {
+    height: 52px;
+    border-radius: 12px;
+
+/* Mobile/P 01/Bold */
+font-family: "Comic Neue";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 24px */
+  }
 }
 
 button.dashboard{
@@ -312,24 +313,13 @@ button:hover {
       background: var(--Negro-500, #343734);
     }
   }
-  button.chiquito{
-    display: flex;
-    width: 180px;
-    height: 60px;
-    padding: 27px 44px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+  button.chiquito {
+    height: 52px;
+    font-family: "Comic Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 36px */
     border-radius: 24px;
-    background: var(--Primario-Auxiliar-400, #B3CD78);
-    color: var(--Negro-800, #1D1F1D);
-    text-align: center;
-
-/* Desktop/P 01/Bold */
-font-family: "Comic Neue";
-font-size: 24px;
-font-style: normal;
-font-weight: 700;
-line-height: 150%; /* 36px */
   }
 }

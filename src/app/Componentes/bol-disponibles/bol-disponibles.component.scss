@@ -2,6 +2,7 @@
     .calendarIco{
         width: 48px;
         height: 48px;
+        flex-shrink: 0;
         @media (max-width: 1200px) {
             width: 32px;
             height: 32px;

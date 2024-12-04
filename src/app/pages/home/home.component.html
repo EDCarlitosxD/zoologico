@@ -7,7 +7,7 @@
 <main class="sobreNosotros">
   <section class="grid-base  sobreNosotros__informacion">
     <p class="sobreNosotrosP ">Aprende, Intuye y Explora.</p>
-    <h2 class="sobreNosotrosH2 ">Sobre nosotros</h2>
+    <h2 class="thin ">Sobre nosotros</h2>
     <p class="sobreNosotrosP2 ">Desde su apertura en 2024, nuestro zoológico ha sido un hogar seguro para más
       de 150 especies.
       <br>
@@ -23,7 +23,7 @@
 
 <section class="wrapper grid-base  nuestrosAnimales">
   <div class="nuestrosAnimales__texto">
-    <h3 class="text-center">Conoce a nuestros animales </h3>
+    <h3 class="text-center thin">Conoce a nuestros animales </h3>
     <p class="nATexto__descripcion">Te invitamos a conocer las increíbles criaturas que dominan el mundo Desde coloridas
       aves tropicales hasta majestuosos rinocerontes, cada especie te sorprenderá con su habilidad para volar y sus
       características únicas.</p>
@@ -64,9 +64,9 @@
 <div class="experiencia">
 
   <div class="experiencia__informacion wrapper">
-    <h5>Explora nuestras Inolvidables experiencias</h5>
+    <h3 class="thin">Experiencias</h3>
     <p>En nuestro zoológico, cada experiencia es una oportunidad de aprender, disfrutar y conectar con la naturaleza.
-      <br> <br>
+      <br><br>
       Ofrecemos <span class="bold">actividades gratuitas</span> cortas pensadas para toda la familia, donde podrás vivir momentos únicos, rodeado de algunas de las criaturas más fascinantes del planeta.</p>
   </div>
 
@@ -257,22 +257,23 @@
 
 <section class="boletosHome ">
   <div class="boletos__texto wrapper">
-    <h3 class="text-center">Boletos</h3>
-    <p class="bTexto__descripcion text-center">Nuestros boletos ofrecen acceso completo a todas las áreas del zoológico,
+    <h3 class="thin text-center">Boletos</h3>
+    <p class="text-center">Nuestros boletos ofrecen acceso completo a todas las áreas del zoológico,
       diseñados para brindar una experiencia única de aprendizaje, diversión e interacción con la naturaleza.</p>
-    <p class="bTexto__horario text-center">Todos los boletos tienen acceso de <span class="fw-700">8 am</span> a <span
+    <p class="bold text-center">Todos los boletos tienen acceso de <span class="fw-700">8 am</span> a <span
         class="fw-700"> 6 pm</span></p>
+      <app-bol-disponibles></app-bol-disponibles>
   </div>
 
   <div class="boletos__container">
     <app-boleto
-      [descripcion]="'Para los más pequeños: acceso a áreas interactivas y actividades especiales que hacen del aprendizaje una aventura.'"
+      [descripcion]="'Para los más pequeños: acceso a áreas interactivas y actividades especiales que hacen del\naprendizaje una aventura.'"
       [precio]="'$70 MXN'" [titulo]="'Infantil'" img="img/card-boletos/Niños.png" class="boleto"></app-boleto>
     <app-boleto [saltosDeLinea]="true"
       [descripcion]="'Vive una experiencia completa con acceso a todas las exhibiciones y charlas educativas del zoológico. \n\n'"
       precio="$120 MXN" titulo="Adulto" img="img/card-boletos/Adultos.png" class="boleto"></app-boleto>
     <app-boleto
-      descripcion="A un precio especial, disfruta de una visita tranquila y accesible, ideal para aprender sobre conservación."
+      descripcion="'A un precio especial, disfruta de una visita tranquila y accesible, ideal para aprender sobre conservación.'"
       titulo="Tercera Edad" precio="$70 MXN" img="img/card-boletos/3raEdad.png" class="boleto">
 
     </app-boleto>
@@ -282,8 +283,8 @@
 
 <section class="recorridosHome wrapper">
 
-  <div class="recorridosHome__texto">
-    <h4>Recorridos</h4>
+  <div class="recorridosHome__texto text-center">
+    <h3 class="thin">Tours</h3>
     <p>Sumérgete en la vida silvestre con nuestros recorridos guiados, diseñados para acercarte a los animales y sus
       historias.</p>
   </div>
@@ -347,7 +348,7 @@
 
 <section class="ubicacionHome wrapper">
 
-  <div class="ubicacionHome__texto">
+  <div class="ubicacionHome__texto text-center">
     <h5>Ubicación</h5>
     <p>Zoo-Logic
       <br>
@@ -362,7 +363,10 @@
       Accede por la ciclovía de la Avenida Naturaleza.
     </p>
 
-    <button routerLink="https://www.google.com/maps/search/maps/@21.198864,-86.868359,3097m/data=!3m1!1e3?hl=es&entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D">Destino</button>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=21.19092409548484,-86.90388322311436&travelmode=driving" 
+    target="_blank">
+        <button>Destino</button>
+     </a>
   </div>
 
   <iframe
