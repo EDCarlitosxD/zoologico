@@ -1,0 +1,69 @@
+.metodoPago{
+    display: flex;
+    padding: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 8px;
+    background: var(--Secundario-Auxiliar-100, #F3EBD6);
+    .tarjeta{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 8px;
+        .tarjetaIco{
+            width: 48px;
+            height: 32px;
+        }
+    }
+}
+
+.screen{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 0 164px;
+    gap: 40px;
+    .gracias{
+        grid-column: 4 / span 6;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        .texto{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .metodoPago{
+        .tarjeta{
+            .tarjetaIco{
+                width: 32px;
+                height: 21.333px;
+            }
+        }
+    }
+    
+    .screen{
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 41px;
+        gap: 20px;
+        .gracias{
+            grid-column: span 2;
+            gap: 40px;
+            .texto{
+                gap: 16px;
+            }
+        }
+    } 
+    
+}

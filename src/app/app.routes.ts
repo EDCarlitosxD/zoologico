@@ -22,6 +22,8 @@ import { CierreComponent } from "./pages/cierre/cierre.component";
 import { LoadingComponent } from "./pages/loading/loading.component";
 import { EditAnimalComponent } from "./pages/edit-animal/edit-animal.component";
 import { CreateAnimalesComponent } from "./pages/create-animales/create-animales.component";
+import { PagarDonacionComponent } from "./pages/pagar-donacion/pagar-donacion.component";
+import { CierreDonacionComponent } from "./pages/cierre-donacion/cierre-donacion.component";
 
 export const routes: Routes = [
   { path: 'contactanos', component: ContactoComponent }, //A PIXEL✅✅✅,
@@ -29,6 +31,7 @@ export const routes: Routes = [
   { path: 'animales', component: AnimalesComponent }, // Falta filtro A PIXEL✅✅✅
   { path: 'loading', component: LoadingComponent }, //Aprobado ✅✅✅
   { path: 'comprar', component: RecorridosComponent }, //A PIXEL✅✅✅, Falta calendario y selectores
+  { path: 'comprar/pagar', component: PagarComponent }, //CENTRAR MODALS, MENSAJES DE CONFIRMACION, MOBILE,
 
 
   { path: '', component: HomeComponent }, // Corrige el nombre del componente si es necesario
@@ -37,9 +40,13 @@ export const routes: Routes = [
 
   { path: 'animales/animal', component: AnimalSoloComponent}, //Aprobado ✅✅✅
 
-  { path: 'comprar/pagar', component: PagarComponent }, //CENTRAR MODALS, MENSAJES DE CONFIRMACION, MOBILE,
   { path: 'comprar/pagar/gracias', component: CierreComponent }, //,
+  { path: 'donaciones/pagar', component: PagarDonacionComponent },
+  { path: 'donaciones/pagar/gracias', component: CierreDonacionComponent },
 
+
+
+  
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
   { path: 'dashboard/ventas', component: DashboardVentasComponent },

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { WarningComponent } from "../../warning/warning.component";
+import { WarningComponent } from "../warning/warning.component";
 
 interface Tour {
   id: number;
