@@ -57,7 +57,7 @@ export const routes: Routes = [
       { path: 'ventas', component: DashboardVentasComponent },
       { path: 'recorridos', component: DashboardRecorridoComponent },
       { path: 'guias/:id', component: EditGuiasComponent },
-      { path: 'animal/edit', component: EditAnimalComponent },
+      { path: 'animales/edit/:slug', component: EditAnimalComponent },
       { path: 'recorridos/vendidos/edit', component: EditRecoVendidosComponent },
       { path: 'animales/create', component: CreateAnimalesComponent },
       { path: 'recorridos/vendidos/edit', component: EditRecoVendidosComponent },

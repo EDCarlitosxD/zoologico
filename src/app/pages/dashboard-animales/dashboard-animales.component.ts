@@ -3,11 +3,12 @@ import { DashboardContentComponent } from "../../Componentes/Admin/dashboard-con
 import { AnimalService } from '../../Services/animal.service';
 import { IAnimal } from '../../types/Animales';
 import { CommonModule } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-animales',
   standalone: true,
-  imports: [DashboardContentComponent,CommonModule],
+  imports: [DashboardContentComponent,CommonModule, RouterLink],
   templateUrl: './dashboard-animales.component.html',
   styleUrl: './dashboard-animales.component.scss'
 })

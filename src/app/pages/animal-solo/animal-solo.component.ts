@@ -45,6 +45,7 @@ export class AnimalSoloComponent {
   subtitulo: '',
   qr: '',
   img_ubicacion: '',
-  estado: true
+  estado: true,
+  slug: ''
   };
 }

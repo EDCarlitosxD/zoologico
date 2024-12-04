@@ -21,8 +21,8 @@ export interface IAnimal {
   id: number|null
   nombre: string;
   nombre_cientifico: string;
-  imagen_principal: string;
-  imagen_secundaria: string;
+  imagen_principal: string | null;
+  imagen_secundaria: string | null;
   caracteristicas_fisicas: string;
   dieta: string;
   datos_curiosos: string;
@@ -34,6 +34,9 @@ export interface IAnimal {
   descripcion: string;
   subtitulo: string;
   qr: string;
-  img_ubicacion: string;
+  img_ubicacion: string | null;
+  slug: string | undefined,
   estado: boolean;
 }
+
+

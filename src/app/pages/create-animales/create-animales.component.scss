@@ -219,3 +219,20 @@ label {
 
   margin-bottom: 78px;
 }
+
+
+
+// .input-dashboard.ng-invalid.ng-touched,
+// .input-dashboard.ng-invalid.ng-touched  textarea,
+// .input-dashboard.ng-invalid.ng-touched select
+// {
+//   border: 2px solid red;
+// }
+
+
+/* Opcional: para resaltar el área de error */
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}

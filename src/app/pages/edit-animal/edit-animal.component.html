@@ -17,7 +17,7 @@
           fill="#467F51" />
       </svg>
     </div>
-    <h3>Agregar Animal</h3>
+    <h3>Editar Animal</h3>
   </div>
 
   <div class="dashboard__perfil">
@@ -34,37 +34,66 @@
 
 
 
+<div *ngIf="editado" class="alert position-sticky sticky-top alert-success wrapper mt-5" style="top: 40px;" role="alert">
+  Se edito correctamente
+</div>
 
-<form class="formularioAnimal">
+<form [formGroup]="animalForm" (ngSubmit)="guardarAnimal($event)" class="formularioAnimal">
 
   <div class="form1">
     <label for="nombre">Nombre</label>
-    <input class="input-dashboard" type="text" placeholder="Nombre">
+    <input class="input-dashboard" formControlName="nombre" [value]="animal.nombre" placeholder="Nombre">
+    <div *ngIf="animalForm.get('nombre')?.invalid && animalForm.get('nombre')?.touched"
+    class="error">Campo requerido</div>
 
-    <label for="nombreCientifico">Nombre Cientifico</label>
-    <input class="input-dashboard" type="text" name="nombreCientifico" id="nombreCientifico" placeholder="Nombre Cientifico">
+    <label for="nombre_cientifico">Nombre Cientifico</label>
+    <input class="input-dashboard" formControlName="nombre_cientifico" [value]="animal.nombre_cientifico" placeholder="Nombre Cientifico">
+    <div *ngIf="animalForm.get('nombre_cientifico')?.invalid && animalForm.get('nombre_cientifico')?.touched"
+      class="error">Campo requerido</div>
 
-    <label for="habitad">Habitad</label>
-    <input class="input-dashboard" type="text" name="habitad" id="habitad" placeholder="Habitad">
+    <label for="habitat">Habitat</label>
+    <input class="input-dashboard" formControlName="habitat" [value]="animal.habitat" placeholder="habitat">
+    <div *ngIf="animalForm.get('habitat')?.invalid && animalForm.get('habitat')?.touched" class="error">Campo requerido
+    </div>
+
 
     <label for="peso">Peso</label>
-    <input class="input-dashboard" type="text" placeholder="Peso" name="peso" id="peso">
+    <input class="input-dashboard" formControlName="peso" type="number" [value]="animal.peso" placeholder="Peso" name="peso" id="peso">
+    <div *ngIf="animalForm.get('peso')?.invalid && animalForm.get('peso')?.touched" class="error">Campo requerido</div>
 
     <label for="altura">Altura</label>
-    <input class="input-dashboard" type="text" placeholder="Altura" name="altura" id="altura">
+    <input class="input-dashboard" formControlName="altura" type="number" [value]="animal.altura" placeholder="Altura" name="altura" id="altura">
+    <div *ngIf="animalForm.get('altura')?.invalid && animalForm.get('altura')?.touched" class="error">Campo requerido
+    </div>
 
     <label for="tipo">Tipo</label>
-    <select class="select-dashboard" name="tipo" id="tipo"></select>
+    <select formControlName="tipo" class="select-dashboard" name="tipo" id="tipo">
+      <option [selected]="animal.tipo === 'terrestre'" value="terrestre">Tilin</option>
+    </select>
+    <div *ngIf="animalForm.get('tipo')?.invalid && animalForm.get('tipo')?.touched" class="error">Campo requerido</div>
+
 
     <label for="descripcion">Descripcion</label>
-    <textarea rows="5" placeholder="Descripcion"  class="area-dashboard" name="descripcion" id="descripcion"></textarea>
+    <textarea formControlName="descripcion" rows="5" [value]="animal.descripcion" placeholder="Descripcion" class="area-dashboard" name="descripcion"
+      id="descripcion"></textarea>
+    <div *ngIf="animalForm.get('descripcion')?.invalid && animalForm.get('descripcion')?.touched" class="error">Campo
+      requerido</div>
 
 
     <label for="subtitulo">Subtitulo</label>
-    <input class="input-dashboard" type="text" placeholder="Subtitulo" name="subtitulo" id="subtitulo">
+    <input formControlName="subtitulo" class="input-dashboard" [value]="animal.subtitulo" type="text" placeholder="Subtitulo" name="subtitulo"
+      id="subtitulo">
+    <div *ngIf="animalForm.get('subtitulo')?.invalid && animalForm.get('subtitulo')?.touched" class="error">Campo
+      requerido</div>
 
-    <label for="datosCuriosos">Datos Curiosos</label>
-    <input class="input-dashboard" type="text" placeholder="Datos Curiosos" name="datosCuriosos" id="datosCuriosos">
+
+
+    <label for="datos_curiosos">Datos Curiosos</label>
+    <input formControlName="datos_curiosos" [value]="animal.datos_curiosos" class="input-dashboard" type="text" placeholder="Datos Curiosos"
+      name="datos_curiosos" id="datos_curiosos">
+    <div *ngIf="animalForm.get('datos_curiosos')?.invalid && animalForm.get('datos_curiosos')?.touched" class="error">
+      Campo requerido</div>
+
   </div>
 
 
@@ -72,12 +101,19 @@
     <div class="form2-imagenes">
       <div class="flex-gap8">
         <p>Imagen Principal</p>
-        <input class="file-upload" type="file">
+        <input
+        [style.backgroundImage]="animal.imagen_principal ? 'url(' + animal.imagen_principal + ')' : ''"
+        type="file" class="file-upload" (change)="onFileSelected($event, 'imagen_principal','imagen_principal')"
+          [class.invalid]="animalForm.get('imagen_principal')?.invalid && animalForm.get('imagen_principal')?.touched">
       </div>
 
       <div class="flex-gap8">
         <p>Imagen Secundaria</p>
-        <input class="file-upload" type="file">
+        <input
+        [style.backgroundImage]="animal.imagen_secundaria ? 'url(' + animal.imagen_secundaria + ')' : ''"
+        type="file" class="file-upload" (change)="onFileSelected($event, 'imagen_secundaria','imagen_secundaria')"
+          [class.invalid]="animalForm.get('imagen_secundaria')?.invalid && animalForm.get('imagen_secundaria')?.touched">
+
       </div>
 
     </div>
@@ -86,25 +122,43 @@
     <div>
       <div class="flex-gap8">
         <p>Imagen Ubicación</p>
-        <input class="file-upload" type="file">
-      </div>
+        <input
+        [style.backgroundImage]="animal.img_ubicacion ? 'url(' + animal.img_ubicacion + ')' : ''"
+        type="file" class="file-upload" (change)="onFileSelected($event, 'img_ubicacion','img_ubicacion')"
+          [class.invalid]="animalForm.get('img_ubicacion')?.invalid && animalForm.get('img_ubicacion')?.touched">
 
+      </div>
     </div>
 
 
     <label for="Fisiologia">Fisiologia</label>
-    <input class="input-dashboard" type="text" placeholder="Fisiologia" name="Fisiologia" id="Fisiologia">
+    <input class="input-dashboard" [value]="animal.caracteristicas_fisicas" formControlName="caracteristicas_fisicas" type="text" placeholder="caracteristicas_fisicas" name="caracteristicas_fisicas"
+      id="caracteristicas_fisicas">
+    <div *ngIf="animalForm.get('caracteristicas_fisicas')?.invalid && animalForm.get('caracteristicas_fisicas')?.touched" class="error">Campo
+      requerido</div>
 
     <label for="Dieta">Dieta</label>
-    <input class="input-dashboard" type="text" placeholder="Dieta" name="Dieta" id="Dieta">
-    <label for="comportamiento">Comportamiento</label>
-    <input class="input-dashboard" type="text" placeholder="Comportamiento" name="comportamiento" id="comportamiento">
+    <input class="input-dashboard" [value]="animal.dieta" formControlName="dieta" type="text" placeholder="Dieta" name="Dieta" id="Dieta">
+    <div *ngIf="animalForm.get('dieta')?.invalid && animalForm.get('dieta')?.touched" class="error">Campo requerido
+    </div>
 
-    <label for="estado">Estado</label>
-    <input class="input-dashboard" type="number" min="0" max="1" placeholder="Estado" name="estado" id="estado">
+
+    <label for="comportamiento">Comportamiento</label>
+    <input class="input-dashboard" [value]="animal.comportamiento" type="text" formControlName="comportamiento" placeholder="Comportamiento"
+      name="comportamiento" id="comportamiento">
+    <div *ngIf="animalForm.get('comportamiento')?.invalid && animalForm.get('comportamiento')?.touched" class="error">
+      Campo requerido</div>
+
+
+
+    <!-- <label for="estado">Estado</label>
+    <input class="input-dashboard" formControlName="estado" type="number" min="0" max="1" placeholder="Estado"
+      name="estado" id="estado">
+    <div *ngIf="animalForm.get('estado')?.invalid && animalForm.get('estado')?.touched" class="error">Campo requerido
+    </div> -->
 
   </div>
 
 
 </form>
-<button class="btnOk">Modificar</button>
+<button (click)="guardarAnimal($event)" class="btnOk">Modificar</button>
