@@ -20,39 +20,8 @@
             <app-bol-disponibles></app-bol-disponibles>
         </div>
 
-        <app-add-boletos class="bol" [addBoletos]="{
-            image: 'img/card-boletos/Niños.png',
-            type: 'Infantil',
-            description: 'Haz que tus hijos vivan una aventura inolvidable en contacto con la naturaleza.\nEste boleto incluye\:
-• Acceso a todas las áreas del zoológico\.
-• Actividades interactivas para niños\.
-• Encuentros educativos con cuidadores y expertos en animales.',
-            price: 70,
-            contador: 0,
-            nota: 'Los menores deben estar acompañados por un adulto con boleto pagado.'
-        }"></app-add-boletos>
+        <app-add-boletos *ngFor="let boleto of boletos"  [addBoletos]="boleto" class="bol"></app-add-boletos>
 
-        <app-add-boletos class="bol" [addBoletos]="{
-            image: 'img/card-boletos/Adultos.png',
-            type: 'Adulto',
-            description: 'Explora el reino animal y vive la experiencia completa\nEste boleto está diseñado para mayores de 13 años y ofrece\:\n• Acceso a todas las atracciones del zoológico\.\n• Información detallada sobre la conservación y cuidado de las especies\.\n• Espacios ideales para capturar recuerdos inolvidables.',
-            price: 120,
-            contador: 1,
-            nota: ''
-        }"></app-add-boletos>
-
-
-        <app-add-boletos class="bol" [addBoletos]="{
-            image: 'img/card-boletos/3raEdad.png',
-            type: 'Tercera Edad (INAPAM)',
-            description: 'Una experiencia tranquila para personas mayores de 60 años\nEste boleto incluye\:
-• Acceso preferencial a todas las áreas principales\.
-• Tarifas especiales para disfrutar del zoológico a un precio reducido\.
-• Zonas de descanso y rutas diseñadas para mayor comodidad',
-            price: 70,
-            contador: 0,
-            nota: 'Es necesario presentar tu credencial INAPAM o identificación oficial para validar el descuento.'
-        }"></app-add-boletos>
 
     </section>
 
@@ -62,22 +31,10 @@
             <p class="thin">Agrega un toque especial a tu visita con nuestros tours exclusivos</p>
         </div>
 
-        <app-tour-component></app-tour-component>
-        <app-tour-component [tour]="{
-    id: 2,
-    nombre: 'Expedición de Animales Nocturnos',
-    precio: 15000,
-    img: '',
-    valoracion: 5,
-    descripcionPrincipal: 'Sumérgete en el misterioso mundo de los animales nocturnos. Acompañado de un guía experto te permitirá observar cómo algunas especies se preparan para la noche\.',
-    incluye: '• Guía experto que te conducirá por las áreas nocturnas\.\n• Uso de linternas especiales para no alterar a los animales\.\n• Relatos sobre adaptaciones únicas al ambiente nocturno\.',
-    alReservar: '• Este Tour tiene una duración aproximada de 3 horas.\n• Se realiza en grupos pequeños para garantizar una experiencia tranquila.\n• Se recomienda llevar ropa abrigadora.',
-    contador: 0,
-    fecha: '',
-    horario: 0
-        }"></app-tour-component>
-        <app-tour-component></app-tour-component>
-        <app-tour-component></app-tour-component>
+        @for (recorrido of recorridos; track $index) {
+          <app-tour-component [tour]="recorrido"></app-tour-component>
+        }
+
 
     </section>
 
@@ -131,36 +88,39 @@
 
             <h6 class="thin">Tours</h6>
 
-            <div class="tour">
-                <p class="thin">Saf</p>
+            <div *ngFor="let tour of tours">
+              <div class="tour">
+                <p class="thin">{{tour.tour.titulo}}</p>
                 <svg xmlns="http://www.w3.org/2000/svg" class="minus" viewBox="0 0 20 20" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20ZM6 9C5.73478 9 5.48043 9.10536 5.29289 9.29289C5.10536 9.48043 5 9.73478 5 10C5 10.2652 5.10536 10.5196 5.29289 10.7071C5.48043 10.8946 5.73478 11 6 11H14C14.2652 11 14.5196 10.8946 14.7071 10.7071C14.8946 10.5196 15 10.2652 15 10C15 9.73478 14.8946 9.48043 14.7071 9.29289C14.5196 9.10536 14.2652 9 14 9H6Z" fill="#AAC767"/>
                   </svg>
+              </div>
+
+              <div class="fecha">
+                  <p class="p1">Fecha</p>
+                  <p class="bold">{{tour.horario.fecha}}</p>
+              </div>
+
+              <div class="hora">
+                  <div class="inicio">
+                      <p class="p1 thin">Hora Inicio</p>
+                      <p class="bold">{{tour.horario.horario_inicio}}</p>
+                  </div>
+                  <div class="inicio">
+                      <p class="p1 thin">Hora Final</p>
+                      <p class="bold">{{tour.horario.horario_fin}}</p>
+                  </div>
+              </div>
+
+              <div class="personas">
+                  <div class="cantidad">
+                      <p class="p1 thin">Personas</p>
+                      <p class="p1 bold">{{tour.reserva.cantidad_personas}}</p>
+                  </div>
+                  <p class="p1 bold">$ {{tour.reserva.cantidad_personas! * tour.tour.precio}}</p>
+              </div>
             </div>
 
-            <div class="fecha">
-                <p class="p1">Fecha</p>
-                <p class="bold">99/99/99</p>
-            </div>
-
-            <div class="hora">
-                <div class="inicio">
-                    <p class="p1 thin">Hora Inicio</p>
-                    <p class="bold">99:99</p>
-                </div>
-                <div class="inicio">
-                    <p class="p1 thin">Hora Final</p>
-                    <p class="bold">99:99</p>
-                </div>
-            </div>
-
-            <div class="personas">
-                <div class="cantidad">
-                    <p class="p1 thin">Personas</p>
-                    <p class="p1 bold">0</p>
-                </div>   
-                <p class="p1 bold">$0</p>
-            </div>
 
 
             <app-warning></app-warning>

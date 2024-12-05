@@ -1,3 +1,6 @@
+
+
+
 .tourContainer{
     display: flex;
     width: 100%;
@@ -13,7 +16,7 @@
         color: var(--Blanco-200, #F9FFF5) !important;
         background-color: #325B3A !important; // Cambia este color al que desees
         .plus {
-        transition: 0.3s ease;     
+        transition: 0.3s ease;
             transform: rotate(180deg);
             path{
                 fill: #F9FFF5 !important;
@@ -147,9 +150,9 @@
     gap: 40px;
 }
 .calendario{
-    width: 317px;
-    height: 331px;
-    background-color: #1D1F1D;
+    width: 450px;
+    height: 450px;
+    // background-color: #1D1F1D;
 }
 
 .inicio-termino{
@@ -192,7 +195,7 @@
         width: 24px;
         height: 24px;
     }
-    
+
     .rembolso{
         display: flex;
         height: 30px;
@@ -306,7 +309,7 @@
         }
         .minus-plus{
             width: 32px;
-            height: 32px;            
+            height: 32px;
         }
 
     }
@@ -317,7 +320,7 @@
         grid-template-rows: auto 1fr;
         gap: 40px;
         row-gap: 8px;
-    
+
         .inicio{
             display: flex;
             padding: 8px;

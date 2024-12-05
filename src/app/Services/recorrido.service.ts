@@ -13,7 +13,7 @@ export class RecorridoService {
 
 
   public getRecorridosActivos(){
-    return this.http.get<IRecorrido>(`${environment.API_URL}/recorridos`);
+    return this.http.get<IRecorrido[]>(`${environment.API_URL}/recorridos`);
 
   }
 

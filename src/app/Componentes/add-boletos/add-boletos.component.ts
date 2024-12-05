@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IBoleto } from '../../types/Boletos';
 
 interface addBoletos{
   image: string;
@@ -16,26 +17,29 @@ interface addBoletos{
   styleUrls: ['./add-boletos.component.scss']
 })
 export class AddBoletosComponent {
-  @Input() addBoletos: addBoletos = {
-    image: '',
-    description: '',
-    type: '',
-    price: 0,
-    contador: 0,
-    nota: ''
+  @Input() addBoletos: IBoleto = {
+    advertencias: '',
+    descripcion: '',
+    descripcion_card: '',
+    estado: 1,
+    imagen: '',
+    precio: 233,
+    titulo: '',
   }
-    
+
+  contador = 0
+
   minus(){
-    if(this.addBoletos.contador === 0){
+    if(this.contador === 0){
       return;
     }
-    let contador = this.addBoletos.contador - 1;
-    this.addBoletos.contador = contador;
+    let contador = this.contador - 1;
+    this.contador = contador;
     return contador;
   }
   plus(){
-    let contador = this.addBoletos.contador + 1;
-    this.addBoletos.contador = contador;
+    let contador = this.contador + 1;
+    this.contador = contador;
     return contador;
   }
 }

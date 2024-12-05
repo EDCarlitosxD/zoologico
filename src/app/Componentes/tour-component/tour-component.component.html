@@ -1,10 +1,10 @@
 
   <div class="tourContainer" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#' + tour.id" aria-expanded="false" aria-controls="collapseExample">
         <div class="tour">
-            <img class="imageBol" [src]="tour.img" alt="">
+            <img class="imageBol" [src]="tour.img_recorrido" alt="">
             <div class="texto">
               <div class="nombreEstrella">
-                <h5 class="thin">{{tour.nombre}}</h5>
+                <h5 class="thin">{{tour.titulo}}</h5>
                 <div class="stars">
                   <h6>{{tour.valoracion}}</h6>
                   <svg xmlns="http://www.w3.org/2000/svg" class="star" viewBox="0 0 40 40" fill="none">
@@ -14,7 +14,7 @@
 
               </div>
               <h6>${{tour.precio}} MXN</h6>
-              <p class="p2 thin">{{tour.descripcionPrincipal}}</p>
+              <p class="p2 thin">{{tour.descripcion}}</p>
               <p class="p2 bold rembolso">Los Recorridos No tienen Reembolso</p>
             </div>
         </div>
@@ -35,19 +35,27 @@
     </div> -->
     <app-warning></app-warning>
 
+    <div *ngIf="horarioValidate" class="alert container m-4  alert-warning" role="alert">
+      Selecciona un horario
+    </div>
+
+    <div *ngIf="personasValidate" class="alert container m-4  alert-warning" role="alert">
+      Coloca la cantidad de personas para el Tour
+    </div>
+
     <div class="body">
       <div class="content">
         <div class="text-collapse">
           <h6 class="thin">Incluye</h6>
-          <p class="p1 thin list">{{tour.incluye}}</p>
+          <p class="p1 thin list">{{tour.descripcion_incluye}}</p>
           <h6 class="thin list">Importante al reservar</h6>
-          <p class="p1 thin list">{{tour.alReservar}}</p>
+          <p class="p1 thin list">{{tour.descripcion_importante_reservar}}</p>
           <h5 class="thin">Personas</h5>
           <div class="contador">
             <svg xmlns="http://www.w3.org/2000/svg" (click)="minus()" class="minus-plus" viewBox="0 0 49 48" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M24.5 48C37.7552 48 48.5 37.2552 48.5 24C48.5 10.7448 37.7552 0 24.5 0C11.2448 0 0.5 10.7448 0.5 24C0.5 37.2552 11.2448 48 24.5 48ZM14.9 21.6C14.2635 21.6 13.653 21.8529 13.2029 22.3029C12.7529 22.753 12.5 23.3635 12.5 24C12.5 24.6365 12.7529 25.247 13.2029 25.6971C13.653 26.1471 14.2635 26.4 14.9 26.4H34.1C34.7365 26.4 35.347 26.1471 35.7971 25.6971C36.2471 25.247 36.5 24.6365 36.5 24C36.5 23.3635 36.2471 22.753 35.7971 22.3029C35.347 21.8529 34.7365 21.6 34.1 21.6H14.9Z" fill="#AAC767"/>
             </svg>
-            <h4 class="thin text-center">{{tour.contador}}</h4>
+            <h4 class="thin text-center">{{reserva.cantidad_personas}}</h4>
             <svg xmlns="http://www.w3.org/2000/svg" (click)="plus()" class="minus-plus" viewBox="0 0 49 48" fill="none">
               <path d="M24.5 0C19.7533 0 15.1131 1.40758 11.1663 4.04473C7.21954 6.68188 4.1434 10.4302 2.3269 14.8156C0.510399 19.201 0.0351188 24.0266 0.961164 28.6822C1.88721 33.3377 4.17299 37.6141 7.52945 40.9706C10.8859 44.327 15.1623 46.6128 19.8178 47.5388C24.4734 48.4649 29.299 47.9896 33.6844 46.1731C38.0698 44.3566 41.8181 41.2805 44.4553 37.3337C47.0924 33.3869 48.5 28.7467 48.5 24C48.5 20.8483 47.8792 17.7274 46.6731 14.8156C45.467 11.9038 43.6992 9.25804 41.4706 7.02944C39.242 4.80083 36.5962 3.033 33.6844 1.82689C30.7726 0.620778 27.6517 0 24.5 0ZM31.7 26.4H26.9V31.2C26.9 31.8365 26.6472 32.447 26.1971 32.897C25.747 33.3471 25.1365 33.6 24.5 33.6C23.8635 33.6 23.253 33.3471 22.803 32.897C22.3529 32.447 22.1 31.8365 22.1 31.2V26.4H17.3C16.6635 26.4 16.053 26.1471 15.603 25.6971C15.1529 25.247 14.9 24.6365 14.9 24C14.9 23.3635 15.1529 22.753 15.603 22.3029C16.053 21.8529 16.6635 21.6 17.3 21.6H22.1V16.8C22.1 16.1635 22.3529 15.553 22.803 15.1029C23.253 14.6529 23.8635 14.4 24.5 14.4C25.1365 14.4 25.747 14.6529 26.1971 15.1029C26.6472 15.553 26.9 16.1635 26.9 16.8V21.6H31.7C32.3365 21.6 32.947 21.8529 33.3971 22.3029C33.8471 22.753 34.1 23.3635 34.1 24C34.1 24.6365 33.8471 25.247 33.3971 25.6971C32.947 26.1471 32.3365 26.4 31.7 26.4Z" fill="#AAC767"/>
             </svg>
@@ -55,24 +63,24 @@
         </div>
         <div class="date">
           <h3 class="thin">Escoge tu fecha</h3>
-          <div class="calendario"></div>
-          
+            <full-calendar class="calendario" #calendarRecorrido [options]="calendarOptions"></full-calendar>
+
           <div class="inicio-termino text-center">
             <h5 class="thin g">Inicio</h5>
             <h5 class="thin g">Término</h5>
             <div class="inicio">
-              <h6 class="thin">10:00</h6>
-              <svg xmlns="http://www.w3.org/2000/svg" class="dropdownIco" viewBox="0 0 32 32" fill="none">
-                <path d="M32 16C32 12.8355 31.0616 9.74207 29.3035 7.11088C27.5454 4.4797 25.0466 2.42894 22.1229 1.21793C19.1993 0.00693257 15.9823 -0.309921 12.8786 0.307443C9.77486 0.924806 6.92394 2.44866 4.6863 4.6863C2.44866 6.92394 0.924805 9.77486 0.307442 12.8786C-0.309921 15.9823 0.0069313 19.1993 1.21793 22.1229C2.42894 25.0466 4.47969 27.5454 7.11088 29.3035C9.74207 31.0616 12.8355 32 16 32C20.2424 31.9965 24.31 30.3096 27.3098 27.3098C30.3096 24.31 31.9965 20.2424 32 16ZM14.976 22.188L8.30934 14.188C8.1971 14.0535 8.11245 13.8983 8.06022 13.7311C8.00799 13.5639 7.98919 13.3881 8.00492 13.2136C8.02064 13.0392 8.07057 12.8695 8.15186 12.7144C8.23314 12.5592 8.3442 12.4216 8.47867 12.3093C8.61314 12.1971 8.76841 12.1125 8.9356 12.0602C9.10279 12.008 9.27862 11.9892 9.45307 12.0049C9.62752 12.0206 9.79717 12.0706 9.95232 12.1519C10.1075 12.2331 10.2451 12.3442 10.3573 12.4787L16 19.2493L21.6427 12.4787C21.7549 12.3442 21.8925 12.2331 22.0477 12.1519C22.2028 12.0706 22.3725 12.0206 22.5469 12.0049C22.7214 11.9892 22.8972 12.008 23.0644 12.0602C23.2316 12.1125 23.3869 12.1971 23.5213 12.3093C23.6558 12.4216 23.7669 12.5592 23.8481 12.7144C23.9294 12.8695 23.9794 13.0392 23.9951 13.2136C24.0108 13.3881 23.992 13.5639 23.9398 13.7311C23.8876 13.8983 23.8029 14.0535 23.6907 14.188L17.024 22.188C16.8989 22.3381 16.7423 22.4588 16.5653 22.5416C16.3884 22.6245 16.1954 22.6674 16 22.6674C15.8046 22.6674 15.6116 22.6245 15.4347 22.5416C15.2577 22.4588 15.1011 22.3381 14.976 22.188Z" fill="#8BAC3F"/>
-              </svg>
+              <select [(ngModel)]="reserva.id_horario_recorrido" (change)="changeInputHorario($event)" class="horInicio desplegable">
+                <option *ngFor="let horario of horarioInput" [value]="horario.id" class="thin">{{horario.horario_inicio}}</option>
+            </select>
+
             </div>
-            <h6 class="thin termino">15:00</h6>
+            <div class="thin">{{horarioFin}}</div>
           </div>
         </div>
       </div>
 
 
 
-      <button class="blackBtn">Agregar</button>
+      <button (click)="agregarCarrito()" class="blackBtn">Agregar</button>
     </div>
 </div>
