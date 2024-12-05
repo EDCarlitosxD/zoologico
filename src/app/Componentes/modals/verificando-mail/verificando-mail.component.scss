@@ -1,0 +1,93 @@
+.autenticacion{
+    display: flex;
+    width: 639px;
+    padding: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    border-radius: 24px;
+    background: var(--Blanco-200, #F9FFF5);
+    .addTarjeta{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        .title{
+            width: 378px;
+            align-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            .lockIco{
+                flex-shrink: 0;
+                width: 48px;
+                height: 71.273px;
+            }
+            
+        }
+    }
+    .loading{
+        width: 80px;
+        height: 80px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background: url(../../../../../public/img/pages/loading/LOADING-DESK.png);
+        animation: spin 1s linear infinite;
+
+    }
+    @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(-360deg);
+        }
+      }
+}
+
+
+
+@media (max-width: 1200px) {
+    .autenticacion{
+        display: flex;
+        width: 349px;
+        padding: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        border-radius: 24px;
+        background: var(--Blanco-200, #F9FFF5);
+        .addTarjeta{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            .title{
+                width: 100%;
+                align-self: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                .lockIco{
+                    flex-shrink: 0;
+                    width: 32px;
+                    height: 47.515px;
+                }
+                
+            }
+        }
+        .loading{
+            width: 40px;
+            height: 40px;
+            background: url(../../../../../public/img/pages/loading/LOADING.png);
+        }
+
+    }
+}

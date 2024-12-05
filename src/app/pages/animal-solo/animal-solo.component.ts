@@ -31,8 +31,8 @@ interface animalSolo {
 })
 export class AnimalSoloComponent {
 @Input() an: animalSolo = {
-  nombre: '',
-  nombre_cientifico: '',
+  nombre: 'Guacamaya azul',
+  nombre_cientifico: 'Ara ararauna',
   img_principal: '',
   img_secundaria: '',
   caracteristicas_fisicas: '',
