@@ -91,7 +91,15 @@ input, textarea{
   font-family: inherit;
   
 } 
-  
+
+
+
+a{
+  text-decoration: none;
+  color: #1D1F1D;
+  width: 100%;
+}
+
 input::placeholder, textarea::placeholder{
   display: flex;
   justify-content: center;
@@ -104,6 +112,18 @@ input::placeholder, textarea::placeholder{
   font-style: normal;
   font-weight: 300;
   line-height: 150%; /* 30px */
+}
+
+@media (max-width: 1200px) {
+  input::placeholder, textarea::placeholder{
+      color: var(--Negro-200, #757C75);      
+      /* Mobile/P 01/Ligth */
+      font-family: "Comic Neue";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%; /* 24px */
+}
 }
 
 h1 {
@@ -146,8 +166,8 @@ h6 {
   line-height: 150%; /* 72px */
 }
 
-.p2 {
-  font-size: 12px;
+.p2{
+  font-size: 14px;
   line-height: 150%; /* 72px */
 }
 
@@ -162,20 +182,16 @@ h6 {
 }
 
 button {
+  all: unset;
   border-color: transparent;
-  display: flex;
   width: 100%;
-  padding: 10px 0;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
+  height: 46px;
   border-radius: 20px;
   background: var(--Primario-Auxiliar-400, #B3CD78);
-  
-
-  color: var(--Negro-800, #1D1F1D);
+  padding: 0;
+  margin: 0;
   text-align: center;
+  color: var(--Negro-800, #1D1F1D);
   
   /* Mobile/P/Bold */
   font-family: "Comic Neue";
@@ -189,23 +205,18 @@ button.formBtn{
   height: 80px;
 }
 button.chiquito {
-  display: flex;
-  width: 96.868px;
-  padding: 6.415px;
-  justify-content: center;
-  align-items: center;
-  gap: 6.415px;
-  border-radius: 12px;
-  background: var(--Primario-Auxiliar-400, #B3CD78);
-  color: var(--Negro-800, #1D1F1D);
-  text-align: center;
-  
-  /* Mobile/P 01/Bold */
-  font-family: "Comic Neue";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 150%; /* 24px */
+  height: 40px;
+  button.chiquito {
+    height: 52px;
+    border-radius: 12px;
+
+/* Mobile/P 01/Bold */
+font-family: "Comic Neue";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 24px */
+  }
 }
 
 button.dashboard{
@@ -255,23 +266,23 @@ button:hover {
   }
 
   h2 {
-    font-size: 4rem;
+    font-size: 72px;;
   }
 
   h3 {
-    font-size: 3.375rem;
+    font-size: 54px;
   }
 
   h4 {
-    font-size: 3rem;
+    font-size: 48px;
   }
 
   h5 {
-    font-size: 2.5rem;
+    font-size: 40px;
   }
 
   h6 {
-    font-size: 2rem;
+    font-size: 32px;
   }
 
 
@@ -285,13 +296,8 @@ button:hover {
   }
 
   button {
-    display: flex;
     width: 100%;
     height: 80px;
-    padding: 16px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
     border-radius: 38px;
     background: var(--Primario-Auxiliar-500, #AAC767);
     
@@ -307,24 +313,13 @@ button:hover {
       background: var(--Negro-500, #343734);
     }
   }
-  button.chiquito{
-    display: flex;
-    width: 180px;
-    height: 60px;
-    padding: 27px 44px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+  button.chiquito {
+    height: 52px;
+    font-family: "Comic Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 36px */
     border-radius: 24px;
-    background: var(--Primario-Auxiliar-400, #B3CD78);
-    color: var(--Negro-800, #1D1F1D);
-    text-align: center;
-
-/* Desktop/P 01/Bold */
-font-family: "Comic Neue";
-font-size: 24px;
-font-style: normal;
-font-weight: 700;
-line-height: 150%; /* 36px */
   }
 }

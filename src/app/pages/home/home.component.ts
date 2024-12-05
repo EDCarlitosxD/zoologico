@@ -8,6 +8,7 @@ import { SliderComponent } from "../../Componentes/slider/slider.component";
 import { RouterLink } from '@angular/router';
 import { ExperienciasComponent } from "../../Componentes/modals/experiencias/experiencias.component";
 import { RecorridosModalComponent } from "../../Componentes/modals/recorridos-modal/recorridos-modal.component";
+import { BolDisponiblesComponent } from "../../Componentes/bol-disponibles/bol-disponibles.component";
 import { AnimalEnum } from '../../types/Animales';
 
 @Component({
@@ -20,7 +21,7 @@ import { AnimalEnum } from '../../types/Animales';
     FooterComponent,
     NavBarComponent,
     SliderComponent,
-    ExperienciasComponent, RecorridosModalComponent],
+    ExperienciasComponent, RecorridosModalComponent, BolDisponiblesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

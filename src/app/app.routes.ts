@@ -26,20 +26,23 @@ import { adminGuard } from "./Guard/admin.guard";
 import { isLoggedGuard } from "./is-logged.guard";
 
 export const routes: Routes = [
-  { path: 'donaciones', component: DonacionesComponent }, // Corregido ✅✅✅,
+  { path: 'contactanos', component: ContactoComponent }, //A PIXEL✅✅✅,
+  { path: 'donaciones', component: DonacionesComponent }, //A PIXEL✅✅✅,
+  { path: 'animales', component: AnimalesComponent }, // Falta filtro A PIXEL✅✅✅
+  { path: 'loading', component: LoadingComponent }, //Aprobado ✅✅✅
+  { path: 'comprar', component: RecorridosComponent }, //A PIXEL✅✅✅, Falta calendario y selectores
+
+
   { path: '', component: HomeComponent }, // Corrige el nombre del componente si es necesario
-  { path: 'animales', component: AnimalesComponent }, // Falta filtro
   { path: 'login', component: LoginComponent },// Terminarlo,
   { path: 'register', component: RegisterComponent },// Terminarlo,
   { path: 'login', component: LoginComponent, canActivate: [isLoggedGuard] },// Terminarlo,
   { path: 'register', component: RegisterComponent , canActivate: [isLoggedGuard]},// Terminarlo,
 
-  { path: 'animales/animal', component: AnimalSoloComponent}, //Mobile parcialmente terminado
-  { path: 'comprar', component: RecorridosComponent }, // Falta calendario y selectores
-  { path: 'contactanos', component: ContactoComponent }, //Aprobado ✅✅✅,
-  { path: 'comprar/pagar', component: PagarComponent }, //Aprobado ✅✅✅,
-  { path: 'comprar/pagar/gracias', component: CierreComponent }, //Aprobado ✅✅✅,
-  { path: 'loading', component: LoadingComponent },
+  { path: 'animales/animal', component: AnimalSoloComponent}, //Aprobado ✅✅✅
+
+  { path: 'comprar/pagar', component: PagarComponent }, //CENTRAR MODALS, MENSAJES DE CONFIRMACION, MOBILE,
+  { path: 'comprar/pagar/gracias', component: CierreComponent }, //,
 
   // { path: 'dashboard', component: DashboardComponent },
   // { path: 'dashboard/animales', component: DashboardAnimalesComponent },

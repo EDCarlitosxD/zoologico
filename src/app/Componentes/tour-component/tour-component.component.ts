@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { WarningComponent } from "../../warning/warning.component";
 
 interface Tour {
   id: number;
@@ -17,7 +18,7 @@ interface Tour {
 @Component({
   selector: 'app-tour-component',
   standalone: true,
-  imports: [],
+  imports: [WarningComponent],
   templateUrl: './tour-component.component.html',
   styleUrl: './tour-component.component.scss'
 })

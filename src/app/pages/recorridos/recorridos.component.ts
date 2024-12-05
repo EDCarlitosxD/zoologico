@@ -6,6 +6,9 @@ import { IndicadorComponent } from "../../Componentes/indicador/indicador.compon
 import { AddBoletosComponent } from "../../Componentes/add-boletos/add-boletos.component";
 import { TourComponentComponent } from "../../Componentes/tour-component/tour-component.component";
 import { RouterLink } from '@angular/router';
+import { BolDisponiblesComponent } from "../../Componentes/bol-disponibles/bol-disponibles.component";
+import { WarningComponent } from "../../warning/warning.component";
+
 import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions, EventSourceInput } from '@fullcalendar/core/index.js';
 import { RecorridoService } from '../../Services/recorrido.service';
@@ -15,6 +18,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 @Component({
   selector: 'app-recorridos',
   standalone: true,
+  imports: [RouterLink, NavBarComponent, FooterComponent, SelectorRecorridoComponent, IndicadorComponent, AddBoletosComponent, TourComponentComponent, BolDisponiblesComponent, WarningComponent],
   imports: [RouterLink, NavBarComponent, FooterComponent, SelectorRecorridoComponent, IndicadorComponent, AddBoletosComponent, TourComponentComponent,FullCalendarModule, CommonModule],
   templateUrl: './recorridos.component.html',
   styleUrl: './recorridos.component.scss'

@@ -17,3 +17,18 @@
         text-align: center;
     }
 }
+
+@media (max-width: 768px) {
+    .contador{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        .icoCont{
+            width: 16px;
+            height: 16px;
+        }
+        P{
+            width: 16px;
+        }
+    }
+}

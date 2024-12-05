@@ -3,20 +3,24 @@
 $grid-columns: 12;
 $grid-gutter-width: 40px;
 
-.flex-column-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
+a{
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--Blanco-400, #FBFFF8);
+
+/* Desktop/P 01/Medium */
+font-family: "Comic Neue";
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 36px */
 }
-
-
 .footer {
   background: var(--Primario-800, #25442B);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 40px;
-  padding: 60px 10%;
+  padding: 80px 164px;
   row-gap: 64px;
   align-content: center;
 
@@ -24,31 +28,22 @@ $grid-gutter-width: 40px;
   .left {
     grid-column: 1 / 5;
     display: flex;
-    // max-width: 501px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    .horarios {
+    .acerca-involucrate{
       display: flex;
-      // max-width: 305px;
-      // max-height: 440px;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       gap: 40px;
       flex-shrink: 0;
-
-      h5 {
-        color: var(--Blanco-600, #F7FFF1);
-        width: 100%;
-        /* Desktop/H5/Medium */
-        font-family: "Fredoka";
-        font-size: 40px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 150%;
-        /* 60px */
+      .acerca{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
       }
 
     }
@@ -71,15 +66,15 @@ $grid-gutter-width: 40px;
 
     .logo {
       width: 172px;
-      height: 116px;
+      height: 116px;      
     }
-
-    .redes h5 {
-      // height: 117px;
-      max-width: 461px;
-
+    .redes{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
     }
-
     .taquilla {
       // max-height: 175px;
       gap: 20px;
@@ -96,24 +91,21 @@ $grid-gutter-width: 40px;
   .right {
     grid-column: 9 / 13;
     display: flex;
-    // max-width: 502px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-
 
     .cuenta-descubre {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: flex-end;
       gap: 40px;
-    }
-
-    .cuenta,
-    .descubre {
-      width: 100%;
-      height: 175px;
+      .cuenta{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 20px;
+      }
     }
 
 
@@ -142,126 +134,66 @@ $grid-gutter-width: 40px;
   align-items: flex-start;
 
 
-  h5 {
-    color: var(--Blanco-600, #F7FFF1);
-    text-align: center;
-
-    /* Desktop/H5/Medium */
-    font-family: "Fredoka";
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%;
-    /* 60px */
-  }
 
 }
 
 
 .socialMedia {
   display: flex;
-  padding: 0px 40px;
+  padding: 0px 16px;
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
 }
 
 .social {
+  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   display: flex;
   align-items: center;
   width: 72px;
   height: 72px;
-  padding: 17px 15px;
   gap: 10px;
+  div{
+    width: 100%;
+    height: 100%;
+  }
 }
 
-#facebook,
-#x,
-#instagram,
-#Youtube {
+.socialIco {
   transition: all .3s;
+  width: 72px;
+  height: 72px;
 
+  &:hover path{
+    transition: 0.3s ease;
+    fill: var(--Secundario-Auxiliar-700, #E9B733);
+  }
 }
+.socialIcoX {
+  transition: all .3s;
+  width: 72px;
+  height: 72px;
 
-#facebook {
-  background-image: url('./../../../assets/img/footer/Facebook.svg');
-
-
-  &:hover {
-    background-image: url('./../../../assets/img//footer/FacebookHover.svg');
+  &:hover rect{
+    transition: 0.3s ease;
+    fill: var(--Secundario-Auxiliar-700, #E9B733);
   }
 }
 
-#x {
-  background-image: url('./../../../assets/img/footer/X.svg');
-
-
-  &:hover {
-    background-image: url('./../../../assets/img//footer/xHover.svg');
-  }
-}
-
-#instagram {
-  background-image: url('./../../../assets/img/footer/Instagram.svg');
-
-
-  &:hover {
-    background-image: url('./../../../assets/img//footer/Instagramhover.svg');
-  }
-}
-
-#Youtube {
-  background-image: url('./../../../assets/img/footer/Youtube.svg');
-
-
-  &:hover {
-    background-image: url('./../../../assets/img//footer/YoutubeHover.svg');
-  }
-}
-
-/*GAP ENTRE H5 y P*/
-.horarios__acerca,
-.involucrate,
-.cuenta,
-.descubre,
-.taquilla,
-.redes {
-  gap: 20px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-}
-.horarios .involucrate{
-  align-self: start;
-}
-
-
-/* FUENTES DESKTOP */
-.horarios__acerca h5,
-.involucrate h5,
-.cuenta h5,
-.descubre h5,
-.redes h5,
-.taquilla h5 {
+h5{
   color: var(--Blanco-600, #F7FFF1);
 
-
   /* Desktop/H5/Medium */
-  font-family: "Fredoka";
   font-size: 40px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%;
-  /* 60px */
+  line-height: 150%; /* 60px */
 }
-
-.horarios__acerca p,
-.involucrate p,
-.cuenta p,
-.descubre p,
-.taquilla p {
+a{
+  cursor: pointer;
+  text-decoration: none;
   color: var(--Blanco-400, #FBFFF8);
 
   /* Desktop/P 01/Medium */
@@ -269,302 +201,227 @@ $grid-gutter-width: 40px;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%;
-  /* 36px */
+  line-height: 150%; /* 36px */
+}
+p{
+  color: var(--Blanco-400, #FBFFF8);
+
+  /* Desktop/P 01/Medium */
+  font-family: "Comic Neue";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 36px */
+}
+
+.p1{
+  color: var(--Blanco-400, #FBFFF8);
+
+  /* Desktop/P 01/Medium */
+  font-family: "Comic Neue";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 36px */
 }
 
 
+@media (max-width: 1200px) {
 
+  h5{
+    color: var(--Blanco-600, #F7FFF1);
+    text-align: center;
+    font-family: Fredoka;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+  }
+  a{
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--Blanco-400, #FBFFF8);
+    /* Mobile/P 02/Medium */
+    font-family: "Comic Neue";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+  }
+  p{
+            /* Mobile/P 02/Medium */
+            font-family: "Comic Neue";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 21px */
+  }
 
-
-@media (max-width: 960px) {
-
-
-
+  .p1{
+    /* Mobile/P 02/Medium */
+    font-family: "Comic Neue";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+  }
   .footer {
+    
+    background: var(--Primario-800, #25442B);
     display: grid;
-    row-gap: 20px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
     gap: 20px;
-    padding: 7% 9%;
-
+    row-gap: 20px;
+    align-content: center;
+ 
+    
+padding: 20px 41px;
+  
+    .left {
+      grid-column: span 1;
+      grid-row: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      .acerca-involucrate{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        .acerca{
+          gap: 8px;
+        }
+  
+      }
+  
+  
+    }
+  
+  
+  
+  
     .center {
-      grid-column: 1 / 3;
-      grid-row: 1 / 2;
-      // height: 247px;
+      order: 1;
+      grid-column: span 2;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: 8px;
-
+      flex-shrink: 0;
+  
+  
       .logo {
         width: 64.911px;
         height: 43.777px;
-
-        img {
-          width: 100%;
-          height: 100%;
-        }
       }
-
-
-      .redes {
-        gap: 7.548px;
+      .redes{
         display: flex;
+        width: 174px;
         flex-direction: column;
-
-        h5 {
-          // height: 44.154px;
-          // width: 173.9px;
-
-        }
-
-        .socialMedia {
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        .socialMedia{
           display: flex;
-          width: 100%;
-          gap: 10px;
-          justify-content: center;
+          justify-content: space-between;
           align-items: center;
           align-self: stretch;
           padding: 0;
-
+          .socialIco{
+            width: 32px;
+            height: 32px;
+          }
         }
 
       }
-
+  
       .taquilla {
+        // max-height: 175px;
         gap: 8px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        align-self: stretch;
       }
-
-      .taquilla p {
-        max-width: 159px;
-
-      }
+  
     }
-
-    .left {
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
-      padding: 0 20px;
-
-      .horarios__acerca {
-        text-align: start;
-        width: 100%;
-        &>.flex-column-center {
-          height: 45px
-        }
-      }
-
-      .horarios__acerca,
-      .involucrate {
+  
+  
+  
+    .right {
+      order: 3;
+      grid-column: 2 / span 1;
+      grid-row: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      .cuenta-descubre {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-
-      .horarios {
+        align-items: flex-end;
         gap: 24px;
-
-      }
-
-      .involucrate {
-
-        text-align: start;
-        // width: 123px;
-      }
-
-
-    }
-
-    .right {
-      grid-column: 2 / 3;
-      grid-row: 2 / 3;
-      margin: 0px;
-      padding: 0px 20px;
-      .cuenta-descubre {
-        gap: 24px;
-        .cuenta,
-        .descubre {
-          height: auto;
-          gap: 8px !important;
-          width: 124px;
-          text-align: end;
+        .cuenta{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 8px;
         }
       }
-
-
-
+  
+  
     }
-
+  
     .letras {
-      grid-column: 1 / 3;
-      grid-row: 3 / 4;
+      all: unset;
+      order: 4;
+      grid-column: span 2;
+      grid-row: 3;
+      display: flex;
       padding: 4px 64px;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 10px;
-      height: auto;
-
-
-      img {
-        align-self: center;
+      flex-shrink: 0;
+      .letrasIco{
         width: 159px;
         height: 38.785px;
       }
     }
+  
   }
-
-
-
-
-  /* FUENTES MOBILE */
-  .horarios__acerca h5,
-  .involucrate h5,
-  .cuenta h5,
-  .descubre h5,
-  .redes h5,
-  .taquilla h5 {
-
-    color: var(--Blanco-600, #F7FFF1);
-    font-family: 'Fredoka';
-    font-size: 16px !important;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%;
-
+  
+  .redes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  
+  
+  
   }
-
-  .horarios__acerca p,
-  .involucrate p,
-  .cuenta p,
-  .descubre p,
-  .taquilla p {
-    color: var(--Blanco-400, #FBFFF8);
-
-    /* Mobile/P 02/Medium */
-    font-family: "Comic Neue";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    /* 18px */
+ 
+  .socialMedia {
+    display: flex;
+    padding: 0px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
   }
-
+  
   .social {
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    align-items: center;
     width: 32px;
-    max-height: 32px;
-    padding: 0 15px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    height: 32px;
+    gap: 10px;
   }
-
-
-
-
-
-
-
-
-}
-
-@media (width: 1920px) {
-  .footer {
-    grid-template-columns: repeat(12, 96px);
-    grid-template-rows: auto 72px;
-    gap: 40px;
-    height: 939px;
-    padding: 80px 164px;
-  }
-
-  .left {
-    width: 501px;
-  }
-
-  .horarios {
-    width: 305px;
-    height: 440px;
-  }
-
-
-  .center {
-    width: 504px;
-
-    .redes h5 {
-      height: 117px;
-
-    }
-
-    .taquilla {
-      height: 175px;
-    }
-  }
-
-  .right {
-    width: 502px;
-
-    .cuenta,
-    .descubre {
-      width: 236px !important;
-      height: 175px !important;
-    }
-
-  }
-
-}
-
-
-@media(width: 430px){
-
-  .footer{
-    grid-template-columns: 164px 164px;
-    padding: 24px 41px;
-
-    .redes{
-      h5 {
-        height: 44.154px;
-        width: 173.9px;
-      }
-    }
-
-
-    .center{
-      .redes{
-        .socialMedia{
-          display: flex;
-          justify-content: space-between ;
-          gap: 0;
-
-          width: 174px;
-
-        }
-      }
-    }
-
-    .left{
-      .involucrate {
-        width: 123px;
-      }
-
-    }
-
-    .right {
-
-      .cuenta,
-      .descubre {
-        height: auto;
-        gap: 8px;
-        width: 124px;
-        text-align: end;
-      }
-
-    }
-
-
-
-  }
-
-
 
 }
