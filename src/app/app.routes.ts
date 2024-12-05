@@ -34,7 +34,7 @@ export const routes: Routes = [
   { path: 'comprar/pagar', component: PagarComponent }, //CENTRAR MODALS, MENSAJES DE CONFIRMACION, MOBILE,
 
 
-  { path: '', component: HomeComponent }, // Corrige el nombre del componente si es necesario
+  { path: '', component: HomeComponent }, // A PIXEL✅✅✅
   { path: 'login', component: LoginComponent },// Terminarlo,
   { path: 'register', component: RegisterComponent },// Terminarlo,
 

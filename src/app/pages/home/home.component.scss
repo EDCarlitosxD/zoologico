@@ -421,6 +421,7 @@ cursor: pointer;
     padding: 0 164px;
     gap: 40px;
     grid-template-columns: repeat(12, 1fr);
+    align-items: center;
     display: grid;
 
     .sobreNosotros__informacion {

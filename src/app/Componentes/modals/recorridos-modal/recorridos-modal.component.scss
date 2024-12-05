@@ -9,6 +9,11 @@
 
 }
 
+.star{
+    width: 24px;
+    height: 24px;
+}
+
 .recorrido-card{
     display: flex;
     width: 348px;
@@ -121,6 +126,12 @@
 }
 
 @media (min-width: 1200px) {
+
+    .star{
+        width: 48px;
+        height: 48px;
+    }
+
     .recorrido-card{
         display: flex;
         width: 903px;
