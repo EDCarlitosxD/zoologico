@@ -74,7 +74,7 @@ $colors: (
   font-family: "Comic Neue";
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 150%; /* 72px */
 }
 
@@ -207,8 +207,7 @@ button.formBtn{
 }
 button.chiquito {
   height: 40px;
-  button.chiquito {
-    height: 52px;
+  
     border-radius: 12px;
 
 /* Mobile/P 01/Bold */
@@ -218,7 +217,7 @@ font-style: normal;
 font-weight: 700;
 line-height: 150%; /* 24px */
   }
-}
+
 
 button.dashboard{
   all:unset;
@@ -333,11 +332,13 @@ button:hover {
   }
   button.chiquito {
     height: 52px;
+    border-radius: 24px;
+    text-align: center;
+    /* Desktop/P 01/Bold */
     font-family: "Comic Neue";
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 36px */
-    border-radius: 24px;
   }
 }

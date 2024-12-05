@@ -41,6 +41,18 @@
     line-height: 150%;
     /* 24px */
   }
+  .estrellas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      margin: auto 0;
+    }
+  }
 
 
 }
