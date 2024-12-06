@@ -24,6 +24,7 @@ import { EditAnimalComponent } from "./pages/edit-animal/edit-animal.component";
 import { CreateAnimalesComponent } from "./pages/create-animales/create-animales.component";
 import { PagarDonacionComponent } from "./pages/pagar-donacion/pagar-donacion.component";
 import { CierreDonacionComponent } from "./pages/cierre-donacion/cierre-donacion.component";
+import { DashboardReportesComponent } from "./pages/dashboard-reportes/dashboard-reportes.component";
 
 export const routes: Routes = [
   { path: 'contactanos', component: ContactoComponent }, //A PIXEL✅✅✅,
@@ -51,6 +52,8 @@ export const routes: Routes = [
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
   { path: 'dashboard/ventas', component: DashboardVentasComponent },
   { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
+  { path: 'dashboard/reportes', component: DashboardReportesComponent },
+
   { path: 'dashboard/recorridos/edit', component: EditRecorridosComponent },
   { path: 'dashboard/guias/edit', component: EditGuiasComponent },
   { path: 'dashboard/animal/edit', component: EditAnimalComponent },

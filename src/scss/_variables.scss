@@ -254,6 +254,63 @@ button:hover {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+//TABLAS
+table{
+  width: 100%;
+  th{
+    color: var(--Negro-800, #1D1F1D);
+
+    /* Desktop/P 02/Bold */
+    font-family: "Comic Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 30px */
+  }
+  td{
+    color: var(--Negro-800, #1D1F1D);
+
+    /* Mobile/P/Medium */
+    font-family: "Comic Neue";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+  }
+  tr{
+    height: 48px !important;
+    border-radius: 4px;
+  }
+  .cellw{
+    display: flex;
+    gap: 10px;
+    padding: 0;
+}
+
+
+  .form-check-input:checked{
+    background-color: var(--Primario-Auxiliar-500, #AAC767) !important; /* Verde */
+    border-color: var(--Primario-Auxiliar-500, #AAC767) !important; /* Asegurar el borde es del mismo color */
+  }
+  
+  /* Opcional: Agregar una transición para un efecto suave */
+  .form-check-input {
+    cursor: pointer;
+    transition: background-color 0.9s, border-color 0.9s;
+  }
+}
+th,
+thead {
+ background-color: #E7ECE3;
+}
+
+.odd-row {
+ background-color: #E7ECE3;
+}
+
+.even-row {
+ background-color: #F9FFF5;
+}
 
 
 // Estilos de Desktop
@@ -270,6 +327,20 @@ button:hover {
     border-radius: 16px;
     border: 3px solid var(--Primario-Auxiliar-200, #C6DA9A);
     background: var(--Blanco-400, #FBFFF8);
+  }
+  input.dash60{
+    border-radius: 16px;
+    background: var(--Blanco-200, #F9FFF5);
+    width: 100%;
+    height: 60px;
+    border: 0;
+  }
+  input.dash80{
+    border-radius: 16px;
+    background: var(--Blanco-200, #F9FFF5);
+    width: 100%;
+    height: 60px;
+    border: 0;
   }
 
 
