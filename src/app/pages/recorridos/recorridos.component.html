@@ -91,7 +91,7 @@
             <div *ngFor="let tour of tours">
               <div class="tour">
                 <p class="thin">{{tour.tour.titulo}}</p>
-                <svg xmlns="http://www.w3.org/2000/svg" class="minus" viewBox="0 0 20 20" fill="none">
+                <svg (click)="eliminarCarrito(tour.horario.id)" xmlns="http://www.w3.org/2000/svg" class="minus" viewBox="0 0 20 20" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20ZM6 9C5.73478 9 5.48043 9.10536 5.29289 9.29289C5.10536 9.48043 5 9.73478 5 10C5 10.2652 5.10536 10.5196 5.29289 10.7071C5.48043 10.8946 5.73478 11 6 11H14C14.2652 11 14.5196 10.8946 14.7071 10.7071C14.8946 10.5196 15 10.2652 15 10C15 9.73478 14.8946 9.48043 14.7071 9.29289C14.5196 9.10536 14.2652 9 14 9H6Z" fill="#AAC767"/>
                   </svg>
               </div>

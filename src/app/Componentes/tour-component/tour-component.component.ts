@@ -41,8 +41,9 @@ export class TourComponentComponent {
   }
 
   reserva: IReserva = {
-    id_usuario: getUserDetails()?.user.id || 0,
+    id_usuario: 0,
     id_horario_recorrido: 0,
+    id_recorrido: 0,
     cantidad_personas: 0,
     estado: true,
   }
@@ -127,6 +128,11 @@ export class TourComponentComponent {
 
       this.updateCalendar();
     })
+
+
+    this.reserva.id_usuario = getUserDetails()?.user.id || 0;
+    this.reserva.id_recorrido = this.tour.id;
+
   }
 
 
@@ -192,7 +198,7 @@ export class TourComponentComponent {
       return
     }
 
-    const reserva = this.reserva;
+    const reserva = {...this.reserva};
     const horarioInformacion = this.horarioInput.find(horarrio => this.reserva.id_horario_recorrido == horarrio.id);
     const tour: IRecorrido = this.tour;
 
@@ -201,6 +207,9 @@ export class TourComponentComponent {
       reserva: reserva,
       tour: tour
     };
+
+
+    console.log(reserva);
 
 
     this.carritoServices.addReserva(reserva,informacionFront);

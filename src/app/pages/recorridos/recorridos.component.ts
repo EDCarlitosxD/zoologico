@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavBarComponent } from '../../Componentes/nav-bar/nav-bar.component';
 import { FooterComponent } from "../../Componentes/footer/footer.component";
 import { SelectorRecorridoComponent } from "../../Componentes/selector-recorrido/selector-recorrido.component";
@@ -18,6 +18,7 @@ import { IRecorrido } from '../../types/Recorridos';
 import { BoletosService } from '../../Services/boletos.service';
 import { CommonModule } from '@angular/common';
 import { CarritoService } from '../../Services/carrito.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-recorridos',
   standalone: true,
@@ -25,11 +26,13 @@ import { CarritoService } from '../../Services/carrito.service';
   templateUrl: './recorridos.component.html',
   styleUrl: './recorridos.component.scss'
 })
-export class RecorridosComponent {
+export class RecorridosComponent implements OnInit{
 
   constructor(private recorridoService: RecorridoService, private boletosService: BoletosService, private carritoService: CarritoService) {
     this.tours = this.carritoService.toursInfo;
    }
+
+   private subscriptioTour?: Subscription;
 
   boletos: IBoleto[]= []
   recorridos: IRecorrido[] = []
@@ -40,8 +43,24 @@ export class RecorridosComponent {
     this.recorridoService.getRecorridosActivos().subscribe(data =>  this.recorridos = data)
     this.boletosService.getAllBoletos(1).subscribe(data =>  this.boletos = data)
 
+    this.subscriptioTour = this.carritoService.toursInfo$.subscribe(data => this.tours = data);
+    console.log(this.carritoService.tours);
+
+
   }
 
+  ngOnDestroy() {
+    // Limpiamos la suscripción para evitar fugas de memoria
+    if (this.subscriptioTour) {
+      this.subscriptioTour.unsubscribe();
+    }
+  }
+
+
+  eliminarCarrito($idHorarrio: number){
+    this.carritoService.eliminarCarritoReserva($idHorarrio);
+    alert("holamundo")
+  }
 
 
 
