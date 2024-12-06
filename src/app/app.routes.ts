@@ -20,8 +20,12 @@ import { EditRecoVendidosComponent } from "./pages/dashboard/edit-reco-vendidos/
 import { PagarComponent } from "./pages/pagar/pagar.component";
 import { CierreComponent } from "./pages/cierre/cierre.component";
 import { LoadingComponent } from "./pages/loading/loading.component";
-import { EditAnimalComponent } from "./pages/edit-animal/edit-animal.component";
+import { EditAnimalComponent } from "./pages/dashboard/edit-animal/edit-animal.component";
 import { CreateAnimalesComponent } from "./pages/create-animales/create-animales.component";
+import { PagarDonacionComponent } from "./pages/pagar-donacion/pagar-donacion.component";
+import { CierreDonacionComponent } from "./pages/cierre-donacion/cierre-donacion.component";
+import { DashboardReportesComponent } from "./pages/dashboard-reportes/dashboard-reportes.component";
+import { AddGuiaComponent } from "./pages/dashboard/add-guia/add-guia.component";
 import { adminGuard } from "./Guard/admin.guard";
 import { isLoggedGuard } from "./is-logged.guard";
 
@@ -31,9 +35,10 @@ export const routes: Routes = [
   { path: 'animales', component: AnimalesComponent }, // Falta filtro A PIXEL✅✅✅
   { path: 'loading', component: LoadingComponent }, //Aprobado ✅✅✅
   { path: 'comprar', component: RecorridosComponent }, //A PIXEL✅✅✅, Falta calendario y selectores
+  { path: 'comprar/pagar', component: PagarComponent }, //CENTRAR MODALS, MENSAJES DE CONFIRMACION, MOBILE,
 
 
-  { path: '', component: HomeComponent }, // Corrige el nombre del componente si es necesario
+  { path: '', component: HomeComponent }, // A PIXEL✅✅✅
   { path: 'login', component: LoginComponent },// Terminarlo,
   { path: 'register', component: RegisterComponent },// Terminarlo,
   { path: 'login', component: LoginComponent, canActivate: [isLoggedGuard] },// Terminarlo,
@@ -41,12 +46,35 @@ export const routes: Routes = [
 
   { path: 'animales/animal', component: AnimalSoloComponent}, //Aprobado ✅✅✅
 
-  { path: 'comprar/pagar', component: PagarComponent }, //CENTRAR MODALS, MENSAJES DE CONFIRMACION, MOBILE,
-  { path: 'comprar/pagar/gracias', component: CierreComponent }, //,
 
-  // { path: 'dashboard', component: DashboardComponent },
-  // { path: 'dashboard/animales', component: DashboardAnimalesComponent },
+  { path: 'comprar/pagar/gracias', component: CierreComponent }, //,
+  { path: 'donaciones/pagar', component: PagarDonacionComponent },
+  { path: 'donaciones/pagar/gracias', component: CierreDonacionComponent },
+
+
+
+
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard/animales', component: DashboardAnimalesComponent },
   { path: 'dashboard/ventas', component: DashboardVentasComponent },
+
+
+  { path: 'dashboard/tours', component: DashboardRecorridoComponent },
+  { path: 'dashboard/tours/create', component: AnimalSoloComponent },
+  { path: 'dashboard/tours/edit', component: EditRecorridosComponent },
+  { path: 'dashboard/tours/guias/edit', component: EditGuiasComponent },
+  { path: 'dashboard/tours/guias/create', component: AddGuiaComponent },
+  { path: 'dashboard/tours/vendidos/edit', component: EditRecoVendidosComponent },
+
+
+  { path: 'dashboard/reportes', component: DashboardReportesComponent },
+
+
+  { path: 'dashboard/animal/edit', component: EditAnimalComponent },
+
+
+  { path: 'dashboard/animales/create', component: CreateAnimalesComponent },
+
   { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
   { path: 'dashboard/recorridos/edit', component: EditRecorridosComponent },
 

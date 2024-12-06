@@ -5,7 +5,7 @@ import { IndicadorComponent } from "../../Componentes/indicador/indicador.compon
 import { Router, RouterLink } from '@angular/router';
 import { AddTarjetaComponent } from "../../Componentes/modals/add-tarjeta/add-tarjeta.component";
 import { MetodoDePagoComponent } from "../../Componentes/modals/metodo-de-pago/metodo-de-pago.component";
-import { WarningComponent } from "../../warning/warning.component";
+import { WarningComponent } from "../../Componentes/warning/warning.component";
 import { CarritoService } from '../../Services/carrito.service';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';

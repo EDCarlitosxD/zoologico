@@ -1,0 +1,429 @@
+.visa-Desk{
+    display: block;
+    width: 48px;
+    height: 33px;
+}
+
+.page{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 0 164px;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    app-atras-btn{
+        position: absolute;
+        top: 123px;
+        left: 172px;
+    }
+
+    .form{
+        height: 597px;
+        grid-column: 4 / span 6 ;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        .montos{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            input[type="radio"].a {
+                display: none;
+                cursor: pointer;
+              }
+              
+              .monto {
+                all: unset;
+                padding: 0 16px;
+                color: var(--Secundario-Auxiliar-100, #F3EBD6);
+              
+                font-family: Fredoka;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 150%; /* 48px */
+                border-radius: 20px;
+                border: 3px solid var(--Primario-Auxiliar-200, #C6DA9A);
+                background: var(--Primario-Auxiliar-700, #8BAC3F);
+              
+                display: inline-block;
+                text-align: center;
+                cursor: pointer;
+                transition: background 0.3s, transform 0.2s;
+              }
+              
+              /* Efecto hover y clic */
+              .monto:hover {
+                border-radius: 20px;
+                border: 3px solid var(--Secundario-Auxiliar-100, #F3EBD6);
+                background: var(--Secundario-Auxiliar-700, #E9B733);
+              }
+              
+              /* Estado activo (cuando el radio está seleccionado) */
+              input[type="radio"].a:checked + .monto {
+                border-radius: 20px;
+                border: 3px solid var(--Secundario-Auxiliar-100, #F3EBD6);
+                background: var(--Secundario-Auxiliar-700, #E9B733);
+              }
+        }
+
+/* Ocultar los inputs pero mantenerlos funcionales */
+
+  
+
+
+
+    }
+    .metodoPago{
+        cursor: pointer;
+        display: flex;
+        padding: 8px 20px;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        border-radius: 8px;
+        background: var(--Secundario-Auxiliar-100, #F3EBD6);
+        .cardbtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            .tarjeta{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+
+            }
+        }
+        &:hover .cardbtn .sig-desk path{
+            transition: 0.3s ease;
+            fill: #DCA617;
+        }
+    }
+}
+.sig-mob{
+    width: 24px;
+    height: 25px;
+    display: none;
+}
+.sig-desk{
+    width: 36px;
+    height: 36px;
+
+}
+
+
+
+
+
+
+.plus{
+    width: 28px;
+    height: 28px;
+  }
+
+  .minus{
+    width: 20px;
+    height: 20px;
+  }
+
+  .close{
+    width: 28px;
+    height: 28px;
+  }
+
+  .plus:hover path, .minus:hover path, .close:hover path{
+    cursor: pointer;
+    transition: 0.3s ease;
+    fill: #DCA617;
+  }
+
+  input[type="radio"] {
+    appearance: none; /* Quitar estilos predeterminados */
+    -webkit-appearance: none; /* Para compatibilidad con Webkit */
+    position: relative; /* Importante para centrar ::after */
+    margin: 2px;
+    width: 28px; /* Diámetro externo */
+    height: 28px; /* Diámetro externo */
+    border: 2px solid #25442B; /* Borde del círculo externo */
+    border-radius: 50%; /* Hacerlo circular */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    transition: border-color 0.3s, background-color 0.3s;
+    &:checked{
+        border-color: #DCA617;
+    }
+  }
+  
+  /* Círculo interno (relleno cuando está seleccionado) */
+  input[type="radio"]::after {
+    content: ""; /* Contenido vacío para el pseudo-elemento */
+    position: absolute; /* Necesario para centrar con top y left */
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Corrige el desplazamiento */
+    width: 20px; /* Ajustar para que quede dentro del círculo externo */
+    height: 20px;
+    background-color: transparent; /* Invisible por defecto */
+    border-radius: 50%; /* Circular */
+    transition: background-color 0.3s, transform 0.3s;
+    border: 2px solid #25442B; /* Borde del círculo externo */
+  }
+  
+  /* Cambiar colores y activar el relleno al seleccionar */
+  
+  input[type="radio"]:checked::after {
+    border: #DCA617;
+    background-color: #DCA617; /* Color del círculo interno */
+  }
+  
+  /* Efecto al pasar el mouse */
+  input[type="radio"]:hover {
+    background-color: #C6DA9A; /* Fondo al pasar el mouse */
+  }
+  
+.minusIco{
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+    &:hover path{
+        transition: 0.3s ease;
+        fill: #DCA617;
+    }
+}
+
+.metodo_pagoModal{
+    display: flex;
+    padding: 16px;
+    width: 504px;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 16px;
+    background: var(--Blanco-200, #F9FFF5);
+    .title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+    }
+    form{
+        display: flex;
+        padding-right: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+    }
+    button{
+        all: unset;
+        border-radius: 12px;
+        background: var(--Primario-Auxiliar-400, #B3CD78);
+        color: var(--Negro-800, #1D1F1D);
+        text-align: center;
+        width: 119px;
+        height: 36px;
+        /* Mobile/P 01/Bold */
+        font-family: "Comic Neue";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; /* 24px */
+        cursor: pointer;
+        &:hover{
+            transition: 0.3s ease;
+            background: var(--hover, #DCA617)
+        }
+    }
+}
+
+form .seleccionar-tarjeta{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    .tarjeta{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+}
+
+.addTarjeta-button{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    .addTarjeta{
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .sig-desk{
+        flex-shrink: 0;
+        width: 24px !important;
+        height: 24px !important;
+    }
+    .visa-Desk{
+        width: 32px !important;
+        height: 21.333px !important;
+    }
+
+
+    .page{
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 41px;
+        gap: 20px;
+        row-gap: 40px;
+        align-items: center;
+        position: relative;
+        app-atras-btn{
+            position: absolute;
+            top: 56px;
+            left: 41px;
+        }
+    
+        .form{
+            height: 597px;
+            grid-column: span 2 ;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            .title{
+                width: 230px;
+            }
+            .montos{
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                width: 100%;
+                input[type="radio"].a {
+                    display: none;
+                    cursor: pointer;
+                  }
+                  
+                  .monto {
+                    all: unset;
+                    display: flex;
+padding: 1.6px 14px;
+width: 100%;
+                  
+
+color: var(--Secundario-Auxiliar-100, #F3EBD6);
+
+/* Mobile/H6/Medium */
+font-family: Fredoka;
+font-size: 22px;
+font-style: normal;
+font-weight: 500;
+line-height: 150%; /* 33px */
+
+                    border-radius: 20px;
+                    border: 3px solid var(--Primario-Auxiliar-200, #C6DA9A);
+                    background: var(--Primario-Auxiliar-700, #8BAC3F);
+                  
+                    display: inline-block;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: background 0.3s, transform 0.2s;
+                  }
+                  
+                  /* Efecto hover y clic */
+                  .monto:hover {
+                    border-radius: 20px;
+                    border: 3px solid var(--Secundario-Auxiliar-100, #F3EBD6);
+                    background: var(--Secundario-Auxiliar-700, #E9B733);
+                  }
+                  
+                  /* Estado activo (cuando el radio está seleccionado) */
+                  input[type="radio"].a:checked + .monto {
+                    border-radius: 20px;
+                    border: 3px solid var(--Secundario-Auxiliar-100, #F3EBD6);
+                    background: var(--Secundario-Auxiliar-700, #E9B733);
+                  }
+            }
+    
+    /* Ocultar los inputs pero mantenerlos funcionales */
+    
+      
+    
+    
+    
+        }
+        .metodoPago{
+            cursor: pointer;
+            display: flex;
+            padding: 8px 20px;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+            border-radius: 8px;
+            background: var(--Secundario-Auxiliar-100, #F3EBD6);
+            .cardbtn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+                .tarjeta{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+    
+                }
+            }
+            &:hover .cardbtn .sig-desk path{
+                transition: 0.3s ease;
+                fill: #DCA617;
+            }
+        }
+    }
+
+
+ //MODAL
+    .metodo_pagoModal{
+        width: 348px;
+
+        button{
+
+            border-radius: 12px;
+
+            width: 101px;
+            height: 30px;
+
+            
+            /* Mobile/P 02/Bold */
+            font-family: "Comic Neue";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%; /* 21px */
+        }
+    }
+
+    input[type="radio"] {
+        margin: 1.5px;
+        width: 25px !important; /* Diámetro externo */
+        height: 25px !important; /* Diámetro externo */
+        padding: 0;
+      }
+      input[type="radio"]::after {
+        width: 18px; /* Diámetro del círculo interno */
+        height: 18px;
+      }
+
+
+}

@@ -1,5 +1,4 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { WarningComponent } from "../../warning/warning.component";
 import { ITour } from '../../types/Tour';
 import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions, DayHeaderContentArg, EventSourceInput } from '@fullcalendar/core/index.js';
@@ -14,6 +13,21 @@ import { FormsModule } from '@angular/forms';
 import { CarritoService } from '../../Services/carrito.service';
 
 
+import { WarningComponent } from "../warning/warning.component";
+
+interface Tour {
+  id: number;
+  nombre: string,
+  precio: number,
+  img: string,
+  valoracion: number,
+  descripcionPrincipal: string,
+  incluye: string,
+  alReservar: string,
+  contador: number,
+  fecha: string,
+  horario: number
+}
 
 @Component({
   selector: 'app-tour-component',

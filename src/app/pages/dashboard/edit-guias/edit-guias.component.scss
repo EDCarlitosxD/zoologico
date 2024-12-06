@@ -1,77 +1,4 @@
-.dashboard__titulo{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    padding: 40px 164px 0 164px;
-    width: 100%;
-    gap: 40px;
-    row-gap: 10px;
-    .atras-title{
-        grid-column: span 3;
-        display: flex;
-        align-items: center;
-        gap: 24px;
-        .atras{
-          cursor: pointer;
-            display: flex;
-            width: 70px;
-            height: 70px;
-            justify-content: center;
-            align-items: center;
-            flex-shrink: 0;
-        }
-    }
 
-    .dashboard__perfil {
-        grid-column:  10 / span 3;
-        display: flex;
-        justify-self: end;
-        width: fit-content;
-        padding: 4px 8px;
-        align-items: center;
-        gap: 8px;
-        align-self: center;
-        border-radius: 64px;
-        background: var(--Negro-600, #2E312E);
-
-        img {
-          width: 72px;
-          height: 72px;
-          background-color: white;
-          border-radius: 64px;
-
-        }
-
-        .dashboard__perfil__datos {
-          display: flex;
-          padding: 0px 8px;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-
-
-          .perfil__nombre {
-            color: var(--Color, #FFF);
-            text-align: center;
-
-          }
-
-          .perfil__role {
-            color: var(--Color, #FFF);
-            text-align: center;
-          }
-        }
-
-    }
-    .line{
-      grid-column: span 12;
-        width: 100%;
-      background-color: #C6DA9A;
-      height: 2px;
-    }
-    .dashboard__descripcion{
-      grid-column: span 12;
-    }
-}
 
 .formGuias{
     display: grid;
@@ -101,8 +28,8 @@
         }
     }
     .formBtn{
-        grid-column: 6/8;
-        margin: auto;
+        grid-column: 3 / 11;
+        width: 100%;
     }
 }
 

@@ -1,6 +1,7 @@
 import { NgClass, NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { WarningComponent } from "../../warning/warning.component";
 interface Recorrido {
   img: string,
   title: string,
@@ -17,7 +18,7 @@ interface Recorrido {
 @Component({
   selector: 'app-recorridos-modal',
   standalone: true,
-  imports: [NgClass, RouterLink, NgFor],
+  imports: [NgClass, RouterLink, NgFor, WarningComponent],
   templateUrl: './recorridos-modal.component.html',
   styleUrl: './recorridos-modal.component.scss'
 })

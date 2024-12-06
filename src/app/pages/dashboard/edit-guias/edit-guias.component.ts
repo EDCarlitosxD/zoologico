@@ -1,5 +1,6 @@
 import { CommonModule, Location } from '@angular/common';
 import { Component } from '@angular/core';
+import { HeaderDashEditComponent } from '../../../Componentes/Admin/header-dash-edit/header-dash-edit.component';
 import { GuiaService } from '../../../Services/guia.service';
 import { ActivatedRoute } from '@angular/router';
 import { IGuia } from '../../../types/Guias';
@@ -8,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-edit-guias',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,HeaderDashEditComponent],
   templateUrl: './edit-guias.component.html',
   styleUrl: './edit-guias.component.scss'
 })

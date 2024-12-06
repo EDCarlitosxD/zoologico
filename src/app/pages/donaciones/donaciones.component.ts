@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { NavBarComponent } from "../../Componentes/nav-bar/nav-bar.component";
 import { FooterComponent } from "../../Componentes/footer/footer.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-donaciones',
   standalone: true,
-  imports: [NavBarComponent, FooterComponent],
+  imports: [RouterLink, NavBarComponent, FooterComponent],
   templateUrl: './donaciones.component.html',
   styleUrl: './donaciones.component.scss'
 })
