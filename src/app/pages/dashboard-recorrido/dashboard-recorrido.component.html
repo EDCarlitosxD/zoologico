@@ -2,7 +2,8 @@
     <div class="recorridos">
         <div class="tableData">
             <h6 class="thin">Tours disponibles</h6>
-            <table class="">
+            <div class="tbody">
+              <table class="">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -47,10 +48,12 @@
                     </tr>
                   </tbody>
             </table>
+            </div>
         </div>
         <div class="tableData">
             <h6 class="thin">Tours Vendidos</h6>
-            <table class="">
+            <div class="tbody">
+<table class="">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -86,6 +89,7 @@
                     </tr>
                   </tbody>
             </table>
+            </div>
         </div>
     </div>
     <div class="guias">
@@ -93,7 +97,8 @@
             <h6 class="thin">Guías</h6>
             <button class="chiquito" routerLink="guias/create">Agregar Guía</button>
         </div>
-        <table class="">
+        <div class="tableGuias">
+          <table class="">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -153,5 +158,6 @@
                 </tr>
               </tbody>
         </table>
+        </div>
     </div>
 </app-dashboard-content>

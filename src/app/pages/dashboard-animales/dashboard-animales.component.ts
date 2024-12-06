@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DashboardContentComponent } from "../../Componentes/Admin/dashboard-content/dashboard-content.component";
 import { NgClass, NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 interface Animales {
   id: number;
@@ -14,7 +15,7 @@ interface Animales {
 @Component({
   selector: 'app-dashboard-animales',
   standalone: true,
-  imports: [DashboardContentComponent, NgFor, NgClass],
+  imports: [DashboardContentComponent, NgFor, NgClass, RouterLink],
   templateUrl: './dashboard-animales.component.html',
   styleUrl: './dashboard-animales.component.scss'
 })

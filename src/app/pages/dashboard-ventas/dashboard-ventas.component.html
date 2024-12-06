@@ -50,28 +50,30 @@
 
             <div class="bgTable">
                 <h6 class="thin">Ventas</h6>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Tipo</th>
-                            <th>Precio</th>
-                            <th>Ventas</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr
-                            *ngFor="let v of ventas; let i = index"
-                            [ngClass] = "{ 'odd-row': i % 2 !== 0, 'even-row': i % 2 === 0 }"
-                        >
-                            <td>{{v.id}}</td>
-                            <td>{{v.tipo}}</td>
-                            <td>${{v.precio}}</td>
-                            <td>{{v.ventas}} Boletos</td>                           
-    
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Tipo</th>
+                                <th>Precio</th>
+                                <th>Ventas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                *ngFor="let v of ventas; let i = index"
+                                [ngClass] = "{ 'odd-row': i % 2 !== 0, 'even-row': i % 2 === 0 }"
+                            >
+                                <td>{{v.id}}</td>
+                                <td>{{v.tipo}}</td>
+                                <td>${{v.precio}}</td>
+                                <td>{{v.ventas}} Boletos</td>                           
+        
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 
             </div>
         </div>

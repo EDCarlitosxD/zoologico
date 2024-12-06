@@ -1,22 +1,20 @@
 import { Location, NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-
 interface Horario{
   fecha: string;
   hora: string;
   guia: string;
   active: boolean;
 }
-
 @Component({
-  selector: 'app-edit-recorridos',
+  selector: 'app-add-reco',
   standalone: true,
   imports: [NgFor, RouterLink],
-  templateUrl: './edit-recorridos.component.html',
-  styleUrl: './edit-recorridos.component.scss'
+  templateUrl: './add-reco.component.html',
+  styleUrl: './add-reco.component.scss'
 })
-export class EditRecorridosComponent {
+export class AddRecoComponent {
   @Input() horarios: Horario[] = [
     { fecha: "15 septiembre", hora: "13:30", guia: "Adrian Hernandez", active: true },
     { fecha: "16 septiembre", hora: "10:00", guia: "Maria Lopez", active: false },
@@ -38,6 +36,4 @@ export class EditRecorridosComponent {
     console.log(`${horario. fecha} is now ${horario.active ? 'active': 'inactive'}`);
     
   }
-  
-
 }

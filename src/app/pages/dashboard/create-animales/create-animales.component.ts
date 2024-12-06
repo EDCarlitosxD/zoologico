@@ -1,10 +1,12 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
+import { HeaderDashEditComponent } from "../../../Componentes/Admin/header-dash-edit/header-dash-edit.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-create-animales',
   standalone: true,
-  imports: [],
+  imports: [HeaderDashEditComponent, RouterLink],
   templateUrl: './create-animales.component.html',
   styleUrl: './create-animales.component.scss'
 })

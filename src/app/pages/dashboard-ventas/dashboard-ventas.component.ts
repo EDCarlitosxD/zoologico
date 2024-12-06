@@ -57,5 +57,23 @@ export class DashboardVentasComponent {
       precio: 70,
       ventas: 5
     },
+    {
+      id: 4,
+      tipo: "Adultos",
+      precio: 120,
+      ventas: 40
+    },
+    {
+      id: 5,
+      tipo: "Adultos",
+      precio: 120,
+      ventas: 20
+    },
+    {
+      id: 6,
+      tipo: "Niños",
+      precio: 120,
+      ventas: 20
+    },
   ]
 }

@@ -21,11 +21,12 @@ import { PagarComponent } from "./pages/pagar/pagar.component";
 import { CierreComponent } from "./pages/cierre/cierre.component";
 import { LoadingComponent } from "./pages/loading/loading.component";
 import { EditAnimalComponent } from "./pages/dashboard/edit-animal/edit-animal.component";
-import { CreateAnimalesComponent } from "./pages/create-animales/create-animales.component";
+import { CreateAnimalesComponent } from "./pages/dashboard/create-animales/create-animales.component";
 import { PagarDonacionComponent } from "./pages/pagar-donacion/pagar-donacion.component";
 import { CierreDonacionComponent } from "./pages/cierre-donacion/cierre-donacion.component";
 import { DashboardReportesComponent } from "./pages/dashboard-reportes/dashboard-reportes.component";
 import { AddGuiaComponent } from "./pages/dashboard/add-guia/add-guia.component";
+import { AddRecoComponent } from "./pages/dashboard/add-reco/add-reco.component";
 
 export const routes: Routes = [
   { path: 'contactanos', component: ContactoComponent }, //A PIXEL✅✅✅,
@@ -56,7 +57,7 @@ export const routes: Routes = [
 
 
   { path: 'dashboard/tours', component: DashboardRecorridoComponent },
-  { path: 'dashboard/tours/create', component: AnimalSoloComponent },
+  { path: 'dashboard/tours/create', component: AddRecoComponent },
   { path: 'dashboard/tours/edit', component: EditRecorridosComponent },
   { path: 'dashboard/tours/guias/edit', component: EditGuiasComponent },
   { path: 'dashboard/tours/guias/create', component: AddGuiaComponent },
@@ -66,7 +67,7 @@ export const routes: Routes = [
   { path: 'dashboard/reportes', component: DashboardReportesComponent },
 
 
-  { path: 'dashboard/animal/edit', component: EditAnimalComponent },
+  { path: 'dashboard/animales/edit', component: EditAnimalComponent },
 
 
   { path: 'dashboard/animales/create', component: CreateAnimalesComponent },
