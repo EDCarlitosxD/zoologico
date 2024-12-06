@@ -1,6 +1,7 @@
 import { Component, Input, input } from '@angular/core';
 import { DashboardContentComponent } from "../../Componentes/Admin/dashboard-content/dashboard-content.component";
 import { NgClass, NgFor, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 interface Recorrido {
   titulo: string;
   precio: number;
@@ -19,7 +20,7 @@ interface Guia{
 @Component({
   selector: 'app-dashboard-recorrido',
   standalone: true,
-  imports: [DashboardContentComponent, NgClass, NgFor, NgIf],
+  imports: [DashboardContentComponent, NgClass, NgFor, NgIf, RouterLink],
   templateUrl: './dashboard-recorrido.component.html',
   styleUrl: './dashboard-recorrido.component.scss'
 })

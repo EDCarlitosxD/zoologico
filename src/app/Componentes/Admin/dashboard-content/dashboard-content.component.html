@@ -4,7 +4,11 @@
   <!--CONTENIDO DE -->
   <div class="dashboard-contenido">
       <section class="dashboard__titulo">
-          <h3>{{dashboardTitulo}}</h3>
+          <div class="dash_titleButton">
+            <h3>{{dashboardTitulo}}</h3>
+            <button [ngClass]="classButton" routerLink="create" class="chiquito">{{dashButton}}</button>
+          </div>
+
           <div class="dashboard__perfil">
             <img src="" alt="">
             <div class="dashboard__perfil__datos">
