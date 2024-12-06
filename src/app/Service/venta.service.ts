@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IReserva } from '../types/Reserva';
-import { IBoleto } from '../types/Boletos';
+import { IBoleto, IBoletoVenta } from '../types/Boletos';
 import { environment } from '../environment';
 import { IUserDetails } from '../types/Auth';
 import { getUserDetails } from '../utils/getUserDetails';
 
 export interface IVenta{
   recorridos: IReserva[],
-  boletos: IBoleto[],
+  boletos: IBoletoVenta[],
 }
 
 

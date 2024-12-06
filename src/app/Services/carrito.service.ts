@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { IReserva, IReservaInformacion } from '../types/Reserva';
-import { IBoleto } from '../types/Boletos';
+import { IBoleto, IBoletoVenta } from '../types/Boletos';
 import { ITour } from '../types/Tour';
 import { BehaviorSubject } from 'rxjs';
+import { BoletosService } from './boletos.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,39 +12,64 @@ export class CarritoService {
 
   private STORAGE_RESERVAS = 'reservas';
   private STORAGE_BOLETOS = 'boletos';
+  private STORAGE_BOLETOS_INFORMACION = 'boletos_informacion';
   private STORAGE_RESERVAS_INFORMACION = 'reservas_informacion';
 
   private tourSubjet = new BehaviorSubject<IReserva[]>([]);
   private tourInfoSubject = new BehaviorSubject<IReservaInformacion[]>([]);
+  private boletoSubject = new BehaviorSubject<IBoletoVenta[]>([])
+  private boletoInformacionSubject = new BehaviorSubject<IBoleto[]>([])
 
-
-  boletos: IBoleto[] = [];
   tours$ = this.tourSubjet.asObservable();
   toursInfo$ = this.tourInfoSubject.asObservable();
+  boletoVenta$ = this.boletoSubject.asObservable();
+  boletoInformacion$ = this.boletoInformacionSubject.asObservable();
 
   tours: IReserva[] = [];
   toursInfo: IReservaInformacion[] = [];
+  boletosVenta: IBoletoVenta[] = []
+  boletosInformacion: IBoleto[] = [];
 
 
 
 
-  constructor() {
+  constructor(private boletoService: BoletosService) {
     const savedReservas = localStorage.getItem(this.STORAGE_RESERVAS);
     const savedReservasInformacion = localStorage.getItem(this.STORAGE_RESERVAS_INFORMACION)
-    const savedBoletos = localStorage.getItem(this.STORAGE_BOLETOS);
-
+    const savedBoletos = localStorage.getItem(this.STORAGE_BOLETOS_INFORMACION);
+    const savedBoletosVenta = localStorage.getItem(this.STORAGE_BOLETOS)
     if (savedReservas) {
       this.tours = JSON.parse(savedReservas);
     }
     if (savedReservasInformacion) {
       this.toursInfo = JSON.parse(savedReservasInformacion);
     }
-    if (savedBoletos) {
-      this.boletos = JSON.parse(savedBoletos);
+    if (savedBoletos && savedBoletosVenta) {
+      this.boletosInformacion = JSON.parse(savedBoletos);
+      this.boletosVenta = JSON.parse(savedBoletosVenta)
+
+    } else {
+      this.tourSubjet.next(this.tours);
+      this.tourInfoSubject.next(this.toursInfo);
+
+      this.boletoService.getAllBoletos(1).subscribe(data => {
+        this.boletosInformacion = data;
+
+        this.boletosVenta = []
+        this.boletosVenta = this.boletosInformacion.map(boleto => ({
+          id_boleto: boleto.id,
+          cantidad: 0,
+        }) as IBoletoVenta)
+
+        this.boletoSubject.next([...this.boletosVenta]);
+        this.boletoInformacionSubject.next([...this.boletosInformacion]);
+        this.actualizarStorageBoletos();
+      })
     }
 
-    this.tourSubjet.next(this.tours);
-    this.tourInfoSubject.next(this.toursInfo);
+
+
+
   }
 
 
@@ -58,8 +84,11 @@ export class CarritoService {
   }
 
 
-  addBoleto(boleto: IBoleto) {
-    this.boletos.push(boleto);
+  aumentarBoleto(id:number) {
+    this.boletosVenta.find(boleto => boleto.id_boleto == id)!.cantidad++;
+
+    this.boletoSubject.next([...this.boletosVenta]);
+
     this.actualizarStorageBoletos();
   }
 
@@ -69,7 +98,8 @@ export class CarritoService {
   }
 
   private actualizarStorageBoletos() {
-    localStorage.setItem(this.STORAGE_BOLETOS, JSON.stringify(this.boletos));
+    localStorage.setItem(this.STORAGE_BOLETOS, JSON.stringify(this.boletosVenta));
+    localStorage.setItem(this.STORAGE_BOLETOS_INFORMACION, JSON.stringify(this.boletosInformacion));
 
   }
 
@@ -87,8 +117,8 @@ export class CarritoService {
   clearCarrito() {
     this.tours = [];
     this.toursInfo = []
-    this.boletos = [];
-
+    this.boletosInformacion = [];
+    this.boletosVenta = []
     this.tourSubjet.next(this.tours);
     this.tourInfoSubject.next(this.toursInfo);
 

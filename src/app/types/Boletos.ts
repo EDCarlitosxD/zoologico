@@ -10,3 +10,9 @@ export interface IBoleto {
   created_at?: string; // Fecha de creación en formato ISO.
   updated_at?: string; // Fecha de actualización en formato ISO.
 }
+
+
+export interface IBoletoVenta{
+  id_boleto: number,
+  cantidad: number
+}

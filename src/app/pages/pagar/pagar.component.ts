@@ -35,7 +35,6 @@ export class PagarComponent implements OnInit{
     this.tarjetasService.getTarjetas().subscribe(data => this.tarjetas = data);
     console.log(this.carritoService.tours);
     this.subscriptionTour = this.carritoService.toursInfo$.subscribe(data => this.toursInfo = data);
-    console.log(this.carritoService.tours);
 
   }
 
@@ -62,7 +61,7 @@ export class PagarComponent implements OnInit{
 
   comprar(){
     const ventaObject: IVenta = {
-      boletos: this.carritoService.boletos,
+      boletos: this.carritoService.boletosVenta,
       recorridos: this.carritoService.tours
     }
 
