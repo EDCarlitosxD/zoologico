@@ -11,5 +11,13 @@ export interface IRecorridoResponse{
 export interface IVentaResponse{
 
   recorridos: IRecorridoResponse[]
-  boletos: [],
+  boletos: IVentaBoletoResponse[],
+}
+
+
+export interface IVentaBoletoResponse{
+  "tipo_boleto": string,
+  "cantidad_boletos": number,
+  "total_boletos": number,
+  "token": string,
 }

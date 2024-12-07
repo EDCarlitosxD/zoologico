@@ -54,29 +54,29 @@ export const routes: Routes = [
 
 
 
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'dashboard/animales', component: DashboardAnimalesComponent },
-  { path: 'dashboard/ventas', component: DashboardVentasComponent },
+  // { path: 'dashboard', component: DashboardComponent },
+  // { path: 'dashboard/animales', component: DashboardAnimalesComponent },
+  // { path: 'dashboard/ventas', component: DashboardVentasComponent },
 
 
-  { path: 'dashboard/tours', component: DashboardRecorridoComponent },
-  { path: 'dashboard/tours/create', component: AnimalSoloComponent },
-  { path: 'dashboard/tours/edit', component: EditRecorridosComponent },
-  { path: 'dashboard/tours/guias/edit', component: EditGuiasComponent },
-  { path: 'dashboard/tours/guias/create', component: AddGuiaComponent },
-  { path: 'dashboard/tours/vendidos/edit', component: EditRecoVendidosComponent },
+  // { path: 'dashboard/tours', component: DashboardRecorridoComponent },
+  // { path: 'dashboard/tours/create', component: AnimalSoloComponent },
+  // { path: 'dashboard/tours/edit', component: EditRecorridosComponent },
+  // { path: 'dashboard/tours/guias/edit', component: EditGuiasComponent },
+  // { path: 'dashboard/tours/guias/create', component: AddGuiaComponent },
+  // { path: 'dashboard/tours/vendidos/edit', component: EditRecoVendidosComponent },
 
 
-  { path: 'dashboard/reportes', component: DashboardReportesComponent },
+  // { path: 'dashboard/reportes', component: DashboardReportesComponent },
 
 
-  { path: 'dashboard/animal/edit', component: EditAnimalComponent },
+  // { path: 'dashboard/animal/edit', component: EditAnimalComponent },
 
 
-  { path: 'dashboard/animales/create', component: CreateAnimalesComponent },
+  // { path: 'dashboard/animales/create', component: CreateAnimalesComponent },
 
-  { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
-  { path: 'dashboard/recorridos/edit', component: EditRecorridosComponent },
+  // { path: 'dashboard/recorridos', component: DashboardRecorridoComponent },
+  // { path: 'dashboard/recorridos/edit', component: EditRecorridosComponent },
 
 
   { path: 'animal/:slug', component: AnimalSoloComponent}, //Mobile parcialmente terminado

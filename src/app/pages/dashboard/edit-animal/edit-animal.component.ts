@@ -1,10 +1,10 @@
 import { CommonModule, Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { IAnimal } from '../../types/Animales';
-import { AnimalService } from '../../Services/animal.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { max } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { AnimalService } from '../../../Services/animal.service';
+import { IAnimal } from '../../../types/Animales';
 
 @Component({
   selector: 'app-edit-animal',

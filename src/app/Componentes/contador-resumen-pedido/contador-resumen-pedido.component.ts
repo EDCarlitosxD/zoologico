@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
+import { CarritoService } from '../../Services/carrito.service';
+import { Subscription } from 'rxjs';
+import { IReserva } from '../../types/Reserva';
 
 @Component({
   selector: 'app-contador-resumen-pedido',
@@ -9,19 +12,29 @@ import { Component } from '@angular/core';
 })
 export class ContadorResumenPedidoComponent {
 
-  cantidad: number = 0;
-  
+
+  constructor(private carritoService: CarritoService){
+  }
+
+  @Input() tipo: "boleto" | "tour" = "boleto";
+
+  @Input() id: number = 0;
+  @Input() cantidad: number = 0;
+
   minus(){
-    if(this.cantidad === 0){
-      return;
+    if(this.tipo === 'boleto'){
+      this.carritoService.decrementarBoleto(this.id);
+    }else{
+      this.carritoService.decrementarPersonaTour(this.id);
     }
-    let contador = this.cantidad - 1;
-    this.cantidad = contador;
-    return contador;
+
   }
   plus(){
-    let contador = this.cantidad + 1;
-    this.cantidad = contador;
-    return contador;
+    if(this.tipo == 'boleto'){
+      this.carritoService.aumentarBoleto(this.id);
+    }else{
+      this.carritoService.aumentarPersonasTour(this.id);
+
+    }
   }
 }

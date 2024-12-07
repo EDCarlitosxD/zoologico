@@ -9,12 +9,14 @@ import { WarningComponent } from "../../Componentes/warning/warning.component";
 import { CarritoService } from '../../Services/carrito.service';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { IReservaInformacion } from '../../types/Reserva';
+import { IReserva, IReservaInformacion } from '../../types/Reserva';
 import { TarjetaService } from '../../Service/tarjeta.service';
 import { ITarjeta } from '../../types/Tarjetas';
 import { FormsModule } from '@angular/forms';
 import { IVenta, VentaService } from '../../Service/venta.service';
 import { IVentaResponse } from '../../types/Venta';
+import { IBoleto, IBoletoVenta } from '../../types/Boletos';
+import { ITour } from '../../types/Tour';
 
 @Component({
   selector: 'app-pagar',
@@ -26,20 +28,44 @@ import { IVentaResponse } from '../../types/Venta';
 export class PagarComponent implements OnInit{
 
   private subscriptionTour?: Subscription;
+  private subscriptioBoletos? : Subscription;
+  private subscriptionBoletosVenta? : Subscription;
+  private subscriptionTourVenta?: Subscription;
   tarjetas: ITarjeta[] = [];
   tarjetaSeleccionada: ITarjeta|null = null;
+  boletos: IBoleto[] = [];
+  boletosVenta: IBoletoVenta[] = []
+  tours: IReserva[] = [];
+  toursInfo: IReservaInformacion[] = [];
+  totalBoletos = 0;
+  totalRecorridos = 0;
 
   constructor( private carritoService: CarritoService, private tarjetasService:TarjetaService, private ventaService: VentaService, private router: Router){}
 
   ngOnInit(){
     this.tarjetasService.getTarjetas().subscribe(data => this.tarjetas = data);
     console.log(this.carritoService.tours);
-    this.subscriptionTour = this.carritoService.toursInfo$.subscribe(data => this.toursInfo = data);
+    this.subscriptionTour = this.carritoService.toursInfo$.subscribe(data => {
+
+      this.toursInfo = data
+      this.totalRecorridos = this.toursInfo.reduce((acumulador, siguiente) => acumulador+ (siguiente.tour.precio * siguiente.reserva.cantidad_personas!),0)
+      console.log(this.totalRecorridos);
+
+    });
+    this.subscriptionTourVenta = this.carritoService.tours$.subscribe(data => {
+      this.tours = data
+
+    }
+    );
+    this.subscriptioBoletos = this.carritoService.boletoInformacion$.subscribe(data => this.boletos = data);
+    this.subscriptionBoletosVenta = this.carritoService.boletoVenta$.subscribe(data => {
+      this.boletosVenta = data;
+      this.totalBoletos = this.boletos.reduce((acumulador, siguiente,index) => acumulador + (siguiente.precio * this.boletosVenta[index].cantidad) ,0);
+    });
 
   }
 
 
-  toursInfo: IReservaInformacion[] = [];
 
   eliminarTarjeta(id: number){
     this.tarjetasService.eliminar(id).subscribe(data => {
@@ -60,10 +86,20 @@ export class PagarComponent implements OnInit{
 
 
   comprar(){
+
+    if(!this.tarjetaSeleccionada){
+      alert("Selecciona una tarjeta")
+      return;
+    }
+    const eliminarBoletosSinCantidad = this.carritoService.boletosVenta.filter(boleto => boleto.cantidad > 0);
+
     const ventaObject: IVenta = {
-      boletos: this.carritoService.boletosVenta,
+      boletos: eliminarBoletosSinCantidad,
       recorridos: this.carritoService.tours
     }
+
+    console.log(ventaObject);
+
 
     this.router.navigate(['/loading']).then(() => {
       this.ventaService.realizarVenta(ventaObject).subscribe({

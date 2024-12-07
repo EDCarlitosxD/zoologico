@@ -21,10 +21,19 @@ export class CierreComponent {
 
     this.venta = state?.venta;
     this.tarjeta = state?.tarjeta;
+
+    this.totalBoleto = this.venta.boletos.reduce((acumulador, siguiente) => acumulador+siguiente.total_boletos ,0)
+    this.totalReserva = this.venta.recorridos.reduce((acumulador, siguiente) => acumulador + siguiente.total_recorrido, 0)
+    this.total = this.totalBoleto + this.totalReserva;
+
   }
 
   venta: IVentaResponse;
   tarjeta: ITarjeta;
+
+  totalBoleto = 0;
+  totalReserva = 0;
+  total = 0;
 
   get totalRecorridos() {
     return this.venta.recorridos.reduce((acumulador, recorrido) => acumulador + recorrido.total_recorrido, 0);

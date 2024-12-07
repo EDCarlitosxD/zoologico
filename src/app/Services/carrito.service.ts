@@ -40,13 +40,17 @@ export class CarritoService {
     const savedBoletosVenta = localStorage.getItem(this.STORAGE_BOLETOS)
     if (savedReservas) {
       this.tours = JSON.parse(savedReservas);
+      this.tourSubjet.next([...this.tours]);
     }
     if (savedReservasInformacion) {
       this.toursInfo = JSON.parse(savedReservasInformacion);
+      this.tourInfoSubject.next([...this.toursInfo]);
     }
     if (savedBoletos && savedBoletosVenta) {
       this.boletosInformacion = JSON.parse(savedBoletos);
-      this.boletosVenta = JSON.parse(savedBoletosVenta)
+      this.boletosVenta = JSON.parse(savedBoletosVenta);
+      this.boletoSubject.next([...this.boletosVenta]);
+      this.boletoInformacionSubject.next([...this.boletosInformacion]);
 
     } else {
       this.tourSubjet.next(this.tours);
@@ -66,6 +70,8 @@ export class CarritoService {
         this.actualizarStorageBoletos();
       })
     }
+
+
 
 
 
@@ -92,7 +98,64 @@ export class CarritoService {
     this.actualizarStorageBoletos();
   }
 
-  private actualizarStorageReserva() {
+  decrementarBoleto(id:number) {
+    this.boletosVenta.find(boleto => boleto.id_boleto == id)!.cantidad--;
+
+    this.boletoSubject.next([...this.boletosVenta]);
+
+    this.actualizarStorageBoletos();
+  }
+
+  aumentarPersonasTour(idHorarrio: number){
+
+    console.log('horarioIDi',idHorarrio);
+    console.log(this.toursInfo);
+
+    const tour = this.tours.find(tour => tour.id_horario_recorrido == idHorarrio);
+
+
+    if (tour) {
+      // Incrementar la cantidad de personas en el tour encontrado
+      tour.cantidad_personas = (tour.cantidad_personas || 0) + 1;
+
+      // Buscar el objeto correspondiente en toursInfo y sincronizar la cantidad de personas
+      const tourInfo = this.toursInfo.find(tourInfo => tourInfo.reserva.id_horario_recorrido == idHorarrio);
+
+      if (tourInfo) {
+        tourInfo.reserva.cantidad_personas = tour.cantidad_personas;
+      }
+    }
+
+
+
+    this.tourSubjet.next([...this.tours]);
+    this.tourInfoSubject.next([...this.toursInfo]);
+    this.actualizarStorageReserva();
+  }
+
+  decrementarPersonaTour(idHorarrio: number){
+    const tour = this.tours.find(tour => tour.id_horario_recorrido == idHorarrio)
+    if (tour) {
+      // Incrementar la cantidad de personas en el tour encontrado
+      tour.cantidad_personas = (tour.cantidad_personas || 0) - 1;
+
+      // Buscar el objeto correspondiente en toursInfo y sincronizar la cantidad de personas
+      const tourInfo = this.toursInfo.find(tourInfo => tourInfo.reserva.id_horario_recorrido == idHorarrio);
+
+      if (tourInfo) {
+        tourInfo.reserva.cantidad_personas = tour.cantidad_personas;
+      }
+    }
+
+    this.tourSubjet.next([...this.tours]);
+    this.tourInfoSubject.next([...this.toursInfo]);
+    this.actualizarStorageReserva();
+
+  }
+
+
+
+  private  actualizarStorageReserva() {
     localStorage.setItem(this.STORAGE_RESERVAS, JSON.stringify(this.tours));
     localStorage.setItem(this.STORAGE_RESERVAS_INFORMACION, JSON.stringify(this.toursInfo));
   }
@@ -117,10 +180,14 @@ export class CarritoService {
   clearCarrito() {
     this.tours = [];
     this.toursInfo = []
-    this.boletosInformacion = [];
-    this.boletosVenta = []
+    this.boletosVenta = this.boletosInformacion.map(boleto => ({
+      cantidad: 0,
+      id_boleto: boleto.id
+    }) as IBoletoVenta)
+
     this.tourSubjet.next(this.tours);
     this.tourInfoSubject.next(this.toursInfo);
+    this.boletoSubject.next(this.boletosVenta)
 
     this.actualizarStorageReserva();
     this.actualizarStorageBoletos();

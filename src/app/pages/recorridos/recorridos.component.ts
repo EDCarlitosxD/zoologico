@@ -19,16 +19,17 @@ interface Boletos {
 import { RecorridoService } from '../../Services/recorrido.service';
 
 import { ITour } from '../../types/Tour';
-import { IBoleto } from '../../types/Boletos';
+import { IBoleto, IBoletoVenta } from '../../types/Boletos';
 import { IRecorrido } from '../../types/Recorridos';
 import { BoletosService } from '../../Services/boletos.service';
 import { CommonModule } from '@angular/common';
 import { CarritoService } from '../../Services/carrito.service';
 import { Subscription } from 'rxjs';
+import { IReserva, IReservaInformacion } from '../../types/Reserva';
 @Component({
   selector: 'app-recorridos',
   standalone: true,
-  imports: [NgFor, RouterLink, NavBarComponent, FooterComponent, CommonModule,SelectorRecorridoComponent, IndicadorComponent, AddBoletosComponent, TourComponentComponent, BolDisponiblesComponent, WarningComponent],
+  imports: [NgFor, RouterLink, NavBarComponent, FooterComponent, CommonModule, IndicadorComponent, AddBoletosComponent, TourComponentComponent, BolDisponiblesComponent, WarningComponent],
   templateUrl: './recorridos.component.html',
   styleUrl: './recorridos.component.scss'
 })
@@ -36,23 +37,55 @@ export class RecorridosComponent implements OnInit{
 
   constructor(private recorridoService: RecorridoService, private boletosService: BoletosService, private carritoService: CarritoService) {
     this.tours = this.carritoService.toursInfo;
+    this.boletos = this.carritoService.boletosInformacion;
+    this.boletosVenta = this.carritoService.boletosVenta;
+
+    console.log(this.boletos);
+
    }
 
    private subscriptioTour?: Subscription;
+   private subscriptioBoletos?: Subscription;
+   private subscriptionBoletosVenta?: Subscription;
 
   boletos: IBoleto[]= []
   recorridos: IRecorrido[] = []
-
+  boletosVenta: IBoletoVenta[] = []
+  reservas: IReserva[] = []
   tours;
+  toursInfo: IReservaInformacion[] = [];
+
+  totalRecorridos = 0;
+  totalBoletos = 0;
+
 
   ngOnInit(){
     this.recorridoService.getRecorridosActivos().subscribe(data =>  this.recorridos = data)
-    this.boletosService.getAllBoletos(1).subscribe(data =>  this.boletos = data)
+    this.subscriptioTour = this.carritoService.toursInfo$.subscribe(data => {
+      this.toursInfo = data
+      this.totalRecorridos = this.toursInfo.reduce((acumulador, siguiente) => acumulador+ (siguiente.tour.precio * siguiente.reserva.cantidad_personas!),0)
+      console.log(this.totalRecorridos);
 
-    this.subscriptioTour = this.carritoService.toursInfo$.subscribe(data => this.tours = data);
-    console.log(this.carritoService.tours);
+    });
+    this.subscriptioTour = this.carritoService.tours$.subscribe(data => {
+      this.reservas = data
 
+    }
+    );
+    this.subscriptioBoletos = this.carritoService.boletoInformacion$.subscribe(data => this.boletos = data);
+    this.subscriptionBoletosVenta = this.carritoService.boletoVenta$.subscribe(data => {
+      this.boletosVenta = data;
+      this.totalBoletos = this.boletos.reduce((acumulador, siguiente,index) => acumulador + (siguiente.precio * this.boletosVenta[index].cantidad) ,0);
+    });
 
+  }
+
+  plusBoleto(id: number){
+    this.carritoService.aumentarBoleto(id);
+  }
+
+  minusBoleto(id: number){
+    this.carritoService.decrementarBoleto(id);
   }
 
   ngOnDestroy() {
@@ -60,6 +93,15 @@ export class RecorridosComponent implements OnInit{
     if (this.subscriptioTour) {
       this.subscriptioTour.unsubscribe();
     }
+
+    if (this.subscriptioBoletos) {
+      this.subscriptioBoletos.unsubscribe();
+    }
+
+    if (this.subscriptionBoletosVenta) {
+      this.subscriptionBoletosVenta.unsubscribe();
+    }
+
   }
 
 

@@ -26,18 +26,14 @@
         <div class="detallesDecompra">
             <div class="boletos" *ngIf="venta.boletos.length > 0">
                 <p class="thin title">Boletos</p>
-                <div class="tipos">
-                    <p class="p1 thin">
-                        Infantil<br>
-                        Adulto<br>
-                        Tercera Edad
-                    </p>
-                    <p class="bold p1">
-                        0<br>
-                        0<br>
-                        0<br>
-                    </p>
-                </div>
+                  <div class="boleto w-20 d-flex justify-content-center" style="gap: 40px; width: 500px;" *ngFor="let bol of venta.boletos; let i = index">
+                    <p class="p1 thin">{{bol.tipo_boleto}}</p>
+                    <p class="p1 bold">{{bol.cantidad_boletos}}</p>
+
+                    <p class="p1 bold">${{bol.total_boletos}}</p>
+                  </div>
+
+
             </div>
 
             <div class="tours" *ngIf="venta.recorridos.length > 0">
@@ -72,7 +68,7 @@
         <div class="escaneame">
             <h6>Escanéame en la entrada</h6>
             <img [src]="" alt="a">
-            <p class="p2">{{venta.recorridos[0].token || ' '}}</p>
+            <p class="p2">{{venta.recorridos[0]?.token || venta.boletos[0]?.token|| ''}}</p>
         </div>
 
         <div class="download">
@@ -94,26 +90,13 @@
 
             <div class="boletos" *ngIf="venta.boletos.length > 0">
                 <p class="thin">Boletos</p>
-                <div class="detalles">
-                    <div class="boleto">
-                        <p class="p1 thin">
-                            Boleto Infantil<br>
-                            Boleto Adulto<br>
-                            Boleto Tercera Edad
-                        </p>
-                        <p class="p1 bold">
-                            1<br>
-                            2<br>
-                            3
-                        </p>
-                    </div>
-                    <div class="subTotales">
-                        <p class="p1 bold">
-                            $508<br>
-                            $508<br>
-                            $508<br>
-                        </p>
-                    </div>
+                <div class="detalles d-flex flex-column gap-0 justify-center  ">
+                  <div class="boleto w-20" *ngFor="let bol of venta.boletos; let i = index">
+                    <p class="p1 thin">{{bol.tipo_boleto}}</p>
+                    <p class="p1 bold">{{bol.cantidad_boletos}}</p>
+
+                    <p class="p1 bold">${{bol.total_boletos}}</p>
+                </div>
                 </div>
             </div>
             <div class="tours" *ngIf="venta.recorridos.length > 0">
@@ -132,7 +115,7 @@
             </div>
         </div>
 
-        <h6>Total: $ {{totalRecorridos}} MXN</h6>
+        <h6>Total: $ {{total}} MXN</h6>
 
         <div class="metodoPago">
             <p class="p1">Método de pago</p>
