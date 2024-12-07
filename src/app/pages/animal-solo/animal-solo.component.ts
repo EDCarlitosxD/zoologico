@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NavBarComponent } from "../../Componentes/nav-bar/nav-bar.component";
 import { FooterComponent } from "../../Componentes/footer/footer.component";
 import { RouterLink } from '@angular/router';
+import { NgClass } from '@angular/common';
 interface animalSolo {
   nombre: string;
   nombre_cientifico: string;
@@ -25,7 +26,7 @@ interface animalSolo {
 @Component({
   selector: 'app-animal-solo',
   standalone: true,
-  imports: [RouterLink, NavBarComponent, FooterComponent],
+  imports: [RouterLink, NavBarComponent, FooterComponent, NgClass],
   templateUrl: './animal-solo.component.html',
   styleUrl: './animal-solo.component.scss'
 })
@@ -41,7 +42,7 @@ export class AnimalSoloComponent {
   comportamiento: '',
   peso: '',
   altura: '',
-  tipo: '',
+  tipo: 'Terrestre',
   habitat: '',
   descripcion: '',
   subtitulo: '',

@@ -19,7 +19,7 @@
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
     "bootstrap": "^5.3.3",
-    "chart.js": "^4.4.6",
+    "chart.js": "^4.4.7",
     "chartjs-chart-financial": "^0.2.1",
     "normalize-scss": "^8.0.0",
     "normalize.css": "^8.0.1",

@@ -1,7 +1,7 @@
 
   <div class="tourContainer" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#' + tour.id" aria-expanded="false" aria-controls="collapseExample">
         <div class="tour">
-            <img class="imageBol" [src]="tour.img" alt="">
+            <img class="imageBol" [src]="tour.img" [alt]="tour.nombre">
             <div class="texto">
               <div class="nombreEstrella">
                 <h5 class="thin">{{tour.nombre}}</h5>
