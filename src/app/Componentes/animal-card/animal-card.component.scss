@@ -15,12 +15,7 @@
   border-radius: 24px;
   background: var(--Negro-600, #2E312E);
   box-shadow: 0px 11px 10.9px 0px rgba(0, 0, 0, 0.25);
-  &:host(.no-hover:hover) {
-    transform: none; /* Desactiva el efecto */
-    transition: none; /* Elimina la transición */
-  background: var(--Negro-600, #2E312E);
-
-  }
+  
   &:hover {
     background: var(--Secundario-Auxiliar-600, #EDC457);
     transition: background-color 0.5s ease, color 0.5s ease;
