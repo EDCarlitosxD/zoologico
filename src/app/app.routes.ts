@@ -27,6 +27,9 @@ import { CierreDonacionComponent } from "./pages/cierre-donacion/cierre-donacion
 import { DashboardReportesComponent } from "./pages/dashboard-reportes/dashboard-reportes.component";
 import { AddGuiaComponent } from "./pages/dashboard/add-guia/add-guia.component";
 import { AddRecoComponent } from "./pages/dashboard/add-reco/add-reco.component";
+import { DatosPerfilComponent } from "./pages/datos-perfil/datos-perfil.component";
+import { ComprasRealizadasComponent } from "./pages/compras-realizadas/compras-realizadas.component";
+import { EditBoletoComponent } from "./pages/dashboard/edit-boleto/edit-boleto.component";
 
 export const routes: Routes = [
   { path: 'contactanos', component: ContactoComponent }, //A PIXEL✅✅✅,
@@ -48,12 +51,21 @@ export const routes: Routes = [
   { path: 'donaciones/pagar', component: PagarDonacionComponent },
   { path: 'donaciones/pagar/gracias', component: CierreDonacionComponent },
 
+  { path: 'configuracion/perfil', component: DatosPerfilComponent },
+  { path: 'configuracion/compras', component: ComprasRealizadasComponent },
+
+
+
+
 
 
   
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/animales', component: DashboardAnimalesComponent },
-  { path: 'dashboard/ventas', component: DashboardVentasComponent },
+
+  { path: 'dashboard/boletos', component: DashboardVentasComponent },
+  { path: 'dashboard/boletos/edit', component: EditBoletoComponent },
+
 
 
   { path: 'dashboard/tours', component: DashboardRecorridoComponent },

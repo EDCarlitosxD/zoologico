@@ -91,18 +91,15 @@
   /* Termina Dashboard Enlaces*/
   .aside-dashboard__salir {
 
-    a {
-      color: var(--Color, #FFF);
-      text-align: center;
-
-      /* Desktop/H6/Ligth */
-      font-family: Fredoka;
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 300;
-      line-height: 150%;
-      /* 48px */
-    }
+    display: flex;
+    padding: 10px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    color: var(--Blanco-200, #F9FFF5);
+text-align: center;
+cursor: pointer;
 
   }
 

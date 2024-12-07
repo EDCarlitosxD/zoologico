@@ -6,6 +6,10 @@
   background: var(--Blanco-700, #F0F7EB);
 
 
+  .line{
+      width: 100%; background-color: #C6DA9A; height: 2px;
+
+  }
   .dashboard-contenido {
     height: 100vh;
     overflow-y: auto;
