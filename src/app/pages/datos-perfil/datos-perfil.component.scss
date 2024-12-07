@@ -148,3 +148,233 @@
         align-self: stretch;
     }
 }
+.perfilIco{
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+.editIco{
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+.tarjetaIco{
+    width: 60px;
+    height: 48px;
+    flex-shrink: 0;
+}
+.addIco{
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+.minus{
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    }
+.visaIco{
+    width: 40px;
+    height: 26.667px;
+}
+.formIco{
+    width: 48px;
+    height: 36px;
+    flex-shrink: 0;
+}
+.close{
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+@media (max-width: 1200px) {
+.formIco{
+    width: 32px;
+    height: 24px;
+}
+.close{
+    width: 32px;
+    height: 32px;
+}
+.perfilIco{
+    width: 48px;
+    height: 48px;
+}
+.editIco{
+    width: 28px;
+    height: 28px;
+}
+.tarjetaIco{
+    width: 40px;
+    height: 32px;
+}
+.addIco{
+    width: 28px;
+    height: 28px;
+}
+.minus{
+    width: 24px;
+    height: 24px;
+}
+.visaIco{
+    width: 40px;
+    height: 26.667px;
+}
+
+
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+        .titleEdit{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            align-self: stretch;
+            .title{
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+            .edit{
+                display: flex;
+                padding: 10px 16px;
+                align-items: center;
+                gap: 16px;
+                svg:hover  path{
+                    transition: 0.3s ease;
+                    fill: var(--amarillo-500, #DCA617);
+                    cursor: pointer;
+                }
+            }
+        }
+        .datos{
+            all: unset;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            align-self: stretch;
+            .img-perfil{
+                display: flex;
+                padding: 8px;
+                justify-content: space-between;
+                align-items: center;
+                align-self: stretch;
+                border-radius: 8px;
+                background: var(--Blanco-200, #F9FFF5);
+                img{
+                    width: 56px;
+                    aspect-ratio: 1/1;
+                    border-radius: 56px;
+                }
+            }
+            .dato{
+                display: flex;
+                padding: 8px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                align-self: stretch;
+                border-radius: 8px;
+                background: var(--Blanco-200, #F9FFF5);
+            }
+        }
+    }
+    .metodoPago{
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+        .titleAdd{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            align-self: stretch;
+            .title{
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+            .add{
+                display: flex;
+                padding: 10px 16px;
+                align-items: center;
+                gap: 8px;
+                svg:hover path{
+                    transition: 0.3s ease;
+                    fill: var(--amarillo-500, #DCA617);
+                    cursor: pointer;
+                }
+            }
+        }
+        .tarjetas{
+            display: flex;
+            padding: 8px 36px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            align-self: stretch;
+            border-radius: 8px;
+            background: var(--Blanco-200, #F9FFF5);
+            .tarjeta{
+                display: flex;
+                width: 146px;
+                justify-content: space-between;
+                align-items: center;
+                .minus:hover path{
+                    transition: 0.3s ease;
+                    fill: var(--amarillo-500, #DCA617);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    
+    .modalPerfil{
+        display: flex;
+        width: calc(348px - 80px);
+        padding: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        border-radius: 24px;
+        background: var(--Blanco-200, #F9FFF5);
+        header{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 16px;
+            align-self: stretch;
+            .titleIco{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 16px;
+                align-self: stretch;
+    
+            }
+            .close:hover path{
+                transition: 0.3s ease;
+                fill: #A9302B;
+                cursor: pointer;
+            }
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            align-self: stretch;
+        }
+    }
+}
