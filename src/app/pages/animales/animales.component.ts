@@ -6,11 +6,12 @@ import { AnimalService, IFiltroAnimalesCard } from '../../Services/animal.servic
 import { IAnimalCard } from '../../types/Animales';
 import { CommonModule } from '@angular/common';
 import { IPagination } from '../../types/Pagination';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-animales',
   standalone: true,
-  imports: [AnimalCardComponent, NavBarComponent, FooterComponent, CommonModule],
+  imports: [AnimalCardComponent, NavBarComponent, FooterComponent, FormsModule, CommonModule],
   templateUrl: './animales.component.html',
   styleUrl: './animales.component.scss'
 })
@@ -22,7 +23,8 @@ export class AnimalesComponent {
   public filtros: IFiltroAnimalesCard = {
       page: 1,
       datomin: null,
-      tipo: null
+      tipo: null,
+      order: ''
   }
 
   ngOnInit(){
@@ -35,5 +37,12 @@ export class AnimalesComponent {
     this.animalService.getAnimalCard(this.filtros).subscribe(data => this.pagination?.data.push(...data.data));
 
   }
+
+
+  // filtrar(){
+
+  //   this.filtros.page = 1;
+  //   this.animalService.getAnimalCard(this.filtros).subscribe(data => this.pagination = data);
+  // }
 
 }

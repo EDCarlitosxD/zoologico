@@ -90,9 +90,8 @@
             <p class="p1">Boletos Vendidos</p>
             <p class="p2 thin">General</p>
         </div>
-        <div class="graph">
-
-        </div>
+        <app-cargando class="mx-auto" *ngIf="cargandoGrafica"></app-cargando>
+        <app-bar-chart *ngIf="!cargandoGrafica"  [dataGraphics]="dataGraphic"></app-bar-chart>
     </div>
 
 </app-dashboard-content>

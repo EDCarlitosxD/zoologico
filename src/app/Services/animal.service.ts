@@ -11,7 +11,8 @@ import { getUserDetails } from '../utils/getUserDetails';
 export interface IFiltroAnimalesCard {
   datomin: string | null,
   tipo: string | null
-  page: number
+  page: number,
+  order: string,
 }
 
 @Injectable({
@@ -24,13 +25,15 @@ export class AnimalService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders().append('accept', 'application/json');
     this.userDetails = getUserDetails();
+    this.headers.append('Authorization','Bearer '+ this.userDetails?.token);
   }
 
 
   getAnimalCard(filtros: IFiltroAnimalesCard = {
     page: 1,
     datomin: null,
-    tipo: null
+    tipo: null,
+    order: '',
   }): Observable<IPagination<IAnimalCard>> {
     let params = new HttpParams();
 

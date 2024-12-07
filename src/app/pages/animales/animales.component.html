@@ -15,7 +15,7 @@
 
     <div class="buscarAnimalBusqueda">
       <div class="inputContainer">
-        <input type="text" placeholder="Buscar Animal"/>
+        <input type="text" [(ngModel)]="filtros.datomin" placeholder="Buscar Animal"/>
         <button type="button" class="lupa">
           <div class="vectorLupa"></div>
         </button>
@@ -35,22 +35,22 @@
 
             <ul>
               <li class="list-group-item">
-                <input class="check bg-black-800" type="checkbox" value="" id="firstCheckbox">
+                <input [(ngModel)]="filtros.tipo" class="check bg-black-800" type="checkbox" value="terrestre" name="tipo" id="firstCheckbox">
                 <label class="p2 bold" for="firstCheckbox">Terrestre</label>
               </li>
               <li class="list-group-item">
-                <input class="check bg-black-800" type="checkbox" value="" id="secondCheckbox">
+                <input [(ngModel)]="filtros.tipo" class="check bg-black-800" type="checkbox" value="aéreo" name="tipo" id="secondCheckbox">
                 <label class="p2 bold" for="secondCheckbox">Aéreo</label>
               </li>
               <li class="list-group-item">
-                <input class="check bg-black-800" type="checkbox" value="" id="thirdCheckbox">
+                <input [(ngModel)]="filtros.order"  class="check bg-black-800" type="checkbox" name="order" value="A-Z" id="thirdCheckbox">
                 <label class="p2 bold" for="thirdCheckbox">A-Z</label>
               </li>
             </ul>
-  
+
             <div class="buttons">
-              <button class="limpiar">Limpiar</button>
-              <button class="filtrar">Filtrar</button>
+              <button  class="limpiar">Limpiar</button>
+              <button  class="filtrar">Filtrar</button>
             </div>
 
           </div>
