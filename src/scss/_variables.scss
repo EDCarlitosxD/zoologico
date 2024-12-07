@@ -257,6 +257,7 @@ button:hover {
 //TABLAS
 table{
   width: 100%;
+  border: 0;
   th{
     color: var(--Negro-800, #1D1F1D);
 
@@ -279,7 +280,8 @@ table{
   }
   tr{
     height: 48px !important;
-    border-radius: 4px;
+    border-radius: 4px !important;
+    border: 0 !important;
   }
   .cellw{
     display: flex;
@@ -301,15 +303,15 @@ table{
 }
 th,
 thead {
- background-color: #E7ECE3;
+background-color: #E7ECE3 ;
 }
 
 .odd-row {
- background-color: #E7ECE3;
+ background-color: #E7ECE3 !important;
 }
 
 .even-row {
- background-color: #F9FFF5;
+ background-color: #F9FFF5 !important;
 }
 
 
