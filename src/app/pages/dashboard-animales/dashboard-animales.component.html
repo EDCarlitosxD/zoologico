@@ -1,8 +1,8 @@
 <app-dashboard-content dashboardTitulo="Animales" class="content" classButton="active">
   <form class="h6Animales">
     <h5 class="thin">Buscar animal</h5>
-    <input type="text" class="dash60">
-    <button class="chiquito">Buscar</button>
+    <input  type="text" name="buscar_animal" id="buscar_animal" [(ngModel)]="buscarAnimal" class="dash60">
+    <button (click)="buscar($event)" class="chiquito">Buscar</button>
   </form>
   <div class="div-table-responsive ">
     <table class="table-animales bg-white-200 ">

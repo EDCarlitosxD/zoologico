@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import {  RouterOutlet } from '@angular/router';
 import { NgClass, NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 interface Animales {
   id: number;
@@ -19,14 +20,14 @@ interface Animales {
 @Component({
   selector: 'app-dashboard-animales',
   standalone: true,
-  imports: [DashboardContentComponent,CommonModule, RouterLink, RouterLink],
+  imports: [DashboardContentComponent,CommonModule,FormsModule, RouterLink, RouterLink],
   templateUrl: './dashboard-animales.component.html',
   styleUrl: './dashboard-animales.component.scss'
 })
 export class DashboardAnimalesComponent {
 
   animales: IAnimal[] = [];
-
+  buscarAnimal = ''
   constructor(private animalesServices: AnimalService){}
 
   ngOnInit(){
@@ -34,6 +35,9 @@ export class DashboardAnimalesComponent {
   }
 
 
+  buscar(event: Event){
+    this.animalesServices.getAll(this.buscarAnimal).subscribe(data => this.animales = data);
+  }
 
   actualizarEstadoAnimal(animal:IAnimal,event: Event){
     const inputElement = event.target as HTMLInputElement;

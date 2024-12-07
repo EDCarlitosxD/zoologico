@@ -8,8 +8,8 @@ import { IUserDetails } from '../types/Auth';
 import { getUserDetails } from '../utils/getUserDetails';
 
 
-export interface IFiltroAnimalesCard{
-  datomin: string | null ,
+export interface IFiltroAnimalesCard {
+  datomin: string | null,
   tipo: string | null
   page: number
 }
@@ -24,13 +24,14 @@ export class AnimalService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders().append('accept', 'application/json');
     this.userDetails = getUserDetails();
-   }
+  }
 
 
-  getAnimalCard(filtros: IFiltroAnimalesCard = {page: 1,
+  getAnimalCard(filtros: IFiltroAnimalesCard = {
+    page: 1,
     datomin: null,
     tipo: null
-  }): Observable<IPagination<IAnimalCard>>{
+  }): Observable<IPagination<IAnimalCard>> {
     let params = new HttpParams();
 
     // Agregar los filtros como query parameters solo si tienen valor
@@ -44,25 +45,31 @@ export class AnimalService {
       params = params.set('tipo', filtros.tipo);
     }
 
-    return this.http.get<IPagination< IAnimalCard>>(`${environment.API_URL}/animales/card`, {headers: this.headers, params});
+    return this.http.get<IPagination<IAnimalCard>>(`${environment.API_URL}/animales/card`, { headers: this.headers, params });
   }
 
-  getAnimal(slug:string): Observable<IAnimal>{
+  getAnimal(slug: string): Observable<IAnimal> {
     return this.http.get<IAnimal>(`${environment.API_URL}/animales/${slug}`);
   }
 
-  getAll(){
-    return this.http.get<IAnimal[]>(`${environment.API_URL}/animales`);
+  getAll(buscar: string | null = null) {
+    let queryParams = new HttpParams(); // Inicializa los parámetros de consulta
+
+    // Agrega el parámetro 'buscar' solo si tiene un valor
+    if (buscar) {
+      queryParams = queryParams.append('buscar', buscar);
+    }
+    return this.http.get<IAnimal[]>(`${environment.API_URL}/animales`, { params: queryParams });
   }
 
-  updateEstado(id: number, estado: boolean){
-    return this.http.put(`${environment.API_URL}/animales/eliminar/${id}`,{
-        'estado': estado
+  updateEstado(id: number, estado: boolean) {
+    return this.http.put(`${environment.API_URL}/animales/eliminar/${id}`, {
+      'estado': estado
     })
   }
 
 
-  guardarAnimal(animal:IAnimal){
+  guardarAnimal(animal: IAnimal) {
 
     const formData = new FormData();
 
@@ -76,18 +83,18 @@ export class AnimalService {
       }
     });
 
-    return this.http.post<IAnimal>(`${environment.API_URL}/animales`,formData,
+    return this.http.post<IAnimal>(`${environment.API_URL}/animales`, formData,
       {
         headers: {
           'Authorization': `Bearer ${this.userDetails?.token}`,
           // 'Content-Type': 'multipart/form-data'
-      }
+        }
       }
     );
   }
 
 
-  editarAnimal(animal: IAnimal, id: number){
+  editarAnimal(animal: IAnimal, id: number) {
     const formData = new FormData();
 
     console.log(animal);
@@ -102,17 +109,17 @@ export class AnimalService {
       }
     });
 
-    if(typeof formData.get('imagen_principal') === 'string') formData.delete('imagen_principal');
-    if(typeof formData.get('imagen_secundaria') === 'string') formData.delete('imagen_secundaria');
-    if(typeof formData.get('img_ubicacion') === 'string') formData.delete('img_ubicacion');
+    if (typeof formData.get('imagen_principal') === 'string') formData.delete('imagen_principal');
+    if (typeof formData.get('imagen_secundaria') === 'string') formData.delete('imagen_secundaria');
+    if (typeof formData.get('img_ubicacion') === 'string') formData.delete('img_ubicacion');
 
 
-    return this.http.post<IAnimal>(`${environment.API_URL}/animales/actualizar/${id}?_method=PUT`,formData,
+    return this.http.post<IAnimal>(`${environment.API_URL}/animales/actualizar/${id}?_method=PUT`, formData,
       {
         headers: {
           'Authorization': `Bearer ${this.userDetails?.token}`,
           //  'Content-Type': 'multipart/form-data'
-      }
+        }
       }
     );
   }
