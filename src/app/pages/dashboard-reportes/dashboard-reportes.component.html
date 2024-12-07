@@ -1,3 +1,73 @@
 <app-dashboard-content dashboardTitulo="Reportes" dashboardDescripcion="Rendimiento General">
+    <section class="buttons">
+        <button class="search">Última Semana</button><button class="search">Último Mes</button><button class="search">Último Año</button>
+    </section>
 
+    <main>
+        <section class="stat">
+            <h5 class="thin">Boletos</h5>
+            <div class="content">
+                <h6 class="thin">Total Boletos Vendidos</h6>
+                <h6>{{getTotalBoletos()}} Boletos</h6>
+                <div class="graph"></div>
+                <div class="table">
+                    <table class="">
+                        <thead>
+                            <tr>
+                                <th>Boleto</th>
+                                <th>Ventas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                            *ngFor="let b of boletos; let i = index"
+                            [ngClass] = "{ 'odd-row': i % 2 !== 0, 'even-row': i % 2 === 0 }"
+                        >
+                                <td>{{b.tipo}}</td>
+                                <td>{{b.ventas}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="stat">
+            <h5 class="thin">Tours</h5>
+            <div class="content">
+                <h6 class="thin">Total Tours Vendidos</h6>      
+                <h6>{{getTotalTours()}} Tours</h6>
+                <div class="graph"></div>
+                <div class="table">
+                    <table class="">
+                        <thead>
+                            <tr>
+                                <th>Tour</th>
+                                <th>Ventas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                            *ngFor="let t of tours; let i = index"
+                            [ngClass] = "{ 'odd-row': i % 2 !== 0, 'even-row': i % 2 === 0 }"
+                        >
+                                <td>{{t.tour}}</td>
+                                <td>{{t.ventas}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="stat">
+            <h5 class="thin">Donaciones</h5>
+            <div class="content">
+                <h6 class="thin">Total Donaciones Realizadas</h6>
+                <h6>700 pesos</h6>
+                <div class="graph"></div>
+                <p class="p2">El promedio de donaciones es de 50 pesos</p>
+            </div>
+        </section>
+    </main>
 </app-dashboard-content>

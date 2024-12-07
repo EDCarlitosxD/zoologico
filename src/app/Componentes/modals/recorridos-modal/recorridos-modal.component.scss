@@ -26,6 +26,7 @@
     border-radius: 16px;
     background: var(--Blanco-600, #F7FFF1);
     box-shadow: 0px 4.775px 4.732px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
     .recorrido-img{
         display: flex;
         width: 348px;
@@ -35,18 +36,22 @@
         align-items: flex-end;
         gap: 10px;
         border-radius: 16px 16px 0px 0px;
-        background-color: brown;
-        .cerrar{
-            cursor: pointer;
-
-            .cerrar-ico{
-                width: 40px;
-                height: 40px;
-            }
-            &:hover path{
-                transition: 0.3s ease;
-                fill: #C53833;
-            }
+        background-color: rgb(66, 20, 20);
+        
+    }
+    .cerrar{
+        position: absolute;
+        cursor: pointer;
+        top: 20px;
+        right: 20px;
+        .cerrar-ico{
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+        &:hover path{
+            transition: 0.3s ease;
+            fill: #C53833;
         }
     }
     .recorrido-cuerpo{
@@ -150,14 +155,16 @@
             padding: 48px;
             gap: 10px;
             border-radius: 48px 48px 0px 0px;
-            background-color: brown;
-            .cerrar{
-                cursor: pointer;
-
-                .cerrar-ico{
-                    width: 56px;
-                    height: 56px;
-                }
+            background-color: rgb(232, 190, 190);
+            
+        }
+        .cerrar{
+            cursor: pointer;
+            top: 48px;
+            right: 48px;
+            .cerrar-ico{
+                width: 56px;
+                height: 56px;
             }
         }
         .recorrido-cuerpo{

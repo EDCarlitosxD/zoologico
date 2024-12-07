@@ -28,10 +28,6 @@ export class DatosPerfilComponent {
     password: 'snwnisw'
   }
   @Input() tarjetas: Tarjetas[] = [
-    {tarjeta: 1},
-    {tarjeta: 2},
-    {tarjeta: 3},
-    {tarjeta: 4},
     {tarjeta: 7851},
     {tarjeta: 1569},
     

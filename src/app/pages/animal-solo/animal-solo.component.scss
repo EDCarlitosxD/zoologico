@@ -121,8 +121,23 @@
             align-self: stretch;
         }
     }
+    .Aéreo{
+        width: 30px;
+height: 30px;
+flex-shrink: 0;
+        background-image: url(../../../../public/img/pages/Animal/AereoDesk.svg);
+    }
+    .Terrestre{
+        width: 30px;
+height: 30px;
+flex-shrink: 0;
+        background-image: url(../../../../public/img/pages/Animal/TerrestreDesk.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 
 @media (min-width: 1200px) {
+    
     .detalles{
         display: grid;
         grid-template-columns: repeat(12, 1fr);

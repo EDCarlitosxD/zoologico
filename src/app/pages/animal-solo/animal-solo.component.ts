@@ -6,12 +6,31 @@ import { NavBarComponent } from "../../Componentes/nav-bar/nav-bar.component";
 
 import { FooterComponent } from "../../Componentes/footer/footer.component";
 import { RouterLink } from '@angular/router';
-
+import { NgClass } from '@angular/common';
+interface animalSolo {
+  nombre: string;
+  nombre_cientifico: string;
+  img_principal: string;
+  img_secundaria: string;
+  caracteristicas_fisicas: string;
+  dieta: string;
+  datos_curiosos: string;
+  comportamiento: string;
+  peso: string;
+  altura: string;
+  tipo: string;
+  habitat: string;
+  descripcion: string;
+  subtitulo: string;
+  qr: string;
+  img_ubicacion: string;
+  estado: string;
+}
 
 @Component({
   selector: 'app-animal-solo',
   standalone: true,
-  imports: [NavBarComponent],
+  imports: [NavBarComponent, NgClass, RouterLink, FooterComponent],
   templateUrl: './animal-solo.component.html',
   styleUrl: './animal-solo.component.scss'
 })
@@ -39,7 +58,7 @@ export class AnimalSoloComponent {
   comportamiento: '',
   peso: '',
   altura: '',
-  tipo: '',
+  tipo: 'Terrestre',
   habitat: '',
   descripcion: '',
   subtitulo: '',

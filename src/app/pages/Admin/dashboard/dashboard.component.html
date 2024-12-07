@@ -1,7 +1,7 @@
 <router-outlet></router-outlet>
 <app-dashboard-content>
 
-  <div class="graficasTop">
+  <section class="graficasTop">
     <div class="chart-container">
       <canvas  id="cryptoChart" >{{ chart }}</canvas>
     </div>
@@ -14,7 +14,22 @@
       <canvas  id="" >{{ chart }}</canvas>
     </div>
 
-  </div>
+  </section>
+  <section class="graficasBottom">
+    <div class="chart-container">
+      <div class="title_graph">
+        <h6 class="thin">Boletos Vendidos</h6>
+        <canvas  id="cryptoChart" >{{ chart }}</canvas>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <div class="title_graph">
+        <h6 class="thin">Tours Vendidos</h6>
+        <canvas  id="cryptoChart" >{{ chart }}</canvas>
+      </div>
+    </div>
+  </section>
 
 
 

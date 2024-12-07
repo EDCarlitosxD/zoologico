@@ -1,5 +1,7 @@
 @import "../../../scss/variables";
 
+
+
 .card {
   display: flex;
   padding-bottom: 16px;
@@ -23,13 +25,8 @@
     .nombre-cientifico {
       color: var(--Negro-800, #1D1F1D);
     }
-
-    .weight {
-      background: url(../../../../public/img/card-animales/WeightHover.svg);
-    }
-
-    .rule {
-      background: url(../../../../public/img/card-animales/RulerHover.svg);
+    svg path{
+      fill: var(--Negro-800, #1D1F1D);
     }
 
     .aéreo {
@@ -98,7 +95,7 @@
   background: url('./../../../../public/img/card-animales/Ruler.svg');
 }
 
-.terrestre {
+.Terrestre {
   background: url('./../../../../public/img/card-animales/IconTerrestre.svg');
 }
 

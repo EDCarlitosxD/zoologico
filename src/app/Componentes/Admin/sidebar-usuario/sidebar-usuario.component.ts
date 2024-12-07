@@ -9,5 +9,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './sidebar-usuario.component.scss'
 })
 export class SidebarUsuarioComponent {
-
+  usuario: string;
+  constructor() {
+    this.usuario = 'Nombre Usuario'
+  }
 }
