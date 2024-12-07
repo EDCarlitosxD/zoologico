@@ -96,5 +96,29 @@ export class ComprasRealizadasComponent {
       personas: 2,
       precio: 60,
     },
+    {
+      tour: 'Tour 2',
+      fecha: this.compras[1].fecha,
+      personas: 2,
+      precio: 60,
+    },
+    {
+      tour: 'Tour 2',
+      fecha: this.compras[1].fecha,
+      personas: 2,
+      precio: 60,
+    },
+    {
+      tour: 'Tour 2',
+      fecha: this.compras[1].fecha,
+      personas: 2,
+      precio: 60,
+    },
+    {
+      tour: 'Tour 2',
+      fecha: this.compras[1].fecha,
+      personas: 2,
+      precio: 60,
+    },
   ];
 }

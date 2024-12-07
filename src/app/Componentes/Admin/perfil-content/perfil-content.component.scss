@@ -103,3 +103,45 @@
   
   }
   
+  @media (max-width: 1200px) {
+    #main-dashboard {
+      all: unset;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      background: var(--Blanco-700, #F0F7EB);
+      position: relative;
+      padding: 96px 0 0px 0px;
+
+      app-sidebar-usuario{
+        position: fixed;
+        top: 40px;
+      }
+
+      .line{
+        width: 100%; background-color: #C6DA9A; height: 2px;
+      }
+      .dashboard__perfil{
+        display: none;
+      }
+
+      
+    
+      .dashboard-contenido {
+        all: unset;
+        grid-column: span 2;
+        display: flex;
+        gap: 10px;
+        padding: 0 41px;
+        flex-direction: column;
+        align-items: flex-start;
+
+        
+        .dashboard-ng-content{
+          padding: 0;
+          display: block;
+        }
+      }
+    } 
+  }

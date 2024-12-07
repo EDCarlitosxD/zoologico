@@ -258,6 +258,7 @@ button:hover {
 table{
   width: 100%;
   border: 0;
+  
   th{
     color: var(--Negro-800, #1D1F1D);
 
@@ -267,6 +268,17 @@ table{
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 30px */
+    @media (max-width: 1200px) {
+    
+      color: var(--Negro-800, #1D1F1D);
+
+      /* Mobile/P 02/Bold */
+      font-family: "Comic Neue";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; /* 21px */
+}
   }
   td{
     color: var(--Negro-800, #1D1F1D);
@@ -277,11 +289,32 @@ table{
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 30px */
+    @media (max-width: 1200px) {
+      color: var(--Negro-800, #1D1F1D);
+
+      /* Mobile/P 02/Medium */
+      font-family: "Comic Neue";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 21px */
+  
+}
   }
   tr{
     height: 48px !important;
     border-radius: 4px !important;
     border: 0 !important;
+    @media (max-width: 1200px) {
+    
+      
+      height: 29px !important;
+      border-radius: 4px !important;
+      border: 0 !important;
+    
+  
+}
+
   }
   .cellw{
     display: flex;
