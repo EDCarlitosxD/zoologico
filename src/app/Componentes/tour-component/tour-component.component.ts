@@ -58,7 +58,7 @@ export class TourComponentComponent {
     id_usuario: 0,
     id_horario_recorrido: 0,
     id_recorrido: 0,
-    cantidad_personas: 0,
+    cantidad: 0,
     estado: true,
   }
 
@@ -105,17 +105,17 @@ export class TourComponentComponent {
 
 
   minus() {
-    if (this.reserva.cantidad_personas === 0) {
+    if (this.reserva.cantidad === 0) {
       return;
     }
-    let contador = this.reserva.cantidad_personas! - 1;
-    this.reserva.cantidad_personas= contador;
+    let contador = this.reserva.cantidad! - 1;
+    this.reserva.cantidad= contador;
 
     return contador;
   }
   plus() {
-    let contador = this.reserva.cantidad_personas!+ 1;
-    this.reserva.cantidad_personas = contador;
+    let contador = this.reserva.cantidad!+ 1;
+    this.reserva.cantidad = contador;
     return contador;
   }
 
@@ -204,7 +204,7 @@ export class TourComponentComponent {
     /**
      * Meter logica para enseñar alerta de errores
      */
-    if(this.reserva.cantidad_personas === 0){
+    if(this.reserva.cantidad === 0){
       alert("Seleccione una cantidad de personas");
       return
     }else if(!this.reserva.id_horario_recorrido){

@@ -16,3 +16,18 @@ export interface IBoletoVenta{
   id_boleto: number,
   cantidad: number
 }
+
+
+
+export interface IBoletosAdmin {
+  id: number;
+  titulo: string;
+  precio: number;
+}
+
+export interface IVentaAdmin {
+  id: number,
+  titulo: string,
+  precio_total: number
+  cantidad: number,
+}

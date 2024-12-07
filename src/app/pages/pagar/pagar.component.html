@@ -58,9 +58,9 @@
                     <div class="d-flex align-items-center w-100 justify-content-center text-center gap-5">
                         <div class="d-flex align-items-center justify-content-center gap-3">
                             <p class="p1 thin">Personas</p>
-                            <app-contador-resumen-pedido tipo="tour" [cantidad]="tours[i].cantidad_personas!" [id]="tour.horario.id"></app-contador-resumen-pedido>
+                            <app-contador-resumen-pedido tipo="tour" [cantidad]="tours[i].cantidad!" [id]="tour.horario.id"></app-contador-resumen-pedido>
                         </div>
-                        <p class="p1 bold">$ {{tour.reserva.cantidad_personas! * tour.tour.precio}}</p>
+                        <p class="p1 bold">$ {{tour.reserva.cantidad! * tour.tour.precio}}</p>
                     </div>
                   </div>
 

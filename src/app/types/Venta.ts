@@ -1,5 +1,5 @@
 export interface IRecorridoResponse{
-  cantidad_personas: number,
+  cantidad: number,
   tipo_recorrido: string,
   token: string,
   total_recorrido: number,

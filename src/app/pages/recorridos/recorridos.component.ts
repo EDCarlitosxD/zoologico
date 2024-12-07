@@ -63,7 +63,7 @@ export class RecorridosComponent implements OnInit{
     this.recorridoService.getRecorridosActivos().subscribe(data =>  this.recorridos = data)
     this.subscriptioTour = this.carritoService.toursInfo$.subscribe(data => {
       this.toursInfo = data
-      this.totalRecorridos = this.toursInfo.reduce((acumulador, siguiente) => acumulador+ (siguiente.tour.precio * siguiente.reserva.cantidad_personas!),0)
+      this.totalRecorridos = this.toursInfo.reduce((acumulador, siguiente) => acumulador+ (siguiente.tour.precio * siguiente.reserva.cantidad!),0)
       console.log(this.totalRecorridos);
 
     });

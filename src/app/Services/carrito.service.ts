@@ -116,13 +116,13 @@ export class CarritoService {
 
     if (tour) {
       // Incrementar la cantidad de personas en el tour encontrado
-      tour.cantidad_personas = (tour.cantidad_personas || 0) + 1;
+      tour.cantidad = (tour.cantidad || 0) + 1;
 
       // Buscar el objeto correspondiente en toursInfo y sincronizar la cantidad de personas
       const tourInfo = this.toursInfo.find(tourInfo => tourInfo.reserva.id_horario_recorrido == idHorarrio);
 
       if (tourInfo) {
-        tourInfo.reserva.cantidad_personas = tour.cantidad_personas;
+        tourInfo.reserva.cantidad = tour.cantidad;
       }
     }
 
@@ -137,13 +137,13 @@ export class CarritoService {
     const tour = this.tours.find(tour => tour.id_horario_recorrido == idHorarrio)
     if (tour) {
       // Incrementar la cantidad de personas en el tour encontrado
-      tour.cantidad_personas = (tour.cantidad_personas || 0) - 1;
+      tour.cantidad = (tour.cantidad || 0) - 1;
 
       // Buscar el objeto correspondiente en toursInfo y sincronizar la cantidad de personas
       const tourInfo = this.toursInfo.find(tourInfo => tourInfo.reserva.id_horario_recorrido == idHorarrio);
 
       if (tourInfo) {
-        tourInfo.reserva.cantidad_personas = tour.cantidad_personas;
+        tourInfo.reserva.cantidad = tour.cantidad;
       }
     }
 

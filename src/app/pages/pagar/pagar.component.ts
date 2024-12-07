@@ -48,7 +48,7 @@ export class PagarComponent implements OnInit{
     this.subscriptionTour = this.carritoService.toursInfo$.subscribe(data => {
 
       this.toursInfo = data
-      this.totalRecorridos = this.toursInfo.reduce((acumulador, siguiente) => acumulador+ (siguiente.tour.precio * siguiente.reserva.cantidad_personas!),0)
+      this.totalRecorridos = this.toursInfo.reduce((acumulador, siguiente) => acumulador+ (siguiente.tour.precio * siguiente.reserva.cantidad!),0)
       console.log(this.totalRecorridos);
 
     });

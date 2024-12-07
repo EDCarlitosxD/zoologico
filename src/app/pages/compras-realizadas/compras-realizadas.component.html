@@ -1,15 +1,15 @@
 <app-perfil-content titulo="Compras Realizadas" descripcion="Resumen">
     <main class="compras">
-        <section *ngFor="let compra of compras">
+        <section *ngFor="let token of tokens">
             <div class="title text-white-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
                     <path d="M36 72C55.858 72 72 55.858 72 36C72 16.142 55.858 0 36 0C16.142 0 0 16.142 0 36C0 55.858 16.142 72 36 72ZM40.8543 40.5522C40.1574 39.8554 39.2284 39.4839 38.2297 39.4839H33.7703C30.9136 39.4839 28.2194 38.3689 26.2219 36.3715C24.2245 34.3741 23.1097 31.68 23.1097 28.8232C23.1097 23.3651 27.2438 18.9289 32.5162 18.2787V16.7226C32.5162 14.7948 34.0722 13.2387 36 13.2387C37.9278 13.2387 39.4839 14.7948 39.4839 16.7226V18.1626H45.4064C47.3342 18.1626 48.8903 19.7187 48.8903 21.6465C48.8903 23.5741 47.3342 25.1303 45.4064 25.1303H33.7703C31.7264 25.1303 30.0775 26.7793 30.0775 28.8232C30.0775 29.8219 30.449 30.751 31.1458 31.4477C31.8426 32.1444 32.7716 32.5161 33.7703 32.5161H38.2297C41.0865 32.5161 43.7806 33.6309 45.7781 35.6283C47.7755 37.6259 48.8903 40.32 48.8903 43.1767C48.8903 48.6349 44.7562 53.0709 39.4839 53.7213V55.2774C39.4839 57.2052 37.9278 58.7613 36 58.7613C34.0722 58.7613 32.5161 57.2052 32.5161 55.2774V53.8374H26.5936C24.6658 53.8374 23.1097 52.2813 23.1097 50.3535C23.1097 48.4257 24.6658 46.8697 26.5936 46.8697H38.2297C40.2736 46.8697 41.9226 45.2206 41.9226 43.1767C41.9226 42.178 41.551 41.2491 40.8543 40.5522Z" fill="#AAC767"/>
                   </svg>
-                  <h4 class="thin">Compra {{compra.fecha}}</h4>
-                  <h6>Total: {{subtotalPorCompra(compra.fecha) + subtotalPorTour(compra.fecha)}} pesos</h6>
+                  <h4 class="thin">Compra {{ compras.boletos[token]?.[0]?.fecha || compras.reservas[token]?.[0]?.fecha }}</h4>
+                  <h6>Total: ${{calculateTotalBoletos(token) + calculateTotalReservas(token)}} </h6>
             </div>
             <!-- BOLETOS -->
-            <div class="boletosTours">
+            <div class="boletosTours" *ngIf="compras.boletos[token]">
                 <div class="title2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
                         <path d="M10.9978 27.9359L20.0635 37.0072L36.704 20.3658L27.6332 11.2996L10.9978 27.9359ZM47.2454 15.4842L43.3878 11.6239C42.408 12.1593 41.2811 12.3629 40.1759 12.2042C39.0707 12.0456 38.0466 11.5332 37.2569 10.7438C36.4673 9.95436 35.9546 8.9304 35.7955 7.82519C35.6365 6.71998 35.8397 5.59298 36.3747 4.61292L32.5171 0.752561C32.0308 0.27048 31.3738 0 30.6891 0C30.0044 0 29.3474 0.27048 28.8612 0.752561L0.752521 28.8627C0.270466 29.349 0 30.006 0 30.6907C0 31.3755 0.270466 32.0325 0.752521 32.5188L4.61267 36.374C5.59298 35.8373 6.72089 35.6328 7.82723 35.7913C8.93357 35.9498 9.95869 36.4628 10.7488 37.2533C11.539 38.0438 12.0515 39.0691 12.2097 40.1756C12.3678 41.282 12.1629 42.4099 11.6258 43.3901L15.4859 47.2453C15.9715 47.7287 16.6288 48 17.3139 48C17.999 48 18.6562 47.7287 19.1419 47.2453L47.2454 19.1403C47.7287 18.6547 48 17.9974 48 17.3123C48 16.6271 47.7287 15.9698 47.2454 15.4842ZM20.0635 41.1561L6.84911 27.9359L27.6357 7.15074L40.8501 20.3658L20.0635 41.1561Z" fill="#9CBE4E"/>
@@ -26,19 +26,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let b of boletosFiltrados(compra.fecha)">
-                            <td>{{ b.boleto }}</td>
+                        <tr *ngFor="let b of compras.boletos[token]">
+                            <td>{{ b.titulo }}</td>
                             <td>{{ b.fecha }}</td>
                             <td>{{ b.cantidad }} Boletos</td>
-                            <td>${{ b.precio }} pesos</td>
-                        </tr>                          
+                            <td>${{ b.precio_total }} pesos</td>
+                        </tr>
                     </tbody>
                 </table>
-                <h6 class="text-center w-100">Total: ${{subtotalPorCompra(compra.fecha)}} pesos</h6>
+                <h6 class="text-center w-100">Total: $ {{calculateTotalBoletos(token)}} pesos</h6>
             </div>
 
             <!-- TOURS -->
-            <div class="boletosTours">
+            <div class="boletosTours" *ngIf="compras.reservas[token]">
                 <div class="title2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="46" height="48" viewBox="0 0 46 48" fill="none">
                         <path d="M5.36622 45.6008V39.2008H18.5978C19.0142 39.2012 19.423 39.0838 19.7807 38.8613C20.1383 38.6387 20.4316 38.3193 20.6293 37.9368C20.8415 37.5305 20.9344 37.068 20.8962 36.607C20.858 36.146 20.6905 35.707 20.4146 35.3448L16.4206 31.2008L20.4146 27.0568C20.6903 26.6945 20.8577 26.2554 20.8959 25.7945C20.9341 25.3336 20.8413 24.8711 20.6293 24.4648C20.4316 24.0823 20.1383 23.7628 19.7807 23.5403C19.423 23.3177 19.0142 23.2004 18.5978 23.2008H5.36622C5.3644 22.5648 5.12152 21.9555 4.69061 21.5058C4.25971 21.0561 3.6758 20.8027 3.06641 20.8008H2.29981C1.69042 20.8027 1.10651 21.0561 0.675609 21.5058C0.244705 21.9555 0.00181998 22.5648 0 23.2008V45.6008C0.00181998 46.2367 0.244705 46.8461 0.675609 47.2957C1.10651 47.7454 1.69042 47.9989 2.29981 48.0008H3.06641C3.6758 47.9989 4.25971 47.7454 4.69061 47.2957C5.12152 46.8461 5.3644 46.2367 5.36622 45.6008Z" fill="#9CBE4E"/>
@@ -57,15 +57,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let t of ToursFiltrados(compra.fecha)">
-                            <td>{{ t.tour }}</td>
+                        <tr *ngFor="let t of compras.reservas[token]">
+                            <td>{{ t.titulo }}</td>
                             <td>{{ t.fecha }}</td>
-                            <td>{{ t.personas }} personas</td>
-                            <td>${{ t.precio }} pesos</td>
-                        </tr>                          
+                            <td>{{ t.cantidad }} personas</td>
+                            <td>${{ t.precio_total }} pesos</td>
+                        </tr>
                     </tbody>
                 </table>
-                <h6 class="text-center w-100">Total: ${{subtotalPorTour(compra.fecha)}} pesos</h6>
+                <h6 class="text-center w-100">Total: $ {{calculateTotalReservas(token)}} pesos</h6>
             </div>
 
         </section>

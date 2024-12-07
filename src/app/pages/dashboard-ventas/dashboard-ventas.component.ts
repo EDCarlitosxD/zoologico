@@ -1,13 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { DashboardContentComponent } from "../../Componentes/Admin/dashboard-content/dashboard-content.component";
-import { NgClass, NgFor } from '@angular/common';
+import { CommonModule, NgClass, NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
-interface Boletos {
-  id: number;
-  tipo: string;
-  precio: number;
-}
-interface Ventas {
+import { IBoletosAdmin, IVentaAdmin } from '../../types/Boletos';
+import { BoletosService } from '../../Services/boletos.service';
+import { CargandoComponent } from "../../Componentes/cargando/cargando.component";
+import { IPagination } from '../../types/Pagination';
+export interface Ventas {
   id: number;
   tipo: string;
   precio: number;
@@ -16,65 +15,28 @@ interface Ventas {
 @Component({
   selector: 'app-dashboard-ventas',
   standalone: true,
-  imports: [DashboardContentComponent, NgFor, NgClass, RouterLink],
+  imports: [DashboardContentComponent, CommonModule, RouterLink, CargandoComponent],
   templateUrl: './dashboard-ventas.component.html',
   styleUrl: './dashboard-ventas.component.scss'
 })
 export class DashboardVentasComponent {
-  @Input() bol: Boletos[] = [
-    {
-      id: 1,
-      tipo: "Niños",
-      precio: 70,
-    },
-    {
-      id: 2,
-      tipo: "Adultos",
-      precio: 120,
-    },
-    {
-      id: 3,
-      tipo: "Tercera Edad",
-      precio: 70,
-    },
-  ]
+  constructor(private boletosService: BoletosService){}
 
-  @Input() ventas: Ventas[] = [
-    {
-      id: 1,
-      tipo: "Niños",
-      precio: 70,
-      ventas: 10
-    },
-    {
-      id: 2,
-      tipo: "Adultos",
-      precio: 120,
-      ventas: 20
-    },
-    {
-      id: 3,
-      tipo: "Tercera Edad",
-      precio: 70,
-      ventas: 5
-    },
-    {
-      id: 4,
-      tipo: "Adultos",
-      precio: 120,
-      ventas: 40
-    },
-    {
-      id: 5,
-      tipo: "Adultos",
-      precio: 120,
-      ventas: 20
-    },
-    {
-      id: 6,
-      tipo: "Niños",
-      precio: 120,
-      ventas: 20
-    },
-  ]
+  ngOnInit(){
+    this.boletosService.getAllBoletosAdmin().subscribe(data => {this.bol = data; this.cargandoBoletosExistentes = false});
+    this.boletosService.getBoletosVendidos().subscribe(data => {
+      this.ventas = data.data; this.cargandoVentas = false
+      this.totalBoletosVendidos =  this.ventas.reduce((contador, siguiente) => contador+ siguiente.cantidad,0)
+
+    })
+
+  }
+
+  cargandoBoletosExistentes = true;
+  cargandoVentas = true;
+  totalBoletosVendidos = 0;
+
+  bol: IBoletosAdmin[] = [];
+
+  ventas: IVentaAdmin[] = []
 }

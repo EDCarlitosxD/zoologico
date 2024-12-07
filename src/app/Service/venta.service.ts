@@ -5,6 +5,7 @@ import { IBoleto, IBoletoVenta } from '../types/Boletos';
 import { environment } from '../environment';
 import { IUserDetails } from '../types/Auth';
 import { getUserDetails } from '../utils/getUserDetails';
+import { IComprasRealizadas } from '../pages/compras-realizadas/compras-realizadas.component';
 
 export interface IVenta{
   recorridos: IReserva[],
@@ -32,4 +33,13 @@ export class VentaService {
     });
   }
 
+
+
+  getComprasUsuario(){
+    return this.http.get<IComprasRealizadas>(`${environment.API_URL}/venta/usuario`, {
+      headers: {
+        'Authorization': `Bearer ${this.userDetails?.token}`,
+    }
+    });
+  }
 }

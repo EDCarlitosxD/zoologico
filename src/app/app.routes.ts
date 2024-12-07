@@ -64,26 +64,18 @@ export const routes: Routes = [
 
 
 
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'dashboard/animales', component: DashboardAnimalesComponent },
-
-  { path: 'dashboard/boletos', component: DashboardVentasComponent },
-  { path: 'dashboard/boletos/edit', component: EditBoletoComponent },
+  // { path: 'dashboard/animales', component: DashboardAnimalesComponent },
 
 
 
-  // { path: 'dashboard/tours', component: DashboardRecorridoComponent },
-  // { path: 'dashboard/tours/create', component: AnimalSoloComponent },
-  // { path: 'dashboard/tours/edit', component: EditRecorridosComponent },
-  // { path: 'dashboard/tours/guias/edit', component: EditGuiasComponent },
-  // { path: 'dashboard/tours/guias/create', component: AddGuiaComponent },
+
+
+
   // { path: 'dashboard/tours/vendidos/edit', component: EditRecoVendidosComponent },
 
 
-  // { path: 'dashboard/reportes', component: DashboardReportesComponent },
 
 
-  { path: 'dashboard/animales/edit', component: EditAnimalComponent },
 
 
   // { path: 'dashboard/animales/create', component: CreateAnimalesComponent },
@@ -105,7 +97,20 @@ export const routes: Routes = [
       { path: 'recorridos/vendidos/edit', component: EditRecoVendidosComponent },
       { path: 'animales/create', component: CreateAnimalesComponent },
       { path: 'recorridos/vendidos/edit', component: EditRecoVendidosComponent },
+      // BOLETOS
+      { path: 'boletos', component: DashboardVentasComponent },
+      { path: 'boletos/edit/:id', component: EditBoletoComponent },
 
+
+      // TOURS
+      { path: 'tours', component: DashboardRecorridoComponent },
+      { path: 'tours/create', component: AnimalSoloComponent },
+      { path: 'tours/edit', component: EditRecorridosComponent },
+      { path: 'tours/guias/edit', component: EditGuiasComponent },
+      { path: 'tours/guias/create', component: AddGuiaComponent },
+
+      // REPORTES
+      { path: 'reportes', component: DashboardReportesComponent }
     ]
 
   },

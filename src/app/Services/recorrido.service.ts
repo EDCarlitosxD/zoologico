@@ -21,4 +21,8 @@ export class RecorridoService {
     return this.http.get<EventosPorDia>(`${environment.API_URL}/horrario/recorrido/${id}`)
   }
 
+  public getRecorridos(){
+    return this.http.get<IRecorrido[]>(`${environment.API_URL}/admin/recorridos`)
+  }
+
 }
