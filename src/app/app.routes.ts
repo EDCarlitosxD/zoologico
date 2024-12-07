@@ -21,11 +21,15 @@ import { PagarComponent } from "./pages/pagar/pagar.component";
 import { CierreComponent } from "./pages/cierre/cierre.component";
 import { LoadingComponent } from "./pages/loading/loading.component";
 import { EditAnimalComponent } from "./pages/dashboard/edit-animal/edit-animal.component";
-import { CreateAnimalesComponent } from "./pages/create-animales/create-animales.component";
+import { CreateAnimalesComponent } from "./pages/dashboard/create-animales/create-animales.component";
 import { PagarDonacionComponent } from "./pages/pagar-donacion/pagar-donacion.component";
 import { CierreDonacionComponent } from "./pages/cierre-donacion/cierre-donacion.component";
 import { DashboardReportesComponent } from "./pages/dashboard-reportes/dashboard-reportes.component";
 import { AddGuiaComponent } from "./pages/dashboard/add-guia/add-guia.component";
+import { AddRecoComponent } from "./pages/dashboard/add-reco/add-reco.component";
+import { DatosPerfilComponent } from "./pages/datos-perfil/datos-perfil.component";
+import { ComprasRealizadasComponent } from "./pages/compras-realizadas/compras-realizadas.component";
+import { EditBoletoComponent } from "./pages/dashboard/edit-boleto/edit-boleto.component";
 import { adminGuard } from "./Guard/admin.guard";
 import { isLoggedGuard } from "./is-logged.guard";
 
@@ -51,12 +55,21 @@ export const routes: Routes = [
   { path: 'donaciones/pagar', component: PagarDonacionComponent },
   { path: 'donaciones/pagar/gracias', component: CierreDonacionComponent },
 
+  { path: 'configuracion/perfil', component: DatosPerfilComponent },
+  { path: 'configuracion/compras', component: ComprasRealizadasComponent },
 
 
 
-  // { path: 'dashboard', component: DashboardComponent },
-  // { path: 'dashboard/animales', component: DashboardAnimalesComponent },
-  // { path: 'dashboard/ventas', component: DashboardVentasComponent },
+
+
+
+
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard/animales', component: DashboardAnimalesComponent },
+
+  { path: 'dashboard/boletos', component: DashboardVentasComponent },
+  { path: 'dashboard/boletos/edit', component: EditBoletoComponent },
+
 
 
   // { path: 'dashboard/tours', component: DashboardRecorridoComponent },
@@ -70,7 +83,7 @@ export const routes: Routes = [
   // { path: 'dashboard/reportes', component: DashboardReportesComponent },
 
 
-  // { path: 'dashboard/animal/edit', component: EditAnimalComponent },
+  { path: 'dashboard/animales/edit', component: EditAnimalComponent },
 
 
   // { path: 'dashboard/animales/create', component: CreateAnimalesComponent },

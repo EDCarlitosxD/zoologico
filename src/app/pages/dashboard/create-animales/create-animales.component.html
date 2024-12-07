@@ -1,0 +1,73 @@
+<app-header-dash-edit title="Agregar Animal" subtitle="Inserción de Datos"></app-header-dash-edit>
+
+
+<form>
+  <div class="form1">
+      <label for="nombre">Nombre</label>
+      <input class="input-dashboard" type="text" placeholder="Nombre">
+  
+      <label for="nombreCientifico">Nombre Cientifico</label>
+      <input class="input-dashboard" type="text" name="nombreCientifico" id="nombreCientifico" placeholder="Nombre Cientifico">
+  
+      <label for="habitad">Habitat</label>
+      <input class="input-dashboard" type="text" name="habitad" id="habitad" placeholder="Habitat">
+  
+      <label for="peso">Peso</label>
+      <input class="input-dashboard" type="text" placeholder="Peso" name="peso" id="peso">
+  
+      <label for="altura">Altura</label>
+      <input class="input-dashboard" type="text" placeholder="Altura" name="altura" id="altura">
+  
+      <label for="tipo">Tipo</label>
+      <select class="select-dashboard" name="tipo" id="tipo"></select>
+  
+      <label for="descripcion">Descripcion</label>
+      <textarea rows="5" placeholder="Descripcion"  class="area-dashboard" name="descripcion" id="descripcion"></textarea>
+  
+  
+      <label for="subtitulo">Subtitulo</label>
+      <input class="input-dashboard" type="text" placeholder="Subtitulo" name="subtitulo" id="subtitulo">
+  
+      <label for="datosCuriosos">Datos Curiosos</label>
+      <input class="input-dashboard" type="text" placeholder="Datos Curiosos" name="datosCuriosos" id="datosCuriosos">
+    </div>
+  
+  
+    <div class="form2">
+
+      <div class="imagenes">
+        
+          <div class="img1">
+            <p>Imagen Principal</p>
+            <input class="file-upload" type="file">
+          </div>
+    
+          <div class="img2">
+            <p>Imagen Secundaria</p>
+            <input class="file-upload" type="file">
+          </div> 
+    
+        
+          <div class="imgUbi">
+            <p>Imagen Ubicación</p>
+            <input class="file-upload" type="file">
+          </div>
+        
+      </div>
+  
+      <label for="Fisiologia">Fisiologia</label>
+      <input class="input-dashboard" type="text" placeholder="Fisiologia" name="Fisiologia" id="Fisiologia">
+  
+      <label for="Dieta">Dieta</label>
+      <input class="input-dashboard" type="text" placeholder="Dieta" name="Dieta" id="Dieta">
+      <label for="comportamiento">Comportamiento</label>
+      <input class="input-dashboard" type="text" placeholder="Comportamiento" name="comportamiento" id="comportamiento">
+  
+      <label for="estado">Estado</label>
+      <input class="input-dashboard" type="number" min="0" max="1" placeholder="Estado" name="estado" id="estado">
+  
+    </div>
+  
+
+    <button routerLink="/dashboard/animales">Agregar</button>
+</form>

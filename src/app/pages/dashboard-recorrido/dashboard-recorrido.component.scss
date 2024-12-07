@@ -17,9 +17,10 @@
         flex: 1 0 0;
         border-radius: 24px;
         background: var(--Blanco-200, #F9FFF5);
-        tbody{
-            max-height: 192px !important;
-            overflow-y: auto;
+        .tbody{
+            width: 100%;
+            max-height: 192px;
+            overflow: auto;
         }
     }
 
@@ -42,8 +43,14 @@
         align-items: center;
         gap: 32px;
         align-self: stretch;
+        
         button{
             width: 219px;
         }
+    }
+    .tableGuias{
+        max-height: 614px;
+        width: 100%;
+        overflow: auto;
     }
 }

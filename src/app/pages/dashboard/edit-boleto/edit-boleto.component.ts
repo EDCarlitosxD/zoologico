@@ -3,12 +3,12 @@ import { HeaderDashEditComponent } from "../../../Componentes/Admin/header-dash-
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-add-guia',
+  selector: 'app-edit-boleto',
   standalone: true,
   imports: [HeaderDashEditComponent, RouterLink],
-  templateUrl: './add-guia.component.html',
-  styleUrl: './add-guia.component.scss'
+  templateUrl: './edit-boleto.component.html',
+  styleUrl: './edit-boleto.component.scss'
 })
-export class AddGuiaComponent {
+export class EditBoletoComponent {
 
 }

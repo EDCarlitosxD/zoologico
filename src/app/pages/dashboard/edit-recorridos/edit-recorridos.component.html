@@ -9,7 +9,7 @@
             <path d="M30.0002 59.1666C24.2316 59.1666 18.5925 57.456 13.796 54.2511C8.99961 51.0462 5.26125 46.491 3.05369 41.1615C0.846134 35.832 0.268536 29.9676 1.39394 24.3098C2.51934 18.652 5.2972 13.455 9.37623 9.37598C13.4553 5.29695 18.6523 2.5191 24.31 1.39369C29.9678 0.268292 35.8323 0.845889 41.1618 3.05345C46.4913 5.261 51.0465 8.99937 54.2514 13.7958C57.4562 18.5922 59.1668 24.2313 59.1668 29.9999C59.1578 37.7326 56.0819 45.146 50.6141 50.6138C45.1462 56.0817 37.7329 59.1575 30.0002 59.1666ZM30.0002 6.6666C25.3853 6.6666 20.874 8.03507 17.0369 10.599C13.1997 13.1629 10.209 16.807 8.44299 21.0707C6.67694 25.3343 6.21486 30.0258 7.11519 34.552C8.01551 39.0783 10.2378 43.2359 13.501 46.4991C16.7642 49.7623 20.9218 51.9846 25.4481 52.8849C29.9743 53.7852 34.6658 53.3232 38.9295 51.5571C43.1931 49.7911 46.8372 46.8004 49.4011 42.9632C51.965 39.1261 53.3335 34.6148 53.3335 29.9999C53.3264 23.8137 50.8658 17.8829 46.4915 13.5086C42.1172 9.13427 36.1864 6.67368 30.0002 6.6666Z" fill="#467F51"/>
           </svg>
         </div>
-          <h3>Recorridos</h3>
+          <h3>Editar Tour</h3>
       </div>
 
         <div class="dashboard__perfil">
@@ -26,31 +26,110 @@
 
     <form class="dashboard__seccion" action="">
       <div class="editData">
-        <h6 class="thin">Nombre Recorrido</h6>
-        <div class="input-text"><input type="text" name="nombre" placeholder="Nombre" id="nombre" autofocus></div>
+        <h6 class="thin">Nombre Tour</h6>
+        <input class="dash80" type="text" name="nombre" placeholder="Nombre" id="nombre" autofocus>
 
-        <h6 class="thin">Precio</h6>
-        <div class="input-text"><input type="text" name="Precio" placeholder="Precio" id="Precio"></div>
-
-        <h6 class="thin">Descripción</h6>
-        <div class="input-textarea"><textarea name="descripcion" placeholder="Descripción" id="descripcion"></textarea></div>
+        <h6 class="thin">Precio por Persona</h6>
+        <input class="dash80"  type="text" name="Precio" placeholder="Precio" id="Precio">
 
         <h6 class="thin">Duración</h6>
-        <div class="input-text"><input type="text" name="Duración" placeholder="Duración" id="Duración"></div>
+        <input class="dash80" type="text" name="Duración" placeholder="Duración" id="Duración">
 
-        <h6 class="thin">Cantidad Personas</h6>
-        <div class="input-text"><input type="text" name="cantidadPersonas" placeholder="Cantidad Personas" id="cantidadPersonas"></div>
+        <h6 class="thin">Descripción General</h6>
+        <textarea class="dash" name="descripcion" placeholder="Descripción" id="descripcion"></textarea>
+
+
+        <h6 class="thin">Descripción Incluye</h6>
+        <textarea class="dash" name="incluye" placeholder="Descripción Incluye" id="incluye"></textarea>
+
+
+        <h6 class="thin">Descripción General</h6>
+        <textarea class="dash" name="importante" placeholder="Importante a reservar" id="importante"></textarea>
       </div>
-      <div class="fecha">
-        <h6 class="thin">Fecha</h6>
-        <full-calendar #recorridoEdit [options]="calendarOptions"></full-calendar>
+      <div class="section2">
+
+        <div class="form-imagen">
+            <h6 class="thin">Imagen Principal</h6>
+            <input class="file-upload" type="file" name="foto" id="foto">
+        </div>
+
         <h6 class="thin">Agregar Horario</h6>
-        <button class="chiquito"></button>
+
         <div class="horarios">
+          <h5 class="thin dia">Dia</h5>
+          <h5 class="thin inicio">Inicio</h5>
+          <h5 class="thin termino">Término</h5>
+          <input class="dash-time dia" type="date" name="fecha" id="fecha">
+          <input class="dash-time inicio" type="time" name="inicio" id="inicio">
+          <input class="dash-time termino" type="time" name="termino" id="termino" disabled>
+        </div>
+
+        <div class="addGuia">
+          <h6 class="thin">Agregar Guía</h6>
+
+          <div class="custom-select-container">
+            <select class="custom-select">
+              <option class="p2 thin text-black-200" value="" disabled selected>Guía</option>
+              <option class="p2 thin" value="adrian">Adrian Hernandez</option>
+            </select>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M24 12C24 9.62663 23.2962 7.30655 21.9776 5.33316C20.6591 3.35977 18.7849 1.8217 16.5922 0.913451C14.3995 0.00519948 11.9867 -0.232441 9.65892 0.230582C7.33115 0.693605 5.19295 1.83649 3.51472 3.51472C1.83649 5.19295 0.693604 7.33115 0.230581 9.65892C-0.232441 11.9867 0.00519903 14.3995 0.91345 16.5922C1.8217 18.7849 3.35977 20.6591 5.33316 21.9776C7.30655 23.2962 9.62663 24 12 24C15.1818 23.9974 18.2325 22.7322 20.4824 20.4824C22.7322 18.2325 23.9974 15.1818 24 12ZM11.232 16.641L6.232 10.641C6.14783 10.5401 6.08434 10.4237 6.04516 10.2983C6.00599 10.1729 5.9919 10.041 6.00369 9.9102C6.01548 9.77936 6.05293 9.65213 6.11389 9.53576C6.17486 9.4194 6.25815 9.31618 6.359 9.232C6.45986 9.14783 6.57631 9.08434 6.7017 9.04516C6.82709 9.00599 6.95897 8.9919 7.0898 9.00369C7.22064 9.01548 7.34788 9.05293 7.46424 9.1139C7.58061 9.17486 7.68382 9.25815 7.768 9.359L12 14.437L16.232 9.359C16.3162 9.25815 16.4194 9.17486 16.5358 9.1139C16.6521 9.05293 16.7794 9.01548 16.9102 9.00369C17.041 8.9919 17.1729 9.00599 17.2983 9.04516C17.4237 9.08434 17.5401 9.14783 17.641 9.232C17.7419 9.31618 17.8251 9.4194 17.8861 9.53576C17.9471 9.65213 17.9845 9.77936 17.9963 9.9102C18.0081 10.041 17.994 10.1729 17.9548 10.2983C17.9157 10.4237 17.8522 10.5401 17.768 10.641L12.768 16.641C12.6742 16.7535 12.5567 16.8441 12.424 16.9062C12.2913 16.9683 12.1465 17.0006 12 17.0006C11.8535 17.0006 11.7087 16.9683 11.576 16.9062C11.4433 16.8441 11.3259 16.7535 11.232 16.641Z" fill="#779336"/>
+                </svg>
+          </div>
 
         </div>
+
+        <button class="chiquito">Agregar</button>
+
+        <div class="addGuia">
+          <h6 class="thin">Horario Agregado</h6>
+          <div class="tablee">
+            <table>
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Horario</th>
+                  <th>Guía</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor ="let horario of horarios; let i = index">
+                  <td>{{horario.fecha}}</td>
+                  <td>{{horario.hora}}</td>
+                  <td>{{horario.guia}}</td>
+                  <td class="cellw">
+
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        [id]="'switch-' + i"
+                        [checked]="horario.active"
+                        (change)="toggleActive(horario)"
+                      />
+                    </div>
+                      <a roterLink="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M22.4932 0.256185C22.3291 0.0921498 22.1066 0 21.8746 0C21.6426 0 21.4201 0.0921498 21.256 0.256185L18.3739 3.1384L24.8608 9.62557L27.7429 6.7451C27.8244 6.66382 27.8891 6.56727 27.9332 6.46097C27.9773 6.35466 28 6.2407 28 6.12561C28 6.01052 27.9773 5.89656 27.9332 5.79026C27.8891 5.68395 27.8244 5.5874 27.7429 5.50612L22.4932 0.256185ZM23.6236 10.8628L17.1367 4.37563L5.76216 15.7505H6.12439C6.35645 15.7505 6.579 15.8427 6.74308 16.0068C6.90717 16.1709 6.99935 16.3934 6.99935 16.6255V17.5005H7.87432C8.10637 17.5005 8.32892 17.5927 8.49301 17.7567C8.65709 17.9208 8.74928 18.1434 8.74928 18.3755V19.2504H9.62424C9.85629 19.2504 10.0788 19.3426 10.2429 19.5067C10.407 19.6708 10.4992 19.8934 10.4992 20.1254V21.0004H11.3742C11.6062 21.0004 11.8288 21.0926 11.9929 21.2567C12.1569 21.4208 12.2491 21.6434 12.2491 21.8754V22.2377L23.6236 10.8628ZM10.5552 23.9316C10.5184 23.8337 10.4994 23.73 10.4992 23.6254V22.7504H9.62424C9.39219 22.7504 9.16964 22.6582 9.00555 22.4941C8.84146 22.33 8.74928 22.1075 8.74928 21.8754V21.0004H7.87432C7.64226 21.0004 7.41971 20.9082 7.25562 20.7441C7.09154 20.5801 6.99935 20.3575 6.99935 20.1254V19.2504H6.12439C5.89234 19.2504 5.66979 19.1583 5.5057 18.9942C5.34161 18.8301 5.24943 18.6075 5.24943 18.3755V17.5005H4.37447C4.26986 17.5003 4.16613 17.4813 4.06823 17.4445L3.755 17.756C3.67161 17.8399 3.60613 17.94 3.56251 18.05L0.0626579 26.7999C-0.000987996 26.9589 -0.0165684 27.1331 0.0178481 27.3008C0.0522646 27.4686 0.135165 27.6226 0.256271 27.7437C0.377377 27.8648 0.531363 27.9477 0.699139 27.9821C0.866915 28.0166 1.0411 28.001 1.20011 27.9373L9.94973 24.4374C10.0597 24.3938 10.1597 24.3283 10.2437 24.2449L10.5552 23.9334V23.9316Z"
+                            fill="#2C4F33" />
+                        </svg>
+
+
+
+                      </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
       </div>
-      <button class="formBtn">Modificar</button>
+      <button class="formBtn" routerLink="/dashboard/tours">Modificar</button>
 
     </form>
 

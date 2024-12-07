@@ -1,0 +1,29 @@
+<main id="main-dashboard">
+    <app-sidebar-usuario></app-sidebar-usuario>
+  
+    <!--CONTENIDO DE -->
+    <div class="dashboard-contenido">
+        <section class="dashboard__titulo">
+            <div class="dash_titleButton">
+              <h3>{{titulo}}</h3>
+            </div>
+  
+            <div class="dashboard__perfil">
+              <img src="" alt="">
+              <div class="dashboard__perfil__datos">
+                <p class="perfil__nombre bold">Nombre Admin</p>
+                <p class="perfil__role p2 thin">Administrador</p>
+              </div>
+  
+            </div>
+        </section>
+        <div class="line"></div>
+
+        <h6 class="dashboard__descripcion">{{descripcion}}</h6>
+
+        <div class="dashboard-ng-content">
+          <ng-content></ng-content>
+        </div>
+    </div>
+  </main>
+  

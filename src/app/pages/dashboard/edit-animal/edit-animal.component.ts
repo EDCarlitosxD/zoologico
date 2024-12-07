@@ -1,5 +1,8 @@
+import { Component } from '@angular/core';
+import { HeaderDashEditComponent } from "../../../Componentes/Admin/header-dash-edit/header-dash-edit.component";
+import { RouterLink } from '@angular/router';
 import { CommonModule, Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import {  OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { max } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -9,7 +12,7 @@ import { IAnimal } from '../../../types/Animales';
 @Component({
   selector: 'app-edit-animal',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [HeaderDashEditComponent, CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './edit-animal.component.html',
   styleUrl: './edit-animal.component.scss'
 })

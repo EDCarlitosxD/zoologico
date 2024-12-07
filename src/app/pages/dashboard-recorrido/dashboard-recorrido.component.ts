@@ -72,6 +72,96 @@ export class DashboardRecorridoComponent {
       disponible: true,
       active: false
     },
+    {
+      nombre: 'Guía 1',
+      disponible: true,
+      active: true
+    },
+    {
+      nombre: 'Guía 2',
+      disponible: false,
+      active: true
+    },    
+    {
+      nombre: 'Guía 3',
+      disponible: true,
+      active: false
+    },
+    {
+      nombre: 'Guía 1',
+      disponible: true,
+      active: true
+    },
+    {
+      nombre: 'Guía 2',
+      disponible: false,
+      active: true
+    },    
+    {
+      nombre: 'Guía 3',
+      disponible: true,
+      active: false
+    },
+    {
+      nombre: 'Guía 1',
+      disponible: true,
+      active: true
+    },
+    {
+      nombre: 'Guía 2',
+      disponible: false,
+      active: true
+    },    
+    {
+      nombre: 'Guía 3',
+      disponible: true,
+      active: false
+    },
+    {
+      nombre: 'Guía 1',
+      disponible: true,
+      active: true
+    },
+    {
+      nombre: 'Guía 2',
+      disponible: false,
+      active: true
+    },    
+    {
+      nombre: 'Guía 3',
+      disponible: true,
+      active: false
+    },
+    {
+      nombre: 'Guía 1',
+      disponible: true,
+      active: true
+    },
+    {
+      nombre: 'Guía 2',
+      disponible: false,
+      active: true
+    },    
+    {
+      nombre: 'Guía 3',
+      disponible: true,
+      active: false
+    },
+    {
+      nombre: 'Guía 1',
+      disponible: true,
+      active: true
+    },
+    {
+      nombre: 'Guía 2',
+      disponible: false,
+      active: true
+    },    
+    {
+      nombre: 'Guía 3',
+      disponible: true,
+      active: false
+    },
 
   ]
 

@@ -329,18 +329,43 @@ thead {
     background: var(--Blanco-400, #FBFFF8);
   }
   input.dash60{
+    all: unset;
     border-radius: 16px;
     background: var(--Blanco-200, #F9FFF5);
     width: 100%;
     height: 60px;
     border: 0;
+    &:focus-within {
+      transition: 0.1s ease;
+      border: 4px solid var(--Primario-Auxiliar-700, #8BAC3F);
+  }
   }
   input.dash80{
+    all: unset;
     border-radius: 16px;
     background: var(--Blanco-200, #F9FFF5);
     width: 100%;
-    height: 60px;
+    height: 80px;
     border: 0;
+    &:focus-within {
+      transition: 0.1s ease;
+      border: 4px solid var(--Primario-Auxiliar-700, #8BAC3F);
+  }
+  }
+  textarea.dash{
+    height: 224px;
+      width: 100%;
+      padding: 16px;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-family: inherit;
+      border-radius: 16px;
+      background: var(--Blanco-200, #F9FFF5);
+      &:focus-within {
+        transition: 0.1s ease;
+        border: 4px solid var(--Primario-Auxiliar-700, #8BAC3F);
+    }
   }
 
 
