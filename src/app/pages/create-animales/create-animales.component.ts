@@ -4,11 +4,12 @@ import { IAnimal } from '../../types/Animales';
 import { AnimalService } from '../../Services/animal.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { max } from 'rxjs';
+import { HeaderDashEditComponent } from "../../Componentes/Admin/header-dash-edit/header-dash-edit.component";
 
 @Component({
   selector: 'app-create-animales',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, HeaderDashEditComponent],
   templateUrl: './create-animales.component.html',
   styleUrl: './create-animales.component.scss'
 })

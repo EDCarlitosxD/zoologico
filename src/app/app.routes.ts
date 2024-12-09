@@ -32,6 +32,7 @@ import { ComprasRealizadasComponent } from "./pages/compras-realizadas/compras-r
 import { EditBoletoComponent } from "./pages/dashboard/edit-boleto/edit-boleto.component";
 import { adminGuard } from "./Guard/admin.guard";
 import { isLoggedGuard } from "./is-logged.guard";
+import { CreatRecorridoComponent } from "./paages/creat-recorrido/creat-recorrido.component";
 
 export const routes: Routes = [
   { path: 'contactanos', component: ContactoComponent }, //A PIXEL✅✅✅,
@@ -103,7 +104,7 @@ export const routes: Routes = [
 
   // TOURS
   { path: 'dashboard/tours', component: DashboardRecorridoComponent , canActivate: [adminGuard]},
-  { path: 'dashboard/tours/create', component: AnimalSoloComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/tours/create', component: CreatRecorridoComponent , canActivate: [adminGuard]},
   { path: 'dashboard/tours/edit', component: EditRecorridosComponent , canActivate: [adminGuard]},
   { path: 'dashboard/tours/guias/edit', component: EditGuiasComponent , canActivate: [adminGuard]},
   { path: 'dashboard/tours/guias/create', component: AddGuiaComponent , canActivate: [adminGuard]},
