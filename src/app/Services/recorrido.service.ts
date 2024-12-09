@@ -8,6 +8,7 @@ import { IReservaDashboard } from '../types/Reserva';
 import { IPagination } from '../types/Pagination';
 import { IUserDetails } from '../types/Auth';
 import { getUserDetails } from '../utils/getUserDetails';
+import { ITourGuardar } from '../types/Tour';
 
 @Injectable({
   providedIn: 'root'
@@ -52,6 +53,30 @@ export class RecorridoService {
 
 
   )
+  }
+
+    guardarRecorrido(animal: ITourGuardar) {
+
+    const formData = new FormData();
+
+    // Agregar campos al FormData
+    Object.keys(animal).forEach(key => {
+      const value = (animal as any)[key];
+      if (value instanceof File) {
+        formData.append(key, value); // Si es un archivo
+      } else {
+        formData.append(key, value?.toString() || ''); // Otros valores como string
+      }
+    });
+
+    return this.http.post<ITourGuardar>(`${environment.API_URL}/animales`, formData,
+      {
+        headers: {
+          'Authorization': `Bearer ${this.userDetails?.token}`,
+          // 'Content-Type': 'multipart/form-data'
+        }
+      }
+    );
   }
 
 }

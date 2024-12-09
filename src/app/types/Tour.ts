@@ -12,6 +12,8 @@
 //   horario: number
 // }
 
+import { HorarioTour } from "./Horario";
+
 export interface ITour {
   id: number;
   titulo: string;
@@ -25,3 +27,13 @@ export interface ITour {
   updated_at: string; // Fecha en formato ISO
 }
 
+export interface ITourGuardar{
+  titulo: string;
+  precio: number;
+  duracion: number;
+  descripcion: string;
+  descripcion_incluye: string;
+  descripcion_importante_reservar: string;
+  img_recorrido: string;
+  horarios: HorarioTour[];
+}
