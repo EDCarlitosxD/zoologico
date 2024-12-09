@@ -1,7 +1,7 @@
 
 
 <div class="screen">
-  
+
 </div>
 <div class="page">
   <div class="frameCentrar">
@@ -14,18 +14,23 @@
         </svg>
       </div>
 
+      <div *ngIf="registrado" class="alert alert-success position-absolute start-0 end-0" style="margin: 0 800px;" role="alert">
+        Se registro tu usuario porfavor verifica tu email
+      </div>
+
+
       <form action="" class="form">
         <div class="textForm text-center">
             <h3 class="h3Form">Regístrate</h3>
             <h6 class="thin h3Form">Y comienza tu aventura</h6>
         </div>
-        <input type="text" name="nombre" class="formInput" placeholder="Nombre">
-        <input type="text" name="apellido" class="formInput" placeholder="Apellido">
-        <input type="text" name="nombre_usuario" class="formInput" placeholder="Nombre de usuario">
-        <input type="email" name="apellido" class="formInput" placeholder="Correo electrónico">
-        <input type="password" name="contraseña" class="formInput" placeholder="Contraseña">
-        <input type="password" class="formInput" placeholder="Confirmar contraseña">
-        <button>Continua</button>
+        <input [(ngModel)]="user.nombre" type="text" name="nombre" class="formInput" placeholder="Nombre">
+        <input [(ngModel)]="user.apellido" type="text" name="apellido" class="formInput" placeholder="Apellido">
+        <input [(ngModel)]="user.nombre_usuario" type="text" name="nombre_usuario" class="formInput" placeholder="Nombre de usuario">
+        <input [(ngModel)]="user.email" type="email" name="apellido" class="formInput" placeholder="Correo electrónico">
+        <input [(ngModel)]="user.password" type="password" name="contraseña" class="formInput" placeholder="Contraseña">
+        <input [(ngModel)]="confirmPassword" type="password" name="confirmPassword" class="formInput" placeholder="Confirmar contraseña">
+        <button (click)="guardar()">Continua</button>
         <a routerLink="/login" class="p2 text-center">¿Ya tiene cuenta? Inicia sesion aqui</a>
       </form>
 

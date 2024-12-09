@@ -4,7 +4,7 @@ export interface User {
   nombre: string;
   apellido: string;
   email: string;
-  contraseña: string;
+  password: string;
   estado: number;
   rol: RoleEnum;
 }
