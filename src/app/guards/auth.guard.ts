@@ -13,7 +13,10 @@ export class AuthGuard implements CanActivate {
       return true; // Permite el acceso si el usuario está autenticado
     }
 
-    // Redirige al inicio de sesión u otra ruta si no está autenticado
+    // Muestra un alert al usuario
+    alert('Debes estar logueado para realizar la compra.');
+
+    // Redirige al inicio de sesión
     this.router.navigate(['/login']);
     return false;
   }
