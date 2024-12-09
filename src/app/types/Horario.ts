@@ -6,4 +6,11 @@ export interface Evento {
   fecha: Date,
 }
 
+export interface HorarioTour{
+  horario_inicio: string;
+  id_guia: number;
+  fecha: Date;
+  horario_fin: string;
+}
+
 export type EventosPorDia = Record<string, Evento[]>;

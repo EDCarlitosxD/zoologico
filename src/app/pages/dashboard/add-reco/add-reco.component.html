@@ -27,30 +27,30 @@
   <form class="dashboard__seccion" action="">
     <div class="editData">
       <h6 class="thin">Nombre Tour</h6>
-      <input class="dash80" type="text" name="nombre" placeholder="Nombre" id="nombre" autofocus>
+      <input class="dash80" type="text" required name="nombre" placeholder="Nombre" id="nombre" autofocus >
       
       <h6 class="thin">Precio por Persona</h6>
-      <input class="dash80"  type="text" name="Precio" placeholder="Precio" id="Precio">
+      <input class="dash80"  type="text" required name="Precio" placeholder="Precio" id="Precio">
       
       <h6 class="thin">Duración</h6>
-      <input class="dash80" type="text" name="Duración" placeholder="Duración" id="Duración">
+      <input class="dash80" type="text" required name="Duración" placeholder="Duración" id="Duración">
 
       <h6 class="thin">Descripción General</h6>
-      <textarea class="dash" name="descripcion" placeholder="Descripción" id="descripcion"></textarea>
+      <textarea class="dash" required name="descripcion" placeholder="Descripción" id="descripcion"></textarea>
       
       
       <h6 class="thin">Descripción Incluye</h6>
-      <textarea class="dash" name="incluye" placeholder="Descripción Incluye" id="incluye"></textarea>
+      <textarea class="dash" required name="incluye" placeholder="Descripción Incluye" id="incluye"></textarea>
 
       
       <h6 class="thin">Descripción General</h6>
-      <textarea class="dash" name="importante" placeholder="Importante a reservar" id="importante"></textarea>
+      <textarea class="dash" required name="importante" placeholder="Importante a reservar" id="importante"></textarea>
     </div>
     <div class="section2">
 
       <div class="form-imagen">  
           <h6 class="thin">Imagen Principal</h6>
-          <input class="file-upload" type="file" name="foto" id="foto">
+          <input class="file-upload" type="file" required name="foto" id="foto">
       </div>
 
       <h6 class="thin">Agregar Horario</h6>
@@ -59,9 +59,9 @@
         <h5 class="thin dia">Dia</h5>
         <h5 class="thin inicio">Inicio</h5>
         <h5 class="thin termino">Término</h5>
-        <input class="dash-time dia" type="date" name="fecha" id="fecha">
-        <input class="dash-time inicio" type="time" name="inicio" id="inicio">
-        <input class="dash-time termino" type="time" name="termino" id="termino" disabled>
+        <input class="dash-time dia" type="date" required name="fecha" id="fecha">
+        <input class="dash-time inicio" type="time" required name="inicio" id="inicio">
+        <input class="dash-time termino" type="time" required name="termino" id="termino" disabled>
       </div>
       
       <div class="addGuia">
@@ -107,7 +107,6 @@
                       role="switch"
                       [id]="'switch-' + i"
                       [checked]="horario.active"
-                      (change)="toggleActive(horario)"
                     />
                   </div>
                     <a roterLink="">
