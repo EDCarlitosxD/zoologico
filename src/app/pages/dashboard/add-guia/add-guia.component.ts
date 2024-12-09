@@ -22,7 +22,7 @@ export class AddGuiaComponent {
     "disponible": true,
     "estado": true,
   }
-  constructor(private location: Location, private guia: GuiaService, private fb: FormBuilder){
+  constructor(private guia: GuiaService, private fb: FormBuilder){
     this.guiaForm = this.fb.group({
       nombre_completo: [''],
       disponible: [true],
