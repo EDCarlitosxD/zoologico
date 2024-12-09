@@ -2,16 +2,21 @@
 <app-dashboard-content>
 
   <section class="graficasTop">
-    <div class="chart-container">
-      <canvas  id="cryptoChart" >{{ chart }}</canvas>
+    <div class="chart-container-top">
+      <p class="aa">Total Boletos Vendidos</p>
+                <h5 class="thin">{{boletoData?.cantidad_total}} Boletos</h5>
     </div>
 
-    <div class="chart-container">
-      <canvas  id="MyChart" >{{ chart }}</canvas>
+    <div class="chart-container-top">
+      <p class="aa">Tours Vendidos Última Semana</p>
+      <h5 class="thin">{{boletoData?.cantidad_total}} Tours</h5>
+
     </div>
 
-    <div class="chart-container">
-      <canvas  id="" >{{ chart }}</canvas>
+    <div class="chart-container-top">
+      <p class="aa">Promedio Donaciones Última Semana</p>
+      <h5 class="thin">${{donacionesData?.total}} pesos</h5>
+
     </div>
 
   </section>
@@ -19,14 +24,21 @@
     <div class="chart-container">
       <div class="title_graph">
         <h6 class="thin">Boletos Vendidos</h6>
-        <canvas  id="cryptoChart" >{{ chart }}</canvas>
+        <div class="graph w-80">
+          <app-cargando *ngIf="cargandoGraphicaBoletos"></app-cargando>
+          <app-chart-cake *ngIf="!cargandoGraphicaBoletos" [idGraph]="'cakeCharBoletos'" [dataGraphics]="boletosGraphicData" ></app-chart-cake>
+
+        </div>
       </div>
     </div>
 
     <div class="chart-container">
       <div class="title_graph">
         <h6 class="thin">Tours Vendidos</h6>
-        <canvas  id="cryptoChart" >{{ chart }}</canvas>
+        <div class="graph">
+          <app-cargando *ngIf="cargandoGraphicaRecorridos"></app-cargando>
+          <app-chart-cake *ngIf="!cargandoGraphicaRecorridos" [idGraph]="'cakeCharRecorridos'" [dataGraphics]="recorridosGraphicData" ></app-chart-cake>
+        </div>
       </div>
     </div>
   </section>

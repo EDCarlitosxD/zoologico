@@ -40,7 +40,7 @@
             <h5 class="thin">Tours</h5>
             <div class="content">
                 <h6 class="thin">Total Tours Vendidos</h6>
-                <h6>{{boletoData?.cantidad_total}} Recorridos</h6>
+                <h6>{{boletoData?.cantidad_total}} Tours</h6>
                 <div class="graph">
                   <app-cargando *ngIf="cargandoGraphicaRecorridos"></app-cargando>
                   <app-chart-cake *ngIf="!cargandoGraphicaRecorridos" [idGraph]="'cakeCharRecorridos'" [dataGraphics]="recorridosGraphicData" ></app-chart-cake>
@@ -71,7 +71,7 @@
             <h5 class="thin">Donaciones</h5>
             <div class="content">
                 <h6 class="thin">Total Donaciones Realizadas</h6>
-                <h6>{{donacionesData?.total}} pesos</h6>
+                <h6>${{donacionesData?.total}} pesos</h6>
                 <div class="graph">
                   <app-cargando *ngIf="cargandoDonacion"></app-cargando>
                   <app-bar-chart *ngIf="!cargandoDonacion"  [dataGraphics]="donacionesGraphicData" ></app-bar-chart>

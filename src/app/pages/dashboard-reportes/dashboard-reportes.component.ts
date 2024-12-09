@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { DashboardComponent } from "../Admin/dashboard/dashboard.component";
 import { DashboardContentComponent } from "../../Componentes/Admin/dashboard-content/dashboard-content.component";
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { DashboardVentasComponent, IDonacionResponse, IVentaItem, IVentaResponseAño, IVentaResponseMes, IVentaResponseSemana } from '../dashboard-ventas/dashboard-ventas.component';
