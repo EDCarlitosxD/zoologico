@@ -1,6 +1,6 @@
-import {  NgFor } from '@angular/common';
+import {  CommonModule, NgFor } from '@angular/common';
 import {  Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 interface Horario{
   fecha: string;
@@ -14,15 +14,35 @@ import { CalendarOptions, DayHeaderContentArg, EventSourceInput } from '@fullcal
 import { Evento, EventosPorDia } from '../../../types/Horario';
 import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import { IRecorrido } from '../../../types/Recorridos';
+import { Form, FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { RecorridoService } from '../../../Services/recorrido.service';
 
 @Component({
   selector: 'app-edit-recorridos',
   standalone: true,
-  imports: [NgFor, RouterLink],
+  imports: [NgFor, RouterLink, FormsModule, CommonModule],
   templateUrl: './edit-recorridos.component.html',
   styleUrl: './edit-recorridos.component.scss'
 })
 export class EditRecorridosComponent {
+  recorridoForm!: FormGroup;
+  editado = false;
+  id: number = 0;
+  constructor(private location:Location, private recorridoService: RecorridoService,private route: ActivatedRoute, ){}
+
+
+  ngOnInit(): void {
+      // Cargamos los datos del animal desde el servicio
+    const id = this.route.snapshot.paramMap.get('id')!;
+    this.recorridoService.getById(parseInt(id)).subscribe((data) => {
+      this.recorrido = data;
+      this.id = data.id!
+
+    });
+  }
+
+
   @Input() horarios: Horario[] = [
     { fecha: "15 septiembre", hora: "13:30", guia: "Adrian Hernandez", active: true },
     { fecha: "16 septiembre", hora: "10:00", guia: "Maria Lopez", active: false },
@@ -33,41 +53,8 @@ export class EditRecorridosComponent {
     { fecha: "21 septiembre", hora: "11:15", guia: "Luis Sanchez", active: false }
   ];
 
-  constructor(private location: Location) {}
-  @ViewChild('recorridoEdit') calendarComponent!: FullCalendarComponent;
 
-
-  events: EventSourceInput = [];
-  calendarOptions: CalendarOptions = {
-    locale: "es",
-    // dayHeaderFormat: { weekday: 'narrow' },
-    initialView: 'dayGridMonth',
-    headerToolbar: {
-      left: 'title',
-      end: 'prev,next',
-    },
-    dayHeaderContent: function (args: DayHeaderContentArg) {
-      // Personalizar para mostrar solo la primera letra, con miércoles como "M"
-      const daysMap = {
-        'dom': 'D',
-        'lun': 'L',
-        'mar': 'M',
-        'mié': 'M',
-        'jue': 'J',
-        'vie': 'V',
-        'sáb': 'S',
-      };
-      console.log(args.text);
-
-      return daysMap[args.text.toLowerCase() as keyof typeof daysMap] || args.text;
-    },
-    eventBackgroundColor: 'transparent',
-    eventBorderColor: 'transparent',
-    events: this.events,
-    plugins: [dayGridPlugin],
-    // eventContent: this.customEventRender, // Personalizar contenido
-    eventClick: this.handleEventClick.bind(this), // Manejar clics en eventos
-  };
+  recorrido: IRecorrido| null = null
 
 
   goBack(): void {
@@ -81,10 +68,26 @@ export class EditRecorridosComponent {
   }
 
 
+  onFileSelected(event: Event, input: string, property: keyof IRecorrido): void {
+    const file = (event.target as HTMLInputElement).files?.[0];
 
-
-  handleEventClick(){
-
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+       (this.recorrido![property] as unknown as string) = reader.result as string; // Actualiza la propiedad dinámica
+        this.recorridoForm.get(input)?.setValue(file);
+        this.recorridoForm.get(input)?.updateValueAndValidity();
+      };
+      reader.readAsDataURL(file);
+    } else {
+     (this.recorrido![property] as unknown as string) = '';
+      this.recorridoForm.get(input)?.setErrors({ required: true });
+    }
   }
+
+
+
+
+
 
 }

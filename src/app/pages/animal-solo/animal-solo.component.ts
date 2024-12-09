@@ -30,7 +30,7 @@ interface animalSolo {
 @Component({
   selector: 'app-animal-solo',
   standalone: true,
-  imports: [NavBarComponent, NgClass, RouterLink, FooterComponent],
+  imports: [NavBarComponent, NgClass],
   templateUrl: './animal-solo.component.html',
   styleUrl: './animal-solo.component.scss'
 })

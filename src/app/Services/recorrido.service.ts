@@ -9,6 +9,7 @@ import { IPagination } from '../types/Pagination';
 import { IUserDetails } from '../types/Auth';
 import { getUserDetails } from '../utils/getUserDetails';
 import { ITourGuardar } from '../types/Tour';
+import { IRecorridoSave } from '../paages/creat-recorrido/creat-recorrido.component';
 
 @Injectable({
   providedIn: 'root'
@@ -55,13 +56,20 @@ export class RecorridoService {
   )
   }
 
-    guardarRecorrido(animal: ITourGuardar) {
+    guardarRecorrido(recorrido: IRecorridoSave) {
+      const recoSave = {
+        ...recorrido
+      }
+
+      recoSave.duracion = this.formatDurationToTime(recoSave.duracion as number);
+
+      console.log(recoSave);
 
     const formData = new FormData();
 
     // Agregar campos al FormData
-    Object.keys(animal).forEach(key => {
-      const value = (animal as any)[key];
+    Object.keys(recoSave ).forEach(key => {
+      const value = (recoSave   as any)[key];
       if (value instanceof File) {
         formData.append(key, value); // Si es un archivo
       } else {
@@ -69,7 +77,12 @@ export class RecorridoService {
       }
     });
 
-    return this.http.post<ITourGuardar>(`${environment.API_URL}/animales`, formData,
+    formData.append('horarios',JSON.stringify(recorrido.horarios));
+
+    console.log(formData);
+
+
+    return this.http.post<ITourGuardar>(`${environment.API_URL}/recorridos/guardar`, formData,
       {
         headers: {
           'Authorization': `Bearer ${this.userDetails?.token}`,
@@ -77,6 +90,28 @@ export class RecorridoService {
         }
       }
     );
+  }
+
+  getById($id:number){
+    return this.http.get<IRecorrido>(`${environment.API_URL}/recorridos/${$id}`)
+  }
+
+
+
+   formatDurationToTime(duracion: number): string {
+    // Calcular las horas, minutos y segundos
+    const hours = Math.floor(duracion); // Parte entera son las horas
+    const minutes = Math.floor((duracion % 1) * 60); // Fracción convertida a minutos
+    const seconds = Math.round((((duracion % 1) * 60) % 1) * 60); // Restante convertido a segundos
+
+    // Formatear con dos dígitos (HH:mm:ss)
+    const formattedTime = [
+      hours.toString().padStart(2, '0'),
+      minutes.toString().padStart(2, '0'),
+      seconds.toString().padStart(2, '0'),
+    ].join(':');
+
+    return formattedTime;
   }
 
 }

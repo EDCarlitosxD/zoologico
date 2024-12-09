@@ -27,24 +27,24 @@
     <form class="dashboard__seccion" action="">
       <div class="editData">
         <h6 class="thin">Nombre Tour</h6>
-        <input class="dash80" type="text" name="nombre" placeholder="Nombre" id="nombre" autofocus>
+        <input class="dash80" type="text" [(ngModel)]="recorrido!.titulo" name="titulo"  placeholder="Nombre" id="nombre" autofocus>
 
         <h6 class="thin">Precio por Persona</h6>
-        <input class="dash80"  type="text" name="Precio" placeholder="Precio" id="Precio">
+        <input class="dash80"  type="text" [(ngModel)]="recorrido!.precio" name="Precio" placeholder="Precio" id="Precio">
 
         <h6 class="thin">Duración</h6>
-        <input class="dash80" type="text" name="Duración" placeholder="Duración" id="Duración">
+        <input class="dash80" type="text" [(ngModel)]="recorrido!.duracion" name="Duración" placeholder="Duración" id="Duración">
 
         <h6 class="thin">Descripción General</h6>
-        <textarea class="dash" name="descripcion" placeholder="Descripción" id="descripcion"></textarea>
+        <textarea class="dash" name="descripcion" [(ngModel)]="recorrido!.descripcion" placeholder="Descripción" id="descripcion"></textarea>
 
 
         <h6 class="thin">Descripción Incluye</h6>
-        <textarea class="dash" name="incluye" placeholder="Descripción Incluye" id="incluye"></textarea>
+        <textarea class="dash" name="incluye" [(ngModel)]="recorrido!.descripcion_incluye" placeholder="Descripción Incluye" id="incluye"></textarea>
 
 
         <h6 class="thin">Descripción General</h6>
-        <textarea class="dash" name="importante" placeholder="Importante a reservar" id="importante"></textarea>
+        <textarea class="dash" name="importante" [(ngModel)]="recorrido!.descripcion_importante_reservar" placeholder="Importante a reservar" id="importante"></textarea>
       </div>
       <div class="section2">
 

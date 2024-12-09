@@ -42,7 +42,7 @@ export class AddRecoComponent implements OnInit {
           id_guia: ['', Validators.required],
           fecha: ['', Validators.required],
           horario_fin: ['', Validators.required],
-        })  
+        })
       ]) // Inicializamos como un arreglo vacío
     });
 
