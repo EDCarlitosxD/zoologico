@@ -32,21 +32,15 @@ export class GraficaService {
   public obtenerVentasBoletosAño(){
     return this.http.get<IVentaResponseAño>(`${environment.API_URL}/boletosyear`,{headers: this.headers});
   }
-
-
-
   public obtenerVentasRecorridosMes(){
     return this.http.get<IVentaResponseMes>(`${environment.API_URL}/recorridosmes`,{headers: this.headers});
   }
-
   public obtenerVentasRecorridosSemana(){
     return this.http.get<IVentaResponseSemana>(`${environment.API_URL}/recorridosemana`,{headers: this.headers});
   }
-
   public obtenerVentasRecorridosAño(){
     return this.http.get<IVentaResponseAño>(`${environment.API_URL}/recorridosyear`,{headers: this.headers});
   }
-
 
   public obtenerDonacionesMes(){
     return this.http.get<IDonacionResponse>(`${environment.API_URL}/donacionmes`,{headers: this.headers});

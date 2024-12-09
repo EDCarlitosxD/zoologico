@@ -64,39 +64,92 @@
             Mexico, Cancún, Q.Roo<br><br>
             Accede por la ciclovía de la Avenida Naturaleza.
         </p>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=21.19092409548484,-86.90388322311436&travelmode=driving" 
+        <a href="https://www.google.com/maps/dir/?api=1&destination=21.19092409548484,-86.90388322311436&travelmode=driving"
         target="_blank">
             <button>Destino</button>
          </a>
     </div>
 </section>
+<div *ngIf="correoEnviado" class="alert alert-success position-sticky top-20 start-0 end-0 mx-20" role="alert">
+  A simple success alert—check it out!
+</div>
+<form class="formContacto position-relative" action="">
 
-<form class="formContacto" action="">
-    
         <div class="items">
             <h3 class="thin text-center">Mándanos un Mensaje</h3>
             <div class="nombre-tel">
                 <h6 class="thin">Nombre</h6>
-                
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre">
-                
+
+                <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre"
+                [(ngModel)]="contacto.nombre"
+                [ngModelOptions]="{standalone: true}"
+                #nombre="ngModel"
+                required
+              >
+              <div class="error" *ngIf="nombre?.touched && nombre?.invalid">
+                <small class="error" *ngIf="nombre?.hasError('required')">El nombre es requerido.</small>
+              </div>
+
                 <h6 class="thin">Teléfono</h6>
-                
-                    <input type="tel" name="telefono" id="telefono" placeholder="Teléfono">
-                
+
+                <input
+                type="tel"
+                name="telefono"
+                id="telefono"
+                placeholder="Teléfono"
+                [(ngModel)]="contacto.telefono"
+                [ngModelOptions]="{standalone: true}"
+                #telefono="ngModel"
+                required
+              >
+              <div class="error" *ngIf="telefono?.touched && telefono?.invalid">
+                <small class="error" *ngIf="telefono?.hasError('required')">El teléfono es requerido.</small>
+              </div>
+
             </div>
         </div>
         <div class="mail-message">
             <h6 class="thin">Correo electrónico</h6>
-                
-                    <input type="email" id="mail" name="mail" placeholder="Correo Electrónico">
-                
+
+            <input
+            type="email"
+            id="mail"
+            name="mail"
+            placeholder="Correo Electrónico"
+            [(ngModel)]="contacto.email"
+            [ngModelOptions]="{standalone: true}"
+            #mail="ngModel"
+            required
+          >
+          <div *ngIf="mail?.touched && mail?.invalid">
+            <small class="error" *ngIf="mail?.hasError('required')">El correo electrónico es requerido.</small>
+            <small class="error" *ngIf="mail?.hasError('email')">El correo electrónico no es válido.</small>
+          </div>
+
             <h6 class="thin">Mensaje</h6>
             <div class="form-input-text">
-                <textarea name="mensaje" id="mensaje" placeholder="Mensaje"></textarea>
-            </div>
+              <textarea
+              name="mensaje"
+              id="mensaje"
+              placeholder="Mensaje"
+              [(ngModel)]="contacto.mensaje"
+              [ngModelOptions]="{standalone: true}"
+              #mensaje="ngModel"
+              required
+            ></textarea>
+
+          </div>
+          <div class="error" *ngIf="mensaje?.touched && mensaje?.invalid">
+            <small class="error" *ngIf="mensaje?.hasError('required')">El mensaje es requerido.</small>
+          </div>
+
+
         </div>
-        <button class="blackBtn" type="submit">Mandar</button>
-    
+        <button (click)="enviar()" class="blackBtn" type="submit">Mandar</button>
+
 </form>
 <app-footer></app-footer>

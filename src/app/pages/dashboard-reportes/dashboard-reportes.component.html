@@ -55,11 +55,11 @@
                         </thead>
                         <tbody>
                             <tr
-                            *ngFor="let t of tours; let i = index"
+                            *ngFor="let t of recorridos; let i = index"
                             [ngClass] = "{ 'odd-row': i % 2 !== 0, 'even-row': i % 2 === 0 }"
                         >
-                                <td>{{t.tour}}</td>
-                                <td>{{t.ventas}}</td>
+                                <td>{{t.titulo}}</td>
+                                <td>{{t.cantidad}}</td>
 
                             </tr>
                         </tbody>
