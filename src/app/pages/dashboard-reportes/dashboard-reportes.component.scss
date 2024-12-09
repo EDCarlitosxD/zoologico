@@ -1,66 +1,77 @@
-.buttons{
-    grid-column: span 3;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    .search{
-        all: unset;
-        border-radius: 20px;
-        border: 3px solid var(--Primario-Auxiliar-200, #C6DA9A);
-        background: var(--Primario-Auxiliar-700, #8BAC3F);
-        padding: 0 16px;
-        height: 29px;
-        color: var(--Secundario-Auxiliar-100, #F3EBD6);
+.buttons {
+  grid-column: span 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 
-        /* Mobile/P 02/Bold */
-        font-family: "Comic Neue";
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 150%; /* 21px */
-    }
+  .search {
+    all: unset;
+    border-radius: 20px;
+    border: 3px solid var(--Primario-Auxiliar-200, #C6DA9A);
+    background: var(--Primario-Auxiliar-700, #8BAC3F);
+    padding: 0 16px;
+    height: 29px;
+    color: var(--Secundario-Auxiliar-100, #F3EBD6);
+
+    /* Mobile/P 02/Bold */
+    font-family: "Comic Neue";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 21px */
+  }
 }
 
-main{
+main {
+  display: flex;
+  grid-column: span 11;
+  padding-top: 10px;
+  align-items: flex-start;
+  gap: 40px;
+
+  .stat {
     display: flex;
-    grid-column: span 11;
-    padding-top: 10px;
+    flex-direction: column;
     align-items: flex-start;
     gap: 40px;
-    .stat{
+    flex: 1 0 0;
+
+    h5 {
+      width: 100%;
+      text-align: center;
+      border-radius: 16px;
+      background: var(--Blanco-200, #F9FFF5);
+    }
+
+    .content {
+      display: flex;
+      padding: 16px 0px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      align-self: stretch;
+      border-radius: 16px;
+      background: var(--Blanco-200, #F9FFF5);
+
+      .graph {
+        width: 343px;
+        aspect-ratio: 1/1;
+        border-radius: 4px;
+        background: var(--Light-Base-Surface, #FFF);
+
+        /* Light/Elevation */
+        box-shadow: 0px 0.5px 1.75px 0px rgba(0, 0, 0, 0.04), 0px 1.85px 6.25px 0px rgba(0, 0, 0, 0.19);
+      }
+
+      .table {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 40px;
-        flex: 1 0 0;
-        h5{
-            width: 100%;
-            text-align: center;
-            border-radius: 16px;
-            background: var(--Blanco-200, #F9FFF5);
-        }
-        .content{
-            display: flex;
-            padding: 16px 0px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            align-self: stretch;
-            border-radius: 16px;
-            background: var(--Blanco-200, #F9FFF5);
-            .graph{
-                width: 300px;
-                aspect-ratio: 1/1;
-                background-color: aqua;
-            }
-            .table{
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                max-height: 192px;
-                overflow: auto;
-            }
-        }
+        max-height: 192px;
+        overflow: auto;
+      }
     }
+  }
 }

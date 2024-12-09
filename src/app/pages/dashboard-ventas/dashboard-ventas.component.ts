@@ -15,16 +15,35 @@ export interface Ventas {
   precio: number;
   ventas: number;
 }
-export interface IVentaMes {
+export interface IVentaItem {
   id: number;
   titulo: string;
   cantidad: string; // Es mejor convertir a número si se usará para cálculos.
 }
 
-export interface IVentaResponse {
-  VentaMes: Record<string, IVentaMes[]>; // Clave numérica como string y un array de IVentaMes
+export interface IVentaResponseMes {
+  VentaMes: Record<string, IVentaItem[]>; // Clave numérica como string y un array de IVentaMes
   cantidad_total: string; // También mejor convertir a número
 }
+
+export interface IVentaResponseSemana {
+  VentaSemana: Record<string, IVentaItem[]>; // Clave numérica como string y un array de IVentaMes
+  cantidad_total: string; // También mejor convertir a número
+}
+
+
+export interface IVentaResponseAño {
+  VentaYear: Record<string, IVentaItem[]>; // Clave numérica como string y un array de IVentaMes
+  cantidad_total: string; // También mejor convertir a número
+}
+
+
+export interface IDonacionResponse {
+  donacion: { id:number, monto: string}[],
+  promedio: number,
+  total: number
+}
+
 
 @Component({
   selector: 'app-dashboard-ventas',
@@ -49,7 +68,7 @@ export class DashboardVentasComponent {
       this.totalBoletosVendidos =  this.ventas.reduce((contador, siguiente) => contador+ siguiente.cantidad,0)
     })
 
-    this.graficaService.obtenerVentasMes().subscribe(data => {
+    this.graficaService.obtenerVentasBoletosMes().subscribe(data => {
       this.dataGraphic = this.transformarVentasParaChart(data);
       this.cargandoGrafica = false;
     })
@@ -77,7 +96,7 @@ export class DashboardVentasComponent {
 
 
 
-  transformarVentasParaChart(data: IVentaResponse): IDataGraficsBar {
+  transformarVentasParaChart(data: IVentaResponseMes): IDataGraficsBar {
     const labels: string[] = [];
     const cantidades: number[] = [];
 

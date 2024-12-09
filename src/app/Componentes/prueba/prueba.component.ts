@@ -5,11 +5,12 @@ import { Post } from './interface';
 import { CommonModule, NgComponentOutlet } from '@angular/common';
 import { LoadingComponent } from "../../pages/loading/loading.component";
 import { CargandoComponent } from "../cargando/cargando.component";
+import { ChartCakeComponent } from "../chart-cake/chart-cake.component";
 
 @Component({
   selector: 'app-prueba',
   standalone: true,
-  imports: [CommonModule, LoadingComponent, CargandoComponent],
+  imports: [CommonModule, LoadingComponent, CargandoComponent, ChartCakeComponent],
   templateUrl: './prueba.component.html',
   styleUrl: './prueba.component.scss'
 })
