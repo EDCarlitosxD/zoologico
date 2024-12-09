@@ -21,3 +21,16 @@ export class AuthGuard implements CanActivate {
     return false;
   }
 }
+
+
+// Nombre Científico: Loxodonta africana
+// Habitat: Sabanas y bosques
+// Peso: 6,000 kg
+// Altura: 3 m
+// Tipo: Mamífero
+// Descripción: El mayor terrestre
+// Subtitulo: Gigante gentil
+// Datos Curiosos: Su piel es gruesa y arrugada
+// Fisiología: Tienen grandes orejas para disipar el calor
+// Dieta: Herbívoro
+// Comportamiento: Viven en manadas con una estructura social matriarcal.
