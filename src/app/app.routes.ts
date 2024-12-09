@@ -49,7 +49,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [isLoggedGuard] },// Terminarlo,
   { path: 'register', component: RegisterComponent , canActivate: [isLoggedGuard]},// Terminarlo,
 
-  { path: 'animales/animal', component: AnimalSoloComponent}, //Aprobado ✅✅✅
+  { path: 'animal/{slug}', component: AnimalSoloComponent}, //Aprobado ✅✅✅
 
 
   { path: 'comprar/pagar/gracias', component: CierreComponent }, //,

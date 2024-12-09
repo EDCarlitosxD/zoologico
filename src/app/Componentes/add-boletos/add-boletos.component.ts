@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IBoleto } from '../../types/Boletos';
+import { CarritoService } from '../../Services/carrito.service';
 
 interface addBoletos{
   image: string;
@@ -17,6 +18,9 @@ interface addBoletos{
   styleUrls: ['./add-boletos.component.scss']
 })
 export class AddBoletosComponent {
+
+  constructor(private carritoService: CarritoService){}
+
   @Input() addBoletos: IBoleto = {
     advertencias: '',
     descripcion: '',
@@ -27,19 +31,15 @@ export class AddBoletosComponent {
     titulo: '',
   }
 
-  contador = 0
+
+
+
+  @Input() contador = 0
 
   minus(){
-    if(this.contador === 0){
-      return;
-    }
-    let contador = this.contador - 1;
-    this.contador = contador;
-    return contador;
+    this.carritoService.decrementarBoleto(this.addBoletos.id!);
   }
   plus(){
-    let contador = this.contador + 1;
-    this.contador = contador;
-    return contador;
+    this.carritoService.decrementarBoleto(this.addBoletos.id!)
   }
 }
