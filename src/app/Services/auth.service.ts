@@ -16,6 +16,11 @@ export class AuthService {
     return this.http.post<AuthResponse>(`${environment.API_URL}/login`,loginData, {observe: 'response'});
   }
 
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('userToken'); // Verifica si hay un token guardado
+  }
+
+
   register(registerData: User){
     return this.http.post(`${environment.API_URL}/register`,registerData)
   }

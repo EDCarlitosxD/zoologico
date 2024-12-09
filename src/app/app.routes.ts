@@ -33,6 +33,7 @@ import { EditBoletoComponent } from "./pages/dashboard/edit-boleto/edit-boleto.c
 import { adminGuard } from "./Guard/admin.guard";
 import { isLoggedGuard } from "./is-logged.guard";
 import { CreatRecorridoComponent } from "./paages/creat-recorrido/creat-recorrido.component";
+import { AuthGuard } from "./guards/auth.guard";
 
 export const routes: Routes = [
   { path: 'contactanos', component: ContactoComponent }, //A PIXEL✅✅✅,
@@ -40,7 +41,7 @@ export const routes: Routes = [
   { path: 'animales', component: AnimalesComponent }, // Falta filtro A PIXEL✅✅✅
   { path: 'loading', component: LoadingComponent }, //Aprobado ✅✅✅
   { path: 'comprar', component: RecorridosComponent }, //A PIXEL✅✅✅, Falta calendario y selectores
-  { path: 'comprar/pagar', component: PagarComponent }, //CENTRAR MODALS, MENSAJES DE CONFIRMACION, MOBILE,
+  { path: 'comprar/pagar', component: PagarComponent,  canActivate: [AuthGuard]  }, //CENTRAR MODALS, MENSAJES DE CONFIRMACION, MOBILE,
 
 
   { path: '', component: HomeComponent }, // A PIXEL✅✅✅
@@ -58,6 +59,7 @@ export const routes: Routes = [
 
   { path: 'configuracion/perfil', component: DatosPerfilComponent },
   { path: 'configuracion/compras', component: ComprasRealizadasComponent },
+
 
 
 
