@@ -21,7 +21,7 @@ import { PagarComponent } from "./pages/pagar/pagar.component";
 import { CierreComponent } from "./pages/cierre/cierre.component";
 import { LoadingComponent } from "./pages/loading/loading.component";
 import { EditAnimalComponent } from "./pages/dashboard/edit-animal/edit-animal.component";
-import { CreateAnimalesComponent } from "./pages/dashboard/create-animales/create-animales.component";
+import { CreateAnimalesComponent } from "./pages/create-animales/create-animales.component";
 import { PagarDonacionComponent } from "./pages/pagar-donacion/pagar-donacion.component";
 import { CierreDonacionComponent } from "./pages/cierre-donacion/cierre-donacion.component";
 import { DashboardReportesComponent } from "./pages/dashboard-reportes/dashboard-reportes.component";
@@ -84,35 +84,29 @@ export const routes: Routes = [
   // { path: 'dashboard/recorridos/edit', component: EditRecorridosComponent },
 
 
-  { path: 'animal/:slug', component: AnimalSoloComponent}, //Mobile parcialmente terminado
+  { path: 'dashboard/animal/:slug', component: AnimalSoloComponent, canActivate: [adminGuard]}, //Mobile parcialmente terminado
 
-  { path: 'dashboard', component: DashboardComponent,
-    canActivate: [adminGuard],
-    children:[
-      { path: 'animales', component: DashboardAnimalesComponent },
-      { path: 'ventas', component: DashboardVentasComponent },
-      { path: 'recorridos', component: DashboardRecorridoComponent },
-      { path: 'guias/:id', component: EditGuiasComponent },
-      { path: 'animales/edit/:slug', component: EditAnimalComponent },
-      { path: 'recorridos/vendidos/edit', component: EditRecoVendidosComponent },
-      { path: 'animales/create', component: CreateAnimalesComponent },
-      { path: 'recorridos/vendidos/edit', component: EditRecoVendidosComponent },
-      // BOLETOS
-      { path: 'boletos', component: DashboardVentasComponent },
-      { path: 'boletos/edit/:id', component: EditBoletoComponent },
+  { path: 'dashboard/guias/:id', component: EditGuiasComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/animales/edit/:slug', component: EditAnimalComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/reportes', component: DashboardReportesComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/animales', component: DashboardAnimalesComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/ventas', component: DashboardVentasComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/recorridos', component: DashboardRecorridoComponent , canActivate: [adminGuard]},
+
+  { path: 'dashboard/recorridos/vendidos/edit', component: EditRecoVendidosComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/animales/create', component: CreateAnimalesComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/recorridos/vendidos/edit', component: EditRecoVendidosComponent , canActivate: [adminGuard]},
+  // BOLETOS
+  { path: 'dashboard/boletos', component: DashboardVentasComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/boletos/edit/:id', component: EditBoletoComponent , canActivate: [adminGuard]},
 
 
-      // TOURS
-      { path: 'tours', component: DashboardRecorridoComponent },
-      { path: 'tours/create', component: AnimalSoloComponent },
-      { path: 'tours/edit', component: EditRecorridosComponent },
-      { path: 'tours/guias/edit', component: EditGuiasComponent },
-      { path: 'tours/guias/create', component: AddGuiaComponent },
-
-      // REPORTES
-      { path: 'reportes', component: DashboardReportesComponent }
-    ]
-
-  },
+  // TOURS
+  { path: 'dashboard/tours', component: DashboardRecorridoComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/tours/create', component: AnimalSoloComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/tours/edit', component: EditRecorridosComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/tours/guias/edit', component: EditGuiasComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/tours/guias/create', component: AddGuiaComponent , canActivate: [adminGuard]},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [adminGuard],},
   { path: 'pruebas', component: PruebaComponent},
 ];
