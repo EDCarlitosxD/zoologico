@@ -1,34 +1,84 @@
 <div class="recorridoHome">
   <div class="recorridoHome__imagen">
-    <img src="{{img}}" [alt]="titulo">
+    <img src="{{a.img}}" [alt]="a.titulo">
   </div>
 
   <div class="recorridoHome__informacion">
-      <p class="nombreRecorrido">{{titulo}}</p>
+      <p class="nombreRecorrido">{{a.titulo}}</p>
       <div class="estrellas">
-        <p class=> {{valoracion}}</p>
+        <p class=> {{a.valoracion}}</p>
         <svg xmlns="http://www.w3.org/2000/svg" width="49" height="48" viewBox="0 0 49 48" fill="none">
           <path d="M48.4206 18.2152C48.3285 17.9183 48.1591 17.6543 47.9316 17.4529C47.7041 17.2515 47.4274 17.1206 47.1328 17.0751L32.5034 14.8367L25.9366 0.937227C25.8048 0.655999 25.6004 0.419123 25.3466 0.253466C25.0928 0.0878084 24.7998 0 24.5009 0C24.2019 0 23.9089 0.0878084 23.6552 0.253466C23.4014 0.419123 23.197 0.655999 23.0651 0.937227L16.5063 14.8367L1.87696 17.0667C1.58005 17.1104 1.30084 17.2408 1.0712 17.4428C0.841546 17.6449 0.670697 17.9105 0.578135 18.2094C0.485574 18.5083 0.475025 18.8285 0.547693 19.1334C0.620361 19.4382 0.77332 19.7156 0.989124 19.9338L11.5872 30.7566L9.08366 46.0393C9.03311 46.3476 9.06583 46.6645 9.17812 46.9542C9.2904 47.244 9.47779 47.4951 9.71908 47.6791C9.96038 47.8631 10.246 47.9727 10.5436 47.9955C10.8412 48.0183 11.139 47.9535 11.4032 47.8082L24.5049 40.5902L37.5985 47.8082C37.8628 47.9535 38.1606 48.0183 38.4582 47.9955C38.7558 47.9727 39.0414 47.8631 39.2827 47.6791C39.524 47.4951 39.7114 47.244 39.8236 46.9542C39.9359 46.6645 39.9687 46.3476 39.9181 46.0393L37.4226 30.7566L48.0206 19.9338C48.2335 19.7148 48.3838 19.4379 48.4544 19.1342C48.5251 18.8306 48.5134 18.5122 48.4206 18.2152Z" fill="#DCA617"/>
         </svg>
       </div>   
       <!-- Button trigger modal -->
-      <button class="blackBtn chiquito" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</button>
+      <button class="blackBtn chiquito" data-bs-toggle="modal" [attr.data-bs-target]="'#'+a.id">Ver Mas</button>
 
   </div>
 </div>
 
       <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="1" tabindex="-1" aria-labelledby="1" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content align-items-center bg-transparent border-0">
       <app-recorridos-modal [recorridos]="{
-        img: '',
+        img: 'img/1Reco/Terrestres.png',
         title: 'Recorrido por Animales Terrestres',
-        valoracion: 3.4,
-        price: 750,
+        valoracion: 3.9,
+        price: 200,
         duracion: 2,
         personaExtra: 300,
         description: 'Explora los mamíferos terrestres del zoológico y descubre sus características, adaptaciones y cómo interactúan con su entorno, guiado por un experto.',
+        calendar: ''
+      }"></app-recorridos-modal>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="2" tabindex="-1" aria-labelledby="1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content align-items-center bg-transparent border-0">
+      <app-recorridos-modal [recorridos]="{
+        img: 'img/1Reco/Aves en vuelo.png',
+        title: 'Safari de Aves en Vuelo',
+        valoracion: 3.8,
+        price: 200,
+        duracion: 2,
+        personaExtra: 300,
+        description: 'Disfruta de un espectáculo aéreo con nuestras impresionantes aves.\nCon un guía experto aprende sobre sus habilidades de caza, migraciones y mucho mas.',
+        calendar: ''
+      }"></app-recorridos-modal>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="3" tabindex="-1" aria-labelledby="1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content align-items-center bg-transparent border-0">
+      <app-recorridos-modal [recorridos]="{
+        img: 'img/1Reco/ZooCompleto.png',
+        title: 'Tour Completo del Zoológico',
+        valoracion: 4.8,
+        price: 300,
+        duracion: 2,
+        personaExtra: 300,
+        description: 'Vive una experiencia completa explorando todos los rincones del zoológico, guiado por un experto que te llevará a conocer cada especie y su hábitat.',
+        calendar: ''
+      }"></app-recorridos-modal>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="4" tabindex="-1" aria-labelledby="1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content align-items-center bg-transparent border-0">
+      <app-recorridos-modal [recorridos]="{
+        img: 'img/1Reco/Nocturnos.png',
+        title: 'Expedición de Animales Nocturnos',
+        valoracion: 5.0,
+        price: 300,
+        duracion: 3,
+        personaExtra: 300,
+        description: 'Sumérgete en el misterioso mundo de los animales nocturnos. Acompañado de un guía experto te permitirá observar cómo algunas especies se preparan para la noche.',
         calendar: ''
       }"></app-recorridos-modal>
     </div>

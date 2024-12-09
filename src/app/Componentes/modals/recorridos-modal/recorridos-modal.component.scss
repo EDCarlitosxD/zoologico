@@ -31,12 +31,14 @@
         display: flex;
         width: 348px;
         height: 192px;
-        padding: 20px;
         flex-direction: column;
         align-items: flex-end;
         gap: 10px;
         border-radius: 16px 16px 0px 0px;
         background-color: rgb(66, 20, 20);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
         
     }
     .cerrar{
@@ -152,7 +154,6 @@
             display: flex;
             width: 903px;
             height: 410px;
-            padding: 48px;
             gap: 10px;
             border-radius: 48px 48px 0px 0px;
             background-color: rgb(232, 190, 190);

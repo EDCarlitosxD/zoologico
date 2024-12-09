@@ -322,18 +322,35 @@
 
 
   <div class="recorridosHome__recorridos"> <!--FALTA 1.83 y tantos pixeles-->
-    <app-recorrido-home img="img/Home/recorridos/puma.png" titulo="Recorrido por Animales Terrestres"
-      valoracion="3.9"></app-recorrido-home>
+  
+  <app-recorrido-home [a]="{
+    id: 1,
+    titulo: 'Recorrido por Animales Terrestres',
+    valoracion: '3.9',
+    img: 'img/Home/recorridos/puma.png',
+    }"></app-recorrido-home>
 
-    <app-recorrido-home img="img/Home/recorridos/aves.png" titulo="Safari de Aves en Vuelo"
-      valoracion="3.8"></app-recorrido-home>
+<app-recorrido-home [a]="{
+  id: 2,
+  titulo: 'Safari de Aves en Vuelo',
+  valoracion: '3.8',
+  img: 'img/Home/recorridos/aves.png',
+  }"></app-recorrido-home>
 
-    <app-recorrido-home img="img/Home/recorridos/tourCompleto.png" titulo="Tour Completo del Zoológico"
-      valoracion="4.8"></app-recorrido-home>
+<app-recorrido-home [a]="{
+  id: 3,
+  titulo: 'Tour Completo del Zoológico',
+  valoracion: '4.8',
+  img: 'img/Home/recorridos/tourCompleto.png',
+  }"></app-recorrido-home>
 
-    <app-recorrido-home img="img/Home/recorridos/buho.png" titulo="Expedición de Animales Nocturnos"
-      valoracion="5.0"></app-recorrido-home>
-
+<app-recorrido-home [a]="{
+  id: 4,
+  titulo: 'Expedición de Animales Nocturnos',
+  valoracion: '5.0',
+  img: 'img/Home/recorridos/buho.png',
+  }"></app-recorrido-home>
+  
 
   </div>
 
