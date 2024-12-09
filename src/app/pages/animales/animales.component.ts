@@ -39,10 +39,10 @@ export class AnimalesComponent {
   }
 
 
-  // filtrar(){
+  filtrar(){
 
-  //   this.filtros.page = 1;
-  //   this.animalService.getAnimalCard(this.filtros).subscribe(data => this.pagination = data);
-  // }
+    this.filtros.page = 1;
+    this.animalService.getAnimalCard(this.filtros).subscribe(data => this.pagination = data);
+  }
 
 }

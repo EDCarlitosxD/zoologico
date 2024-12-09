@@ -32,4 +32,9 @@ export class NavBarComponent implements OnInit {
     this.user = null;
     this.role = null;
   }
+
+
+  cerrarSesion(){
+    localStorage.removeItem('userDetails');
+  }
 }

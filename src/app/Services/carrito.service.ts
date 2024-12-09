@@ -99,8 +99,9 @@ export class CarritoService {
   }
 
   decrementarBoleto(id:number) {
-    this.boletosVenta.find(boleto => boleto.id_boleto == id)!.cantidad--;
-
+    let cantidad = this.boletosVenta.find(boleto => boleto.id_boleto == id)!
+    if(cantidad.cantidad === 0)return;
+    cantidad.cantidad--;
     this.boletoSubject.next([...this.boletosVenta]);
 
     this.actualizarStorageBoletos();

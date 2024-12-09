@@ -41,6 +41,8 @@ export class EditAnimalComponent implements OnInit {
       img_ubicacion: [null],
     });
 
+
+
     // Cargamos los datos del animal desde el servicio
     const slug = this.route.snapshot.paramMap.get('slug')!;
     this.animalService.getAnimal(slug).subscribe((data) => {

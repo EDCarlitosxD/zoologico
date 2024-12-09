@@ -50,7 +50,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [isLoggedGuard] },// Terminarlo,
   { path: 'register', component: RegisterComponent , canActivate: [isLoggedGuard]},// Terminarlo,
 
-  { path: 'animal/{slug}', component: AnimalSoloComponent}, //Aprobado ✅✅✅
+  { path: 'animal/:slug', component: AnimalSoloComponent}, //Aprobado ✅✅✅
 
 
   { path: 'comprar/pagar/gracias', component: CierreComponent }, //,
@@ -107,7 +107,7 @@ export const routes: Routes = [
   // TOURS
   { path: 'dashboard/tours', component: DashboardRecorridoComponent , canActivate: [adminGuard]},
   { path: 'dashboard/tours/create', component: CreatRecorridoComponent , canActivate: [adminGuard]},
-  { path: 'dashboard/tours/edit', component: EditRecorridosComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/tours/edit/:id', component: EditRecorridosComponent , canActivate: [adminGuard]},
   { path: 'dashboard/tours/guias/edit', component: EditGuiasComponent , canActivate: [adminGuard]},
   { path: 'dashboard/tours/guias/create', component: AddGuiaComponent , canActivate: [adminGuard]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [adminGuard],},

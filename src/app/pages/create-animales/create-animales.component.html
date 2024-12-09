@@ -1,8 +1,8 @@
-<app-header-dash-edit title="Editar Animal" subtitle="Edición de Datos"></app-header-dash-edit>
+<app-header-dash-edit title="Guardar Animal" subtitle="Edición de Datos"></app-header-dash-edit>
 
 
 <div *ngIf="guardado" class="alert position-sticky sticky-top alert-success wrapper mt-5" style="top: 40px;" role="alert">
-  Se edito correctamente
+  Se Guardo correctamente
 </div>
 
 <form [formGroup]="animalForm" (ngSubmit)="guardarAnimal($event)" class="formularioAnimal">
@@ -35,7 +35,7 @@
 
     <label for="tipo">Tipo</label>
     <select formControlName="tipo" class="select-dashboard" name="tipo" id="tipo">
-      <option [selected]="animal.tipo === 'terrestre'" value="terrestre">Tilin</option>
+      <option [selected]="animal.tipo === 'terrestre'" value="terrestre">Terrestre</option>
     </select>
     <div *ngIf="animalForm.get('tipo')?.invalid && animalForm.get('tipo')?.touched" class="error">Campo requerido</div>
 

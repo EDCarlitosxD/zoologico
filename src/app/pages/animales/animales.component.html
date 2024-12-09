@@ -17,12 +17,12 @@
       <div class="inputContainer">
         <input type="text" [(ngModel)]="filtros.datomin" placeholder="Buscar Animal"/>
         <button type="button" class="lupa">
-          <div class="vectorLupa"></div>
+          <div (click)="filtrar()" class="vectorLupa"></div>
         </button>
       </div>
 
 
-
+<!--
       <div class="dropdown-center">
         <div type="button" class="filtroAnimal" data-bs-toggle="dropdown" aria-expanded="false">
           <div class="filtroBusq">
@@ -56,7 +56,7 @@
           </div>
         </div>
 
-      </div>
+      </div> -->
 
 
     </div>

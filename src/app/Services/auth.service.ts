@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('userToken'); // Verifica si hay un token guardado
+    return !!localStorage.getItem('userDetails'); // Verifica si hay un token guardado
   }
 
 

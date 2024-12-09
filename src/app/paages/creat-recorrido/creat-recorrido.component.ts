@@ -44,6 +44,14 @@ export class CreatRecorridoComponent {
   guias: IGuia[] = []
   horarios: HorarioTour[] = []
 
+  horario: HorarioTour = {
+    fecha: new Date(),
+    horario_fin: '',
+    horario_inicio: '',
+    id_guia: 1
+  }
+
+
   recorrido: IRecorrido = {
   descripcion: '',
   descripcion_importante_reservar: '',
@@ -79,11 +87,28 @@ onFileSelected(event: Event): void {
   }
 
 
+  agregarHorario(){
+
+    this.horario.horario_fin = this.horario.horario_fin + ":00"
+    this.horario.horario_inicio = this.horario.horario_inicio + ":00"
+
+    this.horarios.push(this.horario);
+    this.horario = {
+      fecha: new Date(),
+      horario_fin: '',
+      horario_inicio: '',
+      id_guia: this.horario.id_guia
+    }
+  }
+
   guardar(){
     const dataSave: IRecorridoSave ={
       ...this.recorrido,
         horarios: this.horarios
     }
+
+
+    console.log(dataSave);
 
     this.recorridoService.guardarRecorrido(dataSave).subscribe(data => alert("Se guardo bien"));
   }

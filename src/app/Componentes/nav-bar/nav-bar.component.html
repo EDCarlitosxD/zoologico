@@ -25,9 +25,9 @@
       <rect x="0.455078" y="22.1818" width="30.5455" height="5.45455" rx="2.72727" fill="#386641"/>
     </svg>
   </div>
-  
+
   <div class="offcanvas offcanvas-end menu-mob border-0" tabindex="-1" id="offcanvasDarkNavbar"  aria-labelledby="offcanvasDarkNavbarLabel">
-      
+
 
     <!-- ICONO USER -->
     <div class="header-navbar">
@@ -39,7 +39,7 @@
         <!-- ABRE DROPDOWN -->
         <div class="dropdown-menu dropdown-menu bg-transparent border-0" >
           <ul class="user-options">
-  
+
             <!-- LOGIN -->
             <li *ngIf="!isLoggedIn">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -55,7 +55,7 @@
               </svg>
               <a routerLink="/login">Iniciar sesion</a>
             </li>
-  
+
             <!-- REGISTRATE -->
             <li *ngIf="!isLoggedIn">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -63,7 +63,7 @@
               </svg>
               <a routerLink="/register">Registrate</a>
             </li>
-            
+
             <!-- COMPRAS -->
             <li *ngIf="isLoggedIn">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -71,7 +71,7 @@
               </svg>
               <a routerLink="/configuracion/compras">Compras realizadas</a>
             </li>
-  
+
             <!-- CONFIGURACION -->
             <li *ngIf="isLoggedIn">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -79,11 +79,11 @@
               </svg>
               <a routerLink="/configuracion/perfil">Configuración</a>
             </li>
-  
+
             <svg xmlns="http://www.w3.org/2000/svg" width="423" height="2" viewBox="0 0 423 2" fill="none">
               <path d="M0 1H423" stroke="#C6DA9A"/>
-            </svg> 
-            
+            </svg>
+
             <!-- CIERRA SESION -->
             <li *ngIf="isLoggedIn">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -97,9 +97,9 @@
                   </clipPath>
                 </defs>
               </svg>
-              <a routerLink="">Cerrar Sesión</a>
+              <a (click)="cerrarSesion" >Cerrar Sesión</a>
             </li>
-            
+
           </ul>
         </div>
         <!-- CIERRA DROPDOWN -->
@@ -212,7 +212,7 @@
             </svg>
             <a routerLink="/register">Registrate</a>
           </li>
-          
+
           <li *ngIf="isLoggedIn">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
               <path d="M6.41535 16.7959L11.7037 22.0876L21.4107 12.3801L16.1193 7.09144L6.41535 16.7959ZM27.5598 9.53246L25.3095 7.28058C24.738 7.5929 24.0806 7.71168 23.4359 7.61913C22.7912 7.52658 22.1938 7.22769 21.7332 6.7672C21.2726 6.30671 20.9735 5.7094 20.8807 5.06469C20.7879 4.41999 20.9065 3.76257 21.2186 3.19087L18.9683 0.938994C18.6846 0.65778 18.3014 0.5 17.902 0.5C17.5026 0.5 17.1193 0.65778 16.8357 0.938994L0.438971 17.3366C0.157772 17.6202 0 18.0035 0 18.4029C0 18.8024 0.157772 19.1856 0.438971 19.4693L2.69073 21.7182C3.26257 21.4051 3.92052 21.2858 4.56588 21.3783C5.21125 21.4707 5.80923 21.77 6.27015 22.2311C6.73107 22.6922 7.03007 23.2903 7.1223 23.9358C7.21454 24.5812 7.09503 25.2391 6.78171 25.8109L9.03347 28.0598C9.31674 28.3417 9.70012 28.5 10.0998 28.5C10.4994 28.5 10.8828 28.3417 11.1661 28.0598L27.5598 11.6652C27.8417 11.3819 28 10.9985 28 10.5988C28 10.1991 27.8417 9.81574 27.5598 9.53246ZM11.7037 24.5077L3.99531 16.7959L16.1208 4.67127L23.8292 12.3801L11.7037 24.5077Z" fill="black"/>
@@ -237,11 +237,11 @@
             </svg>
             <a routerLink="/dashboard">Administrar</a>
           </li>
-          
+
           <svg xmlns="http://www.w3.org/2000/svg" width="423" height="2" viewBox="0 0 423 2" fill="none">
             <path d="M0 1H423" stroke="#C6DA9A"/>
           </svg>
-          
+
           <li *ngIf="isLoggedIn">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
               <g clip-path="url(#clip0_3140_7806)">
@@ -256,7 +256,7 @@
             </svg>
             <a routerLink="">Cerrar Sesión</a>
           </li>
-          
+
         </ul>
       </div>
 

@@ -70,20 +70,12 @@ export class CreateAnimalesComponent {
   guardarAnimal(event: Event){
     event.preventDefault();
 
-    if (this.animalForm.valid) {
       this.animal = this.animalForm.value; // Capturar los datos
       console.log(this.animal);
 
       this.animalService.guardarAnimal(this.animal).subscribe(data => this.guardado = true);
       alert("SE guardo correctamente")
-      this.animalForm.reset(); // Limpia el formulario después de guardar
-    } else {
-      alert('Error de validación. Por favor, revisa los campos.');
-      console.log(this.logAllErrors(this.animalForm))
-      this.markAllFieldsAsTouched(); // Resalta los errores
-    }
   }
-
 
 
 

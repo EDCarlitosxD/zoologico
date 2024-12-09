@@ -31,15 +31,15 @@ export class AddBoletosComponent {
     titulo: '',
   }
 
-
-
-
   @Input() contador = 0
 
   minus(){
     this.carritoService.decrementarBoleto(this.addBoletos.id!);
+    if(this.contador == 0)return
+    this.contador--
   }
   plus(){
-    this.carritoService.decrementarBoleto(this.addBoletos.id!)
+    this.carritoService.aumentarBoleto(this.addBoletos.id!)
+    this.contador++
   }
 }
