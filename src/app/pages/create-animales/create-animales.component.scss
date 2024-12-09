@@ -1,0 +1,238 @@
+.dashboard__titulo {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 40px 164px 0 164px;
+  width: 100%;
+  gap: 40px;
+  row-gap: 10px;
+
+  .atras-title {
+    grid-column: span 5;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    .atras {
+      cursor: pointer;
+      display: flex;
+      width: 70px;
+      height: 70px;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+  }
+
+  .dashboard__perfil {
+    grid-column: 10 / span 3;
+    display: flex;
+    justify-self: end;
+    width: fit-content;
+    padding: 4px 8px;
+    align-items: center;
+    gap: 8px;
+    align-self: center;
+    border-radius: 64px;
+    background: var(--Negro-600, #2E312E);
+
+    img {
+      width: 72px;
+      height: 72px;
+      background-color: white;
+      border-radius: 64px;
+
+    }
+
+    .dashboard__perfil__datos {
+      display: flex;
+      padding: 0px 8px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+
+      .perfil__nombre {
+        color: var(--Color, #FFF);
+        text-align: center;
+
+      }
+
+      .perfil__role {
+        color: var(--Color, #FFF);
+        text-align: center;
+      }
+    }
+
+  }
+
+  .line {
+    grid-column: span 12;
+    width: 100%;
+    background-color: #C6DA9A;
+    height: 2px;
+  }
+
+  .dashboard__descripcion {
+    grid-column: span 12;
+  }
+}
+
+input, textarea {
+  all: unset; /* Resetea todos los estilos */
+  box-sizing: border-box; /* Reaplica un modelo de caja correcto */
+}
+
+.flex-gap8 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+
+
+.file-upload {
+  width: 368px;
+  height: 368px;
+
+  border-radius: 16px;
+  border: 1px solid var(--Negro-200, #757C75);
+  background: url('../../../assets/img/imageUpload.png') lightgray 50% / cover no-repeat;
+}
+
+
+.file-upload::file-selector-button {
+  font-size: 0;
+  /* Oculta el texto */
+  text-indent: -9999px;
+  /* Mueve el texto fuera de la vista */
+  white-space: nowrap;
+  /* Evita el texto en varias líneas */
+  overflow: hidden;
+  /* Esconde cualquier desbordamiento */
+  display: inline-block;
+  width: 368px;
+  height: 368px;
+  border: thin solid grey;
+  border-radius: 3px;
+  opacity: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.formularioAnimal {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  // align-self: stretch;
+  margin-top: 10px;
+
+  padding: 0px 164px 0 164px;
+}
+
+.form1 {
+  display: flex;
+  padding: 40px 0px 0 0;
+  width: 776px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.form2 {
+  display: flex;
+  width: 776px;
+  padding: 40px 0px 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+
+.form2-imagenes {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+
+.input-dashboard,
+.select-dashboard,
+.area-dashboard {
+
+  width: 100%; /* O un tamaño específico como width: 300px; */
+  max-width: 100%; /* Evita que los inputs se estiren más allá del contenedor */
+  box-sizing: border-box; /* Asegura que el padding no aumente el ancho */
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 20px;
+  border: 2px solid var(--Primario-Auxiliar-200, #C6DA9A);
+  background: var(--Blanco-200, #F9FFF5);
+  align-self: flex-start;
+  /* Desktop/P 02/Ligth */
+  font-family: "Comic Neue";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%;
+  /* 30px */
+
+}
+
+.input-dashboard,
+.select-dashboard {
+  height: 80px;
+}
+
+.area-dashboard {
+  height: 224px;
+  resize: none;
+}
+
+.select-dashboard {
+  width: 100%;
+}
+
+
+label {
+  color: #000;
+  text-align: center;
+
+  /* Desktop/H6/Ligth */
+  font-family: Fredoka;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%;
+  /* 48px */
+}
+
+
+.btnOk{
+  width: 218px;
+  height: 80px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+
+  margin-bottom: 78px;
+}
+
+
+
+// .input-dashboard.ng-invalid.ng-touched,
+// .input-dashboard.ng-invalid.ng-touched  textarea,
+// .input-dashboard.ng-invalid.ng-touched select
+// {
+//   border: 2px solid red;
+// }
+
+
+/* Opcional: para resaltar el área de error */
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
