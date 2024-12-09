@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
     }
 
     // Muestra un alert al usuario
-    alert('Debes estar logueado para realizar la compra.');
+    alert('Debes estar logueado para seguir con su proceso.');
 
     // Redirige al inicio de sesión
     this.router.navigate(['/login']);

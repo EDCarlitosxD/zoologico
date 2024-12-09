@@ -54,7 +54,7 @@ export const routes: Routes = [
 
 
   { path: 'comprar/pagar/gracias', component: CierreComponent }, //,
-  { path: 'donaciones/pagar', component: PagarDonacionComponent },
+  { path: 'donaciones/pagar', component: PagarDonacionComponent, canActivate: [AuthGuard] },
   { path: 'donaciones/pagar/gracias', component: CierreDonacionComponent },
 
   { path: 'configuracion/perfil', component: DatosPerfilComponent },
