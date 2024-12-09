@@ -34,14 +34,7 @@ export class DashboardComponent {
 
 
 
-  @Input() tours: Tours[] = [
-    { tour: 'Safari Fotográfico', ventas: 120, precio: 500 },
-    { tour: 'Espectáculo de aves', ventas: 80, precio: 300 },
-    { tour: 'Alimentación de animales', ventas: 150, precio: 200 },
-    { tour: 'Recorrido nocturno', ventas: 50, precio: 600 },
-    { tour: 'Exploración de selva', ventas: 70, precio: 400 },
-    { tour: 'Visita guiada', ventas: 200, precio: 250 }
-  ];
+
 
   boletoData: IVentaResponseMes | IVentaResponseSemana | IVentaResponseAño | null = null;
   boletos: IVentaItem[] = [];
