@@ -20,6 +20,33 @@ export class GuiaService {
 
 
 
+   guardarGuia(guia: IGuia) {
+
+    const formData = new FormData();
+
+    // Agregar campos al FormData
+    Object.keys(guia).forEach(key => {
+      const value = (guia as any)[key];
+      if (value instanceof File) {
+        formData.append(key, value); // Si es un archivo
+      } else {
+        formData.append(key, value?.toString() || ''); // Otros valores como string
+      }
+    });
+    return this.http.post<IGuia>(`${environment.API_URL}/animales`, formData,
+      {
+        headers: {
+          'Authorization': `Bearer ${this.userDetails?.token}`,
+          // 'Content-Type': 'multipart/form-data'
+        }
+      }
+    );
+  }
+
+
+
+
+
   public updateGuia(guia: IGuia, id:number){
     return this.http.put(`${environment.API_URL}/guias/${id}`,guia);
   }
