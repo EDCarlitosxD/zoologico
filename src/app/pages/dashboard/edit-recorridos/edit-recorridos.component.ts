@@ -11,12 +11,13 @@ interface Horario{
 import { Location } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { CalendarOptions, DayHeaderContentArg, EventSourceInput } from '@fullcalendar/core/index.js';
-import { Evento, EventosPorDia } from '../../../types/Horario';
+import { Evento, EventosPorDia, HorarioTour } from '../../../types/Horario';
 import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { IRecorrido } from '../../../types/Recorridos';
 import { Form, FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { RecorridoService } from '../../../Services/recorrido.service';
+import { IRecorridoSave } from '../../../paages/creat-recorrido/creat-recorrido.component';
 
 @Component({
   selector: 'app-edit-recorridos',
@@ -29,7 +30,7 @@ export class EditRecorridosComponent {
   recorridoForm!: FormGroup;
   editado = false;
   id: number = 0;
-  constructor(private location:Location, private recorridoService: RecorridoService,private route: ActivatedRoute, ){}
+  constructor(private location:Location, private recorridoService: RecorridoService, private route: ActivatedRoute, ){}
 
 
   ngOnInit(): void {
@@ -40,30 +41,30 @@ export class EditRecorridosComponent {
       this.id = data.id!
 
     });
+
+    this.recorridoService.getHorariosById(parseInt(id)).subscribe(data => this.horarios = data)
+
   }
 
 
-  @Input() horarios: Horario[] = [
-    { fecha: "15 septiembre", hora: "13:30", guia: "Adrian Hernandez", active: true },
-    { fecha: "16 septiembre", hora: "10:00", guia: "Maria Lopez", active: false },
-    { fecha: "17 septiembre", hora: "12:45", guia: "Carlos Perez", active: true },
-    { fecha: "18 septiembre", hora: "15:30", guia: "Laura Martinez", active: true },
-    { fecha: "19 septiembre", hora: "09:00", guia: "Jose Garcia", active: false },
-    { fecha: "20 septiembre", hora: "17:00", guia: "Ana Rivera", active: true },
-    { fecha: "21 septiembre", hora: "11:15", guia: "Luis Sanchez", active: false }
-  ];
+  @Input() horarios: HorarioTour[] = [  ];
 
 
   recorrido: IRecorrido| null = null
-
+  horario: HorarioTour = {
+    fecha: '',
+    horario_fin: '',
+    horario_inicio: '',
+    id_guia: 1
+  }
 
   goBack(): void {
     this.location.back(); // Navega a la página anterior en el historial
   }
 
-  toggleActive(horario: Horario){
-    horario.active = !horario.active;
-    console.log(`${horario. fecha} is now ${horario.active ? 'active': 'inactive'}`);
+  toggleActive(horario: HorarioTour){
+    horario.disponible = !horario.disponible;
+    console.log(`${horario. fecha} is now ${horario.disponible ? 'active': 'inactive'}`);
 
   }
 
@@ -85,8 +86,40 @@ export class EditRecorridosComponent {
     }
   }
 
+  agregarHorario(){
+
+    this.horario.horario_fin = this.horario.horario_fin + ":00"
+    this.horario.horario_inicio = this.horario.horario_inicio + ":00"
+
+    this.horarios.push(this.horario);
+    this.horario = {
+      fecha: '',
+      horario_fin: '',
+      horario_inicio: '',
+      id_guia: this.horario.id_guia
+    }
+  }
 
 
+  actualizar(){
+
+    this.horarios.map(horario => {
+       horario.horario_fin = horario.horario_fin + ":00"
+      horario.horario_inicio = horario.horario_inicio + ":00"
+    })
+
+    const dataSave: IRecorridoSave ={
+      ...this.recorrido!,
+        horarios: this.horarios
+    }
+
+    console.log("DATA",dataSave);
+
+
+    this.recorridoService.actualizarRecorrido(this.recorrido!.id!,dataSave).subscribe(data => alert("Se edito bien"));
+
+
+  }
 
 
 

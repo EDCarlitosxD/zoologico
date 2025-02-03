@@ -15,7 +15,7 @@ export interface IRecorridoForm{
   descripcion: string;
   descripcion_incluye: string;
   descripcion_importante_reservar: string;
-  img_recorrido: string | File;
+  img_recorrido: string | File | undefined;
   duracion: string | number; // En minutos
   valoracion?: number;
 
@@ -45,7 +45,7 @@ export class CreatRecorridoComponent {
   horarios: HorarioTour[] = []
 
   horario: HorarioTour = {
-    fecha: new Date(),
+    fecha: '',
     horario_fin: '',
     horario_inicio: '',
     id_guia: 1
@@ -94,7 +94,7 @@ onFileSelected(event: Event): void {
 
     this.horarios.push(this.horario);
     this.horario = {
-      fecha: new Date(),
+      fecha: '',
       horario_fin: '',
       horario_inicio: '',
       id_guia: this.horario.id_guia

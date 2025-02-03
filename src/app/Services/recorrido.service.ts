@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environment';
-import { EventosPorDia } from '../types/Horario';
+import { EventosPorDia, HorarioTour } from '../types/Horario';
 import { IRecorrido } from '../types/Recorridos';
 import { IRecorridoAdmin } from '../pages/dashboard-recorrido/dashboard-recorrido.component';
 import { IReservaDashboard } from '../types/Reserva';
@@ -27,6 +27,10 @@ export class RecorridoService {
   public getRecorridosActivos(){
     return this.http.get<IRecorrido[]>(`${environment.API_URL}/recorridos`);
 
+  }
+
+  public getHorariosById(id: number){
+    return this.http.get<HorarioTour[]>(`${environment.API_URL}/horarrios/${id}`)
   }
 
   public getHorarios(id:number){
@@ -112,6 +116,41 @@ export class RecorridoService {
     ].join(':');
 
     return formattedTime;
+  }
+
+  public actualizarRecorrido(id: number, recorrido: IRecorridoSave) {
+    console.log(recorrido);
+
+    const recoSave = {
+      ...recorrido
+    };
+
+    // Verificar si img_recorrido es un string y eliminarlo si lo es
+    if (typeof recoSave.img_recorrido === 'string') {
+      recoSave.img_recorrido = undefined // Elimina la propiedad si es un string
+    }
+
+    console.log(recoSave);
+
+    const formData = new FormData();
+
+    // Agregar campos al FormData
+    Object.keys(recoSave).forEach(key => {
+      const value = (recoSave as any)[key];
+      if (value instanceof File) {
+        formData.append(key, value); // Si es un archivo
+      } else {
+        formData.append(key, value?.toString() || ''); // Otros valores como string
+      }
+    });
+
+    // Agregar los horarios al FormData
+    formData.append('horarios', JSON.stringify(recorrido.horarios));
+
+    console.log(formData);
+
+    // Realizar la solicitud HTTP PUT
+    return this.http.put(`${environment.API_URL}/recorridos/actualizar/${id}`, formData);
   }
 
 }

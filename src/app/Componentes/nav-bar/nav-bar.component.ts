@@ -36,5 +36,6 @@ export class NavBarComponent implements OnInit {
 
   cerrarSesion(){
     localStorage.removeItem('userDetails');
-  }
+
+    }
 }
