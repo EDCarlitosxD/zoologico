@@ -47,6 +47,7 @@ export class RecorridosComponent implements OnInit{
    private subscriptioTour?: Subscription;
    private subscriptioBoletos?: Subscription;
    private subscriptionBoletosVenta?: Subscription;
+   
 
   boletos: IBoleto[]= []
   recorridos: IRecorrido[] = []
@@ -60,6 +61,7 @@ export class RecorridosComponent implements OnInit{
 
 
   ngOnInit(){
+
     this.recorridoService.getRecorridosActivos().subscribe(data =>  this.recorridos = data)
     this.subscriptioTour = this.carritoService.toursInfo$.subscribe(data => {
       this.toursInfo = data

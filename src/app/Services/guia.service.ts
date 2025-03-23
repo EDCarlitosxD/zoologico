@@ -16,7 +16,7 @@ export class GuiaService {
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders().append('accept', 'application/json');
     this.userDetails = getUserDetails();
-   }
+  }
 
 
 
@@ -33,7 +33,7 @@ export class GuiaService {
         formData.append(key, value?.toString() || ''); // Otros valores como string
       }
     });
-    return this.http.post<IGuia>(`${environment.API_URL}/animales`, formData,
+    return this.http.post<IGuia>(`${environment.API_URL}/guias`, formData,
       {
         headers: {
           'Authorization': `Bearer ${this.userDetails?.token}`,

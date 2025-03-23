@@ -1,8 +1,9 @@
 <app-header-dash-edit title="Editar Animal" subtitle="Edición de Datos"></app-header-dash-edit>
 
 
-<div *ngIf="editado" class="alert position-sticky sticky-top alert-success wrapper mt-5" style="top: 40px;" role="alert">
+<div *ngIf="editado" class="alert position-sticky sticky-top alert-success wrapper d-flex align-items-center justify-content-between" style="top: 40px;" role="alert">
   Se edito correctamente
+  <button class="w-25" routerLink="/dashboard/animales">Aceptar</button>
 </div>
 
 <form [formGroup]="animalForm" (ngSubmit)="guardarAnimal($event)" class="formularioAnimal">

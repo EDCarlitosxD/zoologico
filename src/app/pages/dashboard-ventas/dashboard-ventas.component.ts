@@ -2,13 +2,14 @@ import { Component, Input } from '@angular/core';
 import { DashboardContentComponent } from "../../Componentes/Admin/dashboard-content/dashboard-content.component";
 import { CommonModule, NgClass, NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { IBoletosAdmin, IVentaAdmin } from '../../types/Boletos';
+import { IBoletosAdmin, IVentaAdmin, IBoleto } from '../../types/Boletos';
 import { BoletosService } from '../../Services/boletos.service';
 import { CargandoComponent } from "../../Componentes/cargando/cargando.component";
 import { IPagination } from '../../types/Pagination';
 import { Chart, registerables } from 'chart.js';
 import { BarChartComponent, IDataGraficsBar } from "../../Componentes/bar-chart/bar-chart.component";
 import { GraficaService } from '../../Service/grafica.service';
+
 export interface Ventas {
   id: number;
   tipo: string;
@@ -60,6 +61,7 @@ export class DashboardVentasComponent {
     Chart.register(...registerables);
 
   }
+  boletosI: IBoleto[] = [];
 
   ngOnInit(){
     this.boletosService.getAllBoletosAdmin().subscribe(data => {this.bol = data; this.cargandoBoletosExistentes = false});
@@ -74,6 +76,11 @@ export class DashboardVentasComponent {
     })
 
 
+  }
+
+  actualizarEstado(boleto: IBoletosAdmin, event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.boletosService.updateEstado(boleto.id!,inputElement.checked).subscribe(data => console.log(data));
   }
 
   dataGraphic: IDataGraficsBar = {

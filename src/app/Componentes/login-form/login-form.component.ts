@@ -26,6 +26,7 @@ export interface loginFormApi {
 })
 export class LoginFormComponent {
 
+
   constructor(private authService: AuthService, private router: Router, private location : Location) { }
 
   @Input() login: LoginForm = {
@@ -34,6 +35,12 @@ export class LoginFormComponent {
     type: '',
     aText: ''
   }
+
+  showPassword = false;
+
+togglePassword() {
+  this.showPassword = !this.showPassword;
+}
 
   loginForm: loginFormApi = {
     email: '',

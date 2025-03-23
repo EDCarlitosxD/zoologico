@@ -1,6 +1,6 @@
 export interface IGuia {
   "id": number| null,
   "nombre_completo": string,
-  "disponible": boolean,
-  "estado": boolean,
+  "disponible": boolean | null,
+  "estado": boolean | null,
 }

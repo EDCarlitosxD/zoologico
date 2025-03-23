@@ -36,6 +36,8 @@ export class EditGuiasComponent {
     const id: number = parseInt(routeParams.get('id')!);
 
     this.guiaService.getById(id).subscribe(data => this.guia = data);
+    console.log(this.guia);
+    
   }
 
 
@@ -43,6 +45,10 @@ export class EditGuiasComponent {
   editarGuia(event:Event){
     event.preventDefault()
     this.guiaService.updateGuia(this.guia, this.guia.id!).subscribe(data => this.isAlertVisible = true);
+  }
+  toggleEstado() {
+    this.guia.estado = !this.guia.estado; // Alterna entre true y false
+    console.log("Nuevo estado:", this.guia.estado);
   }
 
 }

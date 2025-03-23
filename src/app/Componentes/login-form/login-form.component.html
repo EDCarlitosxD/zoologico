@@ -1,14 +1,23 @@
 <div *ngFor="let error of errors" class="alert alert-danger" role="alert">
-  {{error}}
+  {{ error }}
 </div>
 
 <form class="form">
-    <div class="textForm text-center">
-        <h3 class="h3Form">{{login.title}}</h3>
-        <h6 class="thin h3Form">{{login.subtitle}}</h6>
-    </div>
-    <input [(ngModel)]="loginForm.email" name="email" type="text" class="formInput" placeholder="Correo electrónico">
-    <input [(ngModel)]="loginForm.password" name="password" type="password" class="formInput" placeholder="Contraseña">
-    <button (click)="loginPeticion()">Continua</button>
-    <a  routerLink="/register" class="p2 text-center">{{login.aText}}</a>
+  <div class="textForm text-center">
+    <h3 class="h3Form">{{ login.title }}</h3>
+    <h6 class="thin h3Form">{{ login.subtitle }}</h6>
+  </div>
+
+  <input [(ngModel)]="loginForm.email" name="email" type="text" class="formInput" placeholder="Correo electrónico">
+
+  <div class="password-container">
+    <input [(ngModel)]="loginForm.password" [type]="showPassword ? 'text' : 'password'" 
+           name="password" class="formInput" placeholder="Contraseña">
+    <button type="button" class="toggle-password" (click)="togglePassword()">
+      {{ showPassword ? '🙈' : '👁️' }}
+    </button>
+  </div>
+
+  <button (click)="loginPeticion()">Continúa</button>
+  <a routerLink="/register" class="p2 text-center">{{ login.aText }}</a>
 </form>

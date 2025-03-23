@@ -19,6 +19,10 @@ export class BoletosService {
       return this.http.get<IBoleto[]>(`${environment.API_URL}/boletos`)
     }
 
+    getById(id: number) {
+      return this.http.get<IBoleto>(`${environment.API_URL}/boletos/${id}`)
+    }
+
 
     getAllBoletosAdmin(){
       return this.http.get<IBoletosAdmin[]>(`${environment.API_URL}/admin/boletos`)
@@ -27,5 +31,15 @@ export class BoletosService {
 
     getBoletosVendidos(){
       return this.http.get<IPagination<IVentaAdmin>>(`${environment.API_URL}/venta/boletos`)
+    }
+
+    updateBoleto(id: number, boleto: IBoleto) {
+      return this.http.put(`${environment.API_URL}/boletos/actualizar/${id}`, boleto);
+    }
+
+    updateEstado(id: number, estado: boolean) {
+      return this.http.put(`${environment.API_URL}/boletos/eliminar/${id}`, {
+        'estado': estado
+      })
     }
 }

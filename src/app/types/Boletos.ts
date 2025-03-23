@@ -1,5 +1,5 @@
 export interface IBoleto {
-  id?: number;
+  id?: number | null;
   titulo: string;
   descripcion_card: string;
   descripcion: string;
@@ -23,6 +23,7 @@ export interface IBoletosAdmin {
   id: number;
   titulo: string;
   precio: number;
+  estado: boolean;
 }
 
 export interface IVentaAdmin {

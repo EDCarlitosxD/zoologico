@@ -1,22 +1,8 @@
 <app-header-dash-edit title="Editar Guía" subtitle="Edición de datos"></app-header-dash-edit>
 
 
-  <div *ngIf="isAlertVisible" class="alert  alert-success d-flex align-items-center" role="alert">
-    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-    <div>
-      Se edito correctamente
-    </div>
+  
 
-      <div class="dashboard__perfil">
-        <img src="" alt="">
-        <div class="dashboard__perfil__datos">
-          <p class="perfil__nombre bold">Nombre Admin</p>
-          <p class="perfil__role p2 thin">Administrador</p>
-        </div>
-      </div>
-
-  <div class="line"></div>
-  <h6 class="dashboard__descripcion">Edición de datos</h6>
 
 
   <div *ngIf="isAlertVisible" class="alert  alert-success d-flex align-items-center" role="alert">
@@ -30,10 +16,20 @@
     <div class="items">
       <h6 class="thin">Nombre Completo</h6>
       <div  class="formInput"><input type="text" [(ngModel)]="guia.nombre_completo" [value]="guia.nombre_completo" name="Nombre" id="Nombre" autofocus placeholder="Nombre"></div>
-      <h6 class="thin">Disponible</h6>
-      <div class="formInput"><input type="text" [(ngModel)]="guia.disponible" [value]="guia.disponible" name="Disponible" id="Disponible" placeholder="Disponible"></div>
-      <h6 class="thin">Estado</h6>
-      <div class="formInput"><input type="text" [(ngModel)]="guia.estado" [value]="guia.estado" name="Estado" id="Estado" placeholder="Estado"></div>
+
+      
+    <h6 class="thin">Disponible</h6>
+    <div class="form-check form-switch">
+      <input 
+        class="form-check-input" 
+        type="checkbox" 
+        role="switch" 
+        [(ngModel)]="guia.disponible" 
+        name="estado"
+        (change)="toggleEstado()"
+      />
+
+      </div>
     </div>
     <button (click)="editarGuia($event)" class="formBtn">Modificar</button>
   </form>

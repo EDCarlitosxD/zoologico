@@ -36,6 +36,8 @@ export class NavBarComponent implements OnInit {
 
   cerrarSesion(){
     localStorage.removeItem('userDetails');
-
+    this.isLoggedIn = false;
+    this.user = null;
+    this.role = null;
     }
 }

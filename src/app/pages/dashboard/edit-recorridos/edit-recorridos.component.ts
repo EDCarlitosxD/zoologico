@@ -1,3 +1,4 @@
+import { IGuia } from './../../../types/Guias';
 import {  CommonModule, NgFor } from '@angular/common';
 import {  Input } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -18,6 +19,7 @@ import { IRecorrido } from '../../../types/Recorridos';
 import { Form, FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { RecorridoService } from '../../../Services/recorrido.service';
 import { IRecorridoSave } from '../../../paages/creat-recorrido/creat-recorrido.component';
+import { GuiaService } from '../../../Services/guia.service';
 
 @Component({
   selector: 'app-edit-recorridos',
@@ -30,7 +32,9 @@ export class EditRecorridosComponent {
   recorridoForm!: FormGroup;
   editado = false;
   id: number = 0;
-  constructor(private location:Location, private recorridoService: RecorridoService, private route: ActivatedRoute, ){}
+  constructor(private location:Location,
+    private guiaService: GuiaService
+     ,private recorridoService: RecorridoService, private route: ActivatedRoute, ){}
 
 
   ngOnInit(): void {
@@ -39,13 +43,19 @@ export class EditRecorridosComponent {
     this.recorridoService.getById(parseInt(id)).subscribe((data) => {
       this.recorrido = data;
       this.id = data.id!
-
     });
-
+    this.getGuias();
     this.recorridoService.getHorariosById(parseInt(id)).subscribe(data => this.horarios = data)
 
   }
 
+  getGuias() {
+    this.guiaService.getAll().subscribe(
+      (data: IGuia[]) => { 
+        this.guias = data; 
+      }
+    );
+  }
 
   @Input() horarios: HorarioTour[] = [  ];
 
@@ -58,14 +68,17 @@ export class EditRecorridosComponent {
     id_guia: 1
   }
 
+  guias: IGuia[]| null = null;
+
   goBack(): void {
     this.location.back(); // Navega a la página anterior en el historial
   }
 
-  toggleActive(horario: HorarioTour){
+  toggleActive(horario: HorarioTour, event: Event){
+    const target = event.target as HTMLInputElement;
     horario.disponible = !horario.disponible;
+    
     console.log(`${horario. fecha} is now ${horario.disponible ? 'active': 'inactive'}`);
-
   }
 
 

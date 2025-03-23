@@ -1,17 +1,20 @@
 <app-header-dash-edit title="Editar Boleto" subtitle="Edición de datos"></app-header-dash-edit>
-
+<div *ngIf="isAlertVisible" class="alert  alert-success d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+  <div>
+    Se edito correctamente
+  </div>
+</div>
   <form action="" class="formGuias">
     <div class="items">
-      <h6 class="thin">Nombre Completo</h6>
-     <input type="text" name="Nombre" id="Nombre" autofocus placeholder="Nombre">
+      <h6 class="thin">Titulo</h6>
+     <input type="text" [(ngModel)]="boleto.titulo" [value]="boleto.titulo" name="Nombre" id="Nombre" autofocus placeholder="Título">
       <h6 class="thin">Precio</h6>
-     <input type="text" name="Estado" id="Estado" placeholder="Estado">
+     <input type="number" [(ngModel)]="boleto.precio" [value]="boleto.precio" name="Precio" id="Precio" placeholder="Precio">
      <h6 class="thin">Descripción</h6>
-     <textarea name="descripcion" id="descripcion" placeholder="Descripción"></textarea>
+     <textarea name="descripcion" [(ngModel)]="boleto.descripcion" [value]="boleto.descripcion" id="descripcion" placeholder="Descripción"></textarea>
      <h6 class="thin">Nota</h6>
-     <textarea name="nota" id="nota" placeholder="Nota"></textarea>
+     <textarea name="nota" id="nota" [(ngModel)]="boleto.advertencias" [value]="boleto.advertencias" placeholder="Nota"></textarea>
     </div>
-    <button class="formBtn" routerLink="/dashboard/boletos">Modificar</button>
+    <button class="formBtn" (click)="editarBoleto($event)" routerLink="/dashboard/boletos">Modificar</button>
   </form>
-
-  
