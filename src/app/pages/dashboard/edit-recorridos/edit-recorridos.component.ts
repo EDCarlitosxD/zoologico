@@ -65,10 +65,10 @@ export class EditRecorridosComponent {
     fecha: '',
     horario_fin: '',
     horario_inicio: '',
-    id_guia: 1
+    id_guia: undefined as unknown as number,
   }
 
-  guias: IGuia[]| null = null;
+  guias: IGuia[] = [];
 
   goBack(): void {
     this.location.back(); // Navega a la página anterior en el historial
@@ -103,6 +103,7 @@ export class EditRecorridosComponent {
 
     this.horario.horario_fin = this.horario.horario_fin + ":00"
     this.horario.horario_inicio = this.horario.horario_inicio + ":00"
+    
 
     this.horarios.push(this.horario);
     this.horario = {
@@ -116,10 +117,10 @@ export class EditRecorridosComponent {
 
   actualizar(){
 
-    this.horarios.map(horario => {
-       horario.horario_fin = horario.horario_fin + ":00"
-      horario.horario_inicio = horario.horario_inicio + ":00"
-    })
+    // this.horarios.map(horario => {
+    //    horario.horario_fin = horario.horario_fin + ":00"
+    //   horario.horario_inicio = horario.horario_inicio + ":00"
+    // })
 
     const dataSave: IRecorridoSave ={
       ...this.recorrido!,

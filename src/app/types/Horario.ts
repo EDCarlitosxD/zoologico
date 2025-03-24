@@ -8,7 +8,7 @@ export interface Evento {
 
 export interface HorarioTour{
   horario_inicio: string;
-  id_guia: number;
+  id_guia: number | null;
   fecha: string;
   disponible?: boolean
   horario_fin: string;

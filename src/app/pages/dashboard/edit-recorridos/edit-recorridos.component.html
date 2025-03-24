@@ -33,7 +33,8 @@
         <input class="dash80"  type="text" [(ngModel)]="recorrido!.precio" name="Precio" placeholder="Precio" id="Precio">
 
         <h6 class="thin">Duración</h6>
-        <input class="dash80" type="text" [(ngModel)]="recorrido!.duracion" name="Duración" placeholder="Duración" id="Duración">
+        <input class="dash80" type="text" pattern="(0[1-3]|1[0-2]):([0-5][0-9])" [(ngModel)]="recorrido!.duracion" name="Duración" placeholder="HH:MM" id="Duración">
+        <!-- EN ESTE INPUT QUIERO ESPECIFICAR EL TIPO DE DATO A UTILIZAR PARA SEÑALAR LA CANTIDAD DE HORAS COMO UN RELOJ, COMO 2:30 -->
 
         <h6 class="thin">Descripción General</h6>
         <textarea class="dash" name="descripcion" [(ngModel)]="recorrido!.descripcion" placeholder="Descripción" id="descripcion"></textarea>
@@ -50,7 +51,14 @@
 
         <div class="form-imagen">
             <h6 class="thin">Imagen Principal</h6>
-            <input [style.backgroundImage]="'url(' + recorrido?.img_recorrido + ')'" class="file-upload" type="file" name="foto" id="foto">
+            <input [style.backgroundImage]="'url(' + recorrido?.img_recorrido + ')'" 
+            type="file" 
+            class="file-upload" 
+            (change)="onFileSelected($event, 'img_recorrido', 'img_recorrido')"
+            [(ngModel)]="recorrido!.img_recorrido"
+        >
+            <!-- LA LINEA DE CODIGO CLASS INVALID ME ACTUALIZA LA IMAGEN PERO ME DEJA DE MOSTRAR LOS GUIAS Y LOS HORARIOS DISPONIBLES -->
+            
         </div>
 
         <h6 class="thin">Agregar Horario</h6>
@@ -61,7 +69,7 @@
           <h5 class="thin termino">Término</h5>
           <input class="dash-time dia" type="date" name="fecha" id="fecha">
           <input class="dash-time inicio" type="time" name="inicio" id="inicio">
-          <input class="dash-time termino" type="time" name="termino" id="termino" disabled>
+          <input class="dash-time termino" type="time" name="termino" id="termino" disabled> <!-- AQUI QUIERO QUE ME SUMES A INICIO LA CANTIDAD DE TIEMPO QUE PUSE EN DURACION -->
         </div>
 
         <div class="addGuia">
@@ -69,11 +77,11 @@
 
           <div class="custom-select-container">
             <select class="custom-select">
-              <option class="p2 thin text-black-200" value="" disabled selected>Guía</option>
+              <option class="p2 thin text-black-200" disabled selected>Guía</option>
               <option class="p2 thin" 
-              *ngFor="let guia of guias; let i  = index" 
+              *ngFor="let guia of guias; let i = index" 
               [value]="guia.id">
-              {{guia.nombre_completo}}>
+              {{guia.nombre_completo}}
             </option>
             </select>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

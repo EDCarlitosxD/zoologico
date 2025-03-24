@@ -71,10 +71,12 @@ export class RecorridosComponent implements OnInit{
     });
     this.subscriptioTour = this.carritoService.tours$.subscribe(data => {
       this.reservas = data
-
     }
     );
-    this.subscriptioBoletos = this.carritoService.boletoInformacion$.subscribe(data => this.boletos = data);
+    this.subscriptioBoletos = this.carritoService.boletoInformacion$.subscribe(data => {this.boletos = data
+      console.log(data);
+      
+    });
     this.subscriptionBoletosVenta = this.carritoService.boletoVenta$.subscribe(data => {
       this.boletosVenta = data;
       this.totalBoletos = this.boletos.reduce((acumulador, siguiente,index) => acumulador + (siguiente.precio * this.boletosVenta[index].cantidad) ,0);

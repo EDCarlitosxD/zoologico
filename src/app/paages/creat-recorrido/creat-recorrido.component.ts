@@ -3,7 +3,7 @@ import { HorarioTour } from '../../types/Horario';
 import { IRecorrido } from '../../types/Recorridos';
 import { RecorridoService } from '../../Services/recorrido.service';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { GuiaService } from '../../Services/guia.service';
 import { IGuia } from '../../types/Guias';
 
@@ -11,7 +11,7 @@ import { IGuia } from '../../types/Guias';
 export interface IRecorridoForm{
   id?: number;
   titulo: string;
-  precio: number; // Si prefieres que sea un número, cámbialo a `number`.
+  precio: number ; // Si prefieres que sea un número, cámbialo a `number`.
   descripcion: string;
   descripcion_incluye: string;
   descripcion_importante_reservar: string;
@@ -39,7 +39,7 @@ export interface IRecorridoSave extends IRecorridoForm {
 })
 export class CreatRecorridoComponent {
 
-  constructor(private recorridoService :RecorridoService, private guiaService: GuiaService){}
+  constructor(private recorridoService :RecorridoService, private guiaService: GuiaService, private location: Location){}
 
   guias: IGuia[] = []
   horarios: HorarioTour[] = []
@@ -48,19 +48,19 @@ export class CreatRecorridoComponent {
     fecha: '',
     horario_fin: '',
     horario_inicio: '',
-    id_guia: 1
+    id_guia: undefined as unknown as number
   }
 
 
   recorrido: IRecorrido = {
-  descripcion: '',
-  descripcion_importante_reservar: '',
-  descripcion_incluye: '',
-  duracion: 0,
-  img_recorrido: '',
-  precio: 2,
-  titulo: '',
-}
+    descripcion: '',
+    descripcion_importante_reservar: '',
+    descripcion_incluye: '',
+    duracion: undefined as unknown as number, // 👈 Inicializado sin valor
+    img_recorrido: '',
+    precio: undefined as unknown as number,   // 👈 Inicializado sin valor
+    titulo: '',
+  };
 
 ngOnInit(){
   this.guiaService.getAll().subscribe(data => this.guias = data)
@@ -86,22 +86,56 @@ onFileSelected(event: Event): void {
 
   }
 
+  selectedGuia: number | null = null; // Al inicio, no hay guía seleccionada
 
-  agregarHorario(){
+  agregarHorario() {
+    if (!this.selectedGuia) {
+      alert("❌ Debes seleccionar un guía antes de agregar el horario.");
+      return;
+    }
 
-    this.horario.horario_fin = this.horario.horario_fin + ":00"
-    this.horario.horario_inicio = this.horario.horario_inicio + ":00"
-
-    this.horarios.push(this.horario);
+    if (!this.horario.fecha || !this.horario.horario_fin || !this.horario.horario_inicio) {
+      alert("❌ Debes completar todos los campos antes de agregar el horario.");
+      return;
+    }
+  
+    this.horario.horario_fin = this.horario.horario_fin + ":00";
+    this.horario.horario_inicio = this.horario.horario_inicio + ":00";
+    this.horario.id_guia = this.selectedGuia; // ✅ Asigna correctamente la guía seleccionada
+  
+    this.horarios.push({ ...this.horario }); // Clonar para evitar referencias
+  
+    // Reiniciar valores para el próximo horario
     this.horario = {
       fecha: '',
       horario_fin: '',
       horario_inicio: '',
-      id_guia: this.horario.id_guia
-    }
+      id_guia: this.selectedGuia
+    };
+  
+    console.log("✅ Horario agregado:", this.horario);
   }
-
+  
+  convertirDuracionATime(duracion: string): string {
+    // Verificar que la duración esté en formato HH:MM
+    const duracionRegex = /^([01]?[0-9]|2[0-3]):([0-5][0-9])$/;
+  
+    if (!duracionRegex.test(duracion)) {
+      console.error("❌ Formato de duración inválido:", duracion);
+      return '';
+    }
+  
+    const [horas, minutos] = duracion.split(":").map(Number);
+  
+    // Crear un objeto Date con la duración
+    const fecha = new Date();
+    fecha.setHours(horas, minutos, 0); // HH:MM:SS
+  
+    // Convertirlo a formato `time` para HTML
+    return fecha.toTimeString().slice(0, 5); // "HH:MM"
+  }
   guardar(){
+    //this.recorrido.duracion = this.convertirDuracionATime(this.recorrido.duracion);
     const dataSave: IRecorridoSave ={
       ...this.recorrido,
         horarios: this.horarios
@@ -114,6 +148,7 @@ onFileSelected(event: Event): void {
   }
 
   goBack(){
+    this.location.back();
 
   }
 

@@ -20,7 +20,12 @@
             <app-bol-disponibles></app-bol-disponibles>
         </div>
 
-        <app-add-boletos [addBoletos]="boleto" [contador]="boletosVenta[i]!.cantidad" *ngFor="let boleto of boletos; let i = index"  class="bol"></app-add-boletos>
+        <app-add-boletos 
+        *ngFor="let boleto of boletos; let i = index"  
+        [addBoletos]="boleto" 
+        [contador]="boletosVenta[i]!.cantidad" 
+       
+        class="bol"></app-add-boletos>
 
 
     </section>

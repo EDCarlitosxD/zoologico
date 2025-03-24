@@ -12,7 +12,7 @@ export class BoletosService {
   constructor(private http: HttpClient) { }
 
     getAllBoletos(estado: number|null = null){
-      if(estado ){
+      if(estado){
         const queryParams = new HttpParams()
         queryParams.append('estado',estado)
       }

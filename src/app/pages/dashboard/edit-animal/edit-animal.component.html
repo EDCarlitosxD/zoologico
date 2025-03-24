@@ -71,8 +71,10 @@
         <p>Imagen Principal</p>
         <input
         [style.backgroundImage]="animal.imagen_principal ? 'url(' + animal.imagen_principal + ')' : ''"
-        type="file" class="file-upload" (change)="onFileSelected($event, 'imagen_principal','imagen_principal')"
-          [class.invalid]="animalForm.get('imagen_principal')?.invalid && animalForm.get('imagen_principal')?.touched">
+        type="file" 
+        class="file-upload" 
+        (change)="onFileSelected($event, 'imagen_principal','imagen_principal')"
+        [class.invalid]="animalForm.get('imagen_principal')?.invalid && animalForm.get('imagen_principal')?.touched">
       </div>
 
       <div class="flex-gap8">

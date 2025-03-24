@@ -38,6 +38,21 @@ export class CarritoService {
     const savedReservasInformacion = localStorage.getItem(this.STORAGE_RESERVAS_INFORMACION)
     const savedBoletos = localStorage.getItem(this.STORAGE_BOLETOS_INFORMACION);
     const savedBoletosVenta = localStorage.getItem(this.STORAGE_BOLETOS)
+    this.boletoService.getAllBoletos(1).subscribe(data => {
+      this.boletosInformacion = data;
+      console.log("boletos DATAA",this.boletosInformacion);
+      
+
+      this.boletosVenta = []
+      this.boletosVenta = this.boletosInformacion.map(boleto => ({
+        id_boleto: boleto.id,
+        cantidad: 0,
+      }) as IBoletoVenta)
+
+      this.boletoSubject.next([...this.boletosVenta]);
+      this.boletoInformacionSubject.next([...this.boletosInformacion]);
+      this.actualizarStorageBoletos();
+    })
     if (savedReservas) {
       this.tours = JSON.parse(savedReservas);
       this.tourSubjet.next([...this.tours]);
@@ -58,6 +73,8 @@ export class CarritoService {
 
       this.boletoService.getAllBoletos(1).subscribe(data => {
         this.boletosInformacion = data;
+        console.log("boletos DATAA",this.boletosInformacion);
+        
 
         this.boletosVenta = []
         this.boletosVenta = this.boletosInformacion.map(boleto => ({
