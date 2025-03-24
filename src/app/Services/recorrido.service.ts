@@ -60,6 +60,19 @@ export class RecorridoService {
   )
   }
 
+  public actualizarEstadoHorario(estado: boolean, id:number){
+    return this.http.put<boolean>(`${environment.API_URL}/horarios/estado/${id}`, {
+      disponible: estado
+    },
+      {headers:{
+        'Authorization': `Bearer ${this.userDetails?.token}`,
+      }
+    }
+
+
+  )
+  }
+
     guardarRecorrido(recorrido: IRecorridoSave) {
       const recoSave = {
         ...recorrido
@@ -104,9 +117,9 @@ export class RecorridoService {
 
    formatDurationToTime(duracion: number): string {
     // Calcular las horas, minutos y segundos
-    const hours = Math.floor(duracion); // Parte entera son las horas
-    const minutes = Math.floor((duracion % 1) * 60); // Fracción convertida a minutos
-    const seconds = Math.round((((duracion % 1) * 60) % 1) * 60); // Restante convertido a segundos
+    const hours = Math.floor(duracion / 3600); // Parte entera son las horas
+    const minutes = Math.floor((duracion % 3600) / 60); // Fracción convertida a minutos
+    const seconds = duracion % 60; // Restante convertido a segundos
 
     // Formatear con dos dígitos (HH:mm:ss)
     const formattedTime = [
@@ -126,9 +139,9 @@ export class RecorridoService {
     };
 
     // Verificar si img_recorrido es un string y eliminarlo si lo es
-    if (typeof recoSave.img_recorrido === 'string') {
-      recoSave.img_recorrido = undefined // Elimina la propiedad si es un string
-    }
+     if (typeof recoSave.img_recorrido === 'string') {
+       recoSave.img_recorrido = undefined // Elimina la propiedad si es un string
+     }
 
     console.log(recoSave);
 
@@ -148,9 +161,11 @@ export class RecorridoService {
     formData.append('horarios', JSON.stringify(recorrido.horarios));
 
     console.log(formData);
+    console.log();
+    
 
     // Realizar la solicitud HTTP PUT
-    return this.http.put(`${environment.API_URL}/recorridos/actualizar/${id}`, formData);
+    return this.http.put(`${environment.API_URL}/recorridos/actualizar/${id}`, recoSave);
   }
 
 }

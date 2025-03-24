@@ -7,6 +7,7 @@ export interface Evento {
 }
 
 export interface HorarioTour{
+  id: number;
   horario_inicio: string;
   id_guia: number | null;
   fecha: string;

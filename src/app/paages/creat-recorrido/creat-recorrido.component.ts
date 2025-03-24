@@ -38,19 +38,32 @@ export interface IRecorridoSave extends IRecorridoForm {
   styleUrl: './creat-recorrido.component.scss'
 })
 export class CreatRecorridoComponent {
-
+  duracionHoras: number = 1; // Valor inicial
+  duracionMinutos: number = 0;
   constructor(private recorridoService :RecorridoService, private guiaService: GuiaService, private location: Location){}
 
   guias: IGuia[] = []
   horarios: HorarioTour[] = []
 
   horario: HorarioTour = {
+    id: undefined as unknown as number,
     fecha: '',
     horario_fin: '',
     horario_inicio: '',
     id_guia: undefined as unknown as number
   }
 
+  actualizarDuracion() {
+    // Convertir a string con dos dígitos
+    const horas = this.duracionHoras*3600;
+    const minutos = this.duracionMinutos*60;
+    
+    // Formar duración en formato HH:MM:00
+    
+    const duracion = horas + minutos;
+    
+    this.recorrido.duracion = duracion;
+  }
 
   recorrido: IRecorrido = {
     descripcion: '',
@@ -107,6 +120,7 @@ onFileSelected(event: Event): void {
   
     // Reiniciar valores para el próximo horario
     this.horario = {
+      id: 0,
       fecha: '',
       horario_fin: '',
       horario_inicio: '',
@@ -143,6 +157,8 @@ onFileSelected(event: Event): void {
 
 
     console.log(dataSave);
+    console.log("DATA ENVIADA:", JSON.stringify(dataSave, null, 2));
+
 
     this.recorridoService.guardarRecorrido(dataSave).subscribe(data => alert("Se guardo bien"));
   }

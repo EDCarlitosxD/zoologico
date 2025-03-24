@@ -39,20 +39,39 @@
       autofocus>
 
     <h6 class="thin">Precio por Persona</h6>
-    <input class="dash80" type="text" [(ngModel)]="recorrido.precio" name="Precio" placeholder="Precio" id="Precio">
+    <input class="dash80" type="number"
+    min="0"
+     [(ngModel)]="recorrido.precio" name="Precio" placeholder="Precio" id="Precio">
 
     <h6 class="thin">Duración</h6>
+    <div class="d-flex gap-4">
+      <input 
+    class="dash80" 
+    type="number" 
+    [(ngModel)]="duracionHoras"
+    name="duracion" 
+    placeholder="HH"
+    min="1"
+    [value]="1"
+    max="3"
+    id="duracion"
+    (change)="actualizarDuracion()"
+
+    required>
     <input 
     class="dash80" 
-    type="time" 
-    [(ngModel)]="recorrido.duracion"
+    type="number" 
+    [(ngModel)]="duracionMinutos"
     name="duracion" 
+    placeholder="MM"
+    min="0"
+    max="55"
+    (change)="actualizarDuracion()"
     id="duracion"
-    min="00:00" 
-    max="03:59"
-    step="60" 
+    step="5"
     required>
-
+    </div>
+    <p>Duración: {{ recorrido.duracion }}</p>
     <h6 class="thin">Descripción General</h6>
     <textarea class="dash" name="descripcion" [(ngModel)]="recorrido.descripcion" placeholder="Descripción"
       id="descripcion"></textarea>
@@ -92,7 +111,9 @@
       <div class="custom-select-container">
         <select class="custom-select" [(ngModel)]="selectedGuia" name="guia">
           <option class="p2 thin text-black-200" [ngValue]="null" disabled selected>Guía</option>
-          <option *ngFor="let guia of guias" [value]="guia.id">
+          <option 
+          *ngFor="let guia of guias; let i = index" 
+          [value]="guia.id">
             {{ guia.nombre_completo }}
           </option>
         </select>

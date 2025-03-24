@@ -36,7 +36,9 @@
 
     <label for="tipo">Tipo</label>
     <select formControlName="tipo" class="select-dashboard" name="tipo" id="tipo">
-      <option [selected]="animal.tipo === 'terrestre'" value="terrestre">Tilin</option>
+      <option [selected]="animal.tipo === 'terrestre'" value="terrestre">Terrestre</option>
+      <option [selected]="animal.tipo === 'aéreo'" value="aéreo">Aéreo</option>
+
     </select>
     <div *ngIf="animalForm.get('tipo')?.invalid && animalForm.get('tipo')?.touched" class="error">Campo requerido</div>
 
