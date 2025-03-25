@@ -78,13 +78,12 @@
 
         <div class="form-imagen">
             <h6 class="thin">Imagen Principal</h6>
-            <input [style.backgroundImage]="'url(' + recorrido?.img_recorrido + ')' || imageBackground" 
+            <input 
+        [style.backgroundImage]="recorrido.img_recorrido ? 'url(' + recorrido.img_recorrido + ')' : ''"
             type="file" 
             class="file-upload" 
-            (change)="onFileSelected($event)"
-            [(ngModel)]="recorrido!.img_recorrido"
+            (change)="onFileSelected($event, 'img_recorrido', 'img_recorrido')"
         >
-            <!-- LA LINEA DE CODIGO CLASS INVALID ME ACTUALIZA LA IMAGEN PERO ME DEJA DE MOSTRAR LOS GUIAS Y LOS HORARIOS DISPONIBLES -->
             
         </div>
 
@@ -128,13 +127,14 @@
                 <tr>
                   <th>Fecha</th>
                   <th>Horario</th>
+                  <th></th>
                   <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor ="let horario of horarios; let i = index" ngClass="{'odd-row': i % 2 !== 0, 'even-row': i % 2 === 0}">
                   <td>{{horario.fecha}}</td>
-                  <td>{{horario.horario_fin}}</td>
+                  <td>{{horario.horario_inicio}}</td>
                   <td>{{horario.horario_fin}}</td>
                   <td class="cellw">
 
@@ -157,7 +157,7 @@
 
 
       </div>
-      <button (click)="actualizar()" class="formBtn" routerLink="/dashboard/tours">Modificar</button>
+      <button (click)="actualizar($event)" class="formBtn" routerLink="/dashboard/tours">Modificar</button>
 
     </form>
 

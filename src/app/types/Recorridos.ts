@@ -5,7 +5,7 @@ export interface IRecorrido {
   descripcion: string;
   descripcion_incluye: string;
   descripcion_importante_reservar: string;
-  img_recorrido: string | File | undefined;
+  img_recorrido: string | undefined | File;
   duracion: number | string; // En minutos
   valoracion?: number;
 

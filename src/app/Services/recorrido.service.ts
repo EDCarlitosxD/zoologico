@@ -131,41 +131,112 @@ export class RecorridoService {
     return formattedTime;
   }
 
-  public actualizarRecorrido(id: number, recorrido: IRecorridoSave) {
-    console.log(recorrido);
+  // public actualizarRecorrido(id: number, recorrido: IRecorridoSave) {
+  //   console.log("RECORRIDO",recorrido);
 
-    const recoSave = {
-      ...recorrido
-    };
+  //   const recoSave = {
+  //     ...recorrido
+  //   };
 
-    // Verificar si img_recorrido es un string y eliminarlo si lo es
-     if (typeof recoSave.img_recorrido === 'string') {
-       recoSave.img_recorrido = undefined // Elimina la propiedad si es un string
-     }
+  //   // Verificar si img_recorrido es un string y eliminarlo si lo es
+     
 
-    console.log(recoSave);
+  //   console.log("recoSave",recoSave);
 
-    const formData = new FormData();
+  //   const formData = new FormData();
 
-    // Agregar campos al FormData
-    Object.keys(recoSave).forEach(key => {
-      const value = (recoSave as any)[key];
-      if (value instanceof File) {
-        formData.append(key, value); // Si es un archivo
-      } else {
-        formData.append(key, value?.toString() || ''); // Otros valores como string
-      }
-    });
+  //   // Agregar campos al FormData
+  //   Object.keys(recoSave).forEach(key => {
+  //     const value = (recoSave as any)[key];
+  //     if (value instanceof File) {
+  //       formData.append(key, value); // Si es un archivo
+  //     } else {
+  //       formData.append(key, value?.toString() || ''); // Otros valores como string
+  //     }
+  //   });
+  //   if (typeof recoSave.img_recorrido === 'string') {
+  //     recoSave.img_recorrido = undefined // Elimina la propiedad si es un string
+  //   }
+  //   // Agregar los horarios al FormData
+  //   formData.append('horarios', JSON.stringify(recorrido.horarios));
 
-    // Agregar los horarios al FormData
-    formData.append('horarios', JSON.stringify(recorrido.horarios));
-
-    console.log(formData);
-    console.log();
+  //   console.log(formData);
     
 
-    // Realizar la solicitud HTTP PUT
-    return this.http.put(`${environment.API_URL}/recorridos/actualizar/${id}`, recoSave);
+  //   // Realizar la solicitud HTTP PUT
+  //   return this.http.put(`${environment.API_URL}/recorridos/actualizar/${id}`, recoSave);
+  // }
+//   public actualizarRecorrido(id: number, recorrido: IRecorridoSave) {
+
+//     const recoSave = { ...recorrido };
+//     const formData = new FormData();
+
+//     // 🔍 Si `img_recorrido` es un archivo, lo agregamos al FormData
+//     if (recoSave.img_recorrido instanceof File) {
+//         formData.append('img_recorrido', recoSave.img_recorrido);
+//     } else if (typeof recoSave.img_recorrido === 'string' && recoSave.img_recorrido.startsWith('data:image')) {
+//         // Si es una imagen en base64, no la enviamos (debe convertirse a archivo antes)
+//         console.warn("⚠️ La imagen está en base64, no se enviará.");
+//     } else if (typeof recoSave.img_recorrido === 'string') {
+//         // Si es una URL existente, enviarla como string en JSON
+//         formData.append('img_recorrido_url', recoSave.img_recorrido);
+//     }
+
+//     // 🔍 Agregar otros datos al FormData
+//     Object.keys(recoSave).forEach(key => {
+//         if (key !== 'img_recorrido') {  // Evita duplicar la imagen
+//             const value = (recoSave as any)[key];
+//             if (value !== undefined && value !== null) {
+//                 formData.append(key, value.toString());
+//             }
+//         }
+//     });
+//     recoSave.img_recorrido
+
+//     // 🔍 Agregar los horarios al FormData
+//     formData.append('horarios', JSON.stringify(recorrido.horarios));
+
+//     // ✅ Mostrar en consola todos los valores de FormData
+//     console.log("🔍 FormData enviado:");
+//     formData.forEach((value, key) => {
+//         console.log(key + ": ", value);
+//     });    
+//     console.log("🔍 recoSave:", recoSave);
+//     // ✅ Realizar la solicitud HTTP PUT con `formData`
+//     return this.http.put<IRecorrido>(
+//       `${environment.API_URL}/recorridos/actualizar/${id}?_method=PUT`, 
+//       recoSave
+//     );
+// }
+
+public async actualizarRecorrido(id: number, recorrido: IRecorridoSave) {
+  const recoSave = { ...recorrido };
+
+  // Si la imagen es un archivo, conviértela a Base64
+  if (recoSave.img_recorrido instanceof File) {
+      recoSave.img_recorrido = await this.convertirImagenABase64(recoSave.img_recorrido);
   }
+  console.log("🔍 Datos antes de enviar:", JSON.stringify(recoSave, null, 2));
+
+
+  return this.http.put<IRecorrido>(`${environment.API_URL}/recorridos/actualizar/${id}`, recoSave, {
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.userDetails?.token}`,
+      }
+  });
+}
+
+
+public convertirImagenABase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = error => reject(error);
+  });
+}
+
+
 
 }

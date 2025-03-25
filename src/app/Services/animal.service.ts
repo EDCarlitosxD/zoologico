@@ -112,9 +112,6 @@ export class AnimalService {
       }
     });
 
-    if (typeof formData.get('imagen_principal') === 'string') formData.delete('imagen_principal');
-    if (typeof formData.get('imagen_secundaria') === 'string') formData.delete('imagen_secundaria');
-    if (typeof formData.get('img_ubicacion') === 'string') formData.delete('img_ubicacion');
 
 
     return this.http.post<IAnimal>(`${environment.API_URL}/animales/actualizar/${id}?_method=PUT`, formData,
