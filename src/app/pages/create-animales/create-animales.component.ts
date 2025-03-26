@@ -34,8 +34,6 @@ export class CreateAnimalesComponent {
       img_ubicacion: [null,Validators.required],
 
     });
-
-
   }
   animalForm: FormGroup;
   guardado = false;
