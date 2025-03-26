@@ -259,6 +259,14 @@ export class EditRecorridosComponent {
     
     (await this.recorridoService
       .actualizarRecorrido(this.recorrido!.id!, dataSave))
-      .subscribe((data) => alert('Se edito bien'));
+      .subscribe({
+        next: () => {
+          alert("✅ Recorrido editado correctamente.");
+          window.location.reload()
+        },
+        error: (err) => {
+          alert("❌ Error al editar el recorrido: " + (err.error?.message || err.message || "Inténtalo de nuevo."));
+        }
+      });
   }
 }

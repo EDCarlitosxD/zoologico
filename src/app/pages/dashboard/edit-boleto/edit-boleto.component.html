@@ -7,14 +7,23 @@
 </div>
   <form action="" class="formGuias">
     <div class="items">
+      <h6 class="thin">Imagen</h6>
+
+      <input 
+      type="file" 
+      class="file-upload" 
+      >      
+      <!-- [style.backgroundImage]="boleto.imagen ? 'url(' + boleto.imagen  + ')' : ''" -->
+          <!-- (change)="onFileSelected($event, 'img_recorrido', 'img_recorrido')" -->
+      
       <h6 class="thin">Titulo</h6>
-     <input type="text" [(ngModel)]="boleto.titulo" [value]="boleto.titulo" name="Nombre" id="Nombre" autofocus placeholder="Título">
+     <input class="dash80" type="text" [(ngModel)]="boleto.titulo" [value]="boleto.titulo" name="Nombre" id="Nombre" autofocus placeholder="Título">
       <h6 class="thin">Precio</h6>
-     <input type="number" [(ngModel)]="boleto.precio" [value]="boleto.precio" name="Precio" id="Precio" placeholder="Precio">
+     <input type="number" class="dash80" [(ngModel)]="boleto.precio" [value]="boleto.precio" name="Precio" id="Precio" placeholder="Precio">
      <h6 class="thin">Descripción</h6>
-     <textarea name="descripcion" [(ngModel)]="boleto.descripcion" [value]="boleto.descripcion" id="descripcion" placeholder="Descripción"></textarea>
+     <textarea class="dash" name="descripcion" [(ngModel)]="boleto.descripcion" [value]="boleto.descripcion" id="descripcion" placeholder="Descripción"></textarea>
      <h6 class="thin">Nota</h6>
-     <textarea name="nota" id="nota" [(ngModel)]="boleto.advertencias" [value]="boleto.advertencias" placeholder="Nota"></textarea>
+     <textarea class="dash" name="nota" id="nota" [(ngModel)]="boleto.advertencias" [value]="boleto.advertencias" placeholder="Nota"></textarea>
     </div>
     <button class="formBtn" (click)="editarBoleto($event)" routerLink="/dashboard/boletos">Modificar</button>
   </form>

@@ -40,6 +40,16 @@ export class EditBoletoComponent {
     isAlertVisible: boolean = false;
     editarBoleto(event: Event) {
       event.preventDefault();
-      this.boletoService.updateBoleto(this.boleto.id!, this.boleto).subscribe(data => this.isAlertVisible = true);
+    
+      this.boletoService.updateBoleto(this.boleto.id!, this.boleto)
+      .subscribe({
+        next: () => {
+          alert("✅ Boleto editado correctamente.");
+          window.location.reload()
+        },
+        error: (err) => {
+          alert("❌ Error al editar el boleto: " + (err.error?.message || err.message || "Inténtalo de nuevo."));
+        }
+      });
     }
 }

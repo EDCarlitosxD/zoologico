@@ -1,9 +1,0 @@
-<app-header-dash-edit title="Agregar Guía" subtitle="Inserción de datos"></app-header-dash-edit>
-
-  <form [formGroup]="guiaForm" (ngSubmit)="guardarGuia($event)" class="formGuias">
-    <div class="items">
-      <h6 class="thin">Nombre Completo</h6>
-     <input type="text" formControlName="nombre_completo" autofocus placeholder="Nombre">
-    </div>
-    <button class="formBtn" routerLink="/dashboard/tours" (click)="guardarGuia($event)">Agregar</button>
-  </form>

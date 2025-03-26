@@ -107,7 +107,16 @@ export class EditAnimalComponent implements OnInit {
     if (this.animalForm.valid) {
       this.animal = this.animalForm.value; // Capturar los datos
 
-      this.animalService.editarAnimal(this.animal,this.id!).subscribe(data => this.editado = true);
+      this.animalService.editarAnimal(this.animal,this.id!)
+      .subscribe({
+        next: () => {
+          alert("✅ Animal editado correctamente.");
+          window.location.reload()
+        },
+        error: (err) => {
+          alert("❌ Error al editar el animal: " + (err.error?.message || err.message || "Inténtalo de nuevo."));
+        }
+      });
       // this.animalForm.reset(); // Limpia el formulario después de guardar
     } else {
       alert('Error de validación. Por favor, revisa los campos.');
