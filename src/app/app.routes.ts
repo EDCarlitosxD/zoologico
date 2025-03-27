@@ -7,14 +7,12 @@ import { DashboardVentasComponent } from "./pages/dashboard-ventas/dashboard-ven
 import { DonacionesComponent } from "./pages/donaciones/donaciones.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { HomeComponent } from "./pages/home/home.component";
-import { ComponentesComponent } from "./pages/componentes/componentes.component";
 import { PruebaComponent } from "./Componentes/prueba/prueba.component";
 import { AnimalSoloComponent } from './pages/animal-solo/animal-solo.component';
 import { RecorridosComponent } from "./pages/recorridos/recorridos.component";
 import { RegisterComponent } from "./pages/register/register.component";
 import { ContactoComponent } from "./pages/contacto/contacto.component";
 import { EditRecorridosComponent } from "./pages/dashboard/edit-recorridos/edit-recorridos.component";
-import { Component } from '@angular/core';
 import { EditGuiasComponent } from "./pages/dashboard/edit-guias/edit-guias.component";
 import { EditRecoVendidosComponent } from "./pages/dashboard/edit-reco-vendidos/edit-reco-vendidos.component";
 import { PagarComponent } from "./pages/pagar/pagar.component";
@@ -26,7 +24,6 @@ import { PagarDonacionComponent } from "./pages/pagar-donacion/pagar-donacion.co
 import { CierreDonacionComponent } from "./pages/cierre-donacion/cierre-donacion.component";
 import { DashboardReportesComponent } from "./pages/dashboard-reportes/dashboard-reportes.component";
 import { AddGuiaComponent } from "./pages/dashboard/add-guia/add-guia.component";
-import { AddRecoComponent } from "./pages/dashboard/add-reco/add-reco.component";
 import { DatosPerfilComponent } from "./pages/datos-perfil/datos-perfil.component";
 import { ComprasRealizadasComponent } from "./pages/compras-realizadas/compras-realizadas.component";
 import { EditBoletoComponent } from "./pages/dashboard/edit-boleto/edit-boleto.component";
@@ -34,6 +31,7 @@ import { adminGuard } from "./Guard/admin.guard";
 import { isLoggedGuard } from "./is-logged.guard";
 import { CreatRecorridoComponent } from "./paages/creat-recorrido/creat-recorrido.component";
 import { AuthGuard } from "./guards/auth.guard";
+import { CreateBoletoComponent } from "./paages/create-boleto/create-boleto.component";
 
 export const routes: Routes = [
   { path: 'contactanos', component: ContactoComponent }, //A PIXEL✅✅✅,
@@ -102,6 +100,7 @@ export const routes: Routes = [
   // BOLETOS
   { path: 'dashboard/boletos', component: DashboardVentasComponent , canActivate: [adminGuard]},
   { path: 'dashboard/boletos/edit/:id', component: EditBoletoComponent , canActivate: [adminGuard]},
+  { path: 'dashboard/boletos/create', component: CreateBoletoComponent , canActivate: [adminGuard]},
 
 
   // TOURS

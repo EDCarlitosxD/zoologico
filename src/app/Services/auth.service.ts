@@ -4,31 +4,48 @@ import { loginFormApi } from '../Componentes/login-form/login-form.component';
 import { Observable } from 'rxjs';
 import { AuthResponse, IUserDetails, RoleEnum, User } from '../types/Auth';
 import { environment } from '../environment';
+import { getUserDetails } from '../utils/getUserDetails';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient) {
+    this.userDetails = getUserDetails();
+  }
+  userDetails: IUserDetails | null;
   login(loginData: loginFormApi): Observable<HttpResponse<AuthResponse>> {
-    return this.http.post<AuthResponse>(`${environment.API_URL}/login`,loginData, {observe: 'response'});
+    return this.http.post<AuthResponse>(
+      `${environment.API_URL}/login`,
+      loginData,
+      { observe: 'response' }
+    );
   }
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem('userDetails'); // Verifica si hay un token guardado
   }
 
-
-  register(registerData: User){
-    return this.http.post(`${environment.API_URL}/register`,registerData)
+  register(registerData: User) {
+    return this.http.post(`${environment.API_URL}/register`, registerData);
   }
 
-
-  isAdmin(){
-    const userDetails: IUserDetails = JSON.parse( localStorage.getItem('userDetails')!);
+  isAdmin() {
+    const userDetails: IUserDetails = JSON.parse(
+      localStorage.getItem('userDetails')!
+    );
     return userDetails.user.rol === RoleEnum.ADMIN;
   }
 
+  getUser() {
+    return this.http.get<User>(`${environment.API_URL}/user/`, {
+      headers: { Authorization: `Bearer ${this.userDetails?.token}` },
+    });
+  }
+
+  updateUser(user: User) {
+    return this.http.put<User>(`${environment.API_URL}/cuenta`, user, {
+      headers: { Authorization: `Bearer ${this.userDetails?.token}` },
+    });
+  }
 }

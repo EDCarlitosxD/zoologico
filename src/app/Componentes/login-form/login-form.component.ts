@@ -51,23 +51,26 @@ togglePassword() {
   errors: string[] = [];
 
 
-  loginPeticion() {
+    loginPeticion() {
     this.authService.login(this.loginForm).pipe(catchError((error: HttpErrorResponse) => {
       this.errors = error.error.errors
       console.log(error);
-
       console.log(this.errors);
-
       return of(null);
     })
     ).subscribe(data => {
       if (data) {
         console.log(data);
         localStorage.setItem("userDetails",JSON.stringify(data.body))
-        this.location.back();
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 500);
+        alert('Bienvenido');
+
         // this.router.navigate([this.previosRoute.getPreviousUrl()]);
       }
     })
+
 
 
   }

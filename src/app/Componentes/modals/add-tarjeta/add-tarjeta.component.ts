@@ -32,6 +32,8 @@ export class AddTarjetaComponent {
     this.tarjetaService.guardar(this.tarjeta).subscribe(data => {
       this.tarjeta = data;
       this.tarjetaGuardada.emit(this.tarjeta);
+      alert('✅ Tarjeta Guardada exitosamente');
+      window.location.reload();
     });
 
   }

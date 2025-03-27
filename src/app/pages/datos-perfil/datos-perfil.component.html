@@ -18,8 +18,10 @@
 
         <div class="datos">
             <div class="img-perfil">
-                <h6 class="thin">Imagen de Perfil</h6>
-                <img src="img/pages/loading/imgPerfil.png" alt="Perfil">
+                <h6 class="thin">{{insignia.nombre}}</h6>
+                <img [src]="insignia.imagen"
+                
+                alt="Insignia">
             </div>
 
             <div class="dato">
@@ -34,10 +36,7 @@
                 <h6 class="thin">E-mail</h6>
                 <p class="p1 thin">{{perfil.email}}</p>
             </div>
-            <div class="dato">
-                <h6 class="thin">Contraseña</h6>
-                <p class="p1 thin">{{perfil.password}}</p>
-            </div>
+
         </div>
     </section>
 
@@ -63,7 +62,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="visaIco" viewBox="0 0 48 32" fill="none">
                     <path d="M1.92 0C0.859824 0 0 0.91251 0 2.03822V29.9618C0 31.0874 0.860256 32 1.92 32H46.08C47.1402 32 48 31.0875 48 29.9618V2.03822C48 0.912561 47.1397 0 46.08 0H1.92ZM28.668 9.53661C29.8362 9.53661 30.7725 9.81055 31.3695 10.0653L30.9615 12.7898L30.6915 12.6449C30.1353 12.3902 29.4209 12.145 28.4355 12.1624C27.2558 12.1624 26.7105 12.721 26.7105 13.2437C26.7036 13.8326 27.3477 14.2209 28.401 14.8025C30.1394 15.6999 30.9429 16.7879 30.9315 18.2181C30.9081 20.8279 28.852 22.5143 25.6845 22.5143C24.3332 22.4985 23.0313 22.1949 22.3275 21.8439L22.7505 19.0286L23.139 19.2293C24.1286 19.6987 24.7694 19.8886 25.9755 19.8886C26.8416 19.8886 27.7711 19.5036 27.7785 18.6608C27.7841 18.1105 27.39 17.7182 26.217 17.1019C25.074 16.5004 23.5587 15.4929 23.5755 13.6863C23.5934 11.2424 25.6906 9.53661 28.668 9.53661ZM4.24498 9.93631H9.10949C9.76454 9.9626 10.2934 10.1865 10.476 10.9411L11.5245 16.6863C11.5247 16.6868 11.5243 16.6889 11.5245 16.6895L11.8395 18.4109L14.793 9.93631H17.988L13.239 22.3408L10.047 22.344L7.506 12.3344C9.0179 13.1847 10.3051 14.1685 11.0505 15.5223C10.8583 15.0939 10.6051 14.6103 10.281 14.1338C9.90365 13.5788 9.08866 12.8622 8.748 12.5573C7.56096 11.495 5.94888 10.6371 4.20749 10.1831L4.24498 9.93631ZM19.2585 9.95062H22.383L20.4285 22.336H17.304L19.2585 9.95062ZM36.906 9.95062H39.273L41.751 22.336H38.91C38.91 22.336 38.6281 20.9131 38.5365 20.4793C38.09 20.4793 34.9669 20.4745 34.6155 20.4745C34.4966 20.8098 33.9705 22.336 33.9705 22.336H30.756L35.3025 10.9793C35.6244 10.1723 36.1731 9.95062 36.906 9.95062ZM37.1385 13.2818C36.9848 13.7425 36.7171 14.4865 36.735 14.4538C36.735 14.4538 35.7732 17.1769 35.5215 17.8838L38.049 17.8821C37.9272 17.268 37.344 14.3393 37.344 14.3393L37.1385 13.2818Z" fill="#281B70"/>
                   </svg>
-                  <p class="bold">{{tarjeta.tarjeta}}</p>
+                  <p class="bold">{{tarjeta.numero_tarjeta}}</p>
                   <svg xmlns="http://www.w3.org/2000/svg" class="minus" viewBox="0 0 32 32" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M16 32C24.8368 32 32 24.8368 32 16C32 7.1632 24.8368 0 16 0C7.1632 0 0 7.1632 0 16C0 24.8368 7.1632 32 16 32ZM9.6 14.4C9.17565 14.4 8.76869 14.5686 8.46863 14.8686C8.16857 15.1687 8 15.5757 8 16C8 16.4243 8.16857 16.8313 8.46863 17.1314C8.76869 17.4314 9.17565 17.6 9.6 17.6H22.4C22.8243 17.6 23.2313 17.4314 23.5314 17.1314C23.8314 16.8313 24 16.4243 24 16C24 15.5757 23.8314 15.1687 23.5314 14.8686C23.2313 14.5686 22.8243 14.4 22.4 14.4H9.6Z" fill="#D86B67"/>
                   </svg>
@@ -100,15 +99,15 @@
 
                 <section>
                     <h6 class="thin">Nombre</h6>
-                    <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                    <input type="text" [(ngModel)]="editedUser.nombre" name="nombre" id="nombre" placeholder="Nombre">
                     <h6 class="thin">Apellido</h6>
-                    <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+                    <input type="text" name="apellido" [(ngModel)]="editedUser.apellido" id="apellido" placeholder="Apellido">
                     <h6 class="thin">Contraseña</h6>
-                    <input type="text" name="contraseña" id="contraseña" placeholder="********">
+                    <input type="text" name="contraseña" [(ngModel)]="editedUser.password" id="contraseña" placeholder="********">
                     <h6 class="thin">Confirmar contraseña</h6>
-                    <input type="text" name="Confirmar" id="confirmar" placeholder="********">
+                    <input type="text" name="Confirmar" [(ngModel)]="passwordConfirmation" id="confirmar" placeholder="********">
                 </section>
-                <button>Editar</button>
+                <button (click)="editarPerfil($event)" type="submit">Editar</button>
             </form>
 
 

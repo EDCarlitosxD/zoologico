@@ -39,5 +39,7 @@ export class NavBarComponent implements OnInit {
     this.isLoggedIn = false;
     this.user = null;
     this.role = null;
+    alert("Sesion cerrada");
+    window.location.reload();
     }
 }

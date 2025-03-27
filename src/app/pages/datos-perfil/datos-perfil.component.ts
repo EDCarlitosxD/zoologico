@@ -1,35 +1,108 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, NgModule, OnInit } from '@angular/core';
 import { SidebarUsuarioComponent } from "../../Componentes/Admin/sidebar-usuario/sidebar-usuario.component";
 import { DashboardContentComponent } from "../../Componentes/Admin/dashboard-content/dashboard-content.component";
 import { PerfilContentComponent } from "../../Componentes/Admin/perfil-content/perfil-content.component";
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { AddTarjetaComponent } from "../../Componentes/modals/add-tarjeta/add-tarjeta.component";
+import { IUserDetails, RoleEnum, User } from '../../types/Auth';
+import { AuthService } from '../../Services/auth.service';
+import { InsigniaService } from '../../Services/insignia.service';
+import { TarjetaService } from '../../Service/tarjeta.service';
+import { ITarjeta } from '../../types/Tarjetas';
+import { FormsModule } from '@angular/forms';
+import { IInsignia } from '../../types/Insignias';
+
 interface Perfil {
   nombre: string;
   apellido: string;
   email: string;
   password: string;
 }
+
 interface Tarjetas{
   tarjeta: number;
 }
 @Component({
   selector: 'app-datos-perfil',
   standalone: true,
-  imports: [NgFor, SidebarUsuarioComponent, DashboardContentComponent, PerfilContentComponent, AddTarjetaComponent],
+  imports: [NgFor, SidebarUsuarioComponent, DashboardContentComponent, PerfilContentComponent, AddTarjetaComponent, FormsModule, CommonModule],
   templateUrl: './datos-perfil.component.html',
   styleUrl: './datos-perfil.component.scss'
 })
 export class DatosPerfilComponent {
-  @Input() perfil: Perfil = {
-    nombre: 'Adrian',
-    apellido: 'Hernandez',
-    email: 'ahb@bunubnj.com',
-    password: 'snwnisw'
+
+  perfil!: User;
+  tarjetas: ITarjeta[] = [];
+  insignia: IInsignia = {
+    id: 0,
+    imagen: '',
+    nombre: '',
+    cantidad: 0,
+    estado: true
+  } // Imagen por defecto
+  editedUser: User = {
+    id: 0,
+    nombre_usuario: '',
+    nombre: '',
+    apellido: '',
+    email: '',
+    password: '',
+    rol: RoleEnum.CLIENTE,
+    estado: 1
   }
-  @Input() tarjetas: Tarjetas[] = [
-    {tarjeta: 7851},
-    {tarjeta: 1569},
-    
-  ]
+
+  constructor(
+    private userService: AuthService, 
+    private insigniaService: InsigniaService, 
+    private tarjetaService: TarjetaService
+  ) {}
+
+  ngOnInit(): void {
+    // Cargar perfil
+    this.userService.getUser().subscribe(res => {
+      this.perfil = res;
+      this.editedUser = res;
+      this.editedUser.password = "";
+      this.obtenerInsignia();
+    });
+
+    // Cargar tarjetas
+    this.tarjetaService.getTarjetas().subscribe(res => {
+      this.tarjetas = res;
+    });
+  }
+  passwordConfirmation: string = '';
+
+  obtenerInsignia(): void {
+    if (this.perfil?.id) {
+      this.insigniaService.getByUser(this.perfil.id).subscribe(res => {
+        this.insignia.imagen =   res.imagen ? res.imagen : "img/pages/loading/imgPerfil.png";
+        this.insignia.nombre = res.nombre ? "Insignia de " + res.nombre : "Sin insignia";
+      });
+    }
+  }
+
+  editarPerfil(event: Event) {
+    event.preventDefault();
+    if (this.editedUser.password !== this.passwordConfirmation) {
+      alert('Las contraseñas no coinciden.');
+      return;
+    }
+    this.userService.updateUser(this.editedUser)
+    .subscribe({
+      next: (res) => {
+        alert('✅ Insignia editada correctamente.');
+        window.location.reload();
+        console.log(res);
+      },
+      error: (err) => {
+        alert(
+          '❌ Error al editar el insignia: ' +
+            (err.error?.message || err.message || 'Inténtalo de nuevo.')
+        );
+      },
+    });
+  }
+
+  
 }

@@ -66,4 +66,8 @@ export class InsigniaService {
           }
         );
       }
+
+      getByUser(id: number) {
+        return this.http.get<IInsignia>(`${environment.API_URL}/insignias/user/${id}`);
+      }
 }

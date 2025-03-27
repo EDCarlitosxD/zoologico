@@ -9,10 +9,12 @@
     <div class="items">
       <h6 class="thin">Imagen</h6>
 
-      <input 
-      type="file" 
-      class="file-upload" 
-      >      
+            <input 
+        [style.backgroundImage]="boleto.imagen ? 'url(' + boleto.imagen + ')' : ''"
+            type="file" 
+            class="file-upload" 
+            (change)="onFileSelected($event, 'imagen', 'imagen')"
+        >    
       <!-- [style.backgroundImage]="boleto.imagen ? 'url(' + boleto.imagen  + ')' : ''" -->
           <!-- (change)="onFileSelected($event, 'img_recorrido', 'img_recorrido')" -->
       

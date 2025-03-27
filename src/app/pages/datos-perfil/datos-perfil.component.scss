@@ -1,3 +1,6 @@
+img{
+
+}
 .info{
     grid-column: span 5;
     display: flex;
@@ -44,6 +47,7 @@
             img{
                 aspect-ratio: 1/1;
                 border-radius: 92px;
+                width: 92px;
             }
         }
         .dato{
