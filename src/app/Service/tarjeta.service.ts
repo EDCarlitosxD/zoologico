@@ -38,7 +38,7 @@ export class TarjetaService {
   }
 
 
-  eliminar(id: number){
+  eliminar(id: number | undefined){
     return this.http.delete(`${environment.API_URL}/tarjeta/eliminar/${id!}` ,{
       headers: {
         'Authorization': `Bearer ${this.userDetails?.token}`,

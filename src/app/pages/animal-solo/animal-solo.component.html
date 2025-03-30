@@ -36,16 +36,14 @@
 
         <div class="conducta">
             <h5 class="thin">Conducta</h5>
-            <p class="p1 thin"><span class="p1">Social: </span>
+            <p class="p1 thin">
               {{animal.comportamiento}}
             </p>
-            <p class="p1 thin"><span class="p1">Terriorialidad: </span>gybhunjimgtfyguh</p>
         </div>
 
         <div class="dieta">
             <h5 class="thin">Dieta</h5>
-            <p class="p1 thin"><span class="p1">Tipo: </span>gybhunjimgtfyguh</p>
-            <p class="p1 thin"><span class="p1">Alimentación: </span>gybhunjimgtfyguh</p>
+            <p class="p1 thin"><span class="p1">Alimentación: </span>{{animal.dieta}}</p>
         </div>
 
         <div class="datosCuriosos">
@@ -60,7 +58,7 @@
 
     <section class="descripcionAnimal text-center">
         <div class="texto">
-          <h3 class="thin">Frace animal</h3>
+          <h3 class="thin">{{animal.subtitulo}}</h3>
           <p class="thin">{{animal.descripcion}}</p>
         </div>
         <img class="img2Animal" [src]="animal.imagen_secundaria" [alt]="'Imagen Secundaria ' + animal.nombre">

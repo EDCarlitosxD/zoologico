@@ -6,7 +6,9 @@
     <button (click)="buscar($event)" class="chiquito">Buscar</button>
   </form>
   <div class="div-table-responsive ">
-    <table class="table-animales bg-white-200 ">
+    <h6 class="thin">Animales</h6>
+    <app-cargando *ngIf="cargandoAnimales"></app-cargando>
+    <table *ngIf="!cargandoAnimales" class="table-animales bg-white-200 ">
       <thead>
         <tr>
           <th scope="col" class="bold p2 cell">Id</th>

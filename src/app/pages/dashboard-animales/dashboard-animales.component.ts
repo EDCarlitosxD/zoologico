@@ -7,20 +7,12 @@ import {  RouterOutlet } from '@angular/router';
 import { NgClass, NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
-interface Animales {
-  id: number;
-  nombre: string;
-  tipo: string;
-  peso: string;
-  altura: string;
-  active: boolean;
-}
+import { CargandoComponent } from "../../Componentes/cargando/cargando.component";
 
 @Component({
   selector: 'app-dashboard-animales',
   standalone: true,
-  imports: [DashboardContentComponent,CommonModule,FormsModule, RouterLink, RouterLink],
+  imports: [DashboardContentComponent, CommonModule, FormsModule, RouterLink, RouterLink, CargandoComponent],
   templateUrl: './dashboard-animales.component.html',
   styleUrl: './dashboard-animales.component.scss'
 })
@@ -29,9 +21,12 @@ export class DashboardAnimalesComponent {
   animales: IAnimal[] = [];
   buscarAnimal = ''
   constructor(private animalesServices: AnimalService){}
-
+  cargandoAnimales = true
   ngOnInit(){
-    this.animalesServices.getAll().subscribe(data => this.animales = data);
+    this.animalesServices.getAll().subscribe(data => {this.animales = data;
+      this.cargandoAnimales = false
+    }
+    );
   }
 
 

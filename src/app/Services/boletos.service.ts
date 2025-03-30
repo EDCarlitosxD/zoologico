@@ -33,6 +33,10 @@ export class BoletosService {
       return this.http.get<IPagination<IVentaAdmin>>(`${environment.API_URL}/venta/boletos`)
     }
 
+    agregarBoleto(boleto: IBoleto) {
+      return this.http.post(`${environment.API_URL}/boletos`, boleto);
+    }
+
     updateBoleto(id: number, boleto: IBoleto) {
       return this.http.put(`${environment.API_URL}/boletos/actualizar/${id}`, boleto);
     }

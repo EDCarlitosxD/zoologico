@@ -1,4 +1,31 @@
-
+.file-upload {
+    width: 368px;
+    height: 368px;
+    align-self: center;
+    border-radius: 16px;
+    border: 1px solid var(--Negro-200, #757C75);
+    background: url('../../../assets/img/imageUpload.png') lightgray 50% / cover no-repeat;
+  }
+  .file-upload::file-selector-button {
+    font-size: 0;
+    /* Oculta el texto */
+    text-indent: -9999px;
+    /* Mueve el texto fuera de la vista */
+    white-space: nowrap;
+    /* Evita el texto en varias líneas */
+    overflow: hidden;
+    /* Esconde cualquier desbordamiento */
+    display: inline-block;
+    width: 368px;
+    height: 368px;
+    border: thin solid grey;
+    border-radius: 3px;
+    opacity: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  
+  }
 
 .formGuias{
   display: grid;

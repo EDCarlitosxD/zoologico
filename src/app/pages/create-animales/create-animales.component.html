@@ -92,7 +92,8 @@
         <p>Imagen Ubicación</p>
         <input
         [style.backgroundImage]="animal.img_ubicacion ? 'url(' + animal.img_ubicacion + ')' : ''"
-        type="file" class="file-upload" (change)="onFileSelected($event, 'img_ubicacion','img_ubicacion')"
+        type="file" class="file-upload" 
+        (change)="onFileSelected($event, 'img_ubicacion','img_ubicacion')"
           [class.invalid]="animalForm.get('img_ubicacion')?.invalid && animalForm.get('img_ubicacion')?.touched">
 
       </div>

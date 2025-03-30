@@ -1,9 +1,9 @@
 import { Component, Input, NgModule, OnInit } from '@angular/core';
-import { SidebarUsuarioComponent } from "../../Componentes/Admin/sidebar-usuario/sidebar-usuario.component";
-import { DashboardContentComponent } from "../../Componentes/Admin/dashboard-content/dashboard-content.component";
-import { PerfilContentComponent } from "../../Componentes/Admin/perfil-content/perfil-content.component";
+import { SidebarUsuarioComponent } from '../../Componentes/Admin/sidebar-usuario/sidebar-usuario.component';
+import { DashboardContentComponent } from '../../Componentes/Admin/dashboard-content/dashboard-content.component';
+import { PerfilContentComponent } from '../../Componentes/Admin/perfil-content/perfil-content.component';
 import { CommonModule, NgFor } from '@angular/common';
-import { AddTarjetaComponent } from "../../Componentes/modals/add-tarjeta/add-tarjeta.component";
+import { AddTarjetaComponent } from '../../Componentes/modals/add-tarjeta/add-tarjeta.component';
 import { IUserDetails, RoleEnum, User } from '../../types/Auth';
 import { AuthService } from '../../Services/auth.service';
 import { InsigniaService } from '../../Services/insignia.service';
@@ -19,18 +19,25 @@ interface Perfil {
   password: string;
 }
 
-interface Tarjetas{
+interface Tarjetas {
   tarjeta: number;
 }
 @Component({
   selector: 'app-datos-perfil',
   standalone: true,
-  imports: [NgFor, SidebarUsuarioComponent, DashboardContentComponent, PerfilContentComponent, AddTarjetaComponent, FormsModule, CommonModule],
+  imports: [
+    NgFor,
+    SidebarUsuarioComponent,
+    DashboardContentComponent,
+    PerfilContentComponent,
+    AddTarjetaComponent,
+    FormsModule,
+    CommonModule,
+  ],
   templateUrl: './datos-perfil.component.html',
-  styleUrl: './datos-perfil.component.scss'
+  styleUrl: './datos-perfil.component.scss',
 })
 export class DatosPerfilComponent {
-
   perfil!: User;
   tarjetas: ITarjeta[] = [];
   insignia: IInsignia = {
@@ -38,8 +45,8 @@ export class DatosPerfilComponent {
     imagen: '',
     nombre: '',
     cantidad: 0,
-    estado: true
-  } // Imagen por defecto
+    estado: true,
+  }; // Imagen por defecto
   editedUser: User = {
     id: 0,
     nombre_usuario: '',
@@ -48,26 +55,26 @@ export class DatosPerfilComponent {
     email: '',
     password: '',
     rol: RoleEnum.CLIENTE,
-    estado: 1
-  }
+    estado: 1,
+  };
 
   constructor(
-    private userService: AuthService, 
-    private insigniaService: InsigniaService, 
+    private userService: AuthService,
+    private insigniaService: InsigniaService,
     private tarjetaService: TarjetaService
   ) {}
 
   ngOnInit(): void {
     // Cargar perfil
-    this.userService.getUser().subscribe(res => {
+    this.userService.getUser().subscribe((res) => {
       this.perfil = res;
       this.editedUser = res;
-      this.editedUser.password = "";
+      this.editedUser.password = '';
       this.obtenerInsignia();
     });
 
     // Cargar tarjetas
-    this.tarjetaService.getTarjetas().subscribe(res => {
+    this.tarjetaService.getTarjetas().subscribe((res) => {
       this.tarjetas = res;
     });
   }
@@ -75,9 +82,13 @@ export class DatosPerfilComponent {
 
   obtenerInsignia(): void {
     if (this.perfil?.id) {
-      this.insigniaService.getByUser(this.perfil.id).subscribe(res => {
-        this.insignia.imagen =   res.imagen ? res.imagen : "img/pages/loading/imgPerfil.png";
-        this.insignia.nombre = res.nombre ? "Insignia de " + res.nombre : "Sin insignia";
+      this.insigniaService.getByUser(this.perfil.id).subscribe((res) => {
+        this.insignia.imagen = res.imagen
+          ? res.imagen
+          : 'img/pages/loading/imgPerfil.png';
+        this.insignia.nombre = res.nombre
+          ? 'Insignia de ' + res.nombre
+          : 'Sin insignia';
       });
     }
   }
@@ -88,8 +99,7 @@ export class DatosPerfilComponent {
       alert('Las contraseñas no coinciden.');
       return;
     }
-    this.userService.updateUser(this.editedUser)
-    .subscribe({
+    this.userService.updateUser(this.editedUser).subscribe({
       next: (res) => {
         alert('✅ Insignia editada correctamente.');
         window.location.reload();
@@ -104,5 +114,23 @@ export class DatosPerfilComponent {
     });
   }
 
+  eliminarTarjeta(id: number | undefined) {
+    if (!id) return;
   
+    const confirmacion = window.confirm('¿Estás seguro de eliminar la tarjeta?');
+    if (!confirmacion) return;
+  
+    this.tarjetaService.eliminar(id).subscribe({
+      next: () => {
+        this.tarjetas = this.tarjetas.filter((tarjeta) => tarjeta.id !== id);
+        alert('✅ Tarjeta eliminada correctamente.');
+      },
+      error: (err) => {
+        alert(
+          '❌ Error al eliminar la tarjeta: ' +
+          (err.error?.message || err.message || 'Inténtalo de nuevo.')
+        );
+      },
+    });
+  }
 }

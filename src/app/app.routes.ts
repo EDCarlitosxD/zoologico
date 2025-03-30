@@ -32,6 +32,9 @@ import { isLoggedGuard } from "./is-logged.guard";
 import { CreatRecorridoComponent } from "./paages/creat-recorrido/creat-recorrido.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { CreateBoletoComponent } from "./paages/create-boleto/create-boleto.component";
+import { DashboardMembresiasComponent } from "./pages/dashboard-membresias/dashboard-membresias.component";
+import { CreateMembresiasComponent } from "./paages/create-membresias/create-membresias.component";
+import { EditMembresiasComponent } from "./paages/edit-membresias/edit-membresias.component";
 
 export const routes: Routes = [
   { path: 'contactanos', component: ContactoComponent }, //A PIXEL✅✅✅,
@@ -93,7 +96,9 @@ export const routes: Routes = [
   { path: 'dashboard/animales', component: DashboardAnimalesComponent , canActivate: [adminGuard]},
   { path: 'dashboard/ventas', component: DashboardVentasComponent , canActivate: [adminGuard]},
   { path: 'dashboard/recorridos', component: DashboardRecorridoComponent , canActivate: [adminGuard]},
-
+  { path: 'dashboard/membresias', component:  DashboardMembresiasComponent, canActivate: [adminGuard]},
+  { path: 'dashboard/membresias/create', component:  CreateMembresiasComponent, canActivate: [adminGuard]},
+  { path: 'dashboard/membresias/edit/:id', component: EditMembresiasComponent , canActivate: [adminGuard]},
   { path: 'dashboard/recorridos/vendidos/edit', component: EditRecoVendidosComponent , canActivate: [adminGuard]},
   { path: 'dashboard/animales/create', component: CreateAnimalesComponent , canActivate: [adminGuard]},
   { path: 'dashboard/recorridos/vendidos/edit', component: EditRecoVendidosComponent , canActivate: [adminGuard]},

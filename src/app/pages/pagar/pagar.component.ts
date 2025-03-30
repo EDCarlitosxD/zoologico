@@ -68,8 +68,19 @@ export class PagarComponent implements OnInit{
 
 
   eliminarTarjeta(id: number){
-    this.tarjetasService.eliminar(id).subscribe(data => {
-      this.tarjetas = this.tarjetas.filter(tarjeta => tarjeta.id != id);
+    const confirmacion = window.confirm("¿Estas seguro de eliminar la tarjeta?");
+    if(!confirmacion) return;
+    this.tarjetasService.eliminar(id).subscribe({
+      next: () => {
+        this.tarjetas = this.tarjetas.filter((tarjeta) => tarjeta.id !== id);
+        alert('✅ Tarjeta eliminada correctamente.');
+      },
+      error: (err) => {
+        alert(
+          '❌ Error al eliminar la tarjeta: ' +
+          (err.error?.message || err.message || 'Inténtalo de nuevo.')
+        );
+      },
     });
   }
 

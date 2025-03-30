@@ -1,0 +1,23 @@
+<app-header-dash-edit title="Agregar membresia" subtitle="Inserción de datos"></app-header-dash-edit>
+  <form action="" class="formGuias">
+    <div class="items">
+      <h6 class="thin">Imagen</h6>
+
+            <input 
+        [style.backgroundImage]="membresia.imagen ? 'url(' + membresia.imagen + ')' : ''"
+            type="file" 
+            class="file-upload" 
+            (change)="onFileSelected($event, 'imagen', 'imagen')"
+        >    
+      <!-- [style.backgroundImage]="membresia.imagen ? 'url(' + membresia.imagen  + ')' : ''" -->
+          <!-- (change)="onFileSelected($event, 'img_recorrido', 'img_recorrido')" -->
+      
+      <h6 class="thin">Titulo</h6>
+     <input class="dash80" type="text" [(ngModel)]="membresia.nombre" [value]="membresia.nombre" name="Nombre" id="Nombre" autofocus placeholder="Título">
+      <h6 class="thin">Precio</h6>
+     <input type="number" class="dash80" [(ngModel)]="membresia.precio" [value]="membresia.precio" name="Precio" id="Precio" placeholder="Precio">
+     <h6 class="thin">Descripción</h6>
+     <textarea class="dash" name="descripcion" [(ngModel)]="membresia.descripcion" [value]="membresia.descripcion" id="descripcion" placeholder="Descripción"></textarea>
+    </div>
+    <button class="formBtn" (click)="agregarMembresia($event)" routerLink="/dashboard/membresias">Modificar</button>
+  </form>

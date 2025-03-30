@@ -1,0 +1,24 @@
+<app-header-dash-edit title="Editar membresia" subtitle="Edición de datos"></app-header-dash-edit>
+
+  <form [formGroup]="membresiaForm" class="formGuias">
+    <div class="items">
+      <h6 class="thin">Imagen</h6>
+      <input 
+        type="file" 
+        [style.backgroundImage]="membresia.imagen ? 'url(' + membresia.imagen + ')' : ''"
+        class="file-upload" 
+        (change)="onFileSelected($event, 'imagen')" 
+      >
+      <h6 class="thin">Título</h6>
+      <input class="dash80" type="text" formControlName="nombre" placeholder="Título">
+      
+      <h6 class="thin">Precio</h6>
+      <input type="number" class="dash80" formControlName="precio" placeholder="Precio">
+      
+      <h6 class="thin">Descripción</h6>
+      <textarea class="dash" formControlName="descripcion" placeholder="Descripción"></textarea>
+    </div>
+    
+    <button class="formBtn" routerLink="/dashboard/membresias" (click)="actualizarMembresia($event) ">Modificar</button>
+  </form>
+  
