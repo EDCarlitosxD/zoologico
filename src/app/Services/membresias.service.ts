@@ -18,7 +18,7 @@ export class MembresiasService {
   public getAll() {
     return this.http.get<IMembresia[]>(`${environment.API_URL}/membresias`);
   }
-  public getById(id: number) {
+  public getById(id: number | null | undefined) {
     return this.http.get<IMembresia>(`${environment.API_URL}/membresias/${id}`);
   }
   public create(membresia: IMembresia) {

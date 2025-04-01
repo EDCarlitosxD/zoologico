@@ -1,0 +1,37 @@
+article {
+  display: flex;
+  padding: 0px 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  .membresia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+  }
+  .precio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    .mes {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      align-self: stretch;
+    }
+  }
+}
+.chiquito {
+  background: var(--Secundario-Auxiliar-600, #edc457);
+}

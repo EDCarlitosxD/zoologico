@@ -35,6 +35,7 @@ import { CreateBoletoComponent } from "./paages/create-boleto/create-boleto.comp
 import { DashboardMembresiasComponent } from "./pages/dashboard-membresias/dashboard-membresias.component";
 import { CreateMembresiasComponent } from "./paages/create-membresias/create-membresias.component";
 import { EditMembresiasComponent } from "./paages/edit-membresias/edit-membresias.component";
+import { MembresiaHomeComponent } from "./Componentes/home/membresia-home/membresia-home.component";
 
 export const routes: Routes = [
   { path: 'contactanos', component: ContactoComponent }, //A PIXEL✅✅✅,
@@ -116,4 +117,16 @@ export const routes: Routes = [
   { path: 'dashboard/tours/guias/create', component: AddGuiaComponent , canActivate: [adminGuard]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [adminGuard],},
   { path: 'pruebas', component: PruebaComponent},
+
+
+
+
+
+
+
+
+
+  { path: 'meaa', component: MembresiaHomeComponent },
+  //{ path: '404', component: NotFoundComponent },
+  //{ path: '**', component: NotFoundComponent },
 ];

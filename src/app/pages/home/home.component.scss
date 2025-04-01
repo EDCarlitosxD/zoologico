@@ -1,7 +1,38 @@
-@import '../../../styles.scss';
+@import "../../../styles.scss";
 
+.membresiasHome {
+  row-gap: 24px;
+  margin: 40px 164px;
 
-
+  .como-unirte {
+    display: flex;
+    padding: 20px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    grid-column: span 6;
+    flex: 1 0 0;
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      align-self: stretch;
+    }
+  }
+  .membresiaHome__imagen {
+    grid-column: span 6;
+    width: 100%; // ✅ La imagen se adapta al contenedor
+    max-width: 100%; // ✅ Evita que crezca demasiado
+    height: auto; // ✅ Mantiene la proporción natural
+    aspect-ratio: 776/553;
+    margin: auto;
+    border-radius: 40px;
+  }
+}
+.membresia {
+  grid-column: span 4;
+}
 
 .sobreNosotros {
   margin-top: 32px;
@@ -11,13 +42,12 @@
   flex-direction: column;
   gap: 24px;
 
-
   .sobreNosotros__informacion {
     row-gap: 16px;
-    padding: 0 41px
+    padding: 0 41px;
   }
 
-  .sobreNosotros__informacion>* {
+  .sobreNosotros__informacion > * {
     @extend .col-full;
     text-align: center;
   }
@@ -27,19 +57,14 @@
     width: 100%;
     height: 232px;
   }
-
 }
 
-
-
 .nuestrosAnimales {
-
   padding: 24px 0;
   row-gap: 24px;
   justify-content: center;
   align-items: center;
   align-content: center;
-
 
   .nuestrosAnimales__texto {
     @extend .col-full;
@@ -49,7 +74,6 @@
     align-items: center;
     gap: 16px;
   }
-
 
   .nuestrosAnimales__contenido {
     @extend .col-full;
@@ -72,14 +96,10 @@
       display: none;
       /* Para Chrome, Safari y Edge basados en Chromium */
     }
-
   }
-
 }
 
-
 .boletosHome {
-
   padding-top: 24px;
   padding-bottom: 24px;
   display: flex;
@@ -87,20 +107,14 @@
   align-items: center;
   gap: 24px;
 
-
-
   .boletos__texto {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    padding: 0  24px;
-
-
-
+    padding: 0 24px;
   }
-
 
   .boletos__container {
     display: flex;
@@ -116,7 +130,6 @@
     // width: 430px;
     width: 100%;
 
-
     overflow-x: scroll;
     scroll-behavior: smooth;
     overflow-y: hidden;
@@ -131,14 +144,8 @@
       display: none;
       /* Para Chrome, Safari y Edge basados en Chromium */
     }
-
-
   }
-
 }
-
-
-
 
 .recorridosHome {
   display: flex;
@@ -148,9 +155,7 @@
   align-items: flex-start;
   gap: 24px;
   align-self: stretch;
-
 }
-
 
 .recorridosHome__texto {
   display: flex;
@@ -160,10 +165,7 @@
   align-items: center;
   gap: 20px;
   align-self: stretch;
-
-
 }
-
 
 .recorridosHome__recorridos {
   display: flex;
@@ -173,11 +175,7 @@
   gap: 20px;
   align-self: stretch;
   flex-wrap: wrap;
-
 }
-
-
-
 
 .donacionHome {
   display: flex;
@@ -186,7 +184,7 @@
   align-items: flex-start;
   gap: 24px;
   align-self: stretch;
-  background: var(--Primario-600, #325B3A);
+  background: var(--Primario-600, #325b3a);
 }
 
 .donacionHome__informacion {
@@ -204,16 +202,14 @@
   align-items: center;
   gap: 16px;
   text-align: center;
-  div{
+  div {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    text-align: center;    
+    text-align: center;
   }
-
 }
-
 
 .donacionHome__imagenes {
   display: flex;
@@ -223,7 +219,7 @@
   // justify-content: center;
   gap: 13px;
   margin: 0 auto;
-  background: var(--Blanco-700, #F0F7EB);
+  background: var(--Blanco-700, #f0f7eb);
   overflow-x: scroll;
 
   .donacionHome_imagenPequeño {
@@ -237,9 +233,7 @@
     height: 215px;
     flex-shrink: 0;
   }
-
 }
-
 
 .mapaHome {
   display: flex;
@@ -254,13 +248,8 @@
   div {
     height: 256px;
     align-self: stretch;
-
   }
-
 }
-
-
-
 
 .ubicacionHome {
   display: flex;
@@ -271,14 +260,11 @@
   align-self: stretch;
   padding: 24px 0;
 
-
-
   iframe {
     width: 348px;
     height: 338px;
   }
 }
-
 
 .ubicacionHome__texto {
   display: flex;
@@ -287,7 +273,6 @@
   align-items: center;
   gap: 12px;
 }
-
 
 .experiencia {
   display: flex;
@@ -306,24 +291,24 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-} 
+}
 
 .carouselExperiencias {
   position: relative;
 }
 
-.prev-next-button{
+.prev-next-button {
   width: 40px;
-height: 40px;
-flex-shrink: 0;
-cursor: pointer;
-&:hover path{
-  transition: 0.3s ease;
-  fill: #DCA617;
-}
+  height: 40px;
+  flex-shrink: 0;
+  cursor: pointer;
+  &:hover path {
+    transition: 0.3s ease;
+    fill: #dca617;
+  }
 }
 
-.experienciasDescription{
+.experienciasDescription {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -331,7 +316,7 @@ cursor: pointer;
   gap: 8;
 }
 
-.carouselExperiencias-item{
+.carouselExperiencias-item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -355,10 +340,7 @@ cursor: pointer;
       width: 100%;
       height: 100%;
     }
-
   }
-
-
 
   .carouselExperiencias__texto {
     display: flex;
@@ -367,11 +349,7 @@ cursor: pointer;
     gap: 7px;
     flex: 1 0 0;
     padding: 8px 0px;
-
   }
-
-
-
 }
 
 .carouselExperiencias__textoItem {
@@ -382,9 +360,7 @@ cursor: pointer;
   gap: 16px;
   align-self: stretch;
   padding: 0;
-
 }
-
 
 .carouselExample-control-prev,
 .carouselExample-control-next {
@@ -395,7 +371,7 @@ cursor: pointer;
   width: 40px;
   height: 40px;
 
-  background-color: rgba(29, 31, 29, 0.80);
+  background-color: rgba(29, 31, 29, 0.8);
 }
 
 .carouselExample-control-prev {
@@ -436,11 +412,9 @@ cursor: pointer;
       justify-content: center;
       align-items: flex-start;
       gap: 20px;
-
-
     }
 
-    .sobreNosotros__informacion>* {
+    .sobreNosotros__informacion > * {
       display: block;
       text-align: left;
     }
@@ -452,7 +426,6 @@ cursor: pointer;
       object-fit: cover;
       border-radius: 0 160px 0 160px;
     }
-
   }
 
   .nuestrosAnimales {
@@ -474,9 +447,7 @@ cursor: pointer;
       }
 
       grid-column: 9 / 13;
-
     }
-
 
     .nuestrosAnimales__contenido {
       grid-column: 1 / 9;
@@ -485,18 +456,11 @@ cursor: pointer;
 
       justify-content: center;
 
-
-
       .mobileAnimal {
         display: none;
       }
     }
-
-
   }
-
-
-
 
   .boletosHome {
     display: grid;
@@ -504,13 +468,10 @@ cursor: pointer;
     gap: 40px;
     padding: 40px 164px;
 
-
     .boletos__container {
       grid-column: span 9;
       gap: 40px;
-
     }
-
 
     .boletos__texto {
       grid-column: span 3;
@@ -518,33 +479,27 @@ cursor: pointer;
       margin: 0;
       padding: 20px 0;
     }
-    
-
   }
-  @media(max-width: 1600px){
+  @media (max-width: 1600px) {
     .boletosHome {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 40px;
-      padding: 40px 164px;    
- 
+      padding: 40px 164px;
+
       .boletos__texto {
         grid-column: span 12;
       }
       .boletos__container {
         grid-column: span 12;
-  
       }
-  
     }
   }
 
   .recorridosHome {
     gap: 40px;
     padding: 40px 0;
-
   }
-
 
   .recorridosHome__texto {
     display: flex;
@@ -557,11 +512,9 @@ cursor: pointer;
     justify-content: center;
     align-items: center;
 
-
     .recorridoBtn {
       display: none;
     }
-
   }
 
   .recorridosHome__recorridos {
@@ -579,7 +532,7 @@ cursor: pointer;
     align-items: flex-start;
     gap: 40px;
     align-self: stretch;
-    
+
     .donacionHome__informacion {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -590,27 +543,20 @@ cursor: pointer;
         display: flex;
         margin: 0 0 0 0px;
         padding: 40px 40px;
-  
+
         width: 912px;
         gap: 40px;
         justify-content: flex-start;
         align-items: flex-start;
-        div{
+        div {
           all: unset;
         }
-
-        
       }
-      .donarBtn{
+      .donarBtn {
         grid-column: span 4;
       }
     }
-
-
-
   }
-
-
 
   .donacionHome__imagenes {
     height: 364px;
@@ -641,7 +587,6 @@ cursor: pointer;
 
       flex-shrink: 0;
     }
-
   }
 
   .mapaHome {
@@ -658,9 +603,7 @@ cursor: pointer;
         height: 100%;
       }
     }
-
   }
-
 
   .ubicacionHome {
     display: grid;
@@ -669,7 +612,6 @@ cursor: pointer;
     padding: 40px 0;
 
     .ubicacionHome__texto {
-
       grid-column: 1 / 6;
       padding: 0;
     }
@@ -681,9 +623,6 @@ cursor: pointer;
       aspect-ratio: 1 / 1;
     }
   }
-
-
-
 
   .carouselExperiencias {
     position: relative;
@@ -698,7 +637,7 @@ cursor: pointer;
 
   .experiencia {
     padding: 40px 0;
-    gap: 40px
+    gap: 40px;
   }
 
   .experiencia__informacion {
@@ -710,14 +649,12 @@ cursor: pointer;
     align-items: center;
     gap: 24px;
     align-self: stretch;
-    
   }
 
   .carouselExperiencias__texto {
     justify-content: center;
-    
   }
-  .prev-next-button{
+  .prev-next-button {
     width: 80px;
     height: 80px;
   }
@@ -728,10 +665,9 @@ cursor: pointer;
     gap: 40px;
     padding: 16px 44px;
 
-
     align-self: stretch;
 
-    .infoCarrusel{
+    .infoCarrusel {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 40px;
@@ -746,16 +682,13 @@ cursor: pointer;
         gap: 10px;
         flex-shrink: 0;
         align-self: stretch;
-
       }
-  
-  
 
       .carouselExperiencias__textoItem {
         grid-column: span 4;
         display: flex;
         // width: 536px;
-  
+
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -763,11 +696,6 @@ cursor: pointer;
         flex-shrink: 0;
       }
     }
-
-
-
-
-
   }
 
   .round-bottom-item {
@@ -785,7 +713,7 @@ cursor: pointer;
 
     width: 80px;
     height: 80px;
-    background-color: rgba(29, 31, 29, 0.80);
+    background-color: rgba(29, 31, 29, 0.8);
   }
 
   .carouselExample-control-prev {
@@ -795,8 +723,4 @@ cursor: pointer;
   .carouselExample-control-next {
     right: 64px;
   }
-
-
-
-
 }

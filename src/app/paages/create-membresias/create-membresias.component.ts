@@ -29,10 +29,22 @@ export class CreateMembresiasComponent {
     id: 0,
     nombre: '',
     precio: 0,
-    descripcion: '',
     imagen: '',
-    estado: true,
-  };
+    entradas_ilimitadas: false,
+    descuento_alimentos_souvenirs: 0,
+    acceso_eventos: false,
+    descuento_tours: 0, 
+    experiencias_animales: false,
+    estacionamiento_preferencial: false,
+    detras_camaras: false,
+    recorrido_vip_gratuito: false,
+    programas_conservacion: false,
+    descuento_renta_espacios_eventos: 0,
+    precio_especial_invitados: 0,
+    regalo_bienvenida: false,
+    charlas_educativas: '',
+    estado: true
+  }
   membresiaForm!: FormGroup;
 
   onFileSelected(
