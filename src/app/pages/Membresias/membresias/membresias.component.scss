@@ -1,0 +1,98 @@
+header {
+  background-image: url("../../../../../public/img/Membresias/Hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 164px;
+  height: 100vh;
+  width: 100vw;
+  article {
+    display: flex;
+    grid-column: span 5;
+    padding: 0px 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 32px;
+    flex-shrink: 0;
+  }
+  .title,
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+  }
+  .description {
+    gap: 16px;
+  }
+}
+
+.beneficios {
+  padding: 40px 164px;
+  article {
+    display: flex;
+    padding: 40px;
+    align-items: flex-start;
+    gap: 40px;
+    align-self: stretch;
+    grid-column: 2/12;
+  }
+  .beneficios-descripcion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1 0 0;
+  }
+}
+
+main{
+  display: flex;
+  padding: 0 164px;
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 460px !important; // Evita que se reduzca el tamaño al desbordar
+    flex-shrink: 0; // Evita que los artículos se encojan al hacer overflow
+  }
+  .head {
+    display: flex;
+    padding: 30px 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+  img {
+    width: 56px;
+    height: 56px;
+    aspect-ratio: 1/1;
+  }
+  td{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+  padding: 0 16px;
+
+  }
+  .title2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .membresias {
+    display: flex;
+  overflow-x: scroll;
+
+  }
+}

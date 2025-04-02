@@ -1,24 +1,82 @@
 <app-header-dash-edit title="Editar membresia" subtitle="Edición de datos"></app-header-dash-edit>
 
-  <form [formGroup]="membresiaForm" class="formGuias">
-    <div class="items">
-      <h6 class="thin">Imagen</h6>
-      <input 
-        type="file" 
-        [style.backgroundImage]="membresia.imagen ? 'url(' + membresia.imagen + ')' : ''"
-        class="file-upload" 
-        (change)="onFileSelected($event, 'imagen')" 
-      >
-      <h6 class="thin">Título</h6>
-      <input class="dash80" type="text" formControlName="nombre" placeholder="Título">
-      
-      <h6 class="thin">Precio</h6>
-      <input type="number" class="dash80" formControlName="precio" placeholder="Precio">
-      
-      <h6 class="thin">Descripción</h6>
-      <textarea class="dash" formControlName="descripcion" placeholder="Descripción"></textarea>
-    </div>
+<form #membresiaForm="ngForm" class="formGuias">
+  <div class="items">
+    <h6 class="thin">Imagen</h6>
+    <input 
+      type="file" 
+      [style.backgroundImage]="membresia.imagen ? 'url(' + membresia.imagen + ')' : ''"
+      class="file-upload" 
+      (change)="onFileSelected($event, 'imagen')" 
+    >
+    <h6 class="thin">Título</h6>
+    <input class="dash80" type="text" name="nombre" [(ngModel)]="membresia.nombre" placeholder="Título" required>
     
-    <button class="formBtn" routerLink="/dashboard/membresias" (click)="actualizarMembresia($event) ">Modificar</button>
-  </form>
+    <h6 class="thin">Precio</h6>
+    <input type="number" class="dash80" name="precio" [(ngModel)]="membresia.precio" placeholder="Precio" required>
+    
+    <h6 class="thin">Beneficios</h6>
+    <div class="beneficios">
+     <ul>
+       <li>
+         <input type="checkbox" name="entradas_ilimitadas" [(ngModel)]="membresia.entradas_ilimitadas">
+         <p class="p1">Entradas ilimitadas al zoo</p>
+       </li>
+       <li>
+         <input type="checkbox"  [checked]="membresia.descuento_alimentos_souvenirs > 0" (change)="toggleDescuento('Souvenirs')">
+         <p class="p1">Descuento en alimentos y souvenirs</p>
+         <input type="number" [disabled]="!habilitarDescuentoSouvenirs" class="discount" min="0" max="90" name="descuento_alimentos_souvenirs" [(ngModel)]="membresia.descuento_alimentos_souvenirs"> %
+       </li>
+       <li>
+         <input type="checkbox" name="acceso_eventos" [(ngModel)]="membresia.acceso_eventos">
+         <p class="p1">Acceso a eventos especiales</p>
+       </li>
+       <li>
+         <input type="checkbox" [checked]="membresia.descuento_tours > 0" (change)="toggleDescuento('Tours')">
+         <p class="p1">Descuento en tours</p>
+         <input type="number" [disabled]="!habilitarDescuentoTours" class="discount" min="0" max="90" name="descuento_tours" [(ngModel)]="membresia.descuento_tours"> %
+       </li>
+       <li>
+         <input type="checkbox" name="experiencias_animales" [(ngModel)]="membresia.experiencias_animales">
+         <p class="p1">Experiencias interactivas con animales</p>
+       </li>
+       <li>
+         <input type="checkbox" name="estacionamiento_preferencial" [(ngModel)]="membresia.estacionamiento_preferencial">
+         <p class="p1">Estacionamiento preferencial</p>
+       </li>
+      </ul>
+     
+     <ul>
+        <li>
+          <input type="checkbox" name="detras_camaras" [(ngModel)]="membresia.detras_camaras">
+          <p class="p1">Acceso a zonas detras de camaras</p>
+        </li>
+        <li>
+          <input type="checkbox" name="recorrido_vip_gratuito" [(ngModel)]="membresia.recorrido_vip_gratuito">
+          <p class="p1">Recorrido VIP anual gratuito</p>
+        </li>
+       <li>
+         <input type="checkbox" name="programas_conservacion" [(ngModel)]="membresia.programas_conservacion">
+         <p class="p1">Participe de programas de conservación</p>
+       </li>
+       <li>
+         <input type="checkbox" [checked]="membresia.descuento_renta_espacios_eventos > 0" (change)="toggleDescuento('Espacio')">
+         <p class="p1">Descuento en renta de espacios para eventos</p>
+         <input type="number" [disabled]="!habilitarDescuentoRentaEspacios" class="discount" min="0" max="90" name="descuento_renta_espacios_eventos" [(ngModel)]="membresia.descuento_renta_espacios_eventos">
+       </li>
+       <li>
+         <input type="checkbox" name="charlas_educativas" [(ngModel)]="membresia.charlas_educativas">
+         <p class="p1">Acceso a charlas educativas</p>
+       </li>        
+     </ul>
+     
+    </div>
+    <li>
+     <input type="checkbox" [checked]="membresia.regalo_bienvenida != null " (change)="toggleDescuento('Regalo')">
+     <p class="p1">Regalo de bienvenida</p>
+    </li>
+     <input type="text" [disabled]="!habilitarRegalo" name="regalo_bienvenida" [(ngModel)]="membresia.regalo_bienvenida">
+  </div>
   
+  <button class="formBtn" (click)="actualizarMembresia($event)" routerLink="/dashboard/membresias">Modificar</button>
+</form>

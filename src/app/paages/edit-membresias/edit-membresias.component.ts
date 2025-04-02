@@ -1,44 +1,29 @@
 import { Component } from '@angular/core';
 import { HeaderDashEditComponent } from '../../Componentes/Admin/header-dash-edit/header-dash-edit.component';
 import { IMembresia } from '../../types/Membresia';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MembresiasService } from '../../Services/membresias.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-edit-membresias',
   standalone: true,
-  imports: [
-    HeaderDashEditComponent,
-    ReactiveFormsModule,
-    RouterLink
-  ],
+  imports: [HeaderDashEditComponent, FormsModule, RouterLink, CommonModule],
   templateUrl: './edit-membresias.component.html',
   styleUrl: './edit-membresias.component.scss',
 })
 export class EditMembresiasComponent {
   constructor(
     private membresiasService: MembresiasService,
-    private fb: FormBuilder,
     private activateRoute: ActivatedRoute
   ) {}
-  ngOnInit(): void {
-    this.membresiaForm = this.fb.group({
-      nombre: ['', Validators.required],
-      precio: [0, Validators.required],
-      descripcion: ['', Validators.required],
-      imagen: [null, Validators.required],
-    });
-    const routeParams = this.activateRoute.snapshot.paramMap;
-    const id: number = parseInt(routeParams.get('id')!);
 
-    this.getById(id);
-  }
+  habilitarDescuentoRentaEspacios: boolean = false;
+  habilitarDescuentoSouvenirs: boolean = false;
+  habilitarDescuentoTours: boolean = false;
+  habilitarRegalo: boolean = false;
+
   membresia: IMembresia = {
     id: 0,
     nombre: '',
@@ -47,7 +32,7 @@ export class EditMembresiasComponent {
     entradas_ilimitadas: false,
     descuento_alimentos_souvenirs: 0,
     acceso_eventos: false,
-    descuento_tours: 0, 
+    descuento_tours: 0,
     experiencias_animales: false,
     estacionamiento_preferencial: false,
     detras_camaras: false,
@@ -55,11 +40,53 @@ export class EditMembresiasComponent {
     programas_conservacion: false,
     descuento_renta_espacios_eventos: 0,
     precio_especial_invitados: 0,
-    regalo_bienvenida: false,
-    charlas_educativas: '',
-    estado: true
+    regalo_bienvenida: '',
+    charlas_educativas: false,
+    estado: true,
+  };
+
+  ngOnInit(): void {
+    // Inicializar estados de checkboxes
+    this.habilitarDescuentoRentaEspacios =
+      this.membresia.descuento_renta_espacios_eventos > 0;
+    this.habilitarDescuentoSouvenirs =
+      this.membresia.descuento_alimentos_souvenirs > 0;
+    this.habilitarDescuentoTours = this.membresia.descuento_tours > 0;
+    this.habilitarRegalo = this.membresia.regalo_bienvenida !== null;
+
+    // Obtener ID de la URL
+    const routeParams = this.activateRoute.snapshot.paramMap;
+    const id: number = parseInt(routeParams.get('id')!);
+    this.getById(id);
   }
-  membresiaForm!: FormGroup;
+
+  toggleDescuento(tipo: string) {
+    if (tipo === 'Souvenirs') {
+      this.habilitarDescuentoSouvenirs = !this.habilitarDescuentoSouvenirs;
+      if (!this.habilitarDescuentoSouvenirs) {
+        this.membresia.descuento_alimentos_souvenirs = 0;
+      }
+    }
+    if (tipo === 'Tours') {
+      this.habilitarDescuentoTours = !this.habilitarDescuentoTours;
+      if (!this.habilitarDescuentoTours) {
+        this.membresia.descuento_tours = 0;
+      }
+    }
+    if (tipo === 'Espacio') {
+      this.habilitarDescuentoRentaEspacios =
+        !this.habilitarDescuentoRentaEspacios;
+      if (!this.habilitarDescuentoRentaEspacios) {
+        this.membresia.descuento_renta_espacios_eventos = 0;
+      }
+    }
+    if (tipo === 'Regalo') {
+      this.habilitarRegalo = !this.habilitarRegalo;
+      if (!this.habilitarRegalo) {
+        this.membresia.regalo_bienvenida = '';
+      }
+    }
+  }
 
   onFileSelected(event: Event, property: keyof IMembresia): void {
     const file = (event.target as HTMLInputElement).files?.[0];
@@ -67,51 +94,37 @@ export class EditMembresiasComponent {
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
-        (this.membresia[property] as unknown as string) =
-          reader.result as string; // Actualiza la propiedad dinámica
-        const base64Image = reader.result as string;
-        this.membresiaForm.patchValue({ imagen: base64Image });
-        this.membresiaForm.get('imagen')?.updateValueAndValidity();
+        // Fix the type issue with a proper type assertion
+        (this.membresia as any)[property] = reader.result as string;
       };
       reader.readAsDataURL(file);
-    } else {
-      this.membresiaForm.patchValue({ imagen: null });
-      this.membresiaForm.get('imagen')?.setErrors({ required: true });
     }
   }
-  // onFileSelected(
-  //   event: Event,
-  //   input: string,
-  //   property: keyof IMembresia
-  // ): void {
-  //   const file = (event.target as HTMLInputElement).files?.[0];
-
-  //   if (file) {
-  //     const reader = new FileReader();
-  //     reader.onload = () => {
-  //       (this.membresia[property] as unknown as string) =
-  //         reader.result as string; // Actualiza la propiedad dinámica
-  //       this.membresiaForm.get(input)?.setValue(file);
-  //       this.membresiaForm.get(input)?.updateValueAndValidity();
-  //     };
-  //     reader.readAsDataURL(file);
-  //   } else {
-  //     (this.membresia[property] as unknown as string) = '';
-  //     this.membresiaForm.get(input)?.setErrors({ required: true });
-  //   }
-  // }
 
   getById(id: number): void {
     this.membresiasService.getById(id).subscribe({
       next: (membresia) => {
-        this.membresia = membresia;
-        this.membresiaForm.patchValue({
-          nombre: membresia.nombre,
-          precio: membresia.precio,
-          imagen: membresia.imagen,
-        });
+        // Convertir los valores booleanos correctamente
+        membresia.entradas_ilimitadas = membresia.entradas_ilimitadas;
+        membresia.acceso_eventos = membresia.acceso_eventos;
+        membresia.experiencias_animales = membresia.experiencias_animales;
+        membresia.estacionamiento_preferencial =
+        membresia.estacionamiento_preferencial;
+        membresia.detras_camaras = membresia.detras_camaras;
+        membresia.recorrido_vip_gratuito = membresia.recorrido_vip_gratuito;
+        membresia.programas_conservacion = membresia.programas_conservacion;
+        membresia.charlas_educativas = membresia.charlas_educativas;
 
-        console.log('Membresía cargada:', this.membresiaForm.value);
+        // Asignar la membresia al modelo
+        this.membresia = membresia;
+
+        // Actualizar estados de los checkboxes adicionales
+        this.habilitarDescuentoSouvenirs = this.membresia.descuento_alimentos_souvenirs > 0 ? true : false;
+        this.habilitarDescuentoTours = this.membresia.descuento_tours > 0 ? true : false;
+        this.habilitarDescuentoRentaEspacios = this.membresia.descuento_renta_espacios_eventos > 0 ? true : false;
+        this.habilitarRegalo = this.membresia.regalo_bienvenida !== null ? true : false;
+
+        console.log('Membresía cargada:', this.membresia);
       },
       error: (err) => {
         alert(
@@ -124,21 +137,12 @@ export class EditMembresiasComponent {
 
   actualizarMembresia(event: Event): void {
     event.preventDefault();
-    if (this.membresiaForm.invalid) {
-      alert('⚠️ Completa todos los campos obligatorios.');
-      return;
-    }
 
-    // 🔄 Fusiona datos actualizados del formulario con la membresía
-    const updatedMembresia: IMembresia = {
-      ...this.membresia,
-      ...this.membresiaForm.value, // Usa los valores correctos
-    };
+    console.log('DATA ENVIADA:', this.membresia);
 
-    console.log('DATA ENVIADA:', updatedMembresia);
-
+    if(this.membresia.regalo_bienvenida == null) this.membresia.regalo_bienvenida = '';
     this.membresiasService
-      .update(updatedMembresia, updatedMembresia.id!)
+      .update(this.membresia, this.membresia.id!)
       .subscribe({
         next: () => {
           alert('✅ Membresía editada correctamente.');

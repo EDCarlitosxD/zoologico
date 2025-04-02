@@ -36,6 +36,8 @@ import { DashboardMembresiasComponent } from "./pages/dashboard-membresias/dashb
 import { CreateMembresiasComponent } from "./paages/create-membresias/create-membresias.component";
 import { EditMembresiasComponent } from "./paages/edit-membresias/edit-membresias.component";
 import { MembresiaHomeComponent } from "./Componentes/home/membresia-home/membresia-home.component";
+import { MembresiaActiveComponent } from "./Componentes/Membresias/membresia-active/membresia-active.component";
+import { MembresiasComponent } from "./pages/Membresias/membresias/membresias.component";
 
 export const routes: Routes = [
   { path: 'contactanos', component: ContactoComponent }, //A PIXEL✅✅✅,
@@ -126,7 +128,7 @@ export const routes: Routes = [
 
 
 
-  { path: 'meaa', component: MembresiaHomeComponent },
+  { path: 'membresias', component: MembresiasComponent },
   //{ path: '404', component: NotFoundComponent },
   //{ path: '**', component: NotFoundComponent },
 ];

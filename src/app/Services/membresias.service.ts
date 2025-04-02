@@ -18,8 +18,12 @@ export class MembresiasService {
   public getAll() {
     return this.http.get<IMembresia[]>(`${environment.API_URL}/membresias`);
   }
-  public getById(id: number | null | undefined) {
-    return this.http.get<IMembresia>(`${environment.API_URL}/membresias/${id}`);
+  public getActive() {
+    return this.http.get<IMembresia[]>(`${environment.API_URL}/membresias?estado=1`);
+  }
+   public  getById(id: number | null | undefined) {
+     return  this.http.get<IMembresia>(`${environment.API_URL}/membresias/${id}`);
+    console.log(id);
   }
   public create(membresia: IMembresia) {
     return this.http.post<IMembresia>(

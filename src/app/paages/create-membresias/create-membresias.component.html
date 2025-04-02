@@ -14,9 +14,88 @@
       
       <h6 class="thin">Titulo</h6>
      <input class="dash80" type="text" [(ngModel)]="membresia.nombre" [value]="membresia.nombre" name="Nombre" id="Nombre" autofocus placeholder="Título">
-      <h6 class="thin">Precio</h6>
+      <h6 class="thin">Precio mensual</h6>
      <input type="number" class="dash80" [(ngModel)]="membresia.precio" [value]="membresia.precio" name="Precio" id="Precio" placeholder="Precio">
-     <h6 class="thin">Descripción</h6>
+     <h6 class="thin">Beneficios</h6>
+     <div class="beneficios">
+      <ul>
+        <li>
+          <input type="checkbox" [(ngModel)]="membresia.entradas_ilimitadas" name="entradasIlimitadas">
+          <p class="p1">Entradas ilimitadas al zoo</p>
+        </li>
+        <li>
+          <input type="checkbox" [(ngModel)]="habilitarDescuentoSouvenirs" (change)="toggleDescuento('Souvenirs')">
+          <p class="p1">Descuento en alimentos y souvenirs</p>
+          
+          <input 
+            type="number" 
+            class="discount" 
+            min="0" 
+            max="90" 
+            [disabled]="!habilitarDescuentoSouvenirs" 
+            name="descuento_alimentos_souvenirs"
+            [(ngModel)]="membresia.descuento_alimentos_souvenirs">
+            %
+        </li>
+        
+        <li>
+          <input type="checkbox" [(ngModel)]="membresia.acceso_eventos" name="acceso_eventos">
+          <p class="p1">Acceso a eventos especiales</p>
+        </li>
+        <li>
+          <input type="checkbox" [(ngModel)]="habilitarDescuentoTours" (change)="toggleDescuento('Tours')">
+          <p class="p1">Descuento en tours</p>
+          <input type="number" class="discount" min="0" max="90" [disabled]="!habilitarDescuentoTours" [(ngModel)]="membresia.descuento_tours"  name="descuento_tours"> %
+        </li>
+        <li>
+          <input type="checkbox" [(ngModel)]="membresia.experiencias_animales" name="experiencias_animales">
+          <p class="p1">Experiencias interactivas con animales</p>
+        </li>
+        <li>
+          <input type="checkbox" [(ngModel)]="membresia.estacionamiento_preferencial" name="estacionamiento_preferencial">
+          <p class="p1">Estacionamiento preferencial</p>
+        </li>
+       </ul>
+      
+      <ul>
+         <li>
+           <input type="checkbox" [(ngModel)]="membresia.detras_camaras" name="detras_camaras">
+           <p class="p1">Acceso a zonas detras de camaras</p>
+         </li>
+         <li>
+           <input type="checkbox" [(ngModel)]="membresia.recorrido_vip_gratuito" name="recorrido_vip_gratuito">
+           <p class="p1">Recorrido VIP anual gratuito</p>
+         </li>
+        <li>
+          <input type="checkbox" [(ngModel)]="membresia.programas_conservacion" name="programas_conservacion">
+          <p class="p1">Participe de programas de conservación</p>
+        </li>
+        <li>
+          <input type="checkbox" [(ngModel)]="habilitarDescuentoRentaEspacios" (change)="toggleDescuento('Espacio')">
+          <p class="p1">Descuento en renta de espacios para eventos</p>
+        
+          <!-- Input de número habilitado solo cuando el checkbox está marcado -->
+          <input 
+            type="number" 
+            class="discount" 
+            min="0" 
+            max="90" 
+            [(ngModel)]="membresia.descuento_renta_espacios_eventos" 
+            name="descuentoRenta"
+            [disabled]="!habilitarDescuentoRentaEspacios">%
+        </li>
+        <li>
+          <input type="checkbox" [(ngModel)]="membresia.charlas_educativas" name="charlas_educativas">
+          <p class="p1">Acceso a charlas educativas</p>
+        </li>        
+      </ul>
+      
+     </div>
+     <li>
+      <input type="checkbox" [(ngModel)]="habilitarRegalo" (change)="toggleDescuento('Regalo')">
+      <p class="p1">Regalo de bienvenida</p>
+     </li>
+      <input type="text" [(ngModel)]="membresia.regalo_bienvenida" [disabled]="!habilitarRegalo" name="regalo_bienvenida">
     </div>
-    <button class="formBtn" (click)="agregarMembresia($event)" routerLink="/dashboard/membresias">Modificar</button>
+    <button class="formBtn" (click)="agregarMembresia($event)" routerLink="/dashboard/membresias">Agregar</button>
   </form>

@@ -28,8 +28,8 @@ export class MembresiaHomeComponent {
     programas_conservacion: false,
     descuento_renta_espacios_eventos: 0,
     precio_especial_invitados: 0,
-    regalo_bienvenida: false,
-    charlas_educativas: '',
+    regalo_bienvenida: '',
+    charlas_educativas: false,
     estado: true
   }
   constructor(private membresiasService: MembresiasService) { }
