@@ -38,6 +38,8 @@ import { EditMembresiasComponent } from "./paages/edit-membresias/edit-membresia
 import { MembresiaHomeComponent } from "./Componentes/home/membresia-home/membresia-home.component";
 import { MembresiaActiveComponent } from "./Componentes/Membresias/membresia-active/membresia-active.component";
 import { MembresiasComponent } from "./pages/Membresias/membresias/membresias.component";
+import { PagarMembresiaComponent } from "./pages/Membresias/pagar-membresia/pagar-membresia.component";
+import { GraciasMembresiaComponent } from "./pages/Membresias/gracias-membresia/gracias-membresia.component";
 
 export const routes: Routes = [
   { path: 'contactanos', component: ContactoComponent }, //A PIXEL✅✅✅,
@@ -119,14 +121,9 @@ export const routes: Routes = [
   { path: 'dashboard/tours/guias/create', component: AddGuiaComponent , canActivate: [adminGuard]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [adminGuard],},
   { path: 'pruebas', component: PruebaComponent},
-
-
-
-
-
-
-
-
+  
+  { path: 'membresias/pagar', component: PagarMembresiaComponent},
+  { path: 'membresias/pagar/gracias', component: GraciasMembresiaComponent},
 
   { path: 'membresias', component: MembresiasComponent },
   //{ path: '404', component: NotFoundComponent },

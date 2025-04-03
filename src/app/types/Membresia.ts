@@ -22,6 +22,7 @@ export interface IMembresia {
   }
   
   export interface IMembresiaCard {
+    id?: number | null,
     nombre: string | null,
     precio: number,
     imagen: string,
@@ -38,4 +39,19 @@ export interface IMembresia {
     precio_especial_invitados: number,
     regalo_bienvenida: string | null,
     charlas_educativas: boolean,
+  }
+
+  export interface IMembresiaShort {
+    id?: number | null,
+    nombre: string | null,
+    precio: number,
+    imagen: string,
+  }
+
+  export interface IMembresiaUser {
+    id_membresia: number | null | undefined,
+    id_usuario: number,
+    meses: number,
+    precio_total: number,
+    img: string | null
   }

@@ -3,21 +3,6 @@
     <div class="form text-center">
       <h3 class="thin title">Elíge el Monto de tu Donación</h3>
 
-    <div class="montos">
-      <input (click)="changePrecio(50)" type="radio" class="a" id="option1" name="monto" value="1" />
-      <label for="option1" class="monto">$50</label>
-
-      <input (click)="changePrecio(100)" type="radio" class="a" id="option2" name="monto" value="2" />
-      <label for="option2" class="monto">$100</label>
-
-      <input  (click)="changePrecio(150)" type="radio" class="a" id="option3" name="monto" value="3" />
-      <label for="option3" class="monto">$150</label>
-
-      <input (click)="changePrecio(200)" type="radio" class="a" id="option4" name="monto" value="4" />
-      <label for="option4" class="monto">$200</label>
-    </div>
-
-
       <h6 class="thin">O ingresa la cantidad que deseas donar</h6>
       <input [value]="donacion.monto" [(ngModel)]="donacion.monto" type="text" placeholder="Ingresa la cantidad para donar">
 

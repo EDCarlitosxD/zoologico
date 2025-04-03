@@ -2,16 +2,18 @@ import { Component, Input } from '@angular/core';
 import { IMembresia, IMembresiaCard } from '../../../types/Membresia';
 import { MembresiasService } from '../../../Services/membresias.service';
 import { NgIf } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-membresia-active',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, RouterLink],
   templateUrl: './membresia-active.component.html',
   styleUrl: './membresia-active.component.scss'
 })
 export class MembresiaActiveComponent {
   @Input() m: IMembresiaCard = {
+    id: 0,
     nombre: '',
     precio: 0,
     imagen: '',
@@ -29,4 +31,11 @@ export class MembresiaActiveComponent {
     regalo_bienvenida: '',
     charlas_educativas: false,
   };
+  constructor(private membresiaService: MembresiasService, private router: Router) {}
+  comprarMembresia(membresia: any) {
+    this.membresiaService.setMembresia(membresia);
+    console.log(membresia);
+    this.router.navigate(['/membresias/pagar']); // ✅ Correcto
+
+  }
 }
