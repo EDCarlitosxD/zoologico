@@ -127,5 +127,5 @@ export const routes: Routes = [
 
   { path: 'membresias', component: MembresiasComponent },
   //{ path: '404', component: NotFoundComponent },
-  //{ path: '**', component: NotFoundComponent },
+  { path: '**', component: HomeComponent },
 ];
