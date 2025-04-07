@@ -104,7 +104,7 @@ export class TourComponentComponent {
   horarioValidate = false
 
 
-  minus() {
+  minus(): void| number {
     if (this.reserva.cantidad === 0) {
       return;
     }
