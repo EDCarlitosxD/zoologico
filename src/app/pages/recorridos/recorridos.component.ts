@@ -26,10 +26,11 @@ import { CommonModule } from '@angular/common';
 import { CarritoService } from '../../Services/carrito.service';
 import { Subscription } from 'rxjs';
 import { IReserva, IReservaInformacion } from '../../types/Reserva';
+import { CarritoComponent } from '../../Componentes/carrito/carrito.component';
 @Component({
   selector: 'app-recorridos',
   standalone: true,
-  imports: [NgFor, RouterLink, NavBarComponent, FooterComponent, CommonModule, IndicadorComponent, AddBoletosComponent, TourComponentComponent, BolDisponiblesComponent, WarningComponent],
+  imports: [NgFor, RouterLink, NavBarComponent,FooterComponent, CommonModule, IndicadorComponent, AddBoletosComponent, TourComponentComponent, BolDisponiblesComponent, WarningComponent],
   templateUrl: './recorridos.component.html',
   styleUrl: './recorridos.component.scss'
 })

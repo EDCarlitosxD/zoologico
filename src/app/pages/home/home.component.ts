@@ -11,6 +11,7 @@ import { RecorridosModalComponent } from "../../Componentes/modals/recorridos-mo
 import { BolDisponiblesComponent } from "../../Componentes/bol-disponibles/bol-disponibles.component";
 import { AnimalEnum } from '../../types/Animales';
 import { MembresiaHomeComponent } from "../../Componentes/home/membresia-home/membresia-home.component";
+import { CarritoComponent } from '../../Componentes/carrito/carrito.component';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +23,7 @@ import { MembresiaHomeComponent } from "../../Componentes/home/membresia-home/me
     FooterComponent,
     NavBarComponent,
     SliderComponent,
-    ExperienciasComponent, RecorridosModalComponent, BolDisponiblesComponent, MembresiaHomeComponent],
+    ExperienciasComponent, RecorridosModalComponent, BolDisponiblesComponent, MembresiaHomeComponent,CarritoComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
