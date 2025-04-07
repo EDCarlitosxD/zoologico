@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { CarritoComponent } from './Componentes/carrito/carrito.component';
 //COMPONENTES
 
 //PAGES
@@ -8,7 +9,7 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,CarritoComponent],
 
 
 
