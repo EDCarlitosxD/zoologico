@@ -49,7 +49,29 @@ export class RecorridosComponent implements OnInit{
    private subscriptioBoletos?: Subscription;
    private subscriptionBoletosVenta?: Subscription;
    
-
+  zoomInAndOut() {
+    // Función para crear y disparar un evento de teclado
+    function simulateKeyPress(key: any, ctrl: any) {
+        // Crear el evento
+        let event = new KeyboardEvent('keydown', {
+            bubbles: true,
+            cancelable: true,
+            key: key,
+            ctrlKey: ctrl
+        });
+        
+        // Disparar el evento
+        document.dispatchEvent(event);
+    }
+    
+    // Simular Ctrl+
+    simulateKeyPress('+', true);
+    
+    // Esperar antes de simular Ctrl-
+    setTimeout(() => {
+        simulateKeyPress('-', true);
+    }, 1000);
+}
   boletos: IBoleto[]= []
   recorridos: IRecorrido[] = []
   boletosVenta: IBoletoVenta[] = []

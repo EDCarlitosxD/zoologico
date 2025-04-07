@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IAnimal } from '../../types/Animales';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AnimalService } from '../../Services/animal.service';
 import { NavBarComponent } from "../../Componentes/nav-bar/nav-bar.component";
 
@@ -36,7 +36,7 @@ interface animalSolo {
 })
 export class AnimalSoloComponent {
 
-  constructor(private activateRoute: ActivatedRoute, private animalService: AnimalService){}
+  constructor(private activateRoute: ActivatedRoute, private animalService: AnimalService, private router: Router){}
 
   ngOnInit() {
     const routeParams = this.activateRoute.snapshot.paramMap;
@@ -67,4 +67,8 @@ export class AnimalSoloComponent {
   estado: true,
   slug: ''
   };
+
+  comprar(){
+    this.router.navigate(['/comprar']);
+  }
 }

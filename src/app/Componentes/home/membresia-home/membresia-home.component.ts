@@ -1,11 +1,12 @@
 import { MembresiasService } from './../../../Services/membresias.service';
 import { Component, Input } from '@angular/core';
 import { IMembresia } from '../../../types/Membresia';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-membresia-home',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './membresia-home.component.html',
   styleUrl: './membresia-home.component.scss'
 })

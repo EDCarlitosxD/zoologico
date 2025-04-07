@@ -42,6 +42,7 @@
     display: flex;
     align-items: center;
     gap: 24px;
+    width: 100%;
     .imageBol{
         width: 320px;
         align-self: stretch;
@@ -98,9 +99,24 @@
     border-radius: 8px;
     background: var(--Blanco-800, #E7ECE3);
 }
-.collapse{
+.collapse {
     padding-top: 20px;
-}
+    width: 100%;
+    
+    &.show {
+      // Force repaint/reflow when shown
+      animation: fadeIn 0.1s;
+    }
+  }
+  
+  // Make sure this won't interfere with Bootstrap collapsing
+  .collapse.show {
+    display: block; // This should be handled by Bootstrap
+  }
+  @keyframes fadeIn {
+    from { opacity: 0.99; }
+    to { opacity: 1; }
+  }
 .content{
     display: flex;
     width: 100%;
@@ -149,11 +165,11 @@
     align-items: center;
     gap: 40px;
 }
-.calendario{
-    width: 450px;
+.calendario {
+    width: 100%; /* Instead of fixed 450px */
     height: 450px;
-    // background-color: #1D1F1D;
-}
+    min-width: 300px; /* Ensure minimum width */
+  }
 
 .inicio-termino{
     display: grid;
@@ -186,6 +202,7 @@
 }
 
 @media (max-width: 1200px) {
+
     .calendario{
         width: 283px;
         height: 282px;
@@ -215,9 +232,11 @@
     }
     .collapse{
         width: 348px;
+        margin: auto;
     }
     .tourContainer{
         all: unset;
+        margin: auto;
         width: 348px;
         display: flex;
         padding-bottom: 16px;

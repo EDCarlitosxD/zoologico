@@ -2,7 +2,7 @@
 
 .membresiasHome {
   row-gap: 24px;
-  margin: 40px 164px;
+  margin: 24px 41px;
 
   .como-unirte {
     display: flex;
@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     gap: 16px;
-    grid-column: span 6;
+    grid-column: span 2;
     flex: 1 0 0;
     .step {
       display: flex;
@@ -21,7 +21,7 @@
     }
   }
   .membresiaHome__imagen {
-    grid-column: span 6;
+    grid-column: span 2;
     width: 100%; // ✅ La imagen se adapta al contenedor
     max-width: 100%; // ✅ Evita que crezca demasiado
     height: auto; // ✅ Mantiene la proporción natural
@@ -31,8 +31,11 @@
   }
 }
 .membresia {
-  grid-column: span 4;
+  grid-column: span 2;
 }
+
+
+
 
 .sobreNosotros {
   margin-top: 32px;
@@ -722,5 +725,51 @@
 
   .carouselExample-control-next {
     right: 64px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .membresiasHome {
+    row-gap: 24px;
+    margin: 40px 164px;
+  
+    .como-unirte {
+      display: flex;
+      padding: 20px 24px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      grid-column: span 6;
+      flex: 1 0 0;
+      .step {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        align-self: stretch;
+      }
+    }
+    .membresiaHome__imagen {
+      grid-column: span 6;
+      width: 100%; // ✅ La imagen se adapta al contenedor
+      max-width: 100%; // ✅ Evita que crezca demasiado
+      height: auto; // ✅ Mantiene la proporción natural
+      aspect-ratio: 776/553;
+      margin: auto;
+      border-radius: 40px;
+    }
+  }
+  .membresia {
+    grid-column: span 4;
   }
 }
