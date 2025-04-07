@@ -64,6 +64,7 @@ export class TourComponentComponent {
 
   @ViewChild('calendarRecorrido') calendarComponent!: FullCalendarComponent;
 
+  
 
   events: EventSourceInput = [];
   dataApi: EventosPorDia = {}

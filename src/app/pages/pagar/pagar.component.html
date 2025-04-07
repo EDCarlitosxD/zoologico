@@ -76,8 +76,21 @@
         </div>
 
 
-
-        <h6>Total: ${{totalBoletos + totalRecorridos}}</h6>
+        <div class="discount-info" *ngIf="discountsApplied">
+          <div class="discount-details">
+            <p class="thin">Descuento de membresía ({{membershipDiscount}}%)</p>
+            <p class="bold text-success">- ${{totalDescuento.toFixed(2)}}</p>
+          </div>
+          <div class="subtotal">
+            <p class="thin">Subtotal (sin descuento):</p>
+            <p>${{(totalBoletos + totalRecorridosSinDescuento).toFixed(2)}}</p>
+          </div>
+        </div>
+        
+        <h6 class="total-amount">
+          Total: ${{totalBoletos + totalRecorridos}}
+          <span *ngIf="discountsApplied" class="discount-badge">¡Descuento aplicado!</span>
+        </h6>
 
         <!-- TARJETA -->
         <div class="metodoPago" data-bs-toggle="modal" data-bs-target="#metodoDePago">
@@ -105,7 +118,7 @@
         </div>
 
 
-        <button (click)="comprar()" routerLink="loading">Pagar</button>
+        <button (click)="comprar()">Pagar</button>
     </div>
 </section>
 

@@ -21,7 +21,12 @@ export class AuthService {
       { observe: 'response' }
     );
   }
-
+  getUserMembership(userId: number): Observable<HttpResponse<any>> {
+    return this.http.get<any>(
+      `${environment.API_URL}/user/membership/${userId}`,
+      { observe: 'response' }
+    );
+  }
   isLoggedIn(): boolean {
     return !!localStorage.getItem('userDetails'); // Verifica si hay un token guardado
   }

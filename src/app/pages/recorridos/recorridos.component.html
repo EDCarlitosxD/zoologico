@@ -37,7 +37,7 @@
         </div>
 
         @for (recorrido of recorridos; track $index) {
-          <app-tour-component [tour]="recorrido"></app-tour-component>
+          <app-tour-component [tour]="recorrido" class="w-100" (click)="zoomInAndOut()"></app-tour-component>
         }
 
 

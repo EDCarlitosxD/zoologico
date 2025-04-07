@@ -218,7 +218,7 @@ background: var(--Primario-Auxiliar-700, #8BAC3F);
         flex-direction: column;
         gap: 16px;
         flex-shrink: 0;
-        background-image: url(../../../../public/img/pages/Animales/heroAnimalesMobile.png);
+        background-image: url(../../../../public/img/pages/Animales/heroAnimalesMobile.webp);
     background-position: center;
         .anHeroTxt{
             grid-column: span 2;
@@ -403,7 +403,7 @@ background: var(--Primario-Auxiliar-700, #8BAC3F);
         grid-template-columns: repeat(12, 1fr);
         gap: 32px;
         padding: 0 164px;
-        background-image: url(../../../../public/img/pages/Animales/hero.png);
+        background-image: url(../../../../public/img/pages/Animales/hero.webp);
         height: 1080px;
         background-repeat: no-repeat;
         background-size: cover;

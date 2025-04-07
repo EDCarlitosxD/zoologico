@@ -51,28 +51,48 @@ togglePassword() {
   errors: string[] = [];
 
 
-    loginPeticion() {
-    this.authService.login(this.loginForm).pipe(catchError((error: HttpErrorResponse) => {
+// ANGULAR (AL HACER CLICK AL BOTON)
+loginPeticion() {
+  this.authService.login(this.loginForm).pipe(
+    catchError((error: HttpErrorResponse) => {
       this.errors = error.error.errors
       console.log(error);
       console.log(this.errors);
       return of(null);
     })
-    ).subscribe(data => {
-      if (data) {
-        console.log(data);
-        localStorage.setItem("userDetails",JSON.stringify(data.body))
+  ).subscribe(data => {
+    if (data) {
+      console.log(data);
+      
+      // Después de login exitoso, obtener información de membresía
+      this.authService.getUserMembership(data.body!.user.id).pipe(
+        catchError((error: HttpErrorResponse) => {
+          console.log('Error al obtener membresía:', error);
+          // Si hay error, guardamos los datos del usuario sin membresía
+          const userData = {
+            ...data.body,
+            membership: null
+          };
+          localStorage.setItem("userDetails", JSON.stringify(userData));
+          return of(null);
+        })
+      ).subscribe(membershipData => {
+        // Combinar los datos del usuario con los datos de membresía
+        const userData = {
+          ...data.body, 
+          membership: membershipData?.body || null
+        };
+        
+        // Guardar en localStorage
+        localStorage.setItem("userDetails", JSON.stringify(userData));
+        
         setTimeout(() => {
           window.location.href = '/';
         }, 500);
         alert('Bienvenido');
-
-        // this.router.navigate([this.previosRoute.getPreviousUrl()]);
-      }
-    })
-
-
-
-  }
+      });
+    }
+  });
+}
 
 }

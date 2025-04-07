@@ -3,6 +3,7 @@ import { IMembresia, IMembresiaCard } from '../../../types/Membresia';
 import { MembresiasService } from '../../../Services/membresias.service';
 import { NgIf } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
+import { getUserDetails } from '../../../utils/getUserDetails';
 
 @Component({
   selector: 'app-membresia-active',
@@ -33,9 +34,12 @@ export class MembresiaActiveComponent {
   };
   constructor(private membresiaService: MembresiasService, private router: Router) {}
   comprarMembresia(membresia: any) {
+    if(!getUserDetails()){
+      alert('Error al comprar la membresia, necesitas iniciar sesion para proceder  ');
+      return
+    }
     this.membresiaService.setMembresia(membresia);
     console.log(membresia);
     this.router.navigate(['/membresias/pagar']); // ✅ Correcto
-
   }
 }

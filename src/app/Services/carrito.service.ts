@@ -213,4 +213,97 @@ export class CarritoService {
   }
 
 
+
+
+  private _tours: any[] = [];
+  private _boletosVenta: any[] = [];
+  private _cantidadTotal = new BehaviorSubject<number>(0);
+  private _precioTotal = new BehaviorSubject<number>(0);
+
+  // Getter para tours con descuento aplicado
+  get tourss() {
+    // Aplicar descuento de membresía si existe
+    return this.aplicarDescuentoMembresia(this._tours);
+  }
+
+  // Getter para los boletos originales
+  get boletosVentaa() {
+    return this._boletosVenta;
+  }
+
+  get cantidadTotal() {
+    return this._cantidadTotal.asObservable();
+  }
+
+  get precioTotal() {
+    return this._precioTotal.asObservable();
+  }
+
+  // Método para aplicar descuento de membresías
+  private aplicarDescuentoMembresia(tours: any[]): any[] {
+    // Obtener datos del usuario y verificar si tiene membresía
+    const userDetails = JSON.parse(localStorage.getItem('userDetails') || '{}');
+    const membership = userDetails?.membership?.membershipDetails;
+    
+    // Si no hay membresía o no hay descuento de tours, devolver los tours sin cambios
+    if (!membership || !membership.descuento_tours || membership.descuento_tours <= 0) {
+      return tours;
+    }
+
+    // Aplicar descuento a cada tour
+    return tours.map(tour => {
+      // Calcular el precio con descuento
+      const descuentoPorcentaje = membership.descuento_tours;
+      const precioOriginal = tour.precio;
+      const descuento = (precioOriginal * descuentoPorcentaje) / 100;
+      const precioConDescuento = precioOriginal - descuento;
+      
+      // Devolver el tour con el precio actualizado y la información del descuento
+      return {
+        ...tour,
+        precioOriginal: precioOriginal, // Guardar precio original para referencia
+        precio: precioConDescuento, // Actualizar el precio con descuento
+        descuentoAplicado: {
+          porcentaje: descuentoPorcentaje,
+          valorDescuento: descuento,
+          tipoMembresia: membership.tipo_membresia
+        }
+      };
+    });
+  }
+
+  // Método para calcular el total general (con descuentos aplicados)
+  calcularTotal() {
+    // Calcular total de boletos
+    const totalBoletos = this._boletosVenta.reduce((total, boleto) => {
+      return total + (boleto.precio * boleto.cantidad);
+    }, 0);
+    
+    // Calcular total de tours (con descuento si aplica)
+    const toursConDescuento = this.tourss; // Ya tiene los descuentos aplicados
+    const totalTours = toursConDescuento.reduce((total, tour) => {
+      return total + (tour.precio * tour.cantidad);
+    }, 0);
+    
+    // Calcular cantidad total de items
+    const cantidadItems = this._boletosVenta.reduce((total, boleto) => {
+      return total + boleto.cantidad;
+    }, 0) + this._tours.reduce((total, tour) => {
+      return total + tour.cantidad;
+    }, 0);
+    
+    this._cantidadTotal.next(cantidadItems);
+    this._precioTotal.next(totalBoletos + totalTours);
+  }
+
+  // Resto de métodos del servicio...
+  // ...
+
+  clearCarritoo() {
+    this._tours = [];
+    this._boletosVenta = [];
+    this._cantidadTotal.next(0);
+    this._precioTotal.next(0);
+  }
+
 }
