@@ -6,11 +6,12 @@ import { CargandoComponent } from "../../../Componentes/cargando/cargando.compon
 import { NgFor, NgIf } from '@angular/common';
 import { NavBarComponent } from "../../../Componentes/nav-bar/nav-bar.component";
 import { FooterComponent } from "../../../Componentes/footer/footer.component";
+import { CarritoComponent } from '../../../Componentes/carrito/carrito.component';
 
 @Component({
   selector: 'app-membresias',
   standalone: true,
-  imports: [MembresiaActiveComponent, CargandoComponent, NgFor, NgIf, NavBarComponent, FooterComponent],
+  imports: [MembresiaActiveComponent, CargandoComponent, NgFor, NgIf, NavBarComponent, FooterComponent, CarritoComponent],
   templateUrl: './membresias.component.html',
   styleUrl: './membresias.component.scss'
 })

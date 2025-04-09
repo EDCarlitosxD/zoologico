@@ -7,11 +7,12 @@ import { IAnimalCard } from '../../types/Animales';
 import { CommonModule } from '@angular/common';
 import { IPagination } from '../../types/Pagination';
 import { FormsModule } from '@angular/forms';
+import { CarritoComponent } from '../../Componentes/carrito/carrito.component';
 
 @Component({
   selector: 'app-animales',
   standalone: true,
-  imports: [AnimalCardComponent, NavBarComponent, FooterComponent, FormsModule, CommonModule],
+  imports: [AnimalCardComponent, NavBarComponent, FooterComponent, FormsModule, CommonModule,CarritoComponent],
   templateUrl: './animales.component.html',
   styleUrl: './animales.component.scss'
 })

@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms'
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ContactoService } from '../../Service/contacto.service';
+import { CarritoComponent } from '../../Componentes/carrito/carrito.component';
 
 export interface IFormContacto{
   nombre: string,
@@ -16,7 +17,7 @@ export interface IFormContacto{
 @Component({
   selector: 'app-contacto',
   standalone: true,
-  imports: [NavBarComponent, FooterComponent, FormsModule, CommonModule],
+  imports: [NavBarComponent, FooterComponent, FormsModule, CommonModule,CarritoComponent],
   templateUrl: './contacto.component.html',
   styleUrl: './contacto.component.scss'
 })

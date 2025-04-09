@@ -73,6 +73,8 @@ export class MembresiasService {
 
       this.membresiaSeleccionada.precio_total = membresia.precio;
       console.log(this.membresiaSeleccionada);
+
+      localStorage.setItem('membresia-seleccionada', JSON.stringify(membresia));
       return this.membresiaSeleccionada;
     }
 
@@ -85,6 +87,11 @@ export class MembresiasService {
   
     getMembresia() {
       console.log("GET MEMBRESIA", this.membresiaSeleccionada);
+
+      console.log(localStorage.getItem('membresia-seleccionada'));
+      
+      this.setMembresia(JSON.parse(localStorage.getItem('membresia-seleccionada')))
+
       return this.membresiaSeleccionada;
     }
 }
