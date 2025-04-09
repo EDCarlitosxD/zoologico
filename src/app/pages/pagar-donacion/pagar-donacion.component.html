@@ -47,8 +47,8 @@
         <form action="">
 
 
-            <div class="seleccionar-tarjeta">
-              <div class="seleccionar-tarjeta" *ngFor="let tarjeta of tarjetas">
+            <div style="display: flex; flex-direction: column; justify-content: start; align-items: start;" class="seleccionar-tarjeta">
+              <div  class="seleccionar-tarjeta" *ngFor="let tarjeta of tarjetas">
                 <input [(ngModel)]="tarjetaSeleccionada" [value]="tarjeta" type="radio" id="visa" name="visa" >
                 <div class="tarjeta">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="22" viewBox="0 0 32 22" fill="none">
