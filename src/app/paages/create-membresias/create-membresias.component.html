@@ -24,7 +24,7 @@
           <p class="p1">Entradas ilimitadas al zoo</p>
         </li>
         <li>
-          <input type="checkbox" [(ngModel)]="habilitarDescuentoSouvenirs" (change)="toggleDescuento('Souvenirs')">
+          <input type="checkbox" [checked]="habilitarDescuentoSouvenirs" (change)="toggleDescuento('Souvenirs')">
           <p class="p1">Descuento en alimentos y souvenirs</p>
           
           <input 
@@ -43,7 +43,7 @@
           <p class="p1">Acceso a eventos especiales</p>
         </li>
         <li>
-          <input type="checkbox" [(ngModel)]="habilitarDescuentoTours" (change)="toggleDescuento('Tours')">
+          <input type="checkbox" [checked]="habilitarDescuentoTours" (change)="toggleDescuento('Tours')">
           <p class="p1">Descuento en tours</p>
           <input type="number" class="discount" min="0" max="90" [disabled]="!habilitarDescuentoTours" [(ngModel)]="membresia.descuento_tours"  name="descuento_tours"> %
         </li>
@@ -71,7 +71,7 @@
           <p class="p1">Participe de programas de conservación</p>
         </li>
         <li>
-          <input type="checkbox" [(ngModel)]="habilitarDescuentoRentaEspacios" (change)="toggleDescuento('Espacio')">
+          <input type="checkbox" [checked]="habilitarDescuentoRentaEspacios" (change)="toggleDescuento('Espacio')">
           <p class="p1">Descuento en renta de espacios para eventos</p>
         
           <!-- Input de número habilitado solo cuando el checkbox está marcado -->
