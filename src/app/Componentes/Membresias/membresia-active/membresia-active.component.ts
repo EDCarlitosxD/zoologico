@@ -39,7 +39,6 @@ export class MembresiaActiveComponent {
       return
     }
     this.membresiaService.setMembresia(membresia);
-    console.log(membresia);
     this.router.navigate(['/membresias/pagar']); // ✅ Correcto
   }
 }

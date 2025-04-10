@@ -30,7 +30,7 @@ import { CarritoComponent } from '../../Componentes/carrito/carrito.component';
 @Component({
   selector: 'app-recorridos',
   standalone: true,
-  imports: [NgFor, RouterLink, NavBarComponent,FooterComponent, CommonModule, IndicadorComponent, AddBoletosComponent, TourComponentComponent, BolDisponiblesComponent, WarningComponent],
+  imports: [NgFor, RouterLink, NavBarComponent,FooterComponent,CarritoComponent, CommonModule, IndicadorComponent, AddBoletosComponent, TourComponentComponent, BolDisponiblesComponent, WarningComponent],
   templateUrl: './recorridos.component.html',
   styleUrl: './recorridos.component.scss'
 })

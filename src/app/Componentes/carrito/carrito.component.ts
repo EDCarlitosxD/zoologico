@@ -9,13 +9,13 @@ import { CarritoService } from '../../Services/carrito.service';
 import { MembresiasService } from '../../Services/membresias.service';
 import { IMembresia } from '../../types/Membresia';
 import { WarningComponent } from '../warning/warning.component';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-carrito',
   standalone: true,
-  imports: [WarningComponent, RouterOutlet, CommonModule, NgIf],
+  imports: [WarningComponent, RouterOutlet, RouterLink,CommonModule, NgIf],
   templateUrl: './carrito.component.html',
   styleUrl: './carrito.component.scss'
 })

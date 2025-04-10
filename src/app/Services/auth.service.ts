@@ -43,7 +43,7 @@ export class AuthService {
   }
 
   getUser() {
-    return this.http.get<User>(`${environment.API_URL}/user/`, {
+    return this.http.get<User>(`${environment.API_URL}/user/${this.userDetails.user.id}`, {
       headers: { Authorization: `Bearer ${this.userDetails?.token}` },
     });
   }

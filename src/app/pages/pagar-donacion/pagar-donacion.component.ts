@@ -26,7 +26,7 @@ export class PagarDonacionComponent {
   tarjetaSeleccionada: ITarjeta | null = null;
 
   donacion: IDonacion = {
-    'monto': 0
+    monto: 0
   }
 
 
@@ -50,6 +50,8 @@ export class PagarDonacionComponent {
 
 
   donacionPagar(){
+
+    
     this.router.navigate(['/loading']).then(() => {
       this.donacionService.hacerDonacion(this.donacion).subscribe({
         next: (data) => {
