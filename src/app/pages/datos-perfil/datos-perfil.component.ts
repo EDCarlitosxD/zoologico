@@ -11,6 +11,7 @@ import { TarjetaService } from '../../Service/tarjeta.service';
 import { ITarjeta } from '../../types/Tarjetas';
 import { FormsModule } from '@angular/forms';
 import { IInsignia } from '../../types/Insignias';
+import { catchError, of } from 'rxjs';
 
 interface Perfil {
   nombre: string;
@@ -82,13 +83,19 @@ export class DatosPerfilComponent {
 
   obtenerInsignia(): void {
     if (this.perfil?.id) {
-      this.insigniaService.getByUser(this.perfil.id).subscribe((res) => {
-        this.insignia.imagen = res.imagen
-          ? res.imagen
-          : 'img/pages/loading/imgPerfil.png';
-        this.insignia.nombre = res.nombre
-          ? 'Insignia de ' + res.nombre
-          : 'Sin insignia';
+      this.insigniaService.getByUser(this.perfil.id).pipe(
+        catchError((error) => {
+          // Si hay un error (como 404), asigna "Sin insignia"
+          this.insignia.nombre = 'Sin insignia';
+          this.insignia.imagen = 'img/pages/loading/imgPerfil.png';  // Puedes asignar una imagen predeterminada si lo deseas
+          return of(null);  // Devuelve un observable vacío
+        })
+      ).subscribe((res) => {
+        // Aquí solo se ejecutará si no hubo error en la llamada
+        if (res) {
+          this.insignia.imagen = res.imagen ? res.imagen : 'img/pages/loading/imgPerfil.png';
+          this.insignia.nombre = res.nombre ? 'Insignia de ' + res.nombre : 'Sin insignia';
+        }
       });
     }
   }
