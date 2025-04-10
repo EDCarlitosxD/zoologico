@@ -3,11 +3,16 @@ import { ITarjeta } from '../../../types/Tarjetas';
 import { RouterLink, Router } from '@angular/router';
 import { IMembresia, IMembresiaShort, IMembresiaUser } from '../../../types/Membresia';
 import { MembresiasService } from '../../../Services/membresias.service';
+import { RoundPipe } from '../../../Pipes/round.pipe';
 
 @Component({
   selector: 'app-gracias-membresia',
   standalone: true,
-  imports: [RouterLink],
+  imports: [
+    RouterLink,
+    RoundPipe,
+
+  ],
   templateUrl: './gracias-membresia.component.html',
   styleUrl: './gracias-membresia.component.scss'
 })

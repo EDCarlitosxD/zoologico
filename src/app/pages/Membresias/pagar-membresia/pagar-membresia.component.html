@@ -14,7 +14,7 @@
                     <div class="d-flex justify-content-center align-items-center flex-column w-full" style="gap: 20px;">
                       <img [src]="m.imagen || 'img/Membresias/guardian.png'" width="56px" height="56px" alt="">
                       <h6  class="thin">{{m.nombre || 'Guardian de los animales'}}</h6>
-                      <p class="p1 bold">Precio mensual: $ {{m.precio}} MXN</p>
+                      <p class="p1 bold">Precio mensual: $ {{m.precio | round}} MXN</p>
 
                       <div class="d-flex justify-content-center align-items-center gap-3">
                         <h6 class="p1 thin">Meses: </h6>
@@ -32,7 +32,7 @@
 
 
 
-      <h6>Total: $ {{m.precio * mUser.meses}} MXN</h6>
+      <h6>Total: $ {{m.precio * mUser.meses | round}} MXN</h6>
 
       <!-- TARJETA -->
       <div class="metodoPago" data-bs-toggle="modal" data-bs-target="#metodoDePago">

@@ -30,7 +30,7 @@
                     <p class="p1 thin">{{bol.tipo_boleto}}</p>
                     <p class="p1 bold">{{bol.cantidad_boletos}}</p>
 
-                    <p class="p1 bold">${{bol.total_boletos}}</p>
+                    <p class="p1 bold">${{bol.total_boletos | round}}</p>
                   </div>
 
 
@@ -95,7 +95,7 @@
                     <p class="p1 thin">{{bol.tipo_boleto}}</p>
                     <p class="p1 bold">{{bol.cantidad_boletos}}</p>
 
-                    <p class="p1 bold">${{bol.total_boletos}}</p>
+                    <p class="p1 bold">${{bol.total_boletos | round}}</p>
                 </div>
                 </div>
             </div>
@@ -108,14 +108,14 @@
                           <p class="thin p1">Personas</p>
                           <p class="p1 bold">{{tour.cantidad}}</p>
                       </div>
-                      <p class="p1 bold">${{tour.total_recorrido}}</p>
+                      <p class="p1 bold">${{tour.total_recorrido | round}}</p>
                   </div>
                 </div>
 
             </div>
         </div>
 
-        <h6>Total: $ {{total}} MXN</h6>
+        <h6>Total: $ {{total | round}} MXN</h6>
 
         <div class="metodoPago">
             <p class="p1">Método de pago</p>

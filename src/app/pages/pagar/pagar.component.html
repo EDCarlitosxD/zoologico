@@ -18,7 +18,7 @@
                       <div class="d-flex justify-content-start w-full" style="gap: 20px;" *ngFor="let boleto of boletos; let i = index">
                         <p  class="p1 thin">{{boleto.titulo}}</p>
                         <app-contador-resumen-pedido  [id]="boleto.id!" [cantidad]="boletosVenta[i].cantidad" tipo="boleto" ></app-contador-resumen-pedido>
-                        <p class="p1 bold">$ {{boleto.precio * boletosVenta[i].cantidad}}</p>
+                        <p class="p1 bold">$ {{boleto.precio * boletosVenta[i].cantidad | round}}</p>
                       </div>
                 </div>
 
@@ -60,7 +60,7 @@
                             <p class="p1 thin">Personas</p>
                             <app-contador-resumen-pedido tipo="tour" [cantidad]="tours[i].cantidad!" [id]="tour.horario.id"></app-contador-resumen-pedido>
                         </div>
-                        <p class="p1 bold">$ {{tour.reserva.cantidad! * tour.tour.precio}}</p>
+                        <p class="p1 bold">$ {{tour.reserva.cantidad! * tour.tour.precio | round}}</p>
                     </div>
                   </div>
 
@@ -88,7 +88,7 @@
         </div>
         
         <h6 class="total-amount">
-          Total: ${{totalBoletos + totalRecorridos}}
+          Total: ${{totalBoletos + totalRecorridos | round}}
           <span *ngIf="discountsApplied" class="discount-badge">¡Descuento aplicado!</span>
         </h6>
 

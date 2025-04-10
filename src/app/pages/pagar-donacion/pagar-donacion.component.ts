@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { TarjetaService } from '../../Service/tarjeta.service';
 import { ITarjeta } from '../../types/Tarjetas';
 import { DonacionService } from '../../Service/donacion.service';
+import { RoundPipe } from '../../Pipes/round.pipe';
 
 
 export interface IDonacion {
@@ -16,7 +17,7 @@ export interface IDonacion {
 @Component({
   selector: 'app-pagar-donacion',
   standalone: true,
-  imports: [RouterLink, AddTarjetaComponent, AtrasBtnComponent, FormsModule, CommonModule],
+  imports: [RouterLink, AddTarjetaComponent, AtrasBtnComponent, FormsModule, CommonModule, RoundPipe],
   templateUrl: './pagar-donacion.component.html',
   styleUrl: './pagar-donacion.component.scss'
 })

@@ -23,6 +23,7 @@ import {
 import { getUserDetails } from '../../../utils/getUserDetails';
 import { IUserDetails } from '../../../types/Auth';
 import { MembresiasService } from '../../../Services/membresias.service';
+import { RoundPipe } from '../../../Pipes/round.pipe';
 
 @Component({
   selector: 'app-pagar-membresia',
@@ -36,6 +37,8 @@ import { MembresiasService } from '../../../Services/membresias.service';
     ContadorResumenPedidoComponent,
     IndicadorComponent,
     WarningComponent,
+    RoundPipe,
+    
   ],
   templateUrl: './pagar-membresia.component.html',
   styleUrl: './pagar-membresia.component.scss',

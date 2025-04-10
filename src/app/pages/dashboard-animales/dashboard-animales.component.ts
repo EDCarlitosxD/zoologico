@@ -8,11 +8,12 @@ import { NgClass, NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CargandoComponent } from "../../Componentes/cargando/cargando.component";
+import { CapitalizePipe } from '../../Pipes/capitalize.pipe';
 
 @Component({
   selector: 'app-dashboard-animales',
   standalone: true,
-  imports: [DashboardContentComponent, CommonModule, FormsModule, RouterLink, RouterLink, CargandoComponent],
+  imports: [DashboardContentComponent, CommonModule, FormsModule, RouterLink, RouterLink, CargandoComponent, CapitalizePipe],
   templateUrl: './dashboard-animales.component.html',
   styleUrl: './dashboard-animales.component.scss'
 })

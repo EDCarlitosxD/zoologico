@@ -23,9 +23,9 @@
         <tr *ngFor="let a of animales; let i = index" [ngClass]="{ 'odd-row': i % 2 !== 0, 'even-row': i % 2 === 0 }">
           <td class="p2 cell">{{a.id}}</td>
           <td class="p2 cell">{{a.nombre}}</td>
-          <td class="p2 cell">{{a.tipo}}</td>
-          <td class="p2 cell">{{a.peso}}</td>
-          <td class="p2 cell">{{a.altura}}</td>
+          <td class="p2 cell">{{a.tipo|capitalize}}</td>
+          <td class="p2 cell">{{a.peso}} kg</td>
+          <td class="p2 cell">{{a.altura}} cm</td>
           <td class="cellw">
 
             <div class="form-check form-switch">

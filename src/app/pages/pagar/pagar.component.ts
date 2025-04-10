@@ -17,11 +17,12 @@ import { IVenta, VentaService } from '../../Service/venta.service';
 import { IVentaResponse } from '../../types/Venta';
 import { IBoleto, IBoletoVenta } from '../../types/Boletos';
 import { ITour } from '../../types/Tour';
+import { RoundPipe } from '../../Pipes/round.pipe';
 
 @Component({
   selector: 'app-pagar',
   standalone: true,
-  imports: [RouterLink, AtrasBtnComponent, ContadorResumenPedidoComponent, CommonModule,IndicadorComponent, AddTarjetaComponent, MetodoDePagoComponent, WarningComponent,FormsModule],
+  imports: [RouterLink, AtrasBtnComponent, ContadorResumenPedidoComponent, CommonModule,IndicadorComponent, AddTarjetaComponent, MetodoDePagoComponent, WarningComponent,FormsModule, RoundPipe],
   templateUrl: './pagar.component.html',
   styleUrl: './pagar.component.scss'
 })

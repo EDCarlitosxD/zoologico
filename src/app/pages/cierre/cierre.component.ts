@@ -5,11 +5,12 @@ import { IVenta } from '../../Service/venta.service';
 import { ITarjeta } from '../../types/Tarjetas';
 import { CommonModule } from '@angular/common';
 import { IVentaResponse } from '../../types/Venta';
+import { RoundPipe } from '../../Pipes/round.pipe';
 
 @Component({
   selector: 'app-cierre',
   standalone: true,
-  imports: [RouterLink, IndicadorComponent, CommonModule],
+  imports: [RouterLink, IndicadorComponent, CommonModule, RoundPipe],
   templateUrl: './cierre.component.html',
   styleUrl: './cierre.component.scss'
 })

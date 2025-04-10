@@ -15,7 +15,7 @@
             <tr *ngFor="let m of membresias; let i = index" [ngClass]="{ 'odd-row': i % 2 !== 0, 'even-row': i % 2 === 0 }">
               <td>{{m.id}}</td>
               <td class="p2 cell">{{m.nombre}}</td>
-              <td class="p2 cell">{{m.precio}}</td>
+              <td class="p2 cell">${{m.precio}} MXN</td>
               
               <td class="cellw">
     

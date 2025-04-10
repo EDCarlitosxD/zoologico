@@ -11,11 +11,12 @@ import { IMembresia } from '../../types/Membresia';
 import { WarningComponent } from '../warning/warning.component';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule, NgIf } from '@angular/common';
+import { RoundPipe } from '../../Pipes/round.pipe';
 
 @Component({
   selector: 'app-carrito',
   standalone: true,
-  imports: [WarningComponent, RouterOutlet, RouterLink,CommonModule, NgIf],
+  imports: [WarningComponent, RouterOutlet, RouterLink,CommonModule, NgIf, RoundPipe],
   templateUrl: './carrito.component.html',
   styleUrl: './carrito.component.scss'
 })

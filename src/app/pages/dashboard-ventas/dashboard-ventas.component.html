@@ -5,12 +5,12 @@
     routerButton="create"
 >
     <section class="search-tables">
-         <form action="" class="search">
+         <!-- <form action="" class="search">
             <h5 class="thin">Buscar por dia</h5>
             <input class="dash60" type="date" name="fecha" id="hecha">
             <button class="chiquito">Buscar</button>
             <p class="p1">Total vendido: {{totalBoletosVendidos}} Boletos</p>
-        </form> 
+        </form>  -->
 
         <div class="tables">
             <div class="bgTable">
@@ -32,7 +32,7 @@
                         >
                             <td>{{row.id}}</td>
                             <td>{{row.titulo}}</td>
-                            <td>${{row.precio}}</td>
+                            <td>${{row.precio}} MXN</td>
                             <td class="cellw">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" 
@@ -84,7 +84,7 @@
                             >
                                 <td>{{v.id}}</td>
                                 <td>{{v.titulo}}</td>
-                                <td>${{v.precio_total}}</td>
+                                <td>${{v.precio_total}} MXN</td>
                                 <td>{{v.cantidad}} Boletos</td>
 
                             </tr>

@@ -8,7 +8,7 @@
                 <img [src]="m.imagen || 'img/Membresias/guardian.png'" [alt]="m.nombre">
             </div>
             <h6>Meses: {{mu.meses}}</h6>
-        <h4 class="text-center thin">Total: {{mu.precio_total}} $</h4>
+        <h4 class="text-center thin">Total: {{mu.precio_total | round}} $</h4>
             
         </div>
 
