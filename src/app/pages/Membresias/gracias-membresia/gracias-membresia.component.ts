@@ -39,6 +39,7 @@ export class GraciasMembresiaComponent {
   };
   ngOnInit(): void {
     this.mu =this.membresiasService.getMembresia()
+    this.mu.precio_total = this.mu.meses * this.mu.precio_total
     this.membresiasService.getById(this.mu.id_membresia).subscribe((data) => {
       (this.m = data)
     });
