@@ -58,6 +58,9 @@ export class GuiaService {
   public getAll(){
     return this.http.get<IGuia[]>(`${environment.API_URL}/guias`)
   }
+  public getActive(){
+    return this.http.get<IGuia[]>(`${environment.API_URL}/guias?estado=1`)
+  }
 
   public actualizarEstado(estado: boolean,id:number){
     return this.http.put<boolean>(`${environment.API_URL}/guias/eliminar/${id}`,{estado},{

@@ -96,7 +96,7 @@ export class EditRecorridosComponent {
   }
 
   getGuias() {
-    this.guiaService.getAll().subscribe((data: IGuia[]) => {
+    this.guiaService.getActive().subscribe((data: IGuia[]) => {
       this.guias = data;
     });
   }

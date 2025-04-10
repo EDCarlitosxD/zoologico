@@ -76,7 +76,7 @@ export class CreatRecorridoComponent {
   };
 
 ngOnInit(){
-  this.guiaService.getAll().subscribe(data => this.guias = data)
+  this.guiaService.getActive().subscribe(data => this.guias = data)
 }
 
 imageBackground: string = 'none';
