@@ -53,7 +53,7 @@ export class PagarMembresiaComponent implements OnInit {
   m: IMembresiaShort = {
     id: 0,
     nombre: '',
-    precio: 5,
+    precio: 0,
     imagen: '',
   };
 
@@ -75,18 +75,26 @@ export class PagarMembresiaComponent implements OnInit {
     private activateRoute: ActivatedRoute
   ) {
     this.userDetails = getUserDetails();
-  }
-
-  ngOnInit() {
     this.tarjetasService
       .getTarjetas()
       .subscribe((data) => (this.tarjetas = data));
+
       this.mUser = this.membresiasService.getMembresia();
+
       console.log('membresia PAGAR',this.mUser );
+
       this.mUser = this.membresiasService.getMembresia();
+
       this.membresiasService.getById(this.mUser.id_membresia).subscribe((data) => {
-        (this.m = data)
+        (this.m = data,
+          this.m.precio = data.precio
+        )
       });
+
+  }
+
+  ngOnInit() {
+    
   }
 
   eliminarTarjeta(id: number) {
